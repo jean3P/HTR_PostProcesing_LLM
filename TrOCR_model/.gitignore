@@ -1,0 +1,43 @@
+# Ignore Python compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+# Ignore environment and virtual environment folders
+.env/
+venv/
+env/
+.venv/
+# Ignore HDF5 files (if you don't want to track datasets in version control)
+*.h5
+*.hdf5
+
+# Ignore log files and temporary files
+*.log
+*.tmp
+*.swp
+*.png
+# Ignore Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+
+# Ignore cache directories
+.cache/
+*.bak
+*.orig
+
+# Ignore specific IDE or editor settings
+# For JetBrains IDEs like PyCharm
+.idea/
+models/
+# For VS Code
+.vscode/
+
+# For Visual Studio
+.vs/
+
+# Ignore large data files
+datasets/
