@@ -1,3 +1,5 @@
+# TrOCR_config.py
+
 from dataclasses import dataclass
 import h5py
 import torchvision.transforms as transforms
@@ -13,6 +15,12 @@ train_transforms = transforms.Compose([
     transforms.ColorJitter(brightness=.5, hue=.3),
     transforms.GaussianBlur(kernel_size=(5, 9), sigma=(0.1, 5)),
 ])
+
+
+class TrainingConfig:
+    BATCH_SIZE = 2  # Adjust based on your GPU memory
+    LEARNING_RATE = 5e-5
+    EPOCHS = 100
 
 
 @dataclass(frozen=True)

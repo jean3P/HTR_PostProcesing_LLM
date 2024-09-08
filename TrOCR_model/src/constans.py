@@ -1,3 +1,5 @@
+# constants.py
+
 import os
 
 # Get the absolute path of the directory where the script is located
