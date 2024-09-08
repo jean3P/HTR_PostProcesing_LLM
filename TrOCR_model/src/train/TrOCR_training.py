@@ -1,11 +1,9 @@
-import os
+# TrOCR_training.py
 
-import torch
+import os
 from transformers import TrOCRProcessor, VisionEncoderDecoderModel, Seq2SeqTrainingArguments, Seq2SeqTrainer, \
     default_data_collator
-
-from TrOCR_config import ModelConfig, HandleDataTrOCR
-from hdf5_handler import HDF5Handler
+from config.TrOCR_config import ModelConfig, HandleDataTrOCR
 from utils import metrics_evaluation
 from utils.utils import device, clear_cuda_cache
 
