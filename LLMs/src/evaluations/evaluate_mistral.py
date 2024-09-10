@@ -15,8 +15,8 @@ def evaluate_and_correct_ocr_results(loaded_data, train_set_lines, pipe,
         ground_truth_label = item['ground_truth_label']
 
         corrected_text_line, confidence, justification = text_processing_strategy.check_and_correct_text_line(
-            ocr_text, train_set_lines, pipe, mistral_tokenizer
-        )
+                ocr_text, pipe, mistral_tokenizer, train_set_lines
+            )
 
         if ocr_text == corrected_text_line:
             cer_mistral = item['cer']

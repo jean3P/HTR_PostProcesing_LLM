@@ -11,7 +11,11 @@ logger = setup_logger()
 class TextProcessingStrategy(ABC):
 
     @abstractmethod
-    def check_and_correct_text_line(self, text_line, train_set_lines, pipe, tokenizer):
+    def get_name_method(self):
+        pass
+
+    @abstractmethod
+    def check_and_correct_text_line(self, text_line,  pipe, tokenizer, train_set_lines):
         pass
 
     @abstractmethod

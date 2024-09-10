@@ -32,4 +32,11 @@ class MistralLLM(BaseLLM):
             torch_dtype=torch.float16,
             device_map="auto",
         )
-        self.pipe = pipeline("text-generation", model=self.model, tokenizer=self.tokenizer, batch_size=10)
+        self.pipe = pipeline(
+            "text-generation",
+            model=self.model,
+            tokenizer=self.tokenizer,
+            batch_size=10,
+            truncation=True,  # Ensure truncation is enabled
+            max_length=32  # Use the max_length setting here for truncation
+        )

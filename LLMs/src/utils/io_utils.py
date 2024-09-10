@@ -33,12 +33,12 @@ def get_latest_result(test_dir):
     return os.path.join(test_dir, latest_file)
 
 
-def create_testing_file(base_dir, dataset, partition, result, train_suggestion):
+def create_testing_file(base_dir, dataset, partition, result, train_suggestion, llm_name, name_method):
     # Get current date and time in the format YYYY-MM-DD_HH-MM-SS
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
     # Define the directory structure (without date)
-    test_dir = os.path.join(base_dir, dataset, partition)
+    test_dir = os.path.join(base_dir, dataset, llm_name, name_method, partition)
 
     # Create the directory if it doesn't exist
     os.makedirs(test_dir, exist_ok=True)
