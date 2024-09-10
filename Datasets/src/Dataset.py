@@ -5,7 +5,8 @@ from functools import partial
 import numpy as np
 import h5py
 from tqdm import tqdm
-import preproc as pp
+from utils import preproc as pp
+from utils.text_processing import correct_punctuation_spacing
 
 
 class Dataset:
@@ -294,7 +295,8 @@ class Dataset:
             if not line or line.startswith("#"):
                 continue
             split = line.split()
-            gt_dict[split[0]] = " ".join(split[8:]).replace("|", " ")
+            corrected_gt = correct_punctuation_spacing(" ".join(split[8:]).replace("|", " "))
+            gt_dict[split[0]] = corrected_gt
 
         # Process the IAM dataset for train, valid, and test partitions
         for i in ["train", "valid", "test"]:

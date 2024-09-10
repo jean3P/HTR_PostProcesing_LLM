@@ -18,3 +18,4 @@ splits_washington_path = os.path.join(outputs_path, 'washington')
 splits_iam_path = os.path.join(outputs_path, 'iam')
 
 evaluations_path = os.path.join(current_dir, '../../TrOCR_model/results')
+llm_outputs_path = os.path.join(current_dir, '../../LLMs/results')

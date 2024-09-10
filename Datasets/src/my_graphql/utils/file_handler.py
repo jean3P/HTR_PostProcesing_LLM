@@ -2,7 +2,7 @@ import os
 import json
 import logging
 from h5py import File
-from constants import splits_bentham_path, splits_washington_path, splits_iam_path, evaluations_path
+from constants import splits_bentham_path, splits_washington_path, splits_iam_path, evaluations_path, llm_outputs_path
 from my_graphql.types import FileInfo
 
 # Define your paths here
@@ -51,12 +51,14 @@ def load_partition_data(name_dataset, partition, number_of_rows):
     return partition_data, global_total, full_path, total_count
 
 
-def load_evaluation_results(name_dataset, partition):
+def load_evaluation_results(name_dataset, name_method , partition, llm_name):
     """Load the most recent evaluation results from a JSON file."""
-    eval_dir_path = os.path.join(evaluations_path, name_dataset, partition)
+    eval_dir_path = os.path.join(llm_outputs_path, name_dataset, llm_name, name_method, partition)
+
+    logging.info(f"Checking evaluation directory: {eval_dir_path}")
 
     if not os.path.exists(eval_dir_path):
-        logging.warning(f"Evaluation directory not found for {name_dataset} - {partition}. Path: {eval_dir_path}")
+        logging.warning(f"Evaluation directory not found for {name_dataset} - {name_method} - {partition}. Path: {eval_dir_path}")
         return []
 
     # Find all files that match the 'results_*.json' pattern
@@ -65,6 +67,8 @@ def load_evaluation_results(name_dataset, partition):
     if not result_files:
         logging.warning(f"No results found for {name_dataset} - {partition}. Path: {eval_dir_path}")
         return []
+
+    logging.info(f"Result files found: {result_files}")
 
     # Sort the result files by the timestamp in the filename (most recent first)
     result_files.sort(reverse=True)
@@ -76,31 +80,53 @@ def load_evaluation_results(name_dataset, partition):
     with open(eval_file_path, 'r') as eval_file:
         eval_data = json.load(eval_file)
 
+    logging.info(f"Loading evaluation file: {eval_file_path}")
+    logging.info(f"File contents: {eval_data}")
+
     # Convert evaluation data to FileInfo format
-    return [
+    evaluation_data = [
         FileInfo(
             file_name=item['file_name'],
             ground_truth=item['ground_truth_label'],
-            predicted_text=item['predicted_label'],
-            cer=item['cer'],
+            predicted_text_ocr=item['OCR']['predicted_label'],
+            cer_ocr=item['OCR']['cer'],
+            predicted_text_llm=item['Prompt correcting']['predicted_label'],
+            cer_llm=item['Prompt correcting']['cer'],
+            confidence=item['Prompt correcting']['confidence'],
+            justification=item['Prompt correcting']['justification'],
             image_data=None
         )
         for item in eval_data
     ]
 
+    return evaluation_data
+
 
 def calculate_cer_statistics(evaluation_data):
-    """Calculate average, minimum, and maximum CER."""
+    """Calculate average, minimum, and maximum CER for both OCR and LLM correction."""
     if not evaluation_data:
         return None  # No data to calculate
 
-    cer_values = [result.cer for result in evaluation_data if result.cer is not None]
+    cer_ocr_values = [result.cer_ocr for result in evaluation_data if result.cer_ocr is not None]
+    cer_llm_values = [result.cer_llm for result in evaluation_data if result.cer_llm is not None]
 
-    if not cer_values:
+    if not cer_ocr_values and not cer_llm_values:
         return None  # No valid CER values to calculate
 
+    total_cer_reduction = 0
+    for cer_ocr, cer_llm in zip(cer_ocr_values, cer_llm_values):
+        if cer_ocr > 0:  # To avoid division by zero
+            cer_reduction = ((cer_ocr - cer_llm) / cer_ocr) * 100
+            total_cer_reduction += cer_reduction
+
+    average_cer_reduction = total_cer_reduction / len(cer_ocr_values)
+
     return {
-        'average_cer': round(sum(cer_values) / len(cer_values), 3),
-        'min_cer': round(min(cer_values), 3),
-        'max_cer': round(max(cer_values), 3)
+        'average_cer_ocr': round(sum(cer_ocr_values) / len(cer_ocr_values), 3) if cer_ocr_values else None,
+        'min_cer_ocr': round(min(cer_ocr_values), 3) if cer_ocr_values else None,
+        'max_cer_ocr': round(max(cer_ocr_values), 3) if cer_ocr_values else None,
+        'average_cer_llm': round(sum(cer_llm_values) / len(cer_llm_values), 3) if cer_llm_values else None,
+        'min_cer_llm': round(min(cer_llm_values), 3) if cer_llm_values else None,
+        'max_cer_llm': round(max(cer_llm_values), 3) if cer_llm_values else None,
+        'cer_reduction_percentage': round(average_cer_reduction, 3)
     }
