@@ -3,15 +3,28 @@
 import re
 from prompts.text_processing_base import TextProcessingStrategy
 from utils.aux_processing import count_tokens, calculate_pipe, detect_immediate_repeated_words, \
-    detect_close_repeated_word_sequences
+    detect_close_repeated_word_sequences, suggest_corrections_for_ocr_text_m1
 from utils.logger import setup_logger
 
 logger = setup_logger()
 
 
 class MistralTextProcessingM1(TextProcessingStrategy):
-    def check_and_correct_text_line(self, text_line, train_set_lines, pipe, tokenizer):
-        pass
+    def get_name_method(self):
+        return "method_1"
+
+    def check_and_correct_text_line(self, text_line, pipe, tokenizer, train_set_line):
+        logger.debug(f"Checking and correcting text line: {text_line}")
+        suggestions = suggest_corrections_for_ocr_text_m1(text_line, train_set_line)
+        corrected_text = self.correct_with_suggestions(text_line, suggestions, pipe, tokenizer)
+        corrected_text = self.correct_duplicated_words(corrected_text, pipe, tokenizer)
+        logger.info(f"Text after correcting duplicated words: '{corrected_text}'")
+        confidence, justification = self.evaluate_corrected_text(
+            text_line, corrected_text, pipe, tokenizer
+        )
+        logger.info(f"Final text line: '{corrected_text}'")
+
+        return corrected_text, confidence, justification
 
     def correct_with_suggestions(self, ocr_text, suggestions, pipe, tokenizer):
         suggestion_part = "\n".join(

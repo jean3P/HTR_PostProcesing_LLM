@@ -177,12 +177,14 @@ def detect_similar_immediate_repeated_words(text_line, similarity_threshold=0.8)
     return similar_repeated_words
 
 
+import re
+
 def has_misplaced_punctuation(text_line):
     """
     This function checks if a text line contains any misplaced punctuation marks.
     A punctuation mark is considered misplaced if it is not immediately next to the word on its left
     or if there is not exactly one space between the punctuation mark and the word to its right.
-    Additionally, it returns False if the text contains an ampersand (&).
+    Additionally, it returns False if the text contains an ampersand (&) or unpaired quotation marks.
 
     Returns:
         bool: True if there is misplaced punctuation, otherwise False.
@@ -194,6 +196,10 @@ def has_misplaced_punctuation(text_line):
         return False
     elif text_line.startswith('-') and text_line[1:].strip() and '-' not in text_line[1:]:
         return False
+
+    # Check for unpaired quotation marks
+    if text_line.count('"') % 2 != 0:
+        return False  # Unpaired quotes, so consider it as no misplaced punctuation
 
     # Define a pattern to match correct punctuation usage
     correct_punctuation_pattern = r'\w[.,;:?!-]\s\w|\w[.,;:?!-]$'

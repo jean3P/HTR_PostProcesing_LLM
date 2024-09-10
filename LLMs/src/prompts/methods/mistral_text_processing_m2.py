@@ -12,19 +12,24 @@ logger = setup_logger()
 
 class MistralTextProcessingM2(TextProcessingStrategy):
 
-    def check_and_correct_text_line(self, text_line, train_set_lines, pipe, tokenizer):
+    def get_name_method(self):
+        return "method_2"
+
+    def check_and_correct_text_line(self, text_line, pipe, tokenizer, train_set_lines):
         logger.debug(f"Checking and correcting text line: {text_line}")
-        spelling_erros = self.check_spelling_in_text_line(text_line, pipe, tokenizer)
+        spelling_errors = self.check_spelling_in_text_line(text_line, pipe, tokenizer)
         corrected_text = text_line
-        if spelling_erros == 'Yes':
+        if spelling_errors == 'Yes':
             suggestions = suggest_corrections_for_ocr_text_m2(corrected_text, train_set_lines)
             corrected_text = self.correct_with_suggestions(corrected_text, suggestions, pipe, tokenizer)
         corrected_text = self.correct_duplicated_words(corrected_text, pipe, tokenizer)
+        logger.info(f"Text after correcting duplicated words: '{corrected_text}'")
         corrected_text = self.check_and_correct_punctuation(corrected_text, pipe, tokenizer)
+        logger.info(f"Text after correcting punctuation errors: '{corrected_text}'")
         confidence, justification = self.evaluate_corrected_text(
             text_line, corrected_text, pipe, tokenizer
         )
-        logger.info(f"Text after correcting duplicated words: '{corrected_text}'")
+        logger.info(f"Final text line: '{corrected_text}'")
 
         return corrected_text, confidence, justification
 

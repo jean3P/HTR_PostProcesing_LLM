@@ -11,14 +11,14 @@ from utils.logger import setup_logger
 logger = setup_logger()
 
 
-# Load the Mistral model using LLMFactory
-mistral_llm = LLMFactory.get_llm("mistralai/Mistral-7B-v0.1")
+llm_name_1 = "mistralai/Mistral-7B-v0.1"
+mistral_llm = LLMFactory.get_llm(llm_name_1)
 pipe = mistral_llm.pipe
 mistral_tokenizer = mistral_llm.tokenizer
 llms = ['mistral']
 datasets = ['iam']
 train_sizes = ['train_25', 'train_50', 'train_75', 'train_100']
-train_suggestion = ['bentham', 'iam', 'washington', 'whitefield', '']
+train_suggestion = ['', 'iam', 'bentham', 'washington', 'whitefield']
 latest_results = get_latest_result_for_datasets(llms, datasets, train_sizes)
 
 for llm, dataset, train_size, result_path in latest_results:
@@ -48,7 +48,7 @@ for llm, dataset, train_size, result_path in latest_results:
         )
 
         # Save the results using create_testing_file
-        create_testing_file(results_llm, dataset, train_size, evaluation_results, suggestion_file)
+        create_testing_file(results_llm, dataset, train_size, evaluation_results, suggestion_file, llm, text_processing_strategy.get_name_method())
 
         logger.info(f"=== Evaluation for {dataset} with {train_size} and suggestion training set {suggestion_file} "
                     f"completed and results saved ===")
