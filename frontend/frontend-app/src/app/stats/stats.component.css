@@ -1,0 +1,82 @@
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: 'Arial', sans-serif;
+  min-width: 400px;
+  border: 1px solid #ddd;
+}
+
+.styled-table th, .styled-table td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+.styled-table th {
+  background-color: #f3f3f3;
+  font-weight: bold;
+  text-align: center;
+}
+
+.styled-table td {
+  text-align: center;
+}
+
+.red-cell {
+  background-color: #ffcccc; /* Light red background */
+}
+
+.green-cell {
+  background-color: #ccffcc; /* Light green background */
+}
+
+/* General container styling */
+.selection-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+
+/* Individual selection item styling */
+.selection-item {
+  flex-basis: calc(33.333% - 10px);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+.selection-item label {
+  font-weight: bold;
+  margin-bottom: 8px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.selection-item select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease;
+}
+
+.selection-item select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+/* Adjustments for small screens */
+@media (max-width: 768px) {
+  .selection-item {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
+}

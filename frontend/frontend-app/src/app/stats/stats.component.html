@@ -1,0 +1,83 @@
+<h2>OCR Model Comparison with LLM Across Different Datasets</h2>
+
+<div class="selection-container">
+  <div class="selection-item">
+    <label for="htrModel">HTR Model:</label>
+    <select id="htrModel" (change)="onModelChange($event)">
+      <option value="Flor_model">Flor_model</option>
+      <option value="TrOCR_model">TrOCR_model</option>
+    </select>
+  </div>
+
+  <div class="selection-item">
+    <label for="llmName">LLM Model:</label>
+    <select id="llmName" (change)="onLlmChange($event)">
+      <option value="mistral">Mistral</option>
+      <option value="gpt-3.5">GPT-3.5</option>
+    </select>
+  </div>
+
+  <div class="selection-item">
+    <label for="nameMethod">Name Method:</label>
+    <select id="nameMethod" (change)="onMethodChange($event)">
+      <option value="method_1">Method 1</option>
+      <option value="method_2">Method 2</option>
+    </select>
+  </div>
+</div>
+
+<table class="styled-table">
+  <thead>
+  <tr>
+    <th>Train (%)</th>
+<!--    <th>Model</th>-->
+    <th>OCR CER (%)</th>
+    <th colspan="2">Washington</th>
+    <th colspan="2">Bentham</th>
+    <th colspan="2">Whitefield</th>
+    <th colspan="2">IAM</th>
+    <th colspan="2">No Training Set</th>
+  </tr>
+  <tr>
+    <th></th>
+    <th></th>
+    <th>CER</th>
+    <th>Reduction (%)</th>
+    <th>CER</th>
+    <th>Reduction (%)</th>
+    <th>CER</th>
+    <th>Reduction (%)</th>
+    <th>CER</th>
+    <th>Reduction (%)</th>
+    <th>CER</th>
+    <th>Reduction (%)</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let statGroup of statistics">
+    <td>{{ statGroup.partition }}</td>
+<!--    <td>{{ selectedHtrModel }}</td>-->
+    <td>{{ statGroup.averageCerOcr || '-' }}</td>
+
+    <!-- Washington -->
+    <td [ngClass]="getClass(statGroup, 'washington')">{{ statGroup.washington?.cer || '-' }}</td>
+    <td>{{ statGroup.washington?.reduction || '-' }}</td>
+
+    <!-- Bentham -->
+    <td [ngClass]="getClass(statGroup, 'bentham')">{{ statGroup.bentham?.cer || '-' }}</td>
+    <td>{{ statGroup.bentham?.reduction || '-' }}</td>
+
+    <!-- Whitefield -->
+    <td [ngClass]="getClass(statGroup, 'whitefield')">{{ statGroup.whitefield?.cer || '-' }}</td>
+    <td>{{ statGroup.whitefield?.reduction || '-' }}</td>
+
+    <!-- No Training Set -->
+    <td [ngClass]="getClass(statGroup, 'iam')">{{ statGroup.iam?.cer || '-' }}</td>
+    <td>{{ statGroup.iam?.reduction || '-' }}</td>
+
+    <!-- No Training Set -->
+    <td [ngClass]="getClass(statGroup, 'noTraining')">{{ statGroup.noTraining?.cer || '-' }}</td>
+    <td>{{ statGroup.noTraining?.reduction || '-' }}</td>
+  </tr>
+  </tbody>
+</table>
