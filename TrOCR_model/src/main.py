@@ -11,7 +11,7 @@ logger = setup_logger()
 
 
 def run_training():
-    datasets = ['washington']
+    datasets = ['iam']
 
     # Iterate over each dataset
     for dataset_name in datasets:

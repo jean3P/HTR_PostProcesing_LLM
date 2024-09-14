@@ -1,10 +1,10 @@
-# src/main.py
+# src/main_mistral.py
 
 import os
-from constants import results_from_model_path, training_suggestion_path, results_llm
+from constants import training_suggestion_path, results_llm
 from evaluations.evaluate_mistral import evaluate_and_correct_ocr_results
 from llm.llm_factory import LLMFactory
-from prompts.methods.mistral_text_processing_m2 import MistralTextProcessingM2
+from prompts.mistral.methods.mistral_text_processing_m2 import MistralTextProcessingM2
 from utils.io_utils import get_latest_result_for_datasets, load_from_json, create_testing_file
 from utils.logger import setup_logger
 
@@ -16,10 +16,11 @@ mistral_llm = LLMFactory.get_llm(llm_name_1)
 pipe = mistral_llm.pipe
 mistral_tokenizer = mistral_llm.tokenizer
 llms = ['mistral']
+model_ocr = "Flor_model"
 datasets = ['iam']
 train_sizes = ['train_25', 'train_50', 'train_75', 'train_100']
 train_suggestion = ['', 'iam', 'bentham', 'washington', 'whitefield']
-latest_results = get_latest_result_for_datasets(llms, datasets, train_sizes)
+latest_results = get_latest_result_for_datasets(llms, datasets, train_sizes, model_ocr)
 
 for llm, dataset, train_size, result_path in latest_results:
     logger.info(f"Latest result file for {dataset}, {train_size}: {result_path}")

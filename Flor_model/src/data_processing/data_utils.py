@@ -1,10 +1,6 @@
 import json
 import os
 from datetime import datetime
-from utils.logger import setup_logger, log_status
-
-# Set up the logger
-logger = setup_logger()
 
 
 def get_model_and_processor_paths_by_partition(base_dir, dataset_name, partition_name):
@@ -18,9 +14,8 @@ def get_model_and_processor_paths_by_partition(base_dir, dataset_name, partition
     """
     dataset_dir = os.path.join(base_dir, dataset_name, partition_name)
     model_save_dir = os.path.join(dataset_dir, 'model')
-    processor_save_dir = os.path.join(dataset_dir, 'processor')
 
-    return model_save_dir, processor_save_dir
+    return model_save_dir
 
 
 def create_directories_if_needed(directories):
@@ -29,7 +24,7 @@ def create_directories_if_needed(directories):
     """
     for directory in directories:
         os.makedirs(directory, exist_ok=True)
-        log_status(f"Directory created: {directory}", logger)
+        print(f"Directory created: {directory}")
 
 
 def save_to_json(dict_data, path_file):

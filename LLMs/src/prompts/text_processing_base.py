@@ -1,7 +1,6 @@
 # src/prompts/text_processing_base.py
 
 from abc import ABC, abstractmethod
-
 from utils.aux_processing import count_tokens, calculate_pipe
 from utils.logger import setup_logger
 

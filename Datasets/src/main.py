@@ -1,30 +1,16 @@
 # main.py
 
 import logging
-from flask import Flask
-from graphql_server.flask import GraphQLView
-
+import redis
 from Dataset import Dataset
 from constants import bentham_path, splits_bentham_path, washington_path, splits_washington_path, iam_path, \
     splits_iam_path
-from my_graphql.schema import schema
 
 # Configure logging for the main module
 logging.basicConfig(level=logging.INFO)
 
-# Initialize the Flask app
-app = Flask(__name__)
-
-
-# Add the GraphQL endpoint
-app.add_url_rule(
-    '/graphql',
-    view_func=GraphQLView.as_view(
-        'graphql',
-        schema=schema,
-        graphiql=True  # Enable GraphiQL interface
-    )
-)
+# Connect to Redis
+r = redis.Redis(host='127.0.0.1', port=6379, db=0)
 
 # Run the Flask app
 if __name__ == '__main__':
@@ -40,7 +26,6 @@ if __name__ == '__main__':
         bentham_dataset.save_partitions(target_dir=splits_bentham_path, image_input_size=input_size,
                                         max_text_length=max_text_length)
 
-
         # Initialize the Dataset class for Washington (partition "cv0")
         washington_dataset = Dataset(source=washington_path, name="washington", partition_name="cv0")
         washington_dataset.read_partitions()
@@ -53,9 +38,7 @@ if __name__ == '__main__':
         iam_dataset.save_partitions(target_dir=splits_iam_path, image_input_size=input_size,
                                     max_text_length=max_text_length)
 
-
+        result = r.publish("project_channel", "datasets_done")
+        logging.info(f"Message published to Redis with result: {result}")
     except Exception as e:
         logging.error(f"Error while loading the dataset: {e}")
-
-    # Start the Flask app
-    app.run(host='0.0.0.0', port=5000, debug=True)
