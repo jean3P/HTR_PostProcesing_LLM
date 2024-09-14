@@ -12,11 +12,13 @@ import { CommonModule } from '@angular/common';
 
 export class StatsComponent implements OnInit {
   statistics: any[] = [];
-
-  // Variables to store the selected values
+  selectedEvaluationData: any[] = [];  // Store evaluation data
+  filteredEvaluationData: any[] = [];  // Store filtered evaluation data
   selectedHtrModel: string = 'Flor_model';
   selectedLlmName: string = 'mistral';
   selectedMethod: string = 'method_1';
+  selectedCell: string = '';
+  selectedFilter: string = 'all';  // Default filter value
 
   constructor(private statsService: StatsService) {}
 
@@ -30,6 +32,12 @@ export class StatsComponent implements OnInit {
     this.loadStats();
   }
 
+  // Handle filter change
+  onFilterChange(event: any): void {
+    this.selectedFilter = event.target.value;
+    this.applyFilter();  // Apply the filter when selection changes
+  }
+
   // Method to handle LLM Model change
   onLlmChange(event: any): void {
     this.selectedLlmName = event.target.value;
@@ -40,6 +48,30 @@ export class StatsComponent implements OnInit {
   onMethodChange(event: any): void {
     this.selectedMethod = event.target.value;
     this.loadStats();
+  }
+
+  // Apply the filter based on the selected option
+  applyFilter(): void {
+    switch (this.selectedFilter) {
+      case 'llm_greater':
+        this.filteredEvaluationData = this.selectedEvaluationData.filter(data => data.cerLlm > data.cerOcr);
+        break;
+      case 'llm_lesser':
+        this.filteredEvaluationData = this.selectedEvaluationData.filter(data => data.cerLlm < data.cerOcr);
+        break;
+      case 'llm_equal':
+        this.filteredEvaluationData = this.selectedEvaluationData.filter(data => data.cerLlm === data.cerOcr);
+        break;
+      default:
+        this.filteredEvaluationData = [...this.selectedEvaluationData];  // Show all data
+        break;
+    }
+  }
+
+  // Method to clear the table data
+  clearTable(): void {
+    this.filteredEvaluationData = [];
+    this.selectedEvaluationData = [];
   }
 
   loadStats(): void {
@@ -125,5 +157,19 @@ export class StatsComponent implements OnInit {
     }
 
     return ''; // Default class
+  }
+
+  loadEvaluationData(dataset: string, partition: string): void {
+    this.selectedCell = partition + '-' + dataset;
+
+    this.statsService.getEvaluationData([partition], 'washington', this.selectedHtrModel, this.selectedLlmName, dataset, this.selectedMethod).subscribe(
+      (response: any) => {
+        this.selectedEvaluationData = response.data.partitionData[0].evaluationData;
+        this.applyFilter();  // Apply filter after loading new evaluation data
+      },
+      (error: any) => {
+        console.error(`Error loading evaluation data for ${dataset} and partition ${partition}`, error);
+      }
+    );
   }
 }

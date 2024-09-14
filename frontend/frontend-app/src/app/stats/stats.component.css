@@ -30,6 +30,21 @@
   background-color: #ccffcc; /* Light green background */
 }
 
+/* More intense green when selected */
+.selected-green-cell {
+  background-color: #66ff66 !important;
+}
+
+/* More intense red when selected */
+.selected-red-cell {
+  background-color: #ff6666 !important;
+}
+
+/* Highlighted selection */
+.selected-cell {
+  background-color: #d9edf7;
+  transition: background-color 0.3s ease;  /* Smooth transition */
+}
 /* General container styling */
 .selection-container {
   display: flex;
@@ -80,3 +95,91 @@
     margin-bottom: 10px;
   }
 }
+
+/* Style for the Clear Table Button */
+.clear-button {
+  background-color: #ff6666; /* Softer red background */
+  color: white; /* White text */
+  border: none; /* Remove borders */
+  padding: 6px 12px; /* Smaller padding for a more compact look */
+  border-radius: 4px; /* Slightly smaller rounded corners */
+  font-size: 0.85rem; /* Slightly reduced font size */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  margin-left: 10px; /* Add space between the row count and the button */
+}
+
+.clear-button:hover {
+  background-color: #ff4d4d; /* Slightly darker red on hover */
+  transform: translateY(-1px); /* Subtle upward movement on hover */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+}
+
+.clear-button:active {
+  background-color: #e60000; /* Stronger red when clicked */
+  transform: translateY(0); /* Reset movement when active */
+}
+
+.clear-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0px 0px 4px rgba(255, 128, 128, 0.8); /* Softer red focus shadow */
+}
+
+/* Style for Total Rows Count */
+.total-rows {
+  font-size: 1rem; /* Slightly larger text */
+  color: #555; /* Dark gray text */
+  background-color: #f4f4f4; /* Light gray background */
+  padding: 5px 10px; /* Add some padding around the text */
+  border-radius: 4px; /* Rounded corners */
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Container for Total Rows and Button */
+.rows-button-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Align items to the right */
+  margin-top: 10px;
+  padding-right: 15px; /* Space on the right */
+}
+
+/* Style for the Filter Selection and Total Rows Count */
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px; /* Padding for spacing */
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Reduce the width of the filter container */
+  margin: 10px ; /* Center it on the page */
+}
+
+.filter-item {
+  display: flex;
+  align-items: center;
+}
+
+.filter-item label {
+  font-weight: bold;
+  font-size: 0.9rem;
+  color: #333;
+  margin-right: 8px;
+}
+
+.filter-item select {
+  padding: 6px;
+  font-size: 0.9rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color 0.2s ease;
+}
+
+.filter-item select:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
