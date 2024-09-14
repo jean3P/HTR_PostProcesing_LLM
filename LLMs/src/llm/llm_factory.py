@@ -1,6 +1,6 @@
 # src/llm/llm_factory.py
-
-from src.llm.mistral_llm import MistralLLM
+from llm.gpt_llm import GptLLM
+from llm.mistral_llm import MistralLLM
 
 
 class LLMFactory:
@@ -11,5 +11,7 @@ class LLMFactory:
         """
         if model_name.startswith("mistral"):
             return MistralLLM(model_name)
+        elif model_name.startswith("gpt"):
+            return GptLLM(model_name)
         else:
             raise ValueError(f"Unknown LLM model name: {model_name}")

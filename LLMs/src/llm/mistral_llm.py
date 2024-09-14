@@ -3,9 +3,8 @@
 import os
 import torch
 from transformers import AutoTokenizer, AutoModelForCausalLM, pipeline, BitsAndBytesConfig
-from src.llm.base_llm import BaseLLM
-
 from dotenv import load_dotenv
+from llm.base_llm import BaseLLM
 
 load_dotenv()
 

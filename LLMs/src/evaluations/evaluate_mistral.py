@@ -1,7 +1,6 @@
 # src/evaluation/evaluate_mistral.py
-import os
+
 from evaluations.metrics_evaluation import cer_only
-from utils.io_utils import save_to_json
 from utils.logger import setup_logger
 
 logger = setup_logger()

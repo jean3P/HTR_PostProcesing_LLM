@@ -1,9 +1,10 @@
 # src/utils/io_utils.py
+
 from datetime import datetime
 import json
 import os
 
-from constants import results_from_model_path
+from constants import results_from_TrOCR_path, results_from_Flor_path
 
 
 def save_to_json(data, file_path):
@@ -56,12 +57,17 @@ def create_testing_file(base_dir, dataset, partition, result, train_suggestion, 
     return json_file_path
 
 
-def get_latest_result_for_datasets(llms, datasets, train_sizes):
+def get_latest_result_for_datasets(llms, datasets, train_sizes, type_model):
     results = []
+    name_model_ocr = ""
+    if type_model == "Flor_model":
+        name_model_ocr = results_from_Flor_path
+    elif type_model == "TrOCR_model":
+        name_model_ocr = results_from_TrOCR_path
     for llm in llms:
         for dataset in datasets:
             for train_size in train_sizes:
-                test_dir = os.path.join(results_from_model_path, dataset, train_size)
+                test_dir = os.path.join(name_model_ocr, dataset, train_size)
                 latest_result_path = get_latest_result(test_dir)
                 if latest_result_path:
                     results.append((llm, dataset, train_size, latest_result_path))

@@ -1,6 +1,5 @@
 # src/utils/aux_processing.py
 
-import re
 from collections import defaultdict
 from difflib import get_close_matches, SequenceMatcher
 from utils.logger import setup_logger

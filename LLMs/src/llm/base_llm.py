@@ -6,4 +6,5 @@ class BaseLLM:
         self.tokenizer = None
         self.model = None
         self.pipe = None
+        self.stream = bool
 
