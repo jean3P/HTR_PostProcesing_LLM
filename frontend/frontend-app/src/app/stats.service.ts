@@ -41,4 +41,38 @@ export class StatsService {
     };
     return this.http.post<any>(this.apiUrl, query);
   }
+
+  getEvaluationData(
+    partition: string[],
+    nameDataset: string,
+    htrModel: string,
+    llmName: string,
+    dictName: string,
+    nameMethod: string
+  ): Observable<any> {
+    const query = {
+      query: `
+        query {
+          partitionData(
+            partition: ${JSON.stringify(partition)},
+            nameDataset: "${nameDataset}",
+            htrModel: "${htrModel}",
+            llmName: "${llmName}",
+            dictName: "${dictName}",
+            nameMethod: "${nameMethod}"
+          ) {
+            evaluationData {
+              fileName
+              groundTruth
+              predictedTextOcr
+              cerOcr
+              predictedTextLlm
+              cerLlm
+            }
+          }
+        }
+      `
+    };
+    return this.http.post<any>(this.apiUrl, query);
+  }
 }
