@@ -10,6 +10,15 @@
   </div>
 
   <div class="selection-item">
+    <label for="dataset">Dataset:</label>
+    <select id="dataset" (change)="onDatasetChange($event)">
+      <option value="washington">Washington</option>
+      <option value="bentham">Bentham</option>
+      <option value="iam">IAM</option>
+    </select>
+  </div>
+
+  <div class="selection-item">
     <label for="llmName">LLM Model:</label>
     <select id="llmName" (change)="onLlmChange($event)">
       <option value="mistral">Mistral</option>
@@ -23,6 +32,11 @@
       <option value="method_1">Method 1</option>
       <option value="method_2">Method 2</option>
     </select>
+  </div>
+
+  <!-- Refresh Button -->
+  <div class="selection-item refresh-item">
+    <button class="refresh-button" (click)="refreshData()">Refresh</button>
   </div>
 </div>
 
