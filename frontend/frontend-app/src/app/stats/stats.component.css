@@ -183,3 +183,33 @@
   outline: none;
 }
 
+.refresh-item {
+  flex-basis: calc(25% - 10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.refresh-button {
+  background-color: #4da6ff; /* Light blue background */
+  color: white; /* White text */
+  border: none; /* Remove borders */
+  padding: 10px 15px; /* Padding for better spacing */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease; /* Smooth transitions */
+  font-size: 0.9rem; /* Font size */
+}
+
+.refresh-button:hover {
+  background-color: #3399ff; /* Darker blue on hover */
+}
+
+.refresh-button:active {
+  background-color: #267dcc; /* Even darker blue when clicked */
+}
+
+.refresh-button:focus {
+  outline: none; /* Remove default focus outline */
+  box-shadow: 0px 0px 3px rgba(0, 128, 255, 0.8); /* Soft blue shadow on focus */
+}

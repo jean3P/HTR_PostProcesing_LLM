@@ -17,6 +17,7 @@ export class StatsComponent implements OnInit {
   selectedHtrModel: string = 'Flor_model';
   selectedLlmName: string = 'mistral';
   selectedMethod: string = 'method_1';
+  selectedDataset: string = 'washington'; // Default dataset
   selectedCell: string = '';
   selectedFilter: string = 'all';  // Default filter value
 
@@ -41,6 +42,12 @@ export class StatsComponent implements OnInit {
   // Method to handle LLM Model change
   onLlmChange(event: any): void {
     this.selectedLlmName = event.target.value;
+    this.loadStats();
+  }
+
+  // Method to handle Dataset change
+  onDatasetChange(event: any): void {
+    this.selectedDataset = event.target.value; // Update selected dataset
     this.loadStats();
   }
 
@@ -72,6 +79,11 @@ export class StatsComponent implements OnInit {
   clearTable(): void {
     this.filteredEvaluationData = [];
     this.selectedEvaluationData = [];
+    this.selectedCell = ''; // Reset the selected cell
+  }
+
+  refreshData(): void {
+    this.loadStats(); // Re-fetch or reload the statistics data
   }
 
   loadStats(): void {
@@ -91,47 +103,55 @@ export class StatsComponent implements OnInit {
         noTraining: { cer: null, reduction: null }
       };
 
-      dictionaries.forEach(dictName => {
-        this.statsService.getStats([partition], 'washington', this.selectedHtrModel, this.selectedLlmName, dictName, this.selectedMethod).subscribe(
-          (response: any) => {
-            const data = response.data.partitionData[0];
+      const statPromises = dictionaries.map(dictName => {
+        return new Promise<void>((resolve, reject) => {
+          this.statsService.getStats([partition], this.selectedDataset, this.selectedHtrModel, this.selectedLlmName, dictName, this.selectedMethod).subscribe(
+            (response: any) => {
+              const data = response.data.partitionData[0];
 
-            // Assign values based on dictionary
-            switch (dictName) {
-              case 'washington':
-                statGroup.washington.cer = data.statistics?.averageCerLlm || '-';
-                statGroup.washington.reduction = data.statistics?.cerReductionPercentage || '-';
-                break;
-              case 'bentham':
-                statGroup.bentham.cer = data.statistics?.averageCerLlm || '-';
-                statGroup.bentham.reduction = data.statistics?.cerReductionPercentage || '-';
-                break;
-              case 'whitefield':
-                statGroup.whitefield.cer = data.statistics?.averageCerLlm || '-';
-                statGroup.whitefield.reduction = data.statistics?.cerReductionPercentage || '-';
-                break;
-              case 'iam':
-                statGroup.iam.cer = data.statistics?.averageCerLlm || '-';
-                statGroup.iam.reduction = data.statistics?.cerReductionPercentage || '-';
-                break;
-              case 'empty':
-                statGroup.noTraining.cer = data.statistics?.averageCerLlm || '-';
-                statGroup.noTraining.reduction = data.statistics?.cerReductionPercentage || '-';
-                break;
+              // Assign values based on dictionary
+              switch (dictName) {
+                case 'washington':
+                  statGroup.washington.cer = data.statistics?.averageCerLlm || '-';
+                  statGroup.washington.reduction = data.statistics?.cerReductionPercentage || '-';
+                  break;
+                case 'bentham':
+                  statGroup.bentham.cer = data.statistics?.averageCerLlm || '-';
+                  statGroup.bentham.reduction = data.statistics?.cerReductionPercentage || '-';
+                  break;
+                case 'whitefield':
+                  statGroup.whitefield.cer = data.statistics?.averageCerLlm || '-';
+                  statGroup.whitefield.reduction = data.statistics?.cerReductionPercentage || '-';
+                  break;
+                case 'iam':
+                  statGroup.iam.cer = data.statistics?.averageCerLlm || '-';
+                  statGroup.iam.reduction = data.statistics?.cerReductionPercentage || '-';
+                  break;
+                case 'empty':
+                  statGroup.noTraining.cer = data.statistics?.averageCerLlm || '-';
+                  statGroup.noTraining.reduction = data.statistics?.cerReductionPercentage || '-';
+                  break;
+              }
+
+              // Always assign the OCR CER
+              statGroup.averageCerOcr = data.statistics?.averageCerOcr || '-';
+              resolve();
+            },
+            (error: any) => {
+              console.error(`Error loading stats for partition ${partition} and dictionary ${dictName}`, error);
+              reject();
             }
-
-            // Always assign the OCR CER
-            statGroup.averageCerOcr = data.statistics?.averageCerOcr || '-';
-          },
-          (error: any) => {
-            console.error(`Error loading stats for partition ${partition} and dictionary ${dictName}`, error);
-          }
-        );
+          );
+        });
       });
 
-      this.statistics.push(statGroup);
+      // Wait for all stats to resolve before pushing to statistics array
+      Promise.all(statPromises).then(() => {
+        this.statistics.push(statGroup);
+      });
     });
   }
+
 
   // Method to determine the class for best and worst CER values
   getClass(statGroup: any, dataset: string): string {
@@ -162,7 +182,7 @@ export class StatsComponent implements OnInit {
   loadEvaluationData(dataset: string, partition: string): void {
     this.selectedCell = partition + '-' + dataset;
 
-    this.statsService.getEvaluationData([partition], 'washington', this.selectedHtrModel, this.selectedLlmName, dataset, this.selectedMethod).subscribe(
+    this.statsService.getEvaluationData([partition], this.selectedDataset, this.selectedHtrModel, this.selectedLlmName, dataset, this.selectedMethod).subscribe(
       (response: any) => {
         this.selectedEvaluationData = response.data.partitionData[0].evaluationData;
         this.applyFilter();  // Apply filter after loading new evaluation data
