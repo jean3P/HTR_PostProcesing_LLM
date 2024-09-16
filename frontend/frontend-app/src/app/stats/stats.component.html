@@ -1,4 +1,5 @@
-<h2>OCR Model Comparison with LLM Across Different Datasets</h2>
+
+<h2>Improving handwriting recognition using LLMs as OCR post-processing</h2>
 
 <div class="selection-container">
   <div class="selection-item">
@@ -18,100 +19,33 @@
     </select>
   </div>
 
-  <div class="selection-item">
-    <label for="llmName">LLM Model:</label>
-    <select id="llmName" (change)="onLlmChange($event)">
-      <option value="mistral">Mistral</option>
-      <option value="gpt-3.5">GPT-3.5</option>
-    </select>
-  </div>
+  <div class="full-width">
+    <div class="selection-item">
+      <mat-form-field appearance="fill">
+        <mat-label>LLM Model</mat-label>
+        <mat-select [value]="selectedLlmNames" (selectionChange)="onLlmChange($event)" multiple>
+          <mat-option value="mistral" [disabled]="selectedMethods.length > 1">Mistral</mat-option>
+          <mat-option value="gpt-3.5" [disabled]="selectedMethods.length > 1">GPT-3.5 Turbo</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
-  <div class="selection-item">
-    <label for="nameMethod">Name Method:</label>
-    <select id="nameMethod" (change)="onMethodChange($event)">
-      <option value="method_1">Method 1</option>
-      <option value="method_2">Method 2</option>
-    </select>
-  </div>
+    <div class="selection-item">
+      <mat-form-field appearance="fill">
+        <mat-label>Name Method</mat-label>
+        <mat-select [value]="selectedMethods" (selectionChange)="onMethodChange($event)" multiple>
+          <mat-option value="method_1" [disabled]="selectedLlmNames.length > 1">Method 1</mat-option>
+          <mat-option value="method_2" [disabled]="selectedLlmNames.length > 1">Method 2</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
 
+  </div>
   <!-- Refresh Button -->
   <div class="selection-item refresh-item">
     <button class="refresh-button" (click)="refreshData()">Refresh</button>
   </div>
 </div>
-
-<table class="styled-table">
-  <thead>
-  <tr>
-    <th>Train (%)</th>
-<!--    <th>Model</th>-->
-    <th>OCR CER (%)</th>
-    <th colspan="2">Washington</th>
-    <th colspan="2">Bentham</th>
-    <th colspan="2">Whitefield</th>
-    <th colspan="2">IAM</th>
-    <th colspan="2">No Training Set</th>
-  </tr>
-  <tr>
-    <th></th>
-    <th></th>
-    <th>CER</th>
-    <th>Reduction (%)</th>
-    <th>CER</th>
-    <th>Reduction (%)</th>
-    <th>CER</th>
-    <th>Reduction (%)</th>
-    <th>CER</th>
-    <th>Reduction (%)</th>
-    <th>CER</th>
-    <th>Reduction (%)</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let statGroup of statistics">
-    <td>{{ statGroup.partition }}</td>
-<!--    <td>{{ selectedHtrModel }}</td>-->
-    <td>{{ statGroup.averageCerOcr || '-' }}</td>
-
-    <!-- Washington -->
-    <td [ngClass]="getClass(statGroup, 'washington') + (selectedCell === statGroup.partition + '-washington' ? ' selected-cell' : '')"
-        (click)="loadEvaluationData('washington', statGroup.partition)">
-      {{ statGroup.washington?.cer || '-' }}
-    </td>
-    <td>{{ statGroup.washington?.reduction || '-' }}</td>
-
-    <!-- Bentham -->
-    <td [ngClass]="getClass(statGroup, 'bentham') + (selectedCell === statGroup.partition + '-bentham' ? ' selected-cell' : '')"
-        (click)="loadEvaluationData('bentham', statGroup.partition)">
-      {{ statGroup.bentham?.cer || '-' }}
-    </td>
-    <td>{{ statGroup.bentham?.reduction || '-' }}</td>
-
-    <!-- Whitefield -->
-    <td [ngClass]="getClass(statGroup, 'whitefield') + (selectedCell === statGroup.partition + '-whitefield' ? ' selected-cell' : '')"
-        (click)="loadEvaluationData('whitefield', statGroup.partition)">
-      {{ statGroup.whitefield?.cer || '-' }}
-    </td>
-    <td>{{ statGroup.whitefield?.reduction || '-' }}</td>
-
-    <!-- IAM -->
-    <td [ngClass]="getClass(statGroup, 'iam') + (selectedCell === statGroup.partition + '-iam' ? ' selected-cell' : '')"
-        (click)="loadEvaluationData('iam', statGroup.partition)">
-      {{ statGroup.iam?.cer || '-' }}
-    </td>
-    <td>{{ statGroup.iam?.reduction || '-' }}</td>
-
-    <!-- No Training Set -->
-    <td [ngClass]="getClass(statGroup, 'noTraining') + (selectedCell === statGroup.partition + '-noTraining' ? ' selected-cell' : '')"
-        (click)="loadEvaluationData('noTraining', statGroup.partition)">
-      {{ statGroup.noTraining?.cer || '-' }}
-    </td>
-    <td>{{ statGroup.noTraining?.reduction || '-' }}</td>
-
-
-  </tr>
-  </tbody>
-</table>
 
 <!-- Filter dropdown and total row count -->
 <div class="filter-container">
@@ -134,8 +68,86 @@
 </div>
 
 
+<div *ngFor="let method of selectedMethods">
+  <!-- Loop through each selected LLM and display a table for each -->
+  <div *ngFor="let llm of selectedLlmNames">
+    <h3>Statistics for {{ method }} and LLM: {{ llm }}</h3>
+
+    <table [ngClass]="{'method-1-table': method === 'method_1', 'method-2-table': method === 'method_2'}" class="styled-table">
+      <thead>
+      <tr>
+        <th>Train (%)</th>
+        <th>OCR CER (%)</th>
+        <th colspan="2">Washington</th>
+        <th colspan="2">Bentham</th>
+        <th colspan="2">Whitefield</th>
+        <th colspan="2">IAM</th>
+        <th colspan="2">No Training Set</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th>CER</th>
+        <th>Reduction (%)</th>
+        <th>CER</th>
+        <th>Reduction (%)</th>
+        <th>CER</th>
+        <th>Reduction (%)</th>
+        <th>CER</th>
+        <th>Reduction (%)</th>
+        <th>CER</th>
+        <th>Reduction (%)</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Only show the statistics for the selected method and LLM -->
+      <tr *ngFor="let statGroup of statistics[method]?.[llm]">
+        <td>{{ statGroup.partition }}</td>
+        <td>{{ statGroup.averageCerOcr || '-' }}</td>
+
+        <!-- Washington -->
+        <td [ngClass]="getClass(statGroup, 'washington', method)"
+            (click)="loadEvaluationData(method,'washington', statGroup.partition)">
+          {{ statGroup.washington?.cer || '-' }}
+        </td>
+        <td>{{ statGroup.washington?.reduction || '-' }}</td>
+
+        <!-- Bentham -->
+        <td [ngClass]="getClass(statGroup, 'bentham', method)"
+            (click)="loadEvaluationData(method,'bentham', statGroup.partition)">
+          {{ statGroup.bentham?.cer || '-' }}
+        </td>
+        <td>{{ statGroup.bentham?.reduction || '-' }}</td>
+
+        <!-- Whitefield -->
+        <td [ngClass]="getClass(statGroup, 'whitefield', method)"
+            (click)="loadEvaluationData(method,'whitefield', statGroup.partition)">
+          {{ statGroup.whitefield?.cer || '-' }}
+        </td>
+        <td>{{ statGroup.whitefield?.reduction || '-' }}</td>
+
+        <!-- IAM -->
+        <td [ngClass]="getClass(statGroup, 'iam', method)"
+            (click)="loadEvaluationData(method,'iam', statGroup.partition)">
+          {{ statGroup.iam?.cer || '-' }}
+        </td>
+        <td>{{ statGroup.iam?.reduction || '-' }}</td>
+
+        <!-- No Training Set -->
+        <td [ngClass]="getClass(statGroup, 'noTraining', method)"
+            (click)="loadEvaluationData(method,'noTraining', statGroup.partition)">
+          {{ statGroup.noTraining?.cer || '-' }}
+        </td>
+        <td>{{ statGroup.noTraining?.reduction || '-' }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
 <!-- Evaluation Data Table -->
-<h2 *ngIf="selectedEvaluationData.length">Evaluation Details</h2>
+<h3 *ngIf="selectedEvaluationData.length">Evaluation Details</h3>
 <table *ngIf="filteredEvaluationData.length" class="styled-table">
   <thead>
   <tr>
@@ -158,3 +170,5 @@
   </tr>
   </tbody>
 </table>
+
+

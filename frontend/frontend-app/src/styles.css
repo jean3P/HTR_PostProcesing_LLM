@@ -1,1 +1,48 @@
-/* You can add global styles to this file, and also import other style files */
+/* Ensure the page takes full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Main content area */
+main {
+  flex: 1; /* This makes the main content take up remaining space */
+  padding: 20px;
+}
+
+/* Footer container styling */
+.footer-container {
+  background-color: #f4f4f4;              /* Soft light gray background */
+  padding: 20px;                          /* Padding around the content */
+  border-top: 1px solid #ddd;             /* Subtle border to separate the footer */
+  text-align: center;                     /* Center the content */
+  font-family: 'Merriweather', serif;     /* Use a serif font for elegance */
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  bottom: 0;
+}
+
+/* Footer text styling */
+.footer-text {
+  font-size: 1.2rem;                      /* Slightly larger text */
+  color: #333;                            /* Dark gray text for sophistication */
+  margin-bottom: 10px;                    /* Space between the footer text and author */
+}
+
+/* Footer author and email styling */
+.footer-author {
+  font-size: 1rem;                        /* Regular size for author info */
+  color: #666;                            /* Lighter gray color for secondary text */
+}
+
+.footer-author a {
+  color: #007bff;                         /* Blue color for email link */
+  text-decoration: none;                  /* Remove underline for the link */
+  font-weight: bold;                      /* Make the email bold */
+}
+
+.footer-author a:hover {
+  text-decoration: underline;             /* Add underline on hover */
+  color: #0056b3;                         /* Slightly darker blue on hover */
+}
