@@ -6,7 +6,7 @@ from transformers import TrOCRProcessor, VisionEncoderDecoderModel
 from config.TrOCR_config import HandleDataTrOCR
 from data_processing.data_utils import create_testing_file
 from utils.logger import log_status, setup_logger
-from utils.metrics_evaluation import cer_only
+from utils.metrics_evaluation import cer_only, wer_only
 from utils.utils import device
 
 logger = setup_logger()
@@ -60,13 +60,15 @@ def evaluate_test_data(hdf5_file_path, processor_save_dir, model_save_dir, parti
 
         # Calculate CER (Character Error Rate)
         cer = cer_only([predicted_text], [ground_truth_text])
+        wer = wer_only([predicted_text], [ground_truth_text])
 
         # Append the results
         results.append({
             'file_name': file_name,
             'ground_truth_label': ground_truth_text,
             'predicted_label': predicted_text,
-            'cer': cer
+            'cer': cer,
+            "wer": wer,
         })
 
         # Log the result details

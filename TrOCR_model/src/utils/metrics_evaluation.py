@@ -69,3 +69,47 @@ def cer_only(predicts, ground_truth, norm_accentuation=False, norm_punctuation=F
     cer_mean = round(cer_mean * 100, 3)
 
     return cer_mean
+
+
+def wer_only(predicts, ground_truth, norm_accentuation=False, norm_punctuation=False):
+    """
+    Calculate only Word Error Rate (WER) between predictions and ground truth.
+
+    Args:
+        predicts (list of str): List of predicted sentences.
+        ground_truth (list of str): List of ground truth sentences.
+        norm_accentuation (bool): Normalize to ignore accentuation differences if True.
+        norm_punctuation (bool): Remove punctuation before computing WER if True.
+
+    Returns:
+        float: The mean WER across all predictions.
+    """
+
+    if len(predicts) == 0 or len(ground_truth) == 0:
+        return 100.0  # Return maximum WER percentage if inputs are empty
+
+    wer = []
+
+    for pd, gt in zip(predicts, ground_truth):
+        if norm_accentuation:
+            pd = unicodedata.normalize("NFKD", pd).encode("ASCII", "ignore").decode("ASCII")
+            gt = unicodedata.normalize("NFKD", gt).encode("ASCII", "ignore").decode("ASCII")
+
+        if norm_punctuation:
+            pd = pd.translate(str.maketrans("", "", string.punctuation))
+            gt = gt.translate(str.maketrans("", "", string.punctuation))
+
+        # Split the sentences into words for WER calculation
+        pd_words, gt_words = pd.split(), gt.split()
+
+        # Compute the Levenshtein distance between the predicted and ground truth word lists
+        dist = editdistance.eval(pd_words, gt_words)
+
+        # Calculate WER as the ratio of the distance to the length of the longer sentence
+        wer.append(dist / max(len(pd_words), len(gt_words)))
+
+    # Calculate the mean WER and multiply by 100 to express it as a percentage
+    mean_wer = np.mean(wer) * 100
+
+    # Round the mean WER to 3 decimal places
+    return round(mean_wer, 3)
