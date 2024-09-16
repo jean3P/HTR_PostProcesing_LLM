@@ -4,909 +4,1104 @@
         "ground_truth_label": "308. Letters Orders and Instructions December 1755.",
         "OCR": {
             "predicted_label": "3034. Leters Orders and Instructions December 175.",
-            "cer": 7.843
+            "cer": 7.843,
+            "wer": 42.857
         },
         "Prompt correcting": {
             "predicted_label": "3034. Letters Orders and Instructions December 1755.",
             "cer": 3.846,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by adding the missing digit '5' in the year '1755'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by adding the missing digit '5' in the year '1755'.",
+            "wer": 14.286
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-03.png",
         "ground_truth_label": "remain here until the arrival of the vessel with",
         "OCR": {
             "predicted_label": "remain here until the arival of the vesel with",
-            "cer": 4.167
+            "cer": 4.167,
+            "wer": 22.222
         },
         "Prompt correcting": {
             "predicted_label": "remain here until the arrival of the vesel with",
             "cer": 2.083,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'ariv' with 'arrival' and'vesel' with'vessel'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'ariv' with 'arrival' and'vesel' with'vessel'.",
+            "wer": 11.111
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-04.png",
         "ground_truth_label": "the Stores, Vc. and to be under the same directions",
         "OCR": {
             "predicted_label": "the Stores, Vc. and to be under the same diretions",
-            "cer": 1.961
+            "cer": 1.961,
+            "wer": 10.0
         },
         "Prompt correcting": {
             "predicted_label": "the Stores, Vc. and to be under the same directions",
             "cer": 0.0,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'directions' and removing the extra space between 'Stores' and 'Vc.'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'directions' and removing the extra space between 'Stores' and 'Vc.'.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-05.png",
         "ground_truth_label": "as before ordered. So soon as the Stores arrive, you",
         "OCR": {
             "predicted_label": "as before Ordered. To son as the Stores arive, you",
-            "cer": 7.692
+            "cer": 7.692,
+            "wer": 40.0
         },
         "Prompt correcting": {
             "predicted_label": "as before Ordered. To son as the Stores arive, you",
             "cer": 7.692,
             "confidence": "80",
-            "justification": "The corrected text line accurately fixes the OCR errors, such as the missing 'a' in 'Stores' and the missing 'a' in 'arrive'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors, such as the missing 'a' in 'Stores' and the missing 'a' in 'arrive'.",
+            "wer": 40.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-06.png",
         "ground_truth_label": "are, with all possible dispath, to procure a suf-",
         "OCR": {
             "predicted_label": "are, with al posible dispatch, to procure a ouf-",
-            "cer": 8.163
+            "cer": 8.163,
+            "wer": 44.444
         },
         "Prompt correcting": {
             "predicted_label": "are, with all possible dispatch, to procure a out-",
             "cer": 6.0,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'al' with 'all' and 'ouf' with 'out'. The corrected text line is grammatically correct and consistent with the context of the document."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'al' with 'all' and 'ouf' with 'out'. The corrected text line is grammatically correct and consistent with the context of the document.",
+            "wer": 22.222
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-07.png",
         "ground_truth_label": "ficient number of waggons to carry them to Win-",
         "OCR": {
             "predicted_label": "ficient number of Wagons to cary them to wia-",
-            "cer": 10.638
+            "cer": 10.638,
+            "wer": 33.333
         },
         "Prompt correcting": {
             "predicted_label": "ficient number of Wagons to cary them to wia-",
             "cer": 10.638,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 33.333
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-08.png",
         "ground_truth_label": "chester; whither they are to be sent, under the",
         "OCR": {
             "predicted_label": "chester; whither they are to be sent, ander the",
-            "cer": 2.128
+            "cer": 2.128,
+            "wer": 11.111
         },
         "Prompt correcting": {
             "predicted_label": "chester; whether they are to be sent, ander the",
             "cer": 4.255,
             "confidence": "80",
-            "justification": "The LLM has corrected the OCR error by replacing the incorrect word 'whither' with the correct word 'whether'. The corrected text line is grammatically correct and consistent with the context of the original text line."
-        }
+            "justification": "The LLM has corrected the OCR error by replacing the incorrect word 'whither' with the correct word 'whether'. The corrected text line is grammatically correct and consistent with the context of the original text line.",
+            "wer": 22.222
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-09.png",
         "ground_truth_label": "escort of the Soldiers now here: except the Suits",
         "OCR": {
             "predicted_label": "escort of the Soldiers now here: except the Suits",
-            "cer": 0.0
+            "cer": 0.0,
+            "wer": 0.0
         },
         "Prompt correcting": {
             "predicted_label": "escort of the Soldiers now here: except the Suits",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-10.png",
         "ground_truth_label": "of Clothes; Shoes, Stocking, Shirts, Vc. proportiona-",
         "OCR": {
             "predicted_label": "of Clothes; Shoes, Stockings, Shirts, Vc. proportiona-",
-            "cer": 1.852
+            "cer": 1.852,
+            "wer": 14.286
         },
         "Prompt correcting": {
             "predicted_label": "of Clothes; Shoes, Stockings, Shirts, Vc. proportiona-",
             "cer": 1.852,
             "confidence": "80",
-            "justification": "The LLM's corrected text line accurately fixes the OCR errors by correcting the spelling of 'proportiona-' to 'proportionate'."
-        }
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors by correcting the spelling of 'proportiona-' to 'proportionate'.",
+            "wer": 14.286
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-11.png",
         "ground_truth_label": "bly which are to be left with Colonel Carlyle.",
         "OCR": {
             "predicted_label": "bly, which are to be left with Colomel Carly le.",
-            "cer": 6.25
+            "cer": 6.25,
+            "wer": 40.0
         },
         "Prompt correcting": {
             "predicted_label": "bly, which are to be left with Colomel Carly le.",
             "cer": 6.25,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 40.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-12.png",
         "ground_truth_label": "You are to be very careful of all the",
         "OCR": {
             "predicted_label": "You are to be very careful of al the",
-            "cer": 2.703
+            "cer": 2.703,
+            "wer": 11.111
         },
         "Prompt correcting": {
             "predicted_label": "You are to be very careful of all the",
             "cer": 0.0,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'al' with 'all' and adding a missing space."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'al' with 'all' and adding a missing space.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-13.png",
         "ground_truth_label": "Things delivered into the waggons, and see that",
         "OCR": {
             "predicted_label": "Things delivered into the wagons, and se that",
-            "cer": 4.255
+            "cer": 4.255,
+            "wer": 25.0
         },
         "Prompt correcting": {
             "predicted_label": "Things delivered into the waggons, and se that",
             "cer": 2.128,
             "confidence": "80",
-            "justification": "The LLM's corrected text line accurately fixes the OCR errors by correcting the spelling of 'wagons' and'se' to 'waggons' and 'that', respectively."
-        }
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors by correcting the spelling of 'wagons' and'se' to 'waggons' and 'that', respectively.",
+            "wer": 12.5
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-14.png",
         "ground_truth_label": "a strict Guard is kept over them, that no embez-",
         "OCR": {
             "predicted_label": "a strict Suard is hept over them, that no embey-",
-            "cer": 6.25
+            "cer": 6.25,
+            "wer": 30.0
         },
         "Prompt correcting": {
             "predicted_label": "a strict Suard is hept over them, that no embey-",
             "cer": 6.25,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 30.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-15.png",
         "ground_truth_label": "zlement is made. If your men can not be",
         "OCR": {
             "predicted_label": "Yement is made. If your men can net be",
-            "cer": 7.692
+            "cer": 7.692,
+            "wer": 22.222
         },
         "Prompt correcting": {
             "predicted_label": "Yement is made. If your men can next be",
             "cer": 10.256,
             "confidence": "80",
-            "justification": "The LLM's corrected text line accurately fixes the OCR errors by replacing 'net' with 'next' and 'be' with 'be'. The corrected text line is grammatically correct and makes sense in the context of the original text line."
-        }
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors by replacing 'net' with 'next' and 'be' with 'be'. The corrected text line is grammatically correct and makes sense in the context of the original text line.",
+            "wer": 22.222
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-16.png",
         "ground_truth_label": "conveniently Quartered on their march up; there",
         "OCR": {
             "predicted_label": "conveniently Puartered on their marchup; there",
-            "cer": 4.255
+            "cer": 4.255,
+            "wer": 42.857
         },
         "Prompt correcting": {
             "predicted_label": "conveniently Puartered on their march; there",
             "cer": 8.511,
             "confidence": "80",
-            "justification": "The LLM's corrected text line accurately fixes the OCR errors by correcting the spelling of'marchup' to'march' and adding a missing ';' at the end of the sentence."
-        }
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors by correcting the spelling of'marchup' to'march' and adding a missing ';' at the end of the sentence.",
+            "wer": 42.857
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-17.png",
         "ground_truth_label": "will be a number of Tents among the Stores, which",
         "OCR": {
             "predicted_label": "wil be a number of Sents among the Stores whieh",
-            "cer": 8.163
+            "cer": 8.163,
+            "wer": 40.0
         },
         "Prompt correcting": {
             "predicted_label": "will be a number of Sents among the Stores whieh",
             "cer": 6.122,
             "confidence": "80",
-            "justification": "The corrected text line accurately fixes the OCR errors, such as the missing 'a' in 'a number' and the incorrect spelling of 'whieh'. The corrected text line also corrects the spelling of 'Sents' to 'Sents'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors, such as the missing 'a' in 'a number' and the incorrect spelling of 'whieh'. The corrected text line also corrects the spelling of 'Sents' to 'Sents'.",
+            "wer": 30.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-18.png",
         "ground_truth_label": "must be made use of. - If any of the Soldiers",
         "OCR": {
             "predicted_label": "must be made use of. - If any of the Soldiers",
-            "cer": 0.0
+            "cer": 0.0,
+            "wer": 0.0
         },
         "Prompt correcting": {
             "predicted_label": "must be made use of. - If any of the Soldiers.",
             "cer": 2.174,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'Soldiers' and removing the extra space between 'Soldiers' and '.'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'Soldiers' and removing the extra space between 'Soldiers' and '.'.",
+            "wer": 9.091
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-19.png",
         "ground_truth_label": "should desert from this place, - it would be proper",
         "OCR": {
             "predicted_label": "should desert from this place;- it would be proper",
-            "cer": 3.922
+            "cer": 3.922,
+            "wer": 20.0
         },
         "Prompt correcting": {
             "predicted_label": "should desert from this place;- it would be proper",
             "cer": 3.922,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 20.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-20.png",
         "ground_truth_label": "to send a Sergeant, and one or two trusty men",
         "OCR": {
             "predicted_label": "to send a Sergeant, and one or two trusty men,",
-            "cer": 2.174
+            "cer": 2.174,
+            "wer": 10.0
         },
         "Prompt correcting": {
             "predicted_label": "to send a Sergeant, and one or two trusty men,",
             "cer": 2.174,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 10.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-21.png",
         "ground_truth_label": "in pursuit of them.",
         "OCR": {
             "predicted_label": "in pursuit of themt.",
-            "cer": 5.0
+            "cer": 5.0,
+            "wer": 25.0
         },
         "Prompt correcting": {
             "predicted_label": "in pursuit of them.",
             "cer": 0.0,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'them' and removing the extra 't' at the end of the word."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'them' and removing the extra 't' at the end of the word.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-22.png",
         "ground_truth_label": "Given at Alexandria Vc.",
         "OCR": {
             "predicted_label": "Given ct Alecandria Vc.",
-            "cer": 8.696
+            "cer": 8.696,
+            "wer": 50.0
         },
         "Prompt correcting": {
             "predicted_label": "Given ct Alexandria Vc.",
             "cer": 4.348,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'Alecandria' to 'Alexandria' and the capitalization of 'Vc.' to 'Vc.'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'Alecandria' to 'Alexandria' and the capitalization of 'Vc.' to 'Vc.'.",
+            "wer": 25.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-23.png",
         "ground_truth_label": "December 16th. 1755.",
         "OCR": {
             "predicted_label": "Decamber 6th.1 175.",
-            "cer": 20.0
+            "cer": 20.0,
+            "wer": 100.0
         },
         "Prompt correcting": {
             "predicted_label": "Decamber 6th.1 1755.",
             "cer": 15.0,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by adding the missing digit '5' to the original text line."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by adding the missing digit '5' to the original text line.",
+            "wer": 66.667
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-25.png",
         "ground_truth_label": "16th. To Doctor James Craik, of the Virginia",
         "OCR": {
             "predicted_label": "2th. To Doctor Pames Craik of the Virginia",
-            "cer": 9.091
+            "cer": 9.091,
+            "wer": 37.5
         },
         "Prompt correcting": {
             "predicted_label": "2th. To Doctor Pames Craik of the Virginia",
             "cer": 9.091,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 37.5
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-26.png",
         "ground_truth_label": "Regiment.",
         "OCR": {
             "predicted_label": "Regiment.",
-            "cer": 0.0
+            "cer": 0.0,
+            "wer": 0.0
         },
         "Prompt correcting": {
             "predicted_label": "Regiment.",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly confident in its accuracy."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly confident in its accuracy.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-27.png",
         "ground_truth_label": "So soon as the Vessel with the",
         "OCR": {
             "predicted_label": "io son as the Gsel with the",
-            "cer": 16.667
+            "cer": 16.667,
+            "wer": 42.857
         },
         "Prompt correcting": {
             "predicted_label": "io son as the Gsel",
             "cer": 46.667,
             "confidence": "80",
-            "justification": "The corrected text line accurately fixes the OCR errors and the LLM's confidence in the accuracy of the corrected text line is high."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and the LLM's confidence in the accuracy of the corrected text line is high.",
+            "wer": 71.429
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-28.png",
         "ground_truth_label": "Stores and medicines arrives, you are to embrace",
         "OCR": {
             "predicted_label": "Stores and medicines arives, you are to emhace",
-            "cer": 6.25
+            "cer": 6.25,
+            "wer": 25.0
         },
         "Prompt correcting": {
             "predicted_label": "Stores and medicines arrive, you are to emhace",
             "cer": 6.25,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'arives' to 'arrive' and the spelling of 'emhace' to 'embrace'. The corrected text line also corrects the grammatical error by adding the missing's' in 'arrives'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'arives' to 'arrive' and the spelling of 'emhace' to 'embrace'. The corrected text line also corrects the grammatical error by adding the missing's' in 'arrives'.",
+            "wer": 25.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-29.png",
         "ground_truth_label": "the first opportunity that offers, of conveying up",
         "OCR": {
             "predicted_label": "the first oportunity that ofers, of conveying up",
-            "cer": 4.0
+            "cer": 4.0,
+            "wer": 25.0
         },
         "Prompt correcting": {
             "predicted_label": "the first opportunity that ofers, of conveying up",
             "cer": 2.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 12.5
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-30.png",
         "ground_truth_label": "your Chest, and proceeding, yourself, to Winches-",
         "OCR": {
             "predicted_label": "your Chest, and proceding, yourself, to Winches-",
-            "cer": 2.041
+            "cer": 2.041,
+            "wer": 14.286
         },
         "Prompt correcting": {
             "predicted_label": "your Chest, and proceeding, yourself, to Winches-",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-31.png",
         "ground_truth_label": "ter. You are to provide yourself here, with",
         "OCR": {
             "predicted_label": "ter. You are to provide yourself here with",
-            "cer": 2.326
+            "cer": 2.326,
+            "wer": 12.5
         },
         "Prompt correcting": {
             "predicted_label": "ter. You are to provide yourself here with",
             "cer": 2.326,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 12.5
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-32.png",
         "ground_truth_label": "what you think will be wanting for the Hos-",
         "OCR": {
             "predicted_label": "what you think wil be wanting for the Hos-",
-            "cer": 2.326
+            "cer": 2.326,
+            "wer": 11.111
         },
         "Prompt correcting": {
             "predicted_label": "what you think will be wanting for the Hos-",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'wil' to 'will' and removing the extra space after 'wil'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'wil' to 'will' and removing the extra space after 'wil'.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-33.png",
         "ground_truth_label": "pital, and bring them up with you; taking",
         "OCR": {
             "predicted_label": "pital, and bring them up with you; taking",
-            "cer": 0.0
+            "cer": 0.0,
+            "wer": 0.0
         },
         "Prompt correcting": {
             "predicted_label": "pital, and bring them up with you; taking",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-34.png",
         "ground_truth_label": "care to purchase no more than is absolutely",
         "OCR": {
             "predicted_label": "care to purchase no more than is absolutely",
-            "cer": 0.0
+            "cer": 0.0,
+            "wer": 0.0
         },
         "Prompt correcting": {
             "predicted_label": "care to purchase no more than is absolutely",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "308-35.png",
         "ground_truth_label": "necessary, for the support and relief of the Regiment",
         "OCR": {
             "predicted_label": "necesary, for the suport and relief of the Regim",
-            "cer": 9.434
+            "cer": 9.434,
+            "wer": 33.333
         },
         "Prompt correcting": {
             "predicted_label": "necesary, for the support and relief of the Regim",
             "cer": 7.547,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and provides a more accurate representation of the original text."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and provides a more accurate representation of the original text.",
+            "wer": 22.222
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-01.png",
         "ground_truth_label": "p.309.",
         "OCR": {
             "predicted_label": "R. 30.",
-            "cer": 50.0
+            "cer": 50.0,
+            "wer": 100.0
         },
         "Prompt correcting": {
             "predicted_label": "R. 30.",
             "cer": 50.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly confident in its accuracy."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly confident in its accuracy.",
+            "wer": 100.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-02.png",
         "ground_truth_label": "Letters Orders and Instructions December 1755.",
         "OCR": {
             "predicted_label": "Leters Orders and Instructions December 175.",
-            "cer": 4.348
+            "cer": 4.348,
+            "wer": 33.333
         },
         "Prompt correcting": {
             "predicted_label": "Leters Orders and Instructions December 1755.",
             "cer": 2.174,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by adding the missing digit '5' in the year '1755'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by adding the missing digit '5' in the year '1755'.",
+            "wer": 16.667
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-04.png",
         "ground_truth_label": "Given at Alexandria Vc.",
         "OCR": {
             "predicted_label": "Given atA lexandria Vc.",
-            "cer": 8.696
+            "cer": 8.696,
+            "wer": 50.0
         },
         "Prompt correcting": {
             "predicted_label": "Given at Alexandria Vc.",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-05.png",
         "ground_truth_label": "December 16th. 1755.",
         "OCR": {
             "predicted_label": "December 1. 175.",
-            "cer": 20.0
+            "cer": 20.0,
+            "wer": 66.667
         },
         "Prompt correcting": {
             "predicted_label": "December 1. 1755.",
             "cer": 15.0,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by adding the missing year '1755' to the original text line 'December 1. 175.'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by adding the missing year '1755' to the original text line 'December 1. 175.'.",
+            "wer": 33.333
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-07.png",
         "ground_truth_label": "16th. To Captain John Mercer. of the",
         "OCR": {
             "predicted_label": "28th. To Captain John Mercer. of the",
-            "cer": 5.556
+            "cer": 5.556,
+            "wer": 14.286
         },
         "Prompt correcting": {
             "predicted_label": "28th. To Captain John Mercer. of the",
             "cer": 5.556,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 14.286
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-08.png",
         "ground_truth_label": "Virginia Regiment.",
         "OCR": {
             "predicted_label": "irginie Aegiment.",
-            "cer": 16.667
+            "cer": 16.667,
+            "wer": 100.0
         },
         "Prompt correcting": {
             "predicted_label": "irginie Regiment.",
             "cer": 11.111,
             "confidence": "80",
-            "justification": "The corrected text line 'irginie Regiment.' is likely accurate as it corrects the OCR error 'Aegiment.' to 'Regiment.' and is consistent with the context of the document."
-        }
+            "justification": "The corrected text line 'irginie Regiment.' is likely accurate as it corrects the OCR error 'Aegiment.' to 'Regiment.' and is consistent with the context of the document.",
+            "wer": 50.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-09.png",
         "ground_truth_label": "You are immediately, upon receipt",
         "OCR": {
             "predicted_label": "You are imediately, upon receipt",
-            "cer": 3.03
+            "cer": 3.03,
+            "wer": 20.0
         },
         "Prompt correcting": {
             "predicted_label": "You are immediately, upon receipt",
             "cer": 0.0,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'imediately' with 'immediately' and'receipt' with'receipt'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'imediately' with 'immediately' and'receipt' with'receipt'.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-10.png",
         "ground_truth_label": "hereof, to repair to Winchester, where you will meet",
         "OCR": {
             "predicted_label": "thereof, to repaur to Winchester, where you wil met",
-            "cer": 7.692
+            "cer": 7.692,
+            "wer": 44.444
         },
         "Prompt correcting": {
             "predicted_label": "thereof, to repaur to Winchester, where you will met",
             "cer": 5.769,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'will' to 'will' and adding an apostrophe to'met'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'will' to 'will' and adding an apostrophe to'met'.",
+            "wer": 33.333
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-11.png",
         "ground_truth_label": "with Colonel Washington, and receive further orders.",
         "OCR": {
             "predicted_label": "with Colonel Washington, and receive further orders.",
-            "cer": 0.0
+            "cer": 0.0,
+            "wer": 0.0
         },
         "Prompt correcting": {
             "predicted_label": "with Colonel Washington, and receive further orders.",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly confident in its accuracy."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly confident in its accuracy.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-12.png",
         "ground_truth_label": "I am Vc.",
         "OCR": {
             "predicted_label": "I am Vc.",
-            "cer": 0.0
+            "cer": 0.0,
+            "wer": 0.0
         },
         "Prompt correcting": {
             "predicted_label": "I am Vc.",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly confident in its accuracy."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly confident in its accuracy.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-13.png",
         "ground_truth_label": "G.W. aid de camp.",
         "OCR": {
             "predicted_label": "G.W. aid decamp.",
-            "cer": 5.882
+            "cer": 5.882,
+            "wer": 50.0
         },
         "Prompt correcting": {
             "predicted_label": "G.W. said decamp.",
             "cer": 11.765,
             "confidence": "80",
-            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'aid' with 'aid' and 'decamp' with 'decamp'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'aid' with 'aid' and 'decamp' with 'decamp'.",
+            "wer": 75.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-14.png",
         "ground_truth_label": "Alexandria: December 16th. 1755.",
         "OCR": {
             "predicted_label": "Alexandria: December Vth. 175.",
-            "cer": 9.375
+            "cer": 9.375,
+            "wer": 50.0
         },
         "Prompt correcting": {
             "predicted_label": "Alexandria: December Vth. 1755.",
             "cer": 6.25,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by adding the missing digit '5' in the year."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by adding the missing digit '5' in the year.",
+            "wer": 25.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-15.png",
         "ground_truth_label": "N:B. A Copy left at Alexandria, and another",
         "OCR": {
             "predicted_label": "N7B. ACopy left at Alexandria, and another",
-            "cer": 4.651
+            "cer": 4.651,
+            "wer": 37.5
         },
         "Prompt correcting": {
             "predicted_label": "N7B. ACopy left at Alexandria, and another",
             "cer": 4.651,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 37.5
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-16.png",
         "ground_truth_label": "sent to Stafford, to him there.",
         "OCR": {
             "predicted_label": "sent to Staford, to him there.",
-            "cer": 3.226
+            "cer": 3.226,
+            "wer": 16.667
         },
         "Prompt correcting": {
             "predicted_label": "sent to Staford, to him there.",
             "cer": 3.226,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 16.667
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-18.png",
         "ground_truth_label": "20th. Parole Abbemarle. Winchester: December 20th. 1755.",
         "OCR": {
             "predicted_label": "28th. P arole Albemarle Ienchester. December to. 175.",
-            "cer": 19.643
+            "cer": 19.643,
+            "wer": 87.5
         },
         "Prompt correcting": {
             "predicted_label": "28th. P arole Albemarle Ienchester. December to. 1755.",
             "cer": 17.857,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors, such as the missing '5' in the year and the incorrect spelling of 'December'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors, such as the missing '5' in the year and the incorrect spelling of 'December'.",
+            "wer": 75.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-19.png",
         "ground_truth_label": "A Return to be given in immedi-",
         "OCR": {
             "predicted_label": "A Return to be given in imedi-",
-            "cer": 3.226
+            "cer": 3.226,
+            "wer": 14.286
         },
         "Prompt correcting": {
             "predicted_label": "A Return to be given in imedi-",
             "cer": 3.226,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 14.286
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-20.png",
         "ground_truth_label": "ately of the Recruits now in this town, by the several",
         "OCR": {
             "predicted_label": "ately of the Recruits now in this town, by the sweral",
-            "cer": 3.704
+            "cer": 3.704,
+            "wer": 9.091
         },
         "Prompt correcting": {
             "predicted_label": "ately of the Recruits now in this town, by the sweral",
             "cer": 3.704,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 9.091
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-21.png",
         "ground_truth_label": "Officers who enlisted them; mentioning their height,",
         "OCR": {
             "predicted_label": "Oficers who enlisted them; mentioning thir height,",
-            "cer": 3.846
+            "cer": 3.846,
+            "wer": 28.571
         },
         "Prompt correcting": {
             "predicted_label": "Oficers who enlisted them; mentioning thir height,",
             "cer": 3.846,
             "confidence": "100",
-            "justification": "The LLM's corrected text line accurately fixes the OCR errors. The corrected text line is grammatically correct and matches the original text line."
-        }
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors. The corrected text line is grammatically correct and matches the original text line.",
+            "wer": 28.571
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-22.png",
         "ground_truth_label": "age, trade, Vc. The officers to see that the Serge-",
         "OCR": {
             "predicted_label": "age, trade, Vc. The Oficers to sre that the Serge-",
-            "cer": 5.882
+            "cer": 5.882,
+            "wer": 20.0
         },
         "Prompt correcting": {
             "predicted_label": "age, trade, Vc. The Officers to sure that the Serge-",
             "cer": 5.769,
             "confidence": "80",
-            "justification": "The LLM's corrected text line accurately fixes the OCR errors, but there is a typo in the word \"sure\" which should be \"sue\"."
-        }
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors, but there is a typo in the word \"sure\" which should be \"sue\".",
+            "wer": 20.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-23.png",
         "ground_truth_label": "ants who understand the manual Exercise, do",
         "OCR": {
             "predicted_label": "ants who understand the manual Exercise, do",
-            "cer": 0.0
+            "cer": 0.0,
+            "wer": 0.0
         },
         "Prompt correcting": {
             "predicted_label": "ants who understand the manual Exercise, do",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-24.png",
         "ground_truth_label": "drill the Recruits, at least twice a-day.",
         "OCR": {
             "predicted_label": "dril the Recruits, at least twice aday.",
-            "cer": 4.878
+            "cer": 4.878,
+            "wer": 28.571
         },
         "Prompt correcting": {
             "predicted_label": "drill the Recruits, at least twice a day.",
             "cer": 2.439,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'dril' to 'drill' and adding a missing space between 'twice' and 'a'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'dril' to 'drill' and adding a missing space between 'twice' and 'a'.",
+            "wer": 25.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-26.png",
         "ground_truth_label": "22nd. Parole Boston- Winchester: December 22nd. 1755.",
         "OCR": {
             "predicted_label": "279. Parole Boston inchester: December ch. 175.",
-            "cer": 18.868
+            "cer": 18.868,
+            "wer": 71.429
         },
         "Prompt correcting": {
             "predicted_label": "279. Parole Boston Winchester: December ch. 1755.",
             "cer": 15.094,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'inch' to 'Winchester' and adding the missing year '1755'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by correcting the spelling of 'inch' to 'Winchester' and adding the missing year '1755'.",
+            "wer": 42.857
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-27.png",
         "ground_truth_label": "A Return is to be made every mor-",
         "OCR": {
             "predicted_label": "A Return is to be made every mor",
-            "cer": 3.03
+            "cer": 3.03,
+            "wer": 12.5
         },
         "Prompt correcting": {
             "predicted_label": "A Return is to be made every more",
             "cer": 3.03,
             "confidence": "80",
-            "justification": "The LLM's corrected text line accurately fixes the OCR errors by replacing'mor' with'more', which is a common misspelling. The corrected text line is grammatically correct and conveys the intended meaning."
-        }
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors by replacing'mor' with'more', which is a common misspelling. The corrected text line is grammatically correct and conveys the intended meaning.",
+            "wer": 12.5
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-28.png",
         "ground_truth_label": "ning to Colonel Washington of the number of",
         "OCR": {
             "predicted_label": "ning to Colonel Washington of the number of",
-            "cer": 0.0
+            "cer": 0.0,
+            "wer": 0.0
         },
         "Prompt correcting": {
             "predicted_label": "ning to Colonel Washington of the number of",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-29.png",
         "ground_truth_label": "men in this town - and all contingences.",
         "OCR": {
             "predicted_label": "men in this town and al contingences.",
-            "cer": 7.5
+            "cer": 7.5,
+            "wer": 25.0
         },
         "Prompt correcting": {
             "predicted_label": "men in this town and all contingences.",
             "cer": 5.0,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'al' with 'all', which is a common misspelling. The corrected text line also adds an's' to 'contingences', which is a valid plural form."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'al' with 'all', which is a common misspelling. The corrected text line also adds an's' to 'contingences', which is a valid plural form.",
+            "wer": 12.5
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-30.png",
         "ground_truth_label": "During his stay here, no provision is to be de-",
         "OCR": {
             "predicted_label": "During his stay here, no provision is to be de-",
-            "cer": 0.0
+            "cer": 0.0,
+            "wer": 0.0
         },
         "Prompt correcting": {
             "predicted_label": "During his stay here, no provision is to be de-",
             "cer": 0.0,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 0.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-31.png",
         "ground_truth_label": "livered out, but by a written order from him or",
         "OCR": {
             "predicted_label": "livered out, but by a writen order from himior",
-            "cer": 4.255
+            "cer": 4.255,
+            "wer": 30.0
         },
         "Prompt correcting": {
             "predicted_label": "livered out, but by a writen order from himior",
             "cer": 4.255,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 30.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-32.png",
         "ground_truth_label": "the aid de camp. The Commissary is to send",
         "OCR": {
             "predicted_label": "the Aid de camp. The Comisary is to send",
-            "cer": 7.143
+            "cer": 7.143,
+            "wer": 22.222
         },
         "Prompt correcting": {
             "predicted_label": "the Aid de camp. The Commisary is to send",
             "cer": 4.762,
             "confidence": "90",
-            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'Comisary' with 'Commisary'."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors by replacing 'Comisary' with 'Commisary'.",
+            "wer": 22.222
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-33.png",
         "ground_truth_label": "up the Cask of Tools by the first waggon that",
         "OCR": {
             "predicted_label": "up the Cask of Fols by the first wagon that",
-            "cer": 6.667
+            "cer": 6.667,
+            "wer": 20.0
         },
         "Prompt correcting": {
             "predicted_label": "up the Cask of Fols by the first wagon that",
             "cer": 6.667,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 20.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-34.png",
         "ground_truth_label": "goes to the Fort. The following men being judg-",
         "OCR": {
             "predicted_label": "goes to the Fort. The folowing men being judg-",
-            "cer": 2.128
+            "cer": 2.128,
+            "wer": 11.111
         },
         "Prompt correcting": {
             "predicted_label": "goes to the Fort. The folowing men being judged",
             "cer": 6.383,
             "confidence": "80",
-            "justification": "The LLM's corrected text line accurately fixes the OCR errors by correcting the word 'judg-' to 'judged'. However, the LLM's corrected text line introduces a new error by adding the word 'being' before 'judged'."
-        }
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors by correcting the word 'judg-' to 'judged'. However, the LLM's corrected text line introduces a new error by adding the word 'being' before 'judged'.",
+            "wer": 22.222
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-35.png",
         "ground_truth_label": "ed unfit for Duty, on Review; are ordered to be",
         "OCR": {
             "predicted_label": "ed unfit for Duty, on Revien; are ordered to be",
-            "cer": 2.128
+            "cer": 2.128,
+            "wer": 10.0
         },
         "Prompt correcting": {
             "predicted_label": "ed unfit for Duty, on Revien; are ordered to be",
             "cer": 2.128,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly accurate.",
+            "wer": 10.0
+        },
+        "run_id": ""
     },
     {
         "file_name": "309-36.png",
         "ground_truth_label": "discharged: viz.",
         "OCR": {
             "predicted_label": "dis charged: Viro",
-            "cer": 23.529
+            "cer": 23.529,
+            "wer": 100.0
         },
         "Prompt correcting": {
             "predicted_label": "dis charged: Viro",
             "cer": 23.529,
             "confidence": "100",
-            "justification": "The corrected text line accurately fixes the OCR errors and is highly confident in its accuracy."
-        }
+            "justification": "The corrected text line accurately fixes the OCR errors and is highly confident in its accuracy.",
+            "wer": 100.0
+        },
+        "run_id": ""
     }
 ]

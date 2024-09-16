@@ -1,0 +1,1107 @@
+[
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-01.png",
+        "ground_truth_label": "308. Letters Orders and Instructions December 1755.",
+        "OCR": {
+            "predicted_label": "27oh. Leters Orders and Instructons ecenbar 175.",
+            "cer": 19.608,
+            "wer": 71
+        },
+        "Prompt correcting": {
+            "predicted_label": "27th. Letters, Orders, and Instructions, December 1750.",
+            "cer": 14.545,
+            "wer": 71.429,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR errors in the original text line. It accurately added the missing 'th' after '27', corrected the spelling of 'Leters' to 'Letters', added commas after 'Letters' and 'Orders', and capitalized 'December'. The overall structure and content of the corrected text line align with typical 18th-century language and formatting, leading to a high level of confidence in its accuracy."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-03.png",
+        "ground_truth_label": "remain here until the arrival of the vessel with",
+        "OCR": {
+            "predicted_label": "remainhere until the arival of the vesel with",
+            "cer": 6.25,
+            "wer": 44
+        },
+        "Prompt correcting": {
+            "predicted_label": "remain here until the arrival of the vessel with",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR errors in the original text line by adding spaces between \"remain\" and \"here,\" as well as \"arrival\" and \"vessel.\" Additionally, the LLM corrected the misspelling of \"arrival\" and \"vessel.\" The corrected text line reads fluently and accurately conveys the intended meaning of the original text. The only reason for not giving a perfect score is the slight possibility of a different word choice, but overall, the correction is highly accurate."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-04.png",
+        "ground_truth_label": "the Stores, Vc. and to be under the same directions",
+        "OCR": {
+            "predicted_label": "the Sores, Vc. and to be under the same diretins",
+            "cer": 5.882,
+            "wer": 20
+        },
+        "Prompt correcting": {
+            "predicted_label": "the Sores, &c. and to be under the same directions",
+            "cer": 3.922,
+            "wer": 20.0,
+            "confidence": "95",
+            "justification": "The LLM's corrected text line accurately fixes the OCR error by correctly replacing \"Vc.\" with \"&c.\" which is a common abbreviation for \"et cetera\" meaning \"and so forth.\" Additionally, the correction of \"diretins\" to \"directions\" is a logical and grammatically correct adjustment. The context of the sentence supports the changes made by the LLM, leading to a high level of confidence in the accuracy of the corrected text line."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-05.png",
+        "ground_truth_label": "as before ordered. So soon as the Stores arrive, you",
+        "OCR": {
+            "predicted_label": "as before ordered. To son as the Sres arive, you",
+            "cer": 9.615,
+            "wer": 40
+        },
+        "Prompt correcting": {
+            "predicted_label": "as before ordered. To son as the Sres arrive, you",
+            "cer": 7.692,
+            "wer": 30.0,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR error in the word \"arive\" to \"arrive,\" which makes more sense in the context of the sentence. The correction is grammatically accurate and fits the style of 18th-century text. The overall correction is highly likely to be accurate."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-06.png",
+        "ground_truth_label": "are, with all possible dispath, to procure a suf-",
+        "OCR": {
+            "predicted_label": "are, with al posible dispatch, to procure a suf-",
+            "cer": 6.122,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "are, with all possible dispatch, to procure a suf-",
+            "cer": 2.0,
+            "wer": 11.111,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR error by replacing \"al\" with \"all,\" which makes more sense in the context of the sentence. Additionally, the rest of the text line remains unchanged, indicating that the LLM likely only made the necessary correction without introducing any new errors. Overall, the correction is highly accurate and improves the readability of the text."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-07.png",
+        "ground_truth_label": "ficient number of waggons to carry them to Win-",
+        "OCR": {
+            "predicted_label": "hcient number of Oagons to cary them to a",
+            "cer": 19.149,
+            "wer": 44
+        },
+        "Prompt correcting": {
+            "predicted_label": "hcident number of Wagons to carry them to a",
+            "cer": 19.149,
+            "wer": 33.333,
+            "confidence": "90",
+            "justification": "The LLM correctly identified and corrected the OCR error in the original text line by changing 'Oagons' to 'Wagons', which makes more sense in the context of carrying items. The correction is a common word substitution error that is likely to occur during OCR processing, and the LLM's suggestion is a plausible and accurate fix."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-08.png",
+        "ground_truth_label": "chester; whither they are to be sent, under the",
+        "OCR": {
+            "predicted_label": "tchester; whither they are to be sent, under the",
+            "cer": 2.083,
+            "wer": 11
+        },
+        "Prompt correcting": {
+            "predicted_label": "tchester; whither they are to be sent, under the",
+            "cer": 2.083,
+            "wer": 11,
+            "confidence": "95",
+            "justification": "The corrected text line accurately fixes the OCR error by correctly maintaining the original text's spelling and grammar. The LLM's correction is consistent with the language and style of an 18th-century text, making it highly likely to be accurate. The minor punctuation adjustment does not significantly impact the overall meaning of the sentence."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-09.png",
+        "ground_truth_label": "escort of the Soldiers now here: except the Suits",
+        "OCR": {
+            "predicted_label": "escort of the Soldiers nowhere: ecept the Suits",
+            "cer": 4.082,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "escort of the Soldiers nowhere: except the Suits",
+            "cer": 2.041,
+            "wer": 22.222,
+            "confidence": "95",
+            "justification": "The LLM correctly identified and fixed the OCR error in the original text line. The word \"ecept\" was clearly a mistake and the correction to \"except\" makes perfect sense in the context of the sentence. The correction maintains the overall meaning and flow of the text, resulting in a highly accurate fix."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-10.png",
+        "ground_truth_label": "of Clothes; Shoes, Stocking, Shirts, Vc. proportiona-",
+        "OCR": {
+            "predicted_label": "of Clothes; Shoes, Hcockings, Shirts, Vc. proportiona-",
+            "cer": 5.556,
+            "wer": 14
+        },
+        "Prompt correcting": {
+            "predicted_label": "of Clothes; Shoes, Stockings, Shirts, &c. proportiona-",
+            "cer": 3.704,
+            "wer": 28.571,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR errors in the original text line accurately by replacing 'Hcockings' with 'Stockings' and '&c.' with '&c.'. The corrected text line maintains the overall meaning and context of the sentence, and the corrections are consistent with 18th-century language and spelling conventions. The likelihood of the corrected text line being accurate is very high, hence the high confidence score of 95."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-11.png",
+        "ground_truth_label": "bly which are to be left with Colonel Carlyle.",
+        "OCR": {
+            "predicted_label": "bly, which are to be Aoft. with Eoto ial Carby le.",
+            "cer": 22.0,
+            "wer": 54
+        },
+        "Prompt correcting": {
+            "predicted_label": "bly, which are to be soft. with royal carby le.",
+            "cer": 25.532,
+            "wer": 50.0,
+            "confidence": "90",
+            "justification": "The LLM corrected the OCR errors in the original text line by accurately fixing \"Aoft\" to \"soft\" and \"Eoto ial\" to \"royal.\" The corrected text line now makes sense in the context of 18th-century language and style. The only slight uncertainty comes from the word \"carby le,\" which may be a typo or an uncommon term from that time period. Overall, the correction is highly accurate and improves the readability of the text."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-12.png",
+        "ground_truth_label": "You are to be very careful of all the",
+        "OCR": {
+            "predicted_label": "You ure to be very carful of al the",
+            "cer": 8.108,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "You are to be very careful of all the",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR errors in the original text line by accurately fixing the misspellings and adding the missing word 'all'. The corrected text line reads fluently and makes logical sense in the context of 18th-century language usage. The correction aligns with common grammatical rules and vocabulary choices of the time period, leading to a high level of confidence in its accuracy."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-13.png",
+        "ground_truth_label": "Things delivered into the waggons, and see that",
+        "OCR": {
+            "predicted_label": "Thing delivered into the wagons, and se that",
+            "cer": 6.383,
+            "wer": 37
+        },
+        "Prompt correcting": {
+            "predicted_label": "Thing delivered into the wagons, and see that",
+            "cer": 4.255,
+            "wer": 25.0,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR error by changing \"se\" to \"see,\" which makes more sense in the context of the sentence. The correction is grammatically accurate and fits the style of 18th-century text. The likelihood of this correction being incorrect is very low."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-14.png",
+        "ground_truth_label": "a strict Guard is kept over them, that no embez-",
+        "OCR": {
+            "predicted_label": "a strict Suard is hept over them, that no embey-",
+            "cer": 6.25,
+            "wer": 30
+        },
+        "Prompt correcting": {
+            "predicted_label": "a strict Guard is kept over them, that no embey-",
+            "cer": 2.083,
+            "wer": 10.0,
+            "confidence": "95",
+            "justification": "The LLM correctly identified and fixed the OCR errors in the original text line. The word \"Suard\" was correctly changed to \"Guard,\" which makes more sense in the context of the sentence. Additionally, the word \"hept\" was corrected to \"kept,\" which is a more appropriate word choice. Overall, the corrected text line is grammatically correct and accurately reflects the intended meaning of the original text."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-15.png",
+        "ground_truth_label": "zlement is made. If your men can not be",
+        "OCR": {
+            "predicted_label": "fement is made. If your mien can not be",
+            "cer": 7.692,
+            "wer": 22
+        },
+        "Prompt correcting": {
+            "predicted_label": "ferment is made. If your mien can not be",
+            "cer": 10.0,
+            "wer": 22.222,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR error in the original text line by changing 'fement' to 'ferment', which makes more sense in the context of the sentence. The rest of the text line remains unchanged, indicating that the LLM likely identified and corrected the error accurately. The correction is a common word that fits well in the sentence, leading to a high level of confidence in the accuracy of the corrected text line."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-16.png",
+        "ground_truth_label": "conveniently Quartered on their march up; there",
+        "OCR": {
+            "predicted_label": "Cconoeniently Puartered on their marchup; there",
+            "cer": 8.511,
+            "wer": 57
+        },
+        "Prompt correcting": {
+            "predicted_label": "Conveniently Quartered on their march up; there",
+            "cer": 2.128,
+            "wer": 14.286,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR errors in the original text line by correcting \"Cconoeniently\" to \"Conveniently\" and \"marchup\" to \"march up\". The corrected text line makes much more sense in the context of 18th-century language and accurately reflects the intended meaning of the sentence. The corrections are consistent with the language style of the time period, leading to a high level of confidence in the accuracy of the corrected text line."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-17.png",
+        "ground_truth_label": "will be a number of Tents among the Stores, which",
+        "OCR": {
+            "predicted_label": "wil be a umber of Fenits among, the Stores shit",
+            "cer": 18.367,
+            "wer": 60
+        },
+        "Prompt correcting": {
+            "predicted_label": "will be a number of Deficits among, the Stores shut",
+            "cer": 21.569,
+            "wer": 40.0,
+            "confidence": "80",
+            "justification": "The LLM's corrected text line 'will be a number of Deficits among, the Stores shut' significantly improves the accuracy of the original text line. The correction of 'Fenits' to 'Deficits' makes more sense in the context of the sentence, as 'Deficits' refers to shortages or deficiencies which would be more likely to occur among stores. Additionally, 'shit' is corrected to 'shut', which is a more appropriate word in this context. While there is still a slight difference in the word 'umber' being corrected to 'number', overall the corrected text line is much more coherent and accurate."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-18.png",
+        "ground_truth_label": "must be made use of. - If any of the Soldiers",
+        "OCR": {
+            "predicted_label": "must be made nse of - f ay of the Soldiers",
+            "cer": 8.889,
+            "wer": 36
+        },
+        "Prompt correcting": {
+            "predicted_label": "must be made use of - fay of the Soldiers",
+            "cer": 8.889,
+            "wer": 27.273,
+            "confidence": "90",
+            "justification": "The LLM correctly identified and fixed the OCR error in the original text line by changing \"nse\" to \"use\", which makes more sense in the context of the sentence. The only remaining error is the spacing issue between \"f\" and \"ay\", which is a minor typographical error. Overall, the correction significantly improves the readability and accuracy of the text line."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-19.png",
+        "ground_truth_label": "should desert from this place, - it would be proper",
+        "OCR": {
+            "predicted_label": "tshould dert from this place, it would beprgper",
+            "cer": 13.725,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "tshould depart from this place, it would be proper",
+            "cer": 9.804,
+            "wer": 30.0,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR errors in the original text line by changing \"dert\" to \"depart\" and \"beprgper\" to \"be proper.\" The corrected text line makes much more sense in the context of 18th-century language and grammar. The correction is highly accurate and only a minor improvement could be made to reach 100% confidence."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-20.png",
+        "ground_truth_label": "to send a Sergeant, and one or two trusty men",
+        "OCR": {
+            "predicted_label": "to send a Seirgeant, and one or two trusty nen.",
+            "cer": 6.383,
+            "wer": 20
+        },
+        "Prompt correcting": {
+            "predicted_label": "to send a Sergeant, and one or two trusty men.",
+            "cer": 2.174,
+            "wer": 10.0,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR error in the original text line by changing \"Seirgeant\" to \"Sergeant,\" which is the accurate spelling of the word. Additionally, the LLM made a minor correction by changing \"nen\" to \"men,\" which is the appropriate plural form in this context. Overall, the corrected text line is grammatically correct and accurately reflects the intended meaning of the original text."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-21.png",
+        "ground_truth_label": "in pursuit of them.",
+        "OCR": {
+            "predicted_label": "in persuigt of themt",
+            "cer": 15.0,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "in pursuit of them",
+            "cer": 5.263,
+            "wer": 25.0,
+            "confidence": "95",
+            "justification": "The LLM correctly identified and fixed the OCR errors in the original text line. The word \"persuigt\" was likely a misinterpretation of \"pursuit,\" and the correction to \"in pursuit of them\" makes logical sense in the context of 18th-century language and grammar. The correction is a common phrase that fits the historical context accurately."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-22.png",
+        "ground_truth_label": "Given at Alexandria Vc.",
+        "OCR": {
+            "predicted_label": "Yiens at a leandria Vc.",
+            "cer": 26.087,
+            "wer": 60
+        },
+        "Prompt correcting": {
+            "predicted_label": "Viens at Alexandria Va.",
+            "cer": 17.391,
+            "wer": 50.0,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR errors in the original text line very accurately. The corrected text line 'Viens at Alexandria Va.' makes much more sense in the context of 18th-century text, as \"Viens\" could be a name or a reference to someone arriving at a location. Additionally, \"Alexandria Va.\" is a plausible location in the 18th century. Overall, the correction is highly likely to be accurate."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-23.png",
+        "ground_truth_label": "December 16th. 1755.",
+        "OCR": {
+            "predicted_label": "Icomber 215.",
+            "cer": 55.0,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "Comber 215.",
+            "cer": 60.0,
+            "wer": 100.0,
+            "confidence": "95",
+            "justification": "The LLM correctly removed the extra 'I' at the beginning of the word 'Comber,' which was an OCR error. The rest of the text line remains unchanged and accurate, leading to a high level of confidence in the correction."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-25.png",
+        "ground_truth_label": "16th. To Doctor James Craik, of the Virginia",
+        "OCR": {
+            "predicted_label": "th. To Doctor ames Craik, of the Virginia",
+            "cer": 6.818,
+            "wer": 25
+        },
+        "Prompt correcting": {
+            "predicted_label": "th. To Doctor James Craik, of the Virginia",
+            "cer": 4.545,
+            "wer": 12.5,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR error by changing 'ames' to 'James', which is a common name. The rest of the text line remains unchanged and accurate. The correction is highly likely to be correct with a high level of confidence."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-26.png",
+        "ground_truth_label": "Regiment.",
+        "OCR": {
+            "predicted_label": "Rlinenit.",
+            "cer": 44.444,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "Reinstate.",
+            "cer": 60.0,
+            "wer": 100.0,
+            "confidence": "95",
+            "justification": "The LLM's corrected text line 'Reinstate' accurately fixes the OCR error in the original text line 'Rlinenit.' The correction makes sense in the context of 18th-century language and fits the pattern of common words used during that time period. The correction is highly likely to be accurate based on the context and language patterns of the 18th century."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-27.png",
+        "ground_truth_label": "So soon as the Vessel with the",
+        "OCR": {
+            "predicted_label": "io son as the etith the",
+            "cer": 30.0,
+            "wer": 57
+        },
+        "Prompt correcting": {
+            "predicted_label": "io son as the etith the",
+            "cer": 30.0,
+            "wer": 57,
+            "confidence": "100",
+            "justification": "The corrected text line provided by the LLM is exactly the same as the original text line, which indicates that the LLM did not make any changes. Since the original text line contains OCR errors, the LLM should have made corrections to improve the accuracy. However, since the corrected text line is identical to the original text line, it does not accurately fix the OCR errors. Therefore, I am confident in giving a score of 100 as the LLM did not provide any corrections."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-28.png",
+        "ground_truth_label": "Stores and medicines arrives, you are to embrace",
+        "OCR": {
+            "predicted_label": "ores and medicines arives, you are to embece",
+            "cer": 10.417,
+            "wer": 37
+        },
+        "Prompt correcting": {
+            "predicted_label": "ores and medicines arrives, you are to embrace",
+            "cer": 4.167,
+            "wer": 12.5,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR error in the original text line by changing \"arives\" to \"arrives,\" which is the correct spelling. Additionally, the LLM correctly replaced \"embece\" with \"embrace,\" which makes more sense in the context of the sentence. The corrections are in line with the language and style of an 18th-century text, and the overall accuracy of the corrected text line is high."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-29.png",
+        "ground_truth_label": "the first opportunity that offers, of conveying up",
+        "OCR": {
+            "predicted_label": "the first oportunity that ofers, of conveyingup",
+            "cer": 6.0,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "the first opportunity that offers, of conveying up",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR errors in the original text line by fixing the misspelling of \"oportunity\" to \"opportunity\" and adding a space between \"conveying\" and \"up.\" The corrected text line reads smoothly and accurately conveys the intended meaning of the sentence. The correction is consistent with the language and style of an 18th-century text, making it highly likely to be accurate."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-30.png",
+        "ground_truth_label": "your Chest, and proceeding, yourself, to Winches-",
+        "OCR": {
+            "predicted_label": "your Chert, and prscedeng, yourself to Pinches.",
+            "cer": 14.286,
+            "wer": 57
+        },
+        "Prompt correcting": {
+            "predicted_label": "your Chert, and preceding, yourself to Pinches.",
+            "cer": 12.245,
+            "wer": 57.143,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR error in the original text line by changing \"prscedeng\" to \"preceding,\" which makes more sense in the context of the sentence. The correction aligns with the language and style typical of 18th-century texts, and there are no other potential corrections that would improve the line further."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-31.png",
+        "ground_truth_label": "ter. You are to provide yourself here, with",
+        "OCR": {
+            "predicted_label": "ter. You are to provide yourself here with",
+            "cer": 2.326,
+            "wer": 12
+        },
+        "Prompt correcting": {
+            "predicted_label": "ter. You are to provide yourself here with",
+            "cer": 2.326,
+            "wer": 12,
+            "confidence": "95",
+            "justification": "The corrected text line accurately fixes the OCR error by adding the missing word \"with\" at the end of the sentence, making it grammatically correct and coherent in the context of the 18th-century language style. The correction is straightforward and aligns well with the language conventions of the time period."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-32.png",
+        "ground_truth_label": "what you think will be wanting for the Hos-",
+        "OCR": {
+            "predicted_label": "what you thinh wil be wanting for the 1sos.",
+            "cer": 11.628,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "what you think will be wanting for the 1sos.",
+            "cer": 6.818,
+            "wer": 11.111,
+            "confidence": "95",
+            "justification": "The LLM correctly identified and fixed the OCR errors in the original text line. The word \"thinh\" was corrected to \"think,\" which makes more sense in the context of the sentence. Additionally, the word \"wil\" was corrected to \"will,\" which is the appropriate spelling. The corrected text line is grammatically correct and coherent, with no remaining errors or inconsistencies."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-33.png",
+        "ground_truth_label": "pital, and bring them up with you; taking",
+        "OCR": {
+            "predicted_label": "pitad, and bing them p with you: taking",
+            "cer": 9.756,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "paid, and bring them up with you: taking",
+            "cer": 12.195,
+            "wer": 25.0,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR error of 'pitad' to 'paid', which makes more sense in the context of the sentence. Additionally, the LLM corrected 'bing' to 'bring', which is a common OCR error. The overall correction provided by the LLM is accurate and improves the readability and coherence of the text line."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-34.png",
+        "ground_truth_label": "care to purchase no more than is absolutely",
+        "OCR": {
+            "predicted_label": "care to purchase no more than is absoliltely",
+            "cer": 4.545,
+            "wer": 12
+        },
+        "Prompt correcting": {
+            "predicted_label": "care to purchase no more than is absolutely",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The LLM's corrected text line accurately fixes the OCR error by correctly replacing \"absoliltely\" with \"absolutely,\" which makes more sense in the context of the sentence. The correction maintains the original meaning of the text and fits the style and language of an 18th-century text. The correction is highly likely to be accurate, with a high level of confidence."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "308-35.png",
+        "ground_truth_label": "necessary, for the support and relief of the Regiment",
+        "OCR": {
+            "predicted_label": "necesart for the suport and relief of the Reyiw",
+            "cer": 16.981,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "necessary for the support and relief of the Reyiw",
+            "cer": 11.321,
+            "wer": 22.222,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR errors in the original text line by accurately fixing the misspelling of \"necesart\" to \"necessary\" and \"suport\" to \"support\". The corrected text line now reads grammatically correct and makes sense in the context of the sentence. The only minor discrepancy is the word \"Reyiw\" which should likely be \"Reyiw\" or \"Reyiw\". Overall, the LLM's correction is highly accurate and improves the readability and understanding of the text."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-01.png",
+        "ground_truth_label": "p.309.",
+        "OCR": {
+            "predicted_label": "h. o.",
+            "cer": 66.667,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "ho.",
+            "cer": 83.333,
+            "wer": 100.0,
+            "confidence": "95",
+            "justification": "The LLM's correction of 'h. o.' to 'ho.' is highly accurate. In the 18th century, abbreviations were commonly used in texts, and 'ho.' is a plausible abbreviation for 'h. o.' which likely stands for 'household.' The correction is simple and makes sense in the context of 18th-century writing conventions."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-02.png",
+        "ground_truth_label": "Letters Orders and Instructions December 1755.",
+        "OCR": {
+            "predicted_label": "leters Oerders and nstructions Cecenber 175.",
+            "cer": 15.217,
+            "wer": 83
+        },
+        "Prompt correcting": {
+            "predicted_label": "letters Orders and Instructions December 175.",
+            "cer": 4.348,
+            "wer": 33.333,
+            "confidence": "95",
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors by correcting \"Oerders\" to \"Orders\" and \"Cecenber\" to \"December,\" which are common mistakes made by OCR models when interpreting 18th-century text. The corrected text line is grammatically correct and makes logical sense in the context of the time period. The only reason for not giving a perfect score is the slight possibility of a different interpretation of the word \"Cecenber\" as \"December,\" but this is highly unlikely given the context."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-04.png",
+        "ground_truth_label": "Given at Alexandria Vc.",
+        "OCR": {
+            "predicted_label": "fiven at leandriaV.",
+            "cer": 21.739,
+            "wer": 75
+        },
+        "Prompt correcting": {
+            "predicted_label": "Given at Alexandria.",
+            "cer": 13.043,
+            "wer": 50.0,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR errors in the original text line. The corrected text line 'Given at Alexandria.' is a grammatically correct and historically accurate phrase that aligns with the language and style of 18th-century texts. The correction accurately reflects the likely intended meaning of the original text, making it highly likely to be accurate."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-05.png",
+        "ground_truth_label": "December 16th. 1755.",
+        "OCR": {
+            "predicted_label": "secember 2th, 1.",
+            "cer": 35.0,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "December 2th, 1-",
+            "cer": 35.0,
+            "wer": 66.667,
+            "confidence": "95",
+            "justification": "The LLM correctly identified and corrected the OCR error in the original text line by changing \"secember\" to \"December\" and adding a hyphen after \"2th\" to indicate a missing digit. The correction aligns with the language and formatting typical of 18th-century texts, making it highly likely to be accurate."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-07.png",
+        "ground_truth_label": "16th. To Captain John Mercer. of the",
+        "OCR": {
+            "predicted_label": "2h. To Captain Fohn ercer., of the",
+            "cer": 16.667,
+            "wer": 42
+        },
+        "Prompt correcting": {
+            "predicted_label": "2h. To Captain John Mercer., of the",
+            "cer": 11.111,
+            "wer": 28.571,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR errors in the original text line by changing 'Fohn ercer' to 'John Mercer'. The correction makes sense in the context of an 18th-century text, as 'John Mercer' is a plausible name for a captain during that time period. Additionally, the correction maintains the overall structure and grammar of the sentence. The likelihood of this correction being accurate is very high, hence the high confidence score of 95."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-08.png",
+        "ground_truth_label": "Virginia Regiment.",
+        "OCR": {
+            "predicted_label": "Yirgeinia Regiment.",
+            "cer": 10.526,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "Virginia Regiment.",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "100",
+            "justification": "The LLM correctly identified and fixed the OCR error in the original text line. The correction from 'Yirgeinia Regiment.' to 'Virginia Regiment.' is accurate and reflects the proper spelling of the word. Additionally, the correction aligns with the language and spelling conventions of the 18th century."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-09.png",
+        "ground_truth_label": "You are immediately, upon receipt",
+        "OCR": {
+            "predicted_label": "You are mediately, upon receipt",
+            "cer": 6.061,
+            "wer": 20
+        },
+        "Prompt correcting": {
+            "predicted_label": "You are mediately, upon receipt",
+            "cer": 6.061,
+            "wer": 20,
+            "confidence": "95",
+            "justification": "The LLM's corrected text line accurately fixes the OCR error by correctly changing \"mediately\" to \"immediately,\" which makes more sense in the context of the sentence. The correction is a common word that fits well with the surrounding words and maintains the overall meaning of the text. The likelihood of this correction being incorrect is very low, hence the high confidence score of 95."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-10.png",
+        "ground_truth_label": "hereof, to repair to Winchester, where you will meet",
+        "OCR": {
+            "predicted_label": "hereof to repaur to inchester, where you wil mes",
+            "cer": 11.538,
+            "wer": 55
+        },
+        "Prompt correcting": {
+            "predicted_label": "hereof to repair to Winchester, where you will mes",
+            "cer": 5.769,
+            "wer": 22.222,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR errors in the original text line by accurately fixing \"repaur\" to \"repair\" and \"inchester\" to \"Winchester.\" The corrected text line now reads smoothly and makes sense in the context of 18th-century language. The only minor discrepancy is the word \"mes\" at the end, which may be a typo or an incomplete word. Overall, the correction is highly accurate and improves the readability of the text line."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-11.png",
+        "ground_truth_label": "with Colonel Washington, and receive further orders.",
+        "OCR": {
+            "predicted_label": "with Colonel Hashington, and receive fwuther orders.",
+            "cer": 5.769,
+            "wer": 28
+        },
+        "Prompt correcting": {
+            "predicted_label": "with Colonel Washington, and receive further orders.",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The LLM correctly identified and corrected the OCR errors in the original text line. The name \"Hashington\" was accurately changed to \"Washington,\" which is a common surname. Additionally, the word \"fwuther\" was correctly changed to \"further,\" which makes more sense in the context of receiving orders. Overall, the correction is highly accurate and only minor improvements could potentially be made."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-12.png",
+        "ground_truth_label": "I am Vc.",
+        "OCR": {
+            "predicted_label": "of aner",
+            "cer": 87.5,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "of aner",
+            "cer": 87.5,
+            "wer": 100,
+            "confidence": "100",
+            "justification": "The original text line \"of aner\" appears to be a correct 18th-century spelling of \"of anger.\" The corrected text line \"of aner\" is identical to the original text line, indicating that no correction was needed. Therefore, I am highly confident in the accuracy of the corrected text line."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-13.png",
+        "ground_truth_label": "G.W. aid de camp.",
+        "OCR": {
+            "predicted_label": "WMh. aid descamp.",
+            "cer": 23.529,
+            "wer": 75
+        },
+        "Prompt correcting": {
+            "predicted_label": "Wm. and descamp.",
+            "cer": 29.412,
+            "wer": 100.0,
+            "confidence": "95",
+            "justification": "The LLM correctly capitalized \"Wm.\" to match the typical abbreviation for William in the 18th century. Additionally, the LLM accurately corrected the OCR error of \"aid\" to \"and,\" which makes more sense in the context of the text. Overall, the correction is highly accurate and reflects common language usage in the 18th century."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-14.png",
+        "ground_truth_label": "Alexandria: December 16th. 1755.",
+        "OCR": {
+            "predicted_label": "lecandria. ecember 2h., 15.",
+            "cer": 31.25,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "Alexandria. December 2th., 15.",
+            "cer": 18.75,
+            "wer": 75.0,
+            "confidence": "95",
+            "justification": "The LLM correctly identified and corrected the OCR errors in the original text line. The word \"lecandria\" was accurately changed to \"Alexandria,\" and the abbreviation \"ecember\" was correctly expanded to \"December.\" Additionally, the LLM fixed the OCR error in the date by changing \"2h.\" to \"2th.\" Overall, the correction is highly accurate and only minor improvements could potentially be made, hence the high confidence score of 95."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-15.png",
+        "ground_truth_label": "N:B. A Copy left at Alexandria, and another",
+        "OCR": {
+            "predicted_label": "2th. opy eft at Alexandria, and another",
+            "cer": 16.279,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "2th. copy left at Alexandria, and another",
+            "cer": 13.953,
+            "wer": 37.5,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR error in the original text line by changing \"eft\" to \"left,\" which makes more sense in the context of the sentence. The correction is a common English phrase and fits the 18th-century writing style. The overall correction is accurate and improves the readability of the text."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-16.png",
+        "ground_truth_label": "sent to Stafford, to him there.",
+        "OCR": {
+            "predicted_label": "seant to Faford to him there.",
+            "cer": 16.129,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "sent to Faford to him there.",
+            "cer": 12.903,
+            "wer": 16.667,
+            "confidence": "95",
+            "justification": "The LLM's corrected text line accurately fixes the OCR error by correctly changing \"seant\" to \"sent,\" which makes more sense in the context of the sentence. Additionally, the rest of the text line remains unchanged, indicating that the correction was minor and did not introduce any new errors. Overall, I am highly confident in the accuracy of the corrected text line."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-18.png",
+        "ground_truth_label": "20th. Parole Abbemarle. Winchester: December 20th. 1755.",
+        "OCR": {
+            "predicted_label": "28th. Wrote Abemarle rchestr December t175.",
+            "cer": 30.357,
+            "wer": 85
+        },
+        "Prompt correcting": {
+            "predicted_label": "28th. Wrote Abemarle rchestr December 175.",
+            "cer": 32.143,
+            "wer": 85.714,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR errors in the original text line by removing the extraneous 't' after 'December' and ensuring the year '175' is complete. The corrected text line now reads logically and accurately, with no remaining errors or inconsistencies. The correction is highly confident as it aligns with the typical language and formatting conventions of an 18th-century text."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-19.png",
+        "ground_truth_label": "A Return to be given in immedi-",
+        "OCR": {
+            "predicted_label": "eh Retirn to be qgiven in imedi-",
+            "cer": 15.625,
+            "wer": 57
+        },
+        "Prompt correcting": {
+            "predicted_label": "The Return to be given in immediate-",
+            "cer": 16.667,
+            "wer": 28.571,
+            "confidence": "95",
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors by correctly replacing 'eh Retirn' with 'The' and 'qgiven' with 'given'. The rest of the text is also correctly transcribed without any additional errors. The correction maintains the original meaning of the text and fits the style and language of an 18th-century text line. The high confidence score is given due to the clear and precise correction made by the LLM."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-20.png",
+        "ground_truth_label": "ately of the Recruits now in this town, by the several",
+        "OCR": {
+            "predicted_label": "ately of the Recruits now in this tom, by the sveral",
+            "cer": 5.556,
+            "wer": 18
+        },
+        "Prompt correcting": {
+            "predicted_label": "ately of the Recruits now in this town, by the several",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR errors in the original text line by changing \"tom\" to \"town\", which makes more sense in the context of the sentence. Additionally, the word \"sveral\" was corrected to \"several\", which is a common English word. The corrections are logical and improve the overall readability and coherence of the text. The only reason for not giving a perfect score is the slight possibility of an alternative correction that could also be valid."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-21.png",
+        "ground_truth_label": "Officers who enlisted them; mentioning their height,",
+        "OCR": {
+            "predicted_label": "ficers who enlisted them; mentioning thiuvheight.",
+            "cer": 11.538,
+            "wer": 42
+        },
+        "Prompt correcting": {
+            "predicted_label": "ficers who enlisted them; mentioning their height.",
+            "cer": 5.769,
+            "wer": 28.571,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR error by replacing 'thiuvheight' with 'their height', which makes much more sense in the context of the sentence. The correction is grammatically correct and fits the 18th-century writing style. The likelihood of this correction being accurate is very high, hence the high confidence score of 95."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-22.png",
+        "ground_truth_label": "age, trade, Vc. The officers to see that the Serge-",
+        "OCR": {
+            "predicted_label": "age, trade, Vc. The Ooficers to sre that the Sirge.-",
+            "cer": 9.615,
+            "wer": 30
+        },
+        "Prompt correcting": {
+            "predicted_label": "age, trade, &c. The Officers to see that the Siege.-",
+            "cer": 9.615,
+            "wer": 30.0,
+            "confidence": "95",
+            "justification": "The corrected text line accurately fixes the OCR errors by correctly replacing \"Vc.\" with \"&c.\" and \"sre\" with \"see\". The changes make the text line more consistent with 18th-century language and grammar conventions. The corrections are logical and improve the overall readability and coherence of the sentence. The only reason for not giving a perfect score is the slight possibility of alternative interpretations of the original text line, but the corrections provided by the LLM are highly likely to be accurate."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-23.png",
+        "ground_truth_label": "ants who understand the manual Exercise, do",
+        "OCR": {
+            "predicted_label": "ants whs understand the manual Bcereise,do",
+            "cer": 11.628,
+            "wer": 42
+        },
+        "Prompt correcting": {
+            "predicted_label": "ants who understand the manual Exercise, do",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The LLM corrected the OCR errors in the original text line by replacing 'whs' with 'who' and adding the missing word 'Exercise'. The corrected text line now reads grammatically correct and makes sense in the context of the sentence. The changes made by the LLM are consistent with 18th-century language usage and accurately fix the errors present in the original text line."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-24.png",
+        "ground_truth_label": "drill the Recruits, at least twice a-day.",
+        "OCR": {
+            "predicted_label": "dril the Recrits, at least toie aday,",
+            "cer": 14.634,
+            "wer": 57
+        },
+        "Prompt correcting": {
+            "predicted_label": "drill the Recruits, at least twice a day,",
+            "cer": 4.878,
+            "wer": 25.0,
+            "confidence": "95",
+            "justification": "The LLM correctly identified and fixed the OCR errors in the original text line. The word \"Recrits\" was correctly changed to \"Recruits,\" and the word \"toie\" was correctly changed to \"twice.\" The corrected text line makes much more sense in the context of 18th-century military training practices, where recruits would indeed be drilled at least twice a day. The correction is highly accurate and improves the overall readability and coherence of the text."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-26.png",
+        "ground_truth_label": "22nd. Parole Boston- Winchester: December 22nd. 1755.",
+        "OCR": {
+            "predicted_label": "28t. Parole Bocton. Wnchester: Dcenber 1th. 75.",
+            "cer": 26.415,
+            "wer": 85
+        },
+        "Prompt correcting": {
+            "predicted_label": "28th. Parole Boston. Winchester: December 1th. 75.",
+            "cer": 18.868,
+            "wer": 57.143,
+            "confidence": "90",
+            "justification": "The LLM correctly fixed the OCR errors in the original text line. The word \"Bocton\" was accurately corrected to \"Boston,\" and the abbreviation \"th.\" was correctly expanded to \"th\". The only minor error is the incorrect abbreviation \"1th\" instead of \"1st\" for the date, which is a common mistake in 18th-century texts. Overall, the correction is highly accurate with minimal errors."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-27.png",
+        "ground_truth_label": "A Return is to be made every mor-",
+        "OCR": {
+            "predicted_label": "h Return is to be made every nor",
+            "cer": 9.091,
+            "wer": 25
+        },
+        "Prompt correcting": {
+            "predicted_label": "The Return is to be made every nor",
+            "cer": 14.706,
+            "wer": 25.0,
+            "confidence": "95",
+            "justification": "The LLM's corrected text line accurately fixes the OCR error by correctly inserting 'The' at the beginning of the sentence, which makes the sentence grammatically correct. The rest of the text remains unchanged and there are no other obvious errors present. Overall, the correction seems highly accurate."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-28.png",
+        "ground_truth_label": "ning to Colonel Washington of the number of",
+        "OCR": {
+            "predicted_label": "ning to Colonel Hashington of the umber of",
+            "cer": 4.651,
+            "wer": 25
+        },
+        "Prompt correcting": {
+            "predicted_label": "ning to Colonel Washington of the number of",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors by changing \"Hashington\" to the correct name \"Washington\" and adding the missing word \"the\" before \"number of.\" The correction makes the sentence grammatically correct and coherent in the context of referring to Colonel Washington and the number of something. The correction is highly accurate with minimal room for doubt."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-29.png",
+        "ground_truth_label": "men in this town - and all contingences.",
+        "OCR": {
+            "predicted_label": "men in this town and al contingences.",
+            "cer": 7.5,
+            "wer": 25
+        },
+        "Prompt correcting": {
+            "predicted_label": "men in this town and all contingences.",
+            "cer": 5.0,
+            "wer": 12.5,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR error in the original text line by changing \"al\" to \"all,\" which makes more sense in the context of the sentence. The correction aligns with the language and style typical of 18th-century texts, and there are no other potential corrections that would improve the line further. Therefore, I am highly confident in the accuracy of the corrected text line."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-30.png",
+        "ground_truth_label": "During his stay here, no provision is to be de-",
+        "OCR": {
+            "predicted_label": "uringhis stay here, ns provision is to be de-",
+            "cer": 6.383,
+            "wer": 30
+        },
+        "Prompt correcting": {
+            "predicted_label": "During his stay here, no provision is to be de-",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The LLM's corrected text line accurately fixes the OCR errors by correctly changing 'uringhis' to 'During his' and 'ns' to 'no'. The corrected text line makes much more sense in the context of 18th-century language and grammar. The only remaining uncertainty is the hyphen at the end of the sentence, which may or may not be necessary depending on the surrounding text. Overall, I am highly confident in the accuracy of the corrected text line."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-31.png",
+        "ground_truth_label": "livered out, but by a written order from him or",
+        "OCR": {
+            "predicted_label": "livered out, but by a writen order fromhimeoar",
+            "cer": 8.511,
+            "wer": 40
+        },
+        "Prompt correcting": {
+            "predicted_label": "delivered out, but by a written order from him oar",
+            "cer": 6.0,
+            "wer": 20.0,
+            "confidence": "90",
+            "justification": "The corrected text line 'delivered out, but by a written order from him oar' significantly improves the OCR errors in the original text line. The corrections make the sentence grammatically correct and coherent, with only minor adjustments needed for accuracy. The phrase \"from him oar\" may be a bit unusual, but it is a plausible interpretation given the context of the sentence. Overall, the corrections are highly accurate and improve the readability of the text."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-32.png",
+        "ground_truth_label": "the aid de camp. The Commissary is to send",
+        "OCR": {
+            "predicted_label": "the Aid de camp. The omisary is to send",
+            "cer": 9.524,
+            "wer": 22
+        },
+        "Prompt correcting": {
+            "predicted_label": "the Aid de camp. The commissary is to send",
+            "cer": 4.762,
+            "wer": 22.222,
+            "confidence": "95",
+            "justification": "The LLM correctly identified and corrected the OCR error in the original text line by replacing \"omisary\" with \"commissary,\" which makes more sense in the context of an 18th-century text. The correction fits the language and style of the time period, and there are no other potential errors or inconsistencies in the corrected text line. Overall, the correction is highly accurate and I am very confident in its correctness."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-33.png",
+        "ground_truth_label": "up the Cask of Tools by the first waggon that",
+        "OCR": {
+            "predicted_label": "up the Cask of Fols by the first wagon that",
+            "cer": 6.667,
+            "wer": 20
+        },
+        "Prompt correcting": {
+            "predicted_label": "up the Cask of Fols by the first wagon that",
+            "cer": 6.667,
+            "wer": 20,
+            "confidence": "100",
+            "justification": "The original text line and the corrected text line are identical, indicating that the LLM did not make any changes to the OCR output. Since the corrected text line matches the original text line perfectly, I am highly confident in the accuracy of the correction."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-34.png",
+        "ground_truth_label": "goes to the Fort. The following men being judg-",
+        "OCR": {
+            "predicted_label": "gaes to the Fort. the folowving men being,nsg-",
+            "cer": 17.021,
+            "wer": 55
+        },
+        "Prompt correcting": {
+            "predicted_label": "goes to the Fort. the following men being, nsg-",
+            "cer": 10.638,
+            "wer": 33.333,
+            "confidence": "95",
+            "justification": "The LLM correctly fixed the OCR errors in the original text line. The word \"gaes\" was corrected to \"goes,\" which is a common 18th-century spelling variation. Additionally, the word \"folowving\" was corrected to \"following,\" which is the appropriate spelling in this context. The comma placement and spacing were also corrected accurately. Overall, the corrected text line is grammatically correct and aligns with the language conventions of the 18th century."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-35.png",
+        "ground_truth_label": "ed unfit for Duty, on Review; are ordered to be",
+        "OCR": {
+            "predicted_label": "ed unfit for Duty, on Reviens, are ordered to be",
+            "cer": 6.25,
+            "wer": 10
+        },
+        "Prompt correcting": {
+            "predicted_label": "ed unfit for Duty, on Review, are ordered to be",
+            "cer": 2.128,
+            "wer": 10.0,
+            "confidence": "95",
+            "justification": "The LLM's corrected text line accurately fixes the OCR error by changing \"Reviens\" to \"Review,\" which makes more sense in the context of the sentence. The correction aligns with the language and terminology commonly used in 18th-century texts, leading to a high level of confidence in its accuracy."
+        }
+    },
+    {
+        "run_id": "74241b15-fdcd-4ca0-af16-4dbf9c132710",
+        "file_name": "309-36.png",
+        "ground_truth_label": "discharged: viz.",
+        "OCR": {
+            "predicted_label": "dis charged. ro",
+            "cer": 37.5,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "discharged. ro",
+            "cer": 31.25,
+            "wer": 100.0,
+            "confidence": "100",
+            "justification": "The LLM's corrected text line accurately fixes the OCR error by correctly combining the two words \"dis\" and \"charged\" into one word \"discharged.\" Additionally, the period after \"discharged\" is correctly placed. There are no other possible interpretations for this text line, so I am highly confident in the accuracy of the correction."
+        }
+    }
+]
