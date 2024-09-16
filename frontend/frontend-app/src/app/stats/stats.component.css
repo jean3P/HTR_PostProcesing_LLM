@@ -1,3 +1,41 @@
+
+
+h2 {
+  font-family: 'Roboto', sans-serif;  /* Use a clean, modern font */
+  font-size: 1.8rem;                  /* Slightly larger than the default h2 size */
+  font-weight: bold;                  /* Make the title bold */
+  color: #333;                        /* Dark gray color for readability */
+  text-align: center;                 /* Center align the text */
+  margin-top: 20px;                   /* Add some space above */
+  margin-bottom: 20px;                /* Add space below for separation */
+  padding: 10px 0;                    /* Add vertical padding */
+  border-bottom: 3px solid #007bff;   /* Add a blue underline */
+  letter-spacing: 1px;                /* Add some spacing between letters */
+  text-transform: uppercase;          /* Convert the text to uppercase */
+  background: linear-gradient(to right, #007bff, #00d4ff); /* Gradient background */
+  color: white;                       /* White text for contrast */
+  border-radius: 5px;                 /* Soft rounded corners */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+h3 {
+  font-family: 'Roboto', sans-serif;  /* Same modern font as h2 for consistency */
+  font-size: 1.4rem;                  /* Slightly smaller than the h2 size */
+  font-weight: bold;                  /* Make the title bold */
+  color: #555;                        /* A medium gray color for contrast with h2 */
+  text-align: left;                   /* Align left for a more content-related look */
+  margin-top: 15px;                   /* Space above the heading */
+  margin-bottom: 10px;                /* Space below the heading */
+  padding: 8px 15px;                  /* Add padding for better spacing */
+  border-left: 4px solid #007bff;     /* Blue left border for a clean accent */
+  background-color: #f9f9f9;          /* Light background to distinguish from content */
+  border-radius: 3px;                 /* Slight rounding of the corners */
+  text-transform: capitalize;         /* Keep the text looking formal */
+  letter-spacing: 0.5px;              /* Small letter spacing for readability */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Very subtle shadow for a polished effect */
+}
+
+
 .styled-table {
   border-collapse: collapse;
   margin: 25px 0;
@@ -55,7 +93,7 @@
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  max-width: 600px;
+  max-width: 380px;
 }
 
 /* Individual selection item styling */
@@ -72,6 +110,14 @@
   font-size: 1rem;
   color: #333;
 }
+
+.full-width {
+  flex-basis: 40%;  /* Full width for the row */
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
 
 .selection-item select {
   padding: 8px;
@@ -213,3 +259,12 @@
   outline: none; /* Remove default focus outline */
   box-shadow: 0px 0px 3px rgba(0, 128, 255, 0.8); /* Soft blue shadow on focus */
 }
+
+.method-1-table {
+  border: 2px solid #4CAF50;  /* Green border for Method 1 */
+}
+
+.method-2-table {
+  border: 2px solid #FF5733;  /* Orange border for Method 2 */
+}
+

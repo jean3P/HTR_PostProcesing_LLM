@@ -1,5 +1,7 @@
 {
   "dependencies": {
-    "@angular/cli": "^18.2.4"
+    "@angular/cli": "^18.2.4",
+    "devextreme": "^24.1.5",
+    "devextreme-angular": "^24.1.5"
   }
 }

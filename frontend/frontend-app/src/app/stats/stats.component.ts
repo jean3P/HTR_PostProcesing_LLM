@@ -1,25 +1,34 @@
 import { Component, OnInit } from '@angular/core';
 import { StatsService } from '../stats.service';
 import { CommonModule } from '@angular/common';
+import { MatFormFieldModule } from '@angular/material/form-field';  // Import MatFormFieldModule
+import { MatSelectModule } from '@angular/material/select';  // Import MatSelectModule
+import { MatOptionModule } from '@angular/material/core';  // Import MatOptionModule
 
 @Component({
   selector: 'app-stats',
   standalone: true,
-  imports: [CommonModule],  // Add CommonModule here to use ngIf and ngFor
+  imports: [
+    CommonModule,
+    MatFormFieldModule,   // Add MatFormFieldModule to imports
+    MatSelectModule,
+    MatOptionModule
+  ],
   templateUrl: './stats.component.html',
   styleUrls: ['./stats.component.css']
 })
 
 export class StatsComponent implements OnInit {
-  statistics: any[] = [];
+  statistics: { [method: string]: { [llm: string]: any[] } } = {};  // Store statistics per method and LLM
   selectedEvaluationData: any[] = [];  // Store evaluation data
   filteredEvaluationData: any[] = [];  // Store filtered evaluation data
   selectedHtrModel: string = 'Flor_model';
-  selectedLlmName: string = 'mistral';
-  selectedMethod: string = 'method_1';
+  // selectedLlmName: string = 'mistral';
+  selectedLlmNames: string[] = ['mistral'];
   selectedDataset: string = 'washington'; // Default dataset
-  selectedCell: string = '';
+  selectedCells: { [key: string]: string } = {};  // Store selected cells per method
   selectedFilter: string = 'all';  // Default filter value
+  selectedMethods: string[] = [];  // Store selected methods
 
   constructor(private statsService: StatsService) {}
 
@@ -41,7 +50,8 @@ export class StatsComponent implements OnInit {
 
   // Method to handle LLM Model change
   onLlmChange(event: any): void {
-    this.selectedLlmName = event.target.value;
+    this.selectedLlmNames = event.value;
+    // Reload statistics when LLM selection changes
     this.loadStats();
   }
 
@@ -53,9 +63,12 @@ export class StatsComponent implements OnInit {
 
   // Method to handle Name Method change
   onMethodChange(event: any): void {
-    this.selectedMethod = event.target.value;
+    this.selectedMethods = event.value;
+
+    // Reload statistics when method selection changes
     this.loadStats();
   }
+
 
   // Apply the filter based on the selected option
   applyFilter(): void {
@@ -79,82 +92,95 @@ export class StatsComponent implements OnInit {
   clearTable(): void {
     this.filteredEvaluationData = [];
     this.selectedEvaluationData = [];
-    this.selectedCell = ''; // Reset the selected cell
+    this.selectedCells = {}; // Reset the selected cell
   }
 
   refreshData(): void {
     this.loadStats(); // Re-fetch or reload the statistics data
   }
 
+  // Load statistics for each selected method
   loadStats(): void {
     const partitions = ['train_25', 'train_50', 'train_75', 'train_100'];
     const dictionaries = ['washington', 'bentham', 'whitefield', 'iam', 'empty'];
 
-    this.statistics = [];
+    // Clear existing statistics
+    this.statistics = {};
 
-    partitions.forEach(partition => {
-      let statGroup = {
-        partition: partition,
-        averageCerOcr: null,
-        washington: { cer: null, reduction: null },
-        bentham: { cer: null, reduction: null },
-        whitefield: { cer: null, reduction: null },
-        iam: { cer: null, reduction: null },
-        noTraining: { cer: null, reduction: null }
-      };
+    this.selectedMethods.forEach(method => {
+      const methodStats: { [llm: string]: any[] } = {};  // Store method-specific stats per LLM
 
-      const statPromises = dictionaries.map(dictName => {
-        return new Promise<void>((resolve, reject) => {
-          this.statsService.getStats([partition], this.selectedDataset, this.selectedHtrModel, this.selectedLlmName, dictName, this.selectedMethod).subscribe(
-            (response: any) => {
-              const data = response.data.partitionData[0];
+      this.selectedLlmNames.forEach(llmName => {
+        methodStats[llmName] = [];  // Initialize an empty array for each LLM
 
-              // Assign values based on dictionary
-              switch (dictName) {
-                case 'washington':
-                  statGroup.washington.cer = data.statistics?.averageCerLlm || '-';
-                  statGroup.washington.reduction = data.statistics?.cerReductionPercentage || '-';
-                  break;
-                case 'bentham':
-                  statGroup.bentham.cer = data.statistics?.averageCerLlm || '-';
-                  statGroup.bentham.reduction = data.statistics?.cerReductionPercentage || '-';
-                  break;
-                case 'whitefield':
-                  statGroup.whitefield.cer = data.statistics?.averageCerLlm || '-';
-                  statGroup.whitefield.reduction = data.statistics?.cerReductionPercentage || '-';
-                  break;
-                case 'iam':
-                  statGroup.iam.cer = data.statistics?.averageCerLlm || '-';
-                  statGroup.iam.reduction = data.statistics?.cerReductionPercentage || '-';
-                  break;
-                case 'empty':
-                  statGroup.noTraining.cer = data.statistics?.averageCerLlm || '-';
-                  statGroup.noTraining.reduction = data.statistics?.cerReductionPercentage || '-';
-                  break;
-              }
+        partitions.forEach(partition => {
+          let statGroup = {
+            partition: partition,
+            averageCerOcr: null,
+            washington: { cer: null, reduction: null },
+            bentham: { cer: null, reduction: null },
+            whitefield: { cer: null, reduction: null },
+            iam: { cer: null, reduction: null },
+            noTraining: { cer: null, reduction: null }
+          };
 
-              // Always assign the OCR CER
-              statGroup.averageCerOcr = data.statistics?.averageCerOcr || '-';
-              resolve();
-            },
-            (error: any) => {
-              console.error(`Error loading stats for partition ${partition} and dictionary ${dictName}`, error);
-              reject();
-            }
-          );
+          const statPromises = dictionaries.map(dictName => {
+            return new Promise<void>((resolve, reject) => {
+              this.statsService.getStats([partition], this.selectedDataset, this.selectedHtrModel, llmName, dictName, method).subscribe(
+                (response: any) => {
+                  const data = response.data.partitionData[0];
+
+                  // Assign values based on dictionary
+                  switch (dictName) {
+                    case 'washington':
+                      statGroup.washington.cer = data.statistics?.averageCerLlm || '-';
+                      statGroup.washington.reduction = data.statistics?.cerReductionPercentage || '-';
+                      break;
+                    case 'bentham':
+                      statGroup.bentham.cer = data.statistics?.averageCerLlm || '-';
+                      statGroup.bentham.reduction = data.statistics?.cerReductionPercentage || '-';
+                      break;
+                    case 'whitefield':
+                      statGroup.whitefield.cer = data.statistics?.averageCerLlm || '-';
+                      statGroup.whitefield.reduction = data.statistics?.cerReductionPercentage || '-';
+                      break;
+                    case 'iam':
+                      statGroup.iam.cer = data.statistics?.averageCerLlm || '-';
+                      statGroup.iam.reduction = data.statistics?.cerReductionPercentage || '-';
+                      break;
+                    case 'empty':
+                      statGroup.noTraining.cer = data.statistics?.averageCerLlm || '-';
+                      statGroup.noTraining.reduction = data.statistics?.cerReductionPercentage || '-';
+                      break;
+                  }
+
+                  // Assign OCR CER
+                  statGroup.averageCerOcr = data.statistics?.averageCerOcr || '-';
+                  resolve();
+                },
+                (error: any) => {
+                  console.error(`Error loading stats for partition ${partition} and dictionary ${dictName}`, error);
+                  reject();
+                }
+              );
+            });
+          });
+
+          // Wait for all promises to resolve before pushing to the LLM-specific stats
+          Promise.all(statPromises).then(() => {
+            methodStats[llmName].push(statGroup);  // Push the stat group to the correct LLM
+          });
         });
       });
 
-      // Wait for all stats to resolve before pushing to statistics array
-      Promise.all(statPromises).then(() => {
-        this.statistics.push(statGroup);
-      });
+      // Store the results for the current method
+      this.statistics[method] = methodStats;
     });
   }
 
-
-  // Method to determine the class for best and worst CER values
-  getClass(statGroup: any, dataset: string): string {
+  // Class logic to determine the style of each table cell
+  getClass(statGroup: any, dataset: string, method: string): string {
+    const selectedCell = this.selectedCells[method];  // Get the selected cell for this method
     const cerValues = [
       statGroup.washington?.cer,
       statGroup.bentham?.cer,
@@ -165,31 +191,48 @@ export class StatsComponent implements OnInit {
 
     const cerValue = statGroup[dataset]?.cer;
 
+    // Check if the current cell is the selected one for this method
+    let className = '';
+    if (selectedCell === `${statGroup.partition}-${dataset}`) {
+      className += 'selected-cell ';  // Highlight selected cell
+    }
+
+    // Apply best/worst CER logic
     if (cerValue !== null && cerValue !== '-') {
-      const minValue = Math.min(...cerValues.filter(v => v !== '-'));
-      const maxValue = Math.max(...cerValues.filter(v => v !== '-'));
+      const minValue = Math.min(...cerValues.filter(v => v !== '-' && v !== null));
+      const maxValue = Math.max(...cerValues.filter(v => v !== '-' && v !== null));
 
       if (cerValue === minValue) {
-        return 'green-cell';  // Best CER
+        className += 'green-cell';  // Best CER
       } else if (cerValue === maxValue) {
-        return 'red-cell';  // Worst CER
+        className += 'red-cell';  // Worst CER
       }
     }
 
-    return ''; // Default class
+    return className.trim();  // Return the class name, trim to avoid extra spaces
   }
 
-  loadEvaluationData(dataset: string, partition: string): void {
-    this.selectedCell = partition + '-' + dataset;
+  // Load evaluation data for a specific method, dataset, and partition
+  loadEvaluationData(method: string, dataset: string, partition: string): void {
+    this.selectedCells[method] = partition + '-' + dataset;
 
-    this.statsService.getEvaluationData([partition], this.selectedDataset, this.selectedHtrModel, this.selectedLlmName, dataset, this.selectedMethod).subscribe(
-      (response: any) => {
-        this.selectedEvaluationData = response.data.partitionData[0].evaluationData;
-        this.applyFilter();  // Apply filter after loading new evaluation data
-      },
-      (error: any) => {
-        console.error(`Error loading evaluation data for ${dataset} and partition ${partition}`, error);
-      }
-    );
+    const promisesForLlm = this.selectedLlmNames.map(llmName => {
+      return new Promise<void>((resolve, reject) => {
+        this.statsService.getEvaluationData([partition], this.selectedDataset, this.selectedHtrModel, llmName, dataset, method).subscribe(
+          (response: any) => {
+            this.selectedEvaluationData = response.data.partitionData[0].evaluationData;
+            this.applyFilter();  // Apply filter after loading new evaluation data
+          },
+          (error: any) => {
+            console.error(`Error loading evaluation data for ${dataset} and partition ${partition}`, error);
+          }
+        );
+      });
+    });
+    // Wait for all LLM promises to resolve
+    Promise.all(promisesForLlm).then(() => {
+      console.log('All evaluation data loaded for selected LLMs.');
+    });
   }
 }
+
