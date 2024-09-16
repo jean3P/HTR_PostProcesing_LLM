@@ -26,6 +26,7 @@ class TextProcessingStrategy(ABC):
         pass
 
     def evaluate_corrected_text(self, original_text_line, corrected_text_line, pipe, tokenizer):
+        logger.debug(f"Evaluating the corrected text: '{corrected_text_line}' for the original: '{original_text_line}'")
         system_prompt = (
             f"[INST] Act as an 18th-century text line evaluator. Your task is to analyze the original text line by an "
             f"OCR model and evaluate the corrected text line provided by the LLM. Determine if the LLM's corrected text"
@@ -56,8 +57,5 @@ class TextProcessingStrategy(ABC):
         justification_section = corrected_text.split(justification_marker)[-1].strip()
         justification_lines = justification_section.split('\n')
         justification = justification_lines[0].strip()  # Take the first line of the justification
-
-        logger.info(f"confidence: {confidence}")
-        logger.info(f"justification: {justification}")
 
         return confidence, justification

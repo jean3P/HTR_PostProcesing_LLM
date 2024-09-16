@@ -1,7 +1,7 @@
 # src/prompts/methods/mistral_text_processing_m1.py
 
 import re
-from prompts.text_processing_base import TextProcessingStrategy
+from prompts.mistral.text_processing_base import TextProcessingStrategy
 from utils.aux_processing import count_tokens, calculate_pipe, detect_immediate_repeated_words, \
     detect_close_repeated_word_sequences, suggest_corrections_for_ocr_text_m1
 from utils.logger import setup_logger
@@ -10,20 +10,38 @@ logger = setup_logger()
 
 
 class MistralTextProcessingM1(TextProcessingStrategy):
+    def __init__(self):
+        self.suggestions_memory = {}
+
     def get_name_method(self):
         return "method_1"
 
     def check_and_correct_text_line(self, text_line, pipe, tokenizer, train_set_line):
-        logger.debug(f"Checking and correcting text line: {text_line}")
-        suggestions = suggest_corrections_for_ocr_text_m1(text_line, train_set_line)
+        logger.info(f"Start processing text line: '{text_line}'")
+
+        # Suggest corrections based on OCR and training lines
+        suggestions = suggest_corrections_for_ocr_text_m1(text_line, train_set_line, self.suggestions_memory)
+
+        # Apply suggestions to correct text
         corrected_text = self.correct_with_suggestions(text_line, suggestions, pipe, tokenizer)
+        logger.info(f"Text after applying corrections for '{text_line}': {corrected_text}")
+
+        # Correct duplicated words in the text
         corrected_text = self.correct_duplicated_words(corrected_text, pipe, tokenizer)
-        logger.info(f"Text after correcting duplicated words: '{corrected_text}'")
+        logger.info(f"Final text after correcting duplicated words: '{corrected_text}'")
+
+        # Evaluate the corrected text
         confidence, justification = self.evaluate_corrected_text(
             text_line, corrected_text, pipe, tokenizer
         )
-        logger.info(f"Final text line: '{corrected_text}'")
 
+        if confidence and justification:
+            logger.info(
+                f"Confidence - {confidence}, Justification - {justification}")
+        else:
+            logger.info(f"Could not evaluate the corrected text for '{corrected_text}'")
+
+        logger.info(f"Finished processing text line: {text_line} ===> {corrected_text}")
         return corrected_text, confidence, justification
 
     def correct_with_suggestions(self, ocr_text, suggestions, pipe, tokenizer):
@@ -33,7 +51,10 @@ class MistralTextProcessingM1(TextProcessingStrategy):
         )
 
         if not suggestion_part:
+            logger.info(f"No suggestions available for '{ocr_text}'")
             suggestion_part = "No suggestions available."
+        else:
+            logger.info(f"Generating correction suggestions for text: '{ocr_text}' ==> {suggestion_part}")
 
         system_prompt = (
             f"[INST] Act as an 18th-century document analyst specializing in OCR correction. "
@@ -80,10 +101,10 @@ class MistralTextProcessingM1(TextProcessingStrategy):
         elif len(corrected_text) < (len(ocr_text) / 2):
             corrected_text = ocr_text
 
-        logger.info(f"Corrected text for '{ocr_text}': {corrected_text}")
         return corrected_text
 
     def correct_duplicated_words(self, text_line, pipe, tokenizer):
+        logger.info(f"Checking for duplicated words in: '{text_line}'")
         # First, use the find_immediate_repeated_words function to detect repeated words
         immediate_duplicated_words = detect_immediate_repeated_words(text_line)
         close_repeated_word_sets = detect_close_repeated_word_sequences(text_line)
@@ -101,8 +122,8 @@ class MistralTextProcessingM1(TextProcessingStrategy):
             f"Repeated set: {word_set}" for word_set in close_repeated_word_sets
         )
 
-        logger.info(f"Duplicated words: {immediate_duplicated_words}")
-        logger.info(f"Repeated sets: {close_repeated_word_sets}")
+        logger.info(f"Duplicated words found: {immediate_duplicated_words}")
+        logger.info(f"Repeated word sets found: {close_repeated_word_sets}")
         system_prompt = (
             f"[INST] Act as an 18th-century document analyst specializing in OCR correction. "
             f"Your task is to correct duplicated words in the given text line, ensuring the corrected line retains the "

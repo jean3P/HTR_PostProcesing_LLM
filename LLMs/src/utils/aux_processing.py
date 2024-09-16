@@ -2,10 +2,13 @@
 
 from collections import defaultdict
 from difflib import get_close_matches, SequenceMatcher
+
+import openai
+from openai import OpenAI
+
 from utils.logger import setup_logger
+import tiktoken
 
-
-suggestions_memory = {}
 logger = setup_logger()
 
 
@@ -19,7 +22,11 @@ def count_tokens(prompt, mistral_tokenizer):
     return input_ids.shape[1]
 
 
-def find_top_3_processed_similar_words_m1(word, train_set_lines, is_start_of_line=False):
+def extract_text_lines_from_train_data(train_data):
+    return list(train_data.values())
+
+
+def find_top_3_processed_similar_words_m1(word, train_set_lines, suggestions_memory, is_start_of_line=False):
     def split_suggestion(suggestion, original):
         if original.endswith('-') and not suggestion.endswith('-'):
             return suggestion[:len(original) - 1] + '-'
@@ -51,17 +58,17 @@ def find_top_3_processed_similar_words_m1(word, train_set_lines, is_start_of_lin
     return split_matches if split_matches else [word]
 
 
-def suggest_corrections_for_ocr_text_m1(ocr_text, train_set_lines):
+def suggest_corrections_for_ocr_text_m1(ocr_text, train_set_lines, suggestions_memory):
     suggestions = []
     words = ocr_text.split()
     for idx, word in enumerate(words):
         is_start_of_line = (idx == 0)
-        similar_words = find_top_3_processed_similar_words_m1(word, train_set_lines, is_start_of_line)
+        similar_words = find_top_3_processed_similar_words_m1(word, train_set_lines, suggestions_memory, is_start_of_line)
         suggestions.append((word, similar_words))
     return suggestions
 
 
-def find_top_3_processed_similar_words_m2(word, train_set_lines, is_start_of_line=False):
+def find_top_3_processed_similar_words_m2(word, train_set_lines, suggestions_memory, is_start_of_line=False):
     def split_suggestion(suggestion, original):
         # Preserve any ending characters from the original word
         if original and suggestion and not suggestion.endswith(original[-1]):
@@ -99,14 +106,13 @@ def find_top_3_processed_similar_words_m2(word, train_set_lines, is_start_of_lin
 
 
 # Detect OCR Errors and Suggest Corrections
-def suggest_corrections_for_ocr_text_m2(ocr_text, train_set_lines):
+def suggest_corrections_for_ocr_text_m2(ocr_text, train_set_lines, suggestions_memory):
     suggestions = []
     words = ocr_text.split()
     for idx, word in enumerate(words):
         is_start_of_line = (idx == 0)
-        similar_words = find_top_3_processed_similar_words_m2(word, train_set_lines, is_start_of_line)
+        similar_words = find_top_3_processed_similar_words_m2(word, train_set_lines, suggestions_memory, is_start_of_line)
         suggestions.append((word, similar_words))
-    logger.info(f"OCR text '{ocr_text}' suggestions: {suggestions}")
     return suggestions
 
 
@@ -177,6 +183,7 @@ def detect_similar_immediate_repeated_words(text_line, similarity_threshold=0.8)
 
 
 import re
+
 
 def has_misplaced_punctuation(text_line):
     """
@@ -249,3 +256,99 @@ def check_missing_or_extra_words(original_text, corrected_text):
 
     # If all words match and there are no extras, return False
     return False
+
+
+def count_tokens_gpt(prompt, model_name="gpt-3.5-turbo"):
+    """
+    Count the number of tokens in the prompt for GPT models using tiktoken.
+
+    Args:
+        prompt (str): The text prompt to be tokenized.
+        model_name (str): The name of the GPT model (default is "gpt-3.5-turbo").
+
+    Returns:
+        int: The number of tokens in the prompt.
+    """
+    # Use the appropriate encoding based on the model name
+    encoding = tiktoken.encoding_for_model(model_name)
+
+    # Encode the prompt
+    tokenized_prompt = encoding.encode(prompt)
+
+    # Return the number of tokens
+    return len(tokenized_prompt)
+
+
+def calculate_pipe_openai(model_name, system_prompt, max_tokens, openai_token):
+    """
+    Call OpenAI's ChatCompletion API to generate a response for the provided prompt.
+
+    Args:
+        model_name (str): The OpenAI model name (e.g., 'gpt-3.5-turbo').
+        system_prompt (str): The prompt to be passed to the model.
+        max_tokens (int): The maximum number of tokens to be generated (including prompt tokens).
+        openai_token (str): The OpenAI API key.
+
+    Returns:
+        dict: The response from OpenAI's API, containing the generated text.
+    """
+    try:
+        # Set the OpenAI API key
+        client = OpenAI(
+            # This is the default and can be omitted
+            api_key=openai_token,
+        )
+
+        # Use the OpenAI ChatCompletion API for chat models
+        response = client.chat.completions.create(
+            model=model_name,
+            messages=[{"role": "user", "content": system_prompt}],  # Chat model uses messages
+            max_tokens=max_tokens,
+            temperature=0,
+            top_p=1.0,
+            stream=False,  # Set to True if you want streaming
+        )
+
+        # Return the full response
+        return response
+    except openai.APIConnectionError as e:
+        print("The server could not be reached")
+        print(e.__cause__)  # an underlying Exception, likely raised within httpx.
+    except openai.RateLimitError as e:
+        print("A 429 status code was received; we should back off a bit.")
+    except openai.APIStatusError as e:
+        print("Another non-200-range status code was received")
+        print(e.status_code)
+        print(e.response)
+
+
+import re
+
+def clean_text(original_text, corrected_text):
+    """
+    Cleans the corrected text by removing any unnecessary leading or trailing spaces
+    while ensuring that punctuation (e.g., quotes) is respected as in the original text.
+
+    Args:
+        original_text (str): The original OCR text.
+        corrected_text (str): The corrected text.
+
+    Returns:
+        str: The cleaned corrected text.
+    """
+
+    # Clean internal multiple spaces in the corrected text
+    corrected_text = re.sub(r'\s+', ' ', corrected_text).strip()
+
+    # Handle leading and trailing single quotes and spaces
+    if original_text.startswith("'") and not corrected_text.startswith("'"):
+        corrected_text = "'" + corrected_text.lstrip()
+    elif not original_text.startswith("'") and corrected_text.startswith("'"):
+        corrected_text = corrected_text.lstrip("'").lstrip()
+
+    if original_text.endswith("'") and not corrected_text.endswith("'"):
+        corrected_text = corrected_text.rstrip() + "'"
+    elif not original_text.endswith("'") and corrected_text.endswith("'"):
+        corrected_text = corrected_text.rstrip("'").rstrip()
+
+    return corrected_text
