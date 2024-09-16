@@ -95,6 +95,14 @@ class Dataset:
         # Process the dataset for each partition (train, valid, test)
         for partition in ["train", "valid", "test"]:
             for line in paths[partition]:
+                if line not in gt_dict:
+                    print(f"Warning: Missing ground truth for {line}, skipping.")
+                    continue
+                    # Check if the label is empty
+                label = gt_dict[line].strip()
+                if len(label) == 0:
+                    print(f"Warning: Empty label for {line}, skipping.")
+                    continue
                 dataset[partition]['dt'].append(os.path.join(img_path, f"{line}.png"))
                 dataset[partition]['gt'].append(gt_dict[line])
                 dataset[partition]['path'].append(os.path.join(img_path, f"{line}.png"))

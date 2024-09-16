@@ -11,21 +11,23 @@ class Query(graphene.ObjectType):
         name_dataset=graphene.String(required=True),
         number_of_rows=graphene.Int(default_value=10),
         name_method=graphene.String(required=True),
+        htr_model=graphene.String(required=True),
+        dict_name=graphene.String(required=True),
         training_sizes=graphene.List(graphene.String, default_value=['train_25', 'train_50', 'train_75', 'train_100']),
         training_suggestion=graphene.List(graphene.String,
                                           default_value=['bentham', 'iam', 'washington', 'whitefield', 'empty']),
         llm_name=graphene.String(required=True)
     )
 
-    def resolve_partition_data(self, info, partition, name_dataset, name_method, number_of_rows, training_sizes, training_suggestion,
-                               llm_name):
+    def resolve_partition_data(self, info, partition, name_dataset, name_method, number_of_rows, training_sizes,
+                               training_suggestion, llm_name, htr_model, dict_name):
         partition_results = []
 
         for part in partition:
             partition_data, partition_global_total, partition_full_path, total_count = load_partition_data(
                 name_dataset, part, number_of_rows
             )
-            eval_results = load_evaluation_results(name_dataset, name_method, part, llm_name)
+            eval_results = load_evaluation_results(name_dataset, name_method, part, htr_model, llm_name, dict_name)
 
             # Log evaluation results to check if CER values are available
             print(f"Evaluation results for {name_dataset}, partition {part}: {eval_results}")

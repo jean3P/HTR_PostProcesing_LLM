@@ -11,6 +11,9 @@ class FileInfo(graphene.ObjectType):
     cer_llm = graphene.Float()  # CER after LLM correction
     confidence = graphene.String()  # Confidence from LLM correction
     justification = graphene.String()  # Justification from LLM correction
+    wer_ocr = graphene.Float()
+    wer_llm = graphene.Float()
+    run_id = graphene.String()
     image_data = graphene.List(graphene.Float)  # Image data as floats
 
 
@@ -20,9 +23,12 @@ class Statistics(graphene.ObjectType):
     min_cer_ocr = graphene.Float()  # Minimum OCR CER
     max_cer_ocr = graphene.Float()  # Maximum OCR CER
     average_cer_llm = graphene.Float()  # Average LLM CER
+    average_wer_llm = graphene.Float()
+    average_wer_ocr = graphene.Float()
     min_cer_llm = graphene.Float()  # Minimum LLM CER
     max_cer_llm = graphene.Float()  # Maximum LLM CER
     cer_reduction_percentage = graphene.Float()  # CER reduction percentage
+    wer_reduction_percentage = graphene.Float()  # CER reduction percentage
 
 
 # Add new fields to PartitionData to include LLM and training metadata
