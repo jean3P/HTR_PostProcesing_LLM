@@ -7,7 +7,7 @@ import numpy as np
 from config.model_config import get_data_generator
 from constants import model_outputs, results_outputs
 from data_processing.data_utils import create_testing_file
-from utils.flor.data.evaluation import cer_only
+from utils.flor.data.evaluation import cer_only, wer_only
 from utils.flor.network.model import HTRModel
 
 
@@ -44,7 +44,7 @@ def save_evaluation_data(predicts, ground_truth, dtgen, output_path, dataset, pa
         try:
             print(f"Processing index: {i}, Pred: {pred}, Ground Truth: {gt}")
             cer = cer_only([pred], [gt])  # Calculate Character Error Rate (CER)
-
+            wer = wer_only([pred], [gt])
             # Ensure valid path extraction
             file_name = dtgen.dataset['test']['path'][i].decode('utf-8')
             print(f"File Name: {file_name}")
@@ -53,7 +53,8 @@ def save_evaluation_data(predicts, ground_truth, dtgen, output_path, dataset, pa
                 "file_name": file_name,
                 "ground_truth_label": gt,
                 "predicted_label": pred,
-                "cer": cer
+                "cer": cer,
+                "wer": wer,
             })
         except Exception as e:
             print(f"Error processing index {i}: {e}")
