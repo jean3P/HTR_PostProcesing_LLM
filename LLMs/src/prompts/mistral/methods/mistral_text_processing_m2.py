@@ -1,7 +1,7 @@
 # src/prompts/methods/mistral_text_processing_m2.py
 
 import re
-from prompts.text_processing_base import TextProcessingStrategy
+from prompts.mistral.text_processing_base import TextProcessingStrategy
 from utils.aux_processing import calculate_pipe, count_tokens, detect_immediate_repeated_words, \
     detect_close_repeated_word_sequences, detect_similar_immediate_repeated_words, has_misplaced_punctuation, \
     check_missing_or_extra_words, suggest_corrections_for_ocr_text_m2
@@ -12,33 +12,51 @@ logger = setup_logger()
 
 class MistralTextProcessingM2(TextProcessingStrategy):
 
+    def __init__(self):
+        self.suggestions_memory = {}
+
     def get_name_method(self):
         return "method_2"
 
     def check_and_correct_text_line(self, text_line, pipe, tokenizer, train_set_lines):
-        logger.debug(f"Checking and correcting text line: {text_line}")
+        logger.info(f"Start processing text line: '{text_line}'")
+
+        # Check if there are spelling errors
         spelling_errors = self.check_spelling_in_text_line(text_line, pipe, tokenizer)
         corrected_text = text_line
         if spelling_errors == 'Yes':
-            suggestions = suggest_corrections_for_ocr_text_m2(corrected_text, train_set_lines)
+            # Suggest corrections based on OCR and training lines
+            suggestions = suggest_corrections_for_ocr_text_m2(corrected_text, train_set_lines, self.suggestions_memory)
+
+            # Apply suggestions to correct text
             corrected_text = self.correct_with_suggestions(corrected_text, suggestions, pipe, tokenizer)
+            logger.info(f"Text after applying corrections for '{text_line}': {corrected_text}")
+
+        # Correct duplicated words in the text
         corrected_text = self.correct_duplicated_words(corrected_text, pipe, tokenizer)
         logger.info(f"Text after correcting duplicated words: '{corrected_text}'")
+
+        # Check if there are punctuation marks errors
         corrected_text = self.check_and_correct_punctuation(corrected_text, pipe, tokenizer)
-        logger.info(f"Text after correcting punctuation errors: '{corrected_text}'")
         confidence, justification = self.evaluate_corrected_text(
             text_line, corrected_text, pipe, tokenizer
         )
-        logger.info(f"Final text line: '{corrected_text}'")
 
+        if confidence and justification:
+            logger.info(
+                f"Confidence - {confidence}, Justification - {justification}")
+        else:
+            logger.info(f"Could not evaluate the corrected text for '{corrected_text}'")
+
+        logger.info(f"Finished processing text line: {text_line} ===> {corrected_text}")
         return corrected_text, confidence, justification
 
     def correct_duplicated_words(self, text_line, pipe, tokenizer):
+        logger.info(f"Checking for duplicated words in: '{text_line}'")
         # First, use the find_immediate_repeated_words function to detect repeated words
         immediate_duplicated_words = detect_immediate_repeated_words(text_line)
         close_repeated_word_sets = detect_close_repeated_word_sequences(text_line)
         similar_duplicated_words = detect_similar_immediate_repeated_words(text_line)
-        # immediate_duplicated_punctuation = detect_immediate_repeated_punctuation(text_line)
 
         if (not immediate_duplicated_words and not close_repeated_word_sets and not
         similar_duplicated_words):
@@ -59,8 +77,8 @@ class MistralTextProcessingM2(TextProcessingStrategy):
         )
 
         combined_result = "\n".join([duplicated_words_part, similar_sets_pair])
-        logger.info(f"Duplicated words: {combined_result}")
-        logger.info(f"Repeated sets: {close_repeated_word_sets}")
+        logger.info(f"Duplicated words found: {combined_result}")
+        logger.info(f"Repeated word sets found: {close_repeated_word_sets}")
 
         system_prompt = (
             f"[INST] Act as an 18th-century document analyst specializing in OCR correction. "
@@ -84,7 +102,6 @@ class MistralTextProcessingM2(TextProcessingStrategy):
         tokens_prompt = count_tokens(system_prompt, tokenizer) + 25
         response = calculate_pipe(pipe, system_prompt, tokens_prompt, 1)
         raw_response = response[0]['generated_text']
-        # print("Raw response:", raw_response)  # Debug print
 
         json_output_marker = "Then corrected text line is:"
 
@@ -114,14 +131,37 @@ class MistralTextProcessingM2(TextProcessingStrategy):
                 (ocr_text.count(')') == 1 and ocr_text.count('(') == 0) or
                 '&' in ocr_text
         ):
+            logger.info(f"Evaluating special conditions for text: '{ocr_text}'")
+
+            if ocr_text.startswith('\"') and ocr_text.endswith('\"'):
+                logger.info(f"Text starts and ends with quotation marks: '{ocr_text}'")
+
+            if ocr_text.endswith('_'):
+                logger.info(f"Text ends with an underscore: '{ocr_text}'")
+
+            if ocr_text.endswith('='):
+                logger.info(f"Text ends with an equals sign: '{ocr_text}'")
+
+            if ocr_text.count('(') == 1 and ocr_text.count(')') == 0:
+                logger.info(f"Text contains an unmatched opening parenthesis: '{ocr_text}'")
+
+            if ocr_text.count(')') == 1 and ocr_text.count('(') == 0:
+                logger.info(f"Text contains an unmatched closing parenthesis: '{ocr_text}'")
+
+            if '&' in ocr_text:
+                logger.info(f"Text contains an ampersand: '{ocr_text}'")
             return ocr_text
+
         suggestion_part = "\n".join(
             f"Original word from the text line: {ocr_word}, Suggestions for corrections: {', '.join(set(similar_words))}"
             for ocr_word, similar_words in suggestions if similar_words and set(similar_words) != {ocr_word}
         )
 
         if not suggestion_part:
+            logger.info(f"No suggestions available for '{ocr_text}'")
             suggestion_part = "No suggestions available."
+        else:
+            logger.info(f"Generating correction suggestions for text: '{ocr_text}' ==> {suggestion_part}")
 
         system_prompt = (
             f"[INST] Act as an 18th-century document analyst specializing in OCR error correction. "
@@ -214,7 +254,7 @@ class MistralTextProcessingM2(TextProcessingStrategy):
                 f"\n- text line: 'Good morning ; everyone' the corrected text line is: 'Good morning; everyone'"
                 f"\n- text line: 'Are you ready ? ' the corrected text line is: 'Are you ready? '"
                 f"\n\nYour task is only correct the misplaced punctuation marks base on the guidelines and examples, "
-                f"then given the text line: '{text_line}'"
+                f"then given the text line: {text_line}"
                 f"[/INST]\nThen the corrected text line is:"
             )
 

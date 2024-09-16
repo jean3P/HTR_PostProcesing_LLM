@@ -2,14 +2,16 @@
 
 import os
 from constants import training_suggestion_path, results_llm
-from evaluations.evaluate_mistral import evaluate_and_correct_ocr_results
+from evaluations.evaluate_mistral import evaluate_and_correct_ocr_results_mistral
 from llm.llm_factory import LLMFactory
+from prompts.mistral.methods.mistral_text_processing_m1 import MistralTextProcessingM1
 from prompts.mistral.methods.mistral_text_processing_m2 import MistralTextProcessingM2
+from utils.aux_processing import extract_text_lines_from_train_data
 from utils.io_utils import get_latest_result_for_datasets, load_from_json, create_testing_file
 from utils.logger import setup_logger
+import uuid
 
 logger = setup_logger()
-
 
 llm_name_1 = "mistralai/Mistral-7B-v0.1"
 mistral_llm = LLMFactory.get_llm(llm_name_1)
@@ -17,10 +19,16 @@ pipe = mistral_llm.pipe
 mistral_tokenizer = mistral_llm.tokenizer
 llms = ['mistral']
 model_ocr = "Flor_model"
-datasets = ['iam']
+datasets = ['bentham']
 train_sizes = ['train_25', 'train_50', 'train_75', 'train_100']
-train_suggestion = ['', 'iam', 'bentham', 'washington', 'whitefield']
+train_suggestion = ['', 'bentham']
 latest_results = get_latest_result_for_datasets(llms, datasets, train_sizes, model_ocr)
+
+# Define the strategies you want to iterate over
+text_processing_strategies = [
+    MistralTextProcessingM1(),
+    MistralTextProcessingM2()
+]
 
 for llm, dataset, train_size, result_path in latest_results:
     logger.info(f"Latest result file for {dataset}, {train_size}: {result_path}")
@@ -35,22 +43,34 @@ for llm, dataset, train_size, result_path in latest_results:
         else:
             suggestion_file_path = os.path.join(training_suggestion_path, f"{suggestion_file}.json")
             train_set_lines = load_from_json(suggestion_file_path)
+            train_set_lines = extract_text_lines_from_train_data(train_set_lines)
 
-        # Initialize the MistralTextProcessingM2 strategy
-        text_processing_strategy = MistralTextProcessingM2()
+        for text_processing_strategy in text_processing_strategies:
+            text_processing_strategy.suggestions_memory.clear()
+            run_id = str(uuid.uuid4())
 
-        # Run the evaluation and correction process
-        evaluation_results = evaluate_and_correct_ocr_results(
-            loaded_data,
-            train_set_lines,
-            pipe,
-            mistral_tokenizer,
-            text_processing_strategy
-        )
+            if suggestion_file == '':
+                dict_suggestion = 'empty'
+            else:
+                dict_suggestion = suggestion_file
 
-        # Save the results using create_testing_file
-        create_testing_file(results_llm, dataset, train_size, evaluation_results, suggestion_file, llm, text_processing_strategy.get_name_method())
+            logger.info(
+                f"=== Running for '{dataset}' with '{train_size}' and suggestion dictionary '{dict_suggestion}' "
+                f"| {text_processing_strategy.get_name_method()} | Run ID: {run_id} ===")
+            # Run the evaluation and correction process
+            evaluation_results = evaluate_and_correct_ocr_results_mistral(
+                loaded_data,
+                train_set_lines,
+                text_processing_strategy,  # Pass the strategy directly
+                pipe,  # Pass pipe as an additional model argument
+                mistral_tokenizer,  # Pass tokenizer as an additional model argument
+                run_id
+            )
 
-        logger.info(f"=== Evaluation for {dataset} with {train_size} and suggestion training set {suggestion_file} "
-                    f"completed and results saved ===")
+            # Save the results using create_testing_file
+            create_testing_file(results_llm, dataset, train_size, evaluation_results, suggestion_file, llm,
+                                text_processing_strategy.get_name_method(), model_ocr)
 
+            logger.info(
+                f"=== Evaluation for '{dataset}' with '{train_size}' and suggestion dictionary '{dict_suggestion}' "
+                f"completed and results saved | {text_processing_strategy.get_name_method()} | Run ID: {run_id} ===")
