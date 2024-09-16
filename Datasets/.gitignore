@@ -11,7 +11,7 @@ env/
 # Ignore HDF5 files (if you don't want to track datasets in version control)
 *.h5
 *.hdf5
-
+/outputs
 # Ignore log files and temporary files
 *.log
 *.tmp
