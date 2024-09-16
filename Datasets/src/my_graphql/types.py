@@ -45,3 +45,5 @@ class PartitionData(graphene.ObjectType):
     cer_llm_greater_count = graphene.Int()  # New field for count of LLM CER greater than OCR CER
     cer_llm_lesser_count = graphene.Int()
     cer_llm_equal_count = graphene.Int()  # New field for count of LLM CER equal to OCR CER
+    run_id = graphene.String()
+    logs = graphene.String()
