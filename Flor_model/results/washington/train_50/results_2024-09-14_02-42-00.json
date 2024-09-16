@@ -1,0 +1,392 @@
+[
+    {
+        "file_name": "308-01.png",
+        "ground_truth_label": "308. Letters Orders and Instructions December 1755.",
+        "predicted_label": "25t. Leters Orders and Instructions December 175.",
+        "cer": 9.804
+    },
+    {
+        "file_name": "308-03.png",
+        "ground_truth_label": "remain here until the arrival of the vessel with",
+        "predicted_label": "remain here until the arival of the wesel with",
+        "cer": 6.25
+    },
+    {
+        "file_name": "308-04.png",
+        "ground_truth_label": "the Stores, Vc. and to be under the same directions",
+        "predicted_label": "the Stores, Vc. and to be under the same diretims",
+        "cer": 5.882
+    },
+    {
+        "file_name": "308-05.png",
+        "ground_truth_label": "as before ordered. So soon as the Stores arrive, you",
+        "predicted_label": "as before ordered. Io son as the Siores arive, you",
+        "cer": 7.692
+    },
+    {
+        "file_name": "308-06.png",
+        "ground_truth_label": "are, with all possible dispath, to procure a suf-",
+        "predicted_label": "are, with al posible disputch, to prdcure a suf-",
+        "cer": 10.204
+    },
+    {
+        "file_name": "308-07.png",
+        "ground_truth_label": "ficient number of waggons to carry them to Win-",
+        "predicted_label": "ficient umber of Wagons to cary them to Mia-",
+        "cer": 12.766
+    },
+    {
+        "file_name": "308-08.png",
+        "ground_truth_label": "chester; whither they are to be sent, under the",
+        "predicted_label": "thester; whither they are to be sent, under the",
+        "cer": 2.128
+    },
+    {
+        "file_name": "308-09.png",
+        "ground_truth_label": "escort of the Soldiers now here: except the Suits",
+        "predicted_label": "escort of the Soldiers now here; except the Suits",
+        "cer": 2.041
+    },
+    {
+        "file_name": "308-10.png",
+        "ground_truth_label": "of Clothes; Shoes, Stocking, Shirts, Vc. proportiona-",
+        "predicted_label": "of Clo thes; Shoes, Stockings, Shirts, Vc. proportiona-",
+        "cer": 3.636
+    },
+    {
+        "file_name": "308-11.png",
+        "ground_truth_label": "bly which are to be left with Colonel Carlyle.",
+        "predicted_label": "blhy, which are to be left with Coloel Carble.",
+        "cer": 10.87
+    },
+    {
+        "file_name": "308-12.png",
+        "ground_truth_label": "You are to be very careful of all the",
+        "predicted_label": "You are to be very careful, of al the",
+        "cer": 5.405
+    },
+    {
+        "file_name": "308-13.png",
+        "ground_truth_label": "Things delivered into the waggons, and see that",
+        "predicted_label": "Thing delivered into the wagons, and se that",
+        "cer": 6.383
+    },
+    {
+        "file_name": "308-14.png",
+        "ground_truth_label": "a strict Guard is kept over them, that no embez-",
+        "predicted_label": "a strict Suard is kept over them, that no embey -",
+        "cer": 6.122
+    },
+    {
+        "file_name": "308-15.png",
+        "ground_truth_label": "zlement is made. If your men can not be",
+        "predicted_label": "Rement is made. If your Men can net be",
+        "cer": 10.256
+    },
+    {
+        "file_name": "308-16.png",
+        "ground_truth_label": "conveniently Quartered on their march up; there",
+        "predicted_label": "conveniently Suartered on their Mmarchs upothere",
+        "cer": 10.417
+    },
+    {
+        "file_name": "308-17.png",
+        "ground_truth_label": "will be a number of Tents among the Stores, which",
+        "predicted_label": "wil be a number of Fents among, the Stores, whih",
+        "cer": 8.163
+    },
+    {
+        "file_name": "308-18.png",
+        "ground_truth_label": "must be made use of. - If any of the Soldiers",
+        "predicted_label": "must be made use of. - If any of the Soldiers",
+        "cer": 0.0
+    },
+    {
+        "file_name": "308-19.png",
+        "ground_truth_label": "should desert from this place, - it would be proper",
+        "predicted_label": "thould desert from this place, - it would beproger",
+        "cer": 5.882
+    },
+    {
+        "file_name": "308-20.png",
+        "ground_truth_label": "to send a Sergeant, and one or two trusty men",
+        "predicted_label": "to send a Sergeant, and one or two trusty men,",
+        "cer": 2.174
+    },
+    {
+        "file_name": "308-21.png",
+        "ground_truth_label": "in pursuit of them.",
+        "predicted_label": "in pursuif of them",
+        "cer": 10.526
+    },
+    {
+        "file_name": "308-22.png",
+        "ground_truth_label": "Given at Alexandria Vc.",
+        "predicted_label": "Given af e leundria Vc.",
+        "cer": 21.739
+    },
+    {
+        "file_name": "308-23.png",
+        "ground_truth_label": "December 16th. 1755.",
+        "predicted_label": "Dcamber t. 15.",
+        "cer": 35.0
+    },
+    {
+        "file_name": "308-25.png",
+        "ground_truth_label": "16th. To Doctor James Craik, of the Virginia",
+        "predicted_label": "th. To Doctor Ia mes Craik, of the Veirginice",
+        "cer": 15.556
+    },
+    {
+        "file_name": "308-26.png",
+        "ground_truth_label": "Regiment.",
+        "predicted_label": "Gegiment.",
+        "cer": 11.111
+    },
+    {
+        "file_name": "308-27.png",
+        "ground_truth_label": "So soon as the Vessel with the",
+        "predicted_label": "ifh son as the Ooel urth the",
+        "cer": 33.333
+    },
+    {
+        "file_name": "308-28.png",
+        "ground_truth_label": "Stores and medicines arrives, you are to embrace",
+        "predicted_label": "Stores and medicines arives, you are to emhrace",
+        "cer": 4.167
+    },
+    {
+        "file_name": "308-29.png",
+        "ground_truth_label": "the first opportunity that offers, of conveying up",
+        "predicted_label": "the first oportunity that ofers, of convezing up",
+        "cer": 6.0
+    },
+    {
+        "file_name": "308-30.png",
+        "ground_truth_label": "your Chest, and proceeding, yourself, to Winches-",
+        "predicted_label": "your bhest, and proceding, yourself, to Winches-",
+        "cer": 4.082
+    },
+    {
+        "file_name": "308-31.png",
+        "ground_truth_label": "ter. You are to provide yourself here, with",
+        "predicted_label": "ter. You are to provide yourself here with",
+        "cer": 2.326
+    },
+    {
+        "file_name": "308-32.png",
+        "ground_truth_label": "what you think will be wanting for the Hos-",
+        "predicted_label": "what you thinh wil be wanting for the Htos-",
+        "cer": 6.977
+    },
+    {
+        "file_name": "308-33.png",
+        "ground_truth_label": "pital, and bring them up with you; taking",
+        "predicted_label": "pital, and bing them up with you; taking",
+        "cer": 2.439
+    },
+    {
+        "file_name": "308-34.png",
+        "ground_truth_label": "care to purchase no more than is absolutely",
+        "predicted_label": "care to purchase no more than is alsolutely",
+        "cer": 2.326
+    },
+    {
+        "file_name": "308-35.png",
+        "ground_truth_label": "necessary, for the support and relief of the Regiment",
+        "predicted_label": "necesary, for the suport and relief of the Regiws",
+        "cer": 11.321
+    },
+    {
+        "file_name": "309-01.png",
+        "ground_truth_label": "p.309.",
+        "predicted_label": "9 S5g.",
+        "cer": 83.333
+    },
+    {
+        "file_name": "309-02.png",
+        "ground_truth_label": "Letters Orders and Instructions December 1755.",
+        "predicted_label": "Leters brders and Instructions December 175.",
+        "cer": 6.522
+    },
+    {
+        "file_name": "309-04.png",
+        "ground_truth_label": "Given at Alexandria Vc.",
+        "predicted_label": "Given uf Llexundria Vc.",
+        "cer": 17.391
+    },
+    {
+        "file_name": "309-05.png",
+        "ground_truth_label": "December 16th. 1755.",
+        "predicted_label": "December 1th. 175.",
+        "cer": 10.0
+    },
+    {
+        "file_name": "309-07.png",
+        "ground_truth_label": "16th. To Captain John Mercer. of the",
+        "predicted_label": "28h. To Captain I ohn Lercer. of the",
+        "cer": 16.667
+    },
+    {
+        "file_name": "309-08.png",
+        "ground_truth_label": "Virginia Regiment.",
+        "predicted_label": "Wrginie Aegiment.",
+        "cer": 22.222
+    },
+    {
+        "file_name": "309-09.png",
+        "ground_truth_label": "You are immediately, upon receipt",
+        "predicted_label": "You are imediately, upon receipt",
+        "cer": 3.03
+    },
+    {
+        "file_name": "309-10.png",
+        "ground_truth_label": "hereof, to repair to Winchester, where you will meet",
+        "predicted_label": "hereof, to repar to Wincheter, where you wil met",
+        "cer": 7.692
+    },
+    {
+        "file_name": "309-11.png",
+        "ground_truth_label": "with Colonel Washington, and receive further orders.",
+        "predicted_label": "with Colonel Washington, and receive futher orders.",
+        "cer": 1.923
+    },
+    {
+        "file_name": "309-12.png",
+        "ground_truth_label": "I am Vc.",
+        "predicted_label": "I am be.",
+        "cer": 25.0
+    },
+    {
+        "file_name": "309-13.png",
+        "ground_truth_label": "G.W. aid de camp.",
+        "predicted_label": "GWtr. Aid decamp.",
+        "cer": 29.412
+    },
+    {
+        "file_name": "309-14.png",
+        "ground_truth_label": "Alexandria: December 16th. 1755.",
+        "predicted_label": "aRlexandria: ecember th. 175.",
+        "cer": 18.75
+    },
+    {
+        "file_name": "309-15.png",
+        "ground_truth_label": "N:B. A Copy left at Alexandria, and another",
+        "predicted_label": "MWs. ACopy left at Alexandria, and anothe",
+        "cer": 11.628
+    },
+    {
+        "file_name": "309-16.png",
+        "ground_truth_label": "sent to Stafford, to him there.",
+        "predicted_label": "sent to Staford, to him there.",
+        "cer": 3.226
+    },
+    {
+        "file_name": "309-18.png",
+        "ground_truth_label": "20th. Parole Abbemarle. Winchester: December 20th. 1755.",
+        "predicted_label": "28th. Pote ebemarle 6 Wrchestr. December to 275.",
+        "cer": 32.143
+    },
+    {
+        "file_name": "309-19.png",
+        "ground_truth_label": "A Return to be given in immedi-",
+        "predicted_label": "el Return to be given in imedi-",
+        "cer": 9.677
+    },
+    {
+        "file_name": "309-20.png",
+        "ground_truth_label": "ately of the Recruits now in this town, by the several",
+        "predicted_label": "ately of the Recruits now in this town, by the sweral",
+        "cer": 3.704
+    },
+    {
+        "file_name": "309-21.png",
+        "ground_truth_label": "Officers who enlisted them; mentioning their height,",
+        "predicted_label": "bficers who enlisted them; mentioming thiwheight.",
+        "cer": 13.462
+    },
+    {
+        "file_name": "309-22.png",
+        "ground_truth_label": "age, trade, Vc. The officers to see that the Serge-",
+        "predicted_label": "age, trade, Vc. The Oficers to se that the Serge-",
+        "cer": 5.882
+    },
+    {
+        "file_name": "309-23.png",
+        "ground_truth_label": "ants who understand the manual Exercise, do",
+        "predicted_label": "ants whs understand the manual freicise, do",
+        "cer": 9.302
+    },
+    {
+        "file_name": "309-24.png",
+        "ground_truth_label": "drill the Recruits, at least twice a-day.",
+        "predicted_label": "dril the Recruits, at least tvice aday,",
+        "cer": 9.756
+    },
+    {
+        "file_name": "309-26.png",
+        "ground_truth_label": "22nd. Parole Boston- Winchester: December 22nd. 1755.",
+        "predicted_label": "29h. Parole Borton- Frchester. December th 1275.",
+        "cer": 28.302
+    },
+    {
+        "file_name": "309-27.png",
+        "ground_truth_label": "A Return is to be made every mor-",
+        "predicted_label": "cl Return is to be made every mor",
+        "cer": 9.091
+    },
+    {
+        "file_name": "309-28.png",
+        "ground_truth_label": "ning to Colonel Washington of the number of",
+        "predicted_label": "ning to Colonel Wishington of the number of",
+        "cer": 2.326
+    },
+    {
+        "file_name": "309-29.png",
+        "ground_truth_label": "men in this town - and all contingences.",
+        "predicted_label": "en in this towne and al contingences.",
+        "cer": 10.0
+    },
+    {
+        "file_name": "309-30.png",
+        "ground_truth_label": "During his stay here, no provision is to be de-",
+        "predicted_label": "During his stay here, ns provision is to bede-",
+        "cer": 4.255
+    },
+    {
+        "file_name": "309-31.png",
+        "ground_truth_label": "livered out, but by a written order from him or",
+        "predicted_label": "livered out, but by a writen order fromhimor",
+        "cer": 6.383
+    },
+    {
+        "file_name": "309-32.png",
+        "ground_truth_label": "the aid de camp. The Commissary is to send",
+        "predicted_label": "the Aid de Camt. The Comisary is to send",
+        "cer": 11.905
+    },
+    {
+        "file_name": "309-33.png",
+        "ground_truth_label": "up the Cask of Tools by the first waggon that",
+        "predicted_label": "up the Cask of Fols by the first wagon that",
+        "cer": 6.667
+    },
+    {
+        "file_name": "309-34.png",
+        "ground_truth_label": "goes to the Fort. The following men being judg-",
+        "predicted_label": "goes to the Fort. The folowing men beingjudg -",
+        "cer": 6.383
+    },
+    {
+        "file_name": "309-35.png",
+        "ground_truth_label": "ed unfit for Duty, on Review; are ordered to be",
+        "predicted_label": "ed unfit for Duty, on Review; are ordered to be",
+        "cer": 0.0
+    },
+    {
+        "file_name": "309-36.png",
+        "ground_truth_label": "discharged: viz.",
+        "predicted_label": "dis char ged :. Wiro",
+        "cer": 35.0
+    }
+]
