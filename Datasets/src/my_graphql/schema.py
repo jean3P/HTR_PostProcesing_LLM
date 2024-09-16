@@ -1,5 +1,8 @@
 import graphene
-from my_graphql.utils.file_handler import load_partition_data, load_evaluation_results, calculate_cer_statistics
+import time
+from constants import llm_logs_file
+from my_graphql.utils.file_handler import load_partition_data, load_evaluation_results, calculate_cer_statistics, \
+    retrieve_log_info
 from my_graphql.types import PartitionData, Statistics
 
 
@@ -24,18 +27,22 @@ class Query(graphene.ObjectType):
         partition_results = []
 
         for part in partition:
+            time.sleep(0.09)
             partition_data, partition_global_total, partition_full_path, total_count = load_partition_data(
                 name_dataset, part, number_of_rows
             )
             eval_results = load_evaluation_results(name_dataset, name_method, part, htr_model, llm_name, dict_name)
 
             # Log evaluation results to check if CER values are available
-            print(f"Evaluation results for {name_dataset}, partition {part}: {eval_results}")
+            # print(f"Evaluation results for {name_dataset}, partition {part}: {eval_results}")
 
             # Calculate CER statistics for the current partition
             cer_statistics = calculate_cer_statistics(eval_results)
 
             # Automatically calculate counts for different CER conditions
+            run_id = eval_results[0].run_id
+            logs = retrieve_log_info(llm_logs_file, run_id)
+            print(logs)
             cer_llm_greater_count = sum(1 for result in eval_results if result.cer_llm > result.cer_ocr)
             cer_llm_lesser_count = sum(1 for result in eval_results if result.cer_llm < result.cer_ocr)
             cer_llm_equal_count = sum(1 for result in eval_results if result.cer_llm == result.cer_ocr)
@@ -76,7 +83,9 @@ class Query(graphene.ObjectType):
                     llm_name=llm_name,
                     cer_llm_greater_count=cer_llm_greater_count,
                     cer_llm_lesser_count=cer_llm_lesser_count,
-                    cer_llm_equal_count=cer_llm_equal_count
+                    cer_llm_equal_count=cer_llm_equal_count,
+                    run_id=run_id,
+                    logs=logs,
                 )
             )
 

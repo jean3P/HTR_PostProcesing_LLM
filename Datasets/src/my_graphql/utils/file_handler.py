@@ -1,6 +1,8 @@
 import os
 import json
 import logging
+import re
+
 from h5py import File
 from constants import splits_bentham_path, splits_washington_path, splits_iam_path, llm_outputs_path
 from my_graphql.types import FileInfo
@@ -84,7 +86,7 @@ def load_evaluation_results(name_dataset, name_method, partition, htr_model, llm
 
     logging.info(f"Loading evaluation file: {eval_file_path}")
     logging.info(f"File contents: {eval_data}")
-
+    run_id = eval_data[0].get("run_id")
     # Convert evaluation data to FileInfo format
     evaluation_data = [
         FileInfo(
@@ -98,7 +100,7 @@ def load_evaluation_results(name_dataset, name_method, partition, htr_model, llm
             justification=item['Prompt correcting']['justification'],
             wer_ocr=item['OCR']['wer'],
             wer_llm=item['Prompt correcting']['wer'],
-            run_id=item['run_id'],
+            run_id=run_id,
             image_data=None
         )
         for item in eval_data
@@ -145,3 +147,38 @@ def calculate_cer_statistics(evaluation_data):
         'cer_reduction_percentage': round(cer_reduction_percentage, 3),
         'wer_reduction_percentage': round(wer_reduction_percentage, 3)
     }
+
+
+def retrieve_log_info(log_file, run_id):
+    log_entries = []
+    capture = False  # Flag to start capturing logs
+
+    # Regex patterns to detect the start and end of log blocks
+    run_start_pattern = re.compile(
+        rf"=== Running for '(?P<dataset>.+?)' with '(?P<train_size>.+?)' and suggestion dictionary '(?P<dict_suggestion>.+?)' "
+        rf"\| (?P<method_name>.+?) \| Run ID: {run_id} ==="
+    )
+    run_complete_pattern = re.compile(
+        rf"=== Evaluation for '(?P<dataset>.+?)' with '(?P<train_size>.+?)' and suggestion dictionary '(?P<dict_suggestion>.+?)' "
+        rf"completed and results saved \| (?P<method_name>.+?) \| Run ID: {run_id} ==="
+    )
+
+    # Read the log file
+    with open(log_file, 'r') as file:
+        for line in file:
+            # Check if we found the start of the run_id block
+            if run_start_pattern.search(line):
+                capture = True  # Start capturing logs for the specified run_id
+                log_entries.append(line.strip())  # Include the start line
+
+            # Capture all subsequent lines related to that run_id
+            if capture:
+                log_entries.append(line.strip())
+
+            # If we find the completion log entry for the same run_id, stop capturing
+            if run_complete_pattern.search(line) and capture:
+                break  # Stop capturing after the complete line is found
+
+    # Join all log entries into a single string to return
+    return "\n".join(log_entries)
+
