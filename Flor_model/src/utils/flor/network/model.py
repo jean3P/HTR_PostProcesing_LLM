@@ -1,3 +1,5 @@
+# ./flor/network/model.py
+
 """Handwritten Text Recognition Neural Network"""
 
 import os
@@ -282,6 +284,8 @@ class HTRModel:
     @staticmethod
     def ctc_loss_lambda_func(y_true, y_pred):
         """Function for computing the CTC loss"""
+        print(f"y_true shape: {y_true.shape}, y_true: {y_true}")
+        print(f"y_pred shape: {y_pred.shape}, y_pred: {y_pred}")
 
         y_true = tf.reshape(y_true, (tf.shape(y_true)[0], -1))
         y_pred = tf.reshape(y_pred, (tf.shape(y_pred)[0], -1, tf.shape(y_pred)[-1]))

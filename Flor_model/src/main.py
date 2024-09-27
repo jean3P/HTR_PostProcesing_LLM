@@ -1,3 +1,5 @@
+# main.py
+
 import os
 from constants import model_outputs, outputs_hdf5, results_outputs
 from pipeline.pipeline_manager import main_training_pipeline
@@ -26,7 +28,7 @@ print("Found GPU at: {}".format(device_name))
 
 
 def run_training():
-    datasets = ['bentham']
+    datasets = ['iam']
     print(f"DATASET: {datasets}")
 
     # Iterate over each dataset

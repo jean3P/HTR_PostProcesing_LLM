@@ -1,3 +1,5 @@
+# ./flor/network/layers.py
+
 """
 Gated implementations
     GatedConv2D: Introduce a Conv2D layer (same number of filters) to multiply with its sigmoid activation.
