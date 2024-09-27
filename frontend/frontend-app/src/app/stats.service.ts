@@ -33,7 +33,11 @@ export class StatsService {
             statistics {
               averageCerOcr
               averageCerLlm
+              averageWerOcr
+              averageWerLlm
+              averageConfidence
               cerReductionPercentage
+              werReductionPercentage
             }
           }
         }
@@ -60,19 +64,25 @@ export class StatsService {
             llmName: "${llmName}",
             dictName: "${dictName}",
             nameMethod: "${nameMethod}"
-          ) {
+          )
+          {
             evaluationData {
               fileName
               groundTruth
               predictedTextOcr
               cerOcr
+              werOcr
               predictedTextLlm
+              confidence
               cerLlm
+              werLlm
             }
+            logs
           }
         }
       `
     };
+    console.log('GraphQL Query:', query);
     return this.http.post<any>(this.apiUrl, query);
   }
 }
