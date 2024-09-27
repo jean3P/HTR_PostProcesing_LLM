@@ -1,3 +1,5 @@
+# src/main_gpt.py
+
 import os
 
 from constants import training_suggestion_path, results_llm
@@ -10,17 +12,17 @@ from utils.io_utils import get_latest_result_for_datasets, load_from_json, creat
 from utils.logger import setup_logger
 import uuid
 
-logger = setup_logger()
-
-llm_name_2 = "gpt-3.5-turbo"
+# llm_name_2 = "gpt-3.5-turbo"
+llm_name_2 = "gpt-4o-mini"
 gpt_llm = LLMFactory.get_llm(llm_name_2)
 mistral_tokenizer = gpt_llm.tokenizer
-llms = ['gpt-3.5']
+llms = [llm_name_2]
 model_ocr = "Flor_model"
-name_dataset = 'bentham'
+name_dataset = 'iam'
 datasets = [name_dataset]
 train_sizes = ['train_25', 'train_50', 'train_75', 'train_100']
-train_suggestion = ['', 'bentham']
+train_suggestion = ['', 'iam']
+# train_suggestion = ['']
 latest_results = get_latest_result_for_datasets(llms, datasets, train_sizes, model_ocr)
 
 # Get the latest OCR results for the GPT model
@@ -29,15 +31,11 @@ latest_results = get_latest_result_for_datasets(llms, datasets, train_sizes, mod
 # Define the strategies you want to iterate over
 text_processing_strategies = [
     GptTextProcessingM1(),
-    GptTextProcessingM2()
 ]
 
 for llm, dataset, train_size, result_path in latest_results:
-    logger.info(f"Latest result file for {dataset}, {train_size}: {result_path}")
-
     # Load the latest OCR result data (assuming it's a JSON file)
     loaded_data = load_from_json(result_path)
-
     # Load the corresponding training suggestion data (assuming these are JSON files)
     for suggestion_file in train_suggestion:
         if suggestion_file == '':
@@ -54,10 +52,8 @@ for llm, dataset, train_size, result_path in latest_results:
             text_processing_strategy.suggestions_memory.clear()
             run_id = str(uuid.uuid4())
 
-            if suggestion_file == '':
-                dict_suggestion = 'empty'
-            else:
-                dict_suggestion = suggestion_file
+            log_file_path = f"../logs/workflow_{dataset}_{model_ocr}_{llm}_{text_processing_strategy.get_name_method()}_{train_size}_{dict_suggestion}.log"
+            logger = setup_logger(log_file_path)
 
             logger.info(
                 f"=== Running for '{dataset}' with '{train_size}' and suggestion dictionary '{dict_suggestion}' "
@@ -68,7 +64,9 @@ for llm, dataset, train_size, result_path in latest_results:
                 text_processing_strategy,
                 run_id,
                 gpt_llm.model_name,  # Only pass model_name for GPT
-                gpt_llm.openai_token
+                gpt_llm.openai_token,
+                llm_name_2,
+                logger
             )
 
             # Save the results using create_testing_file

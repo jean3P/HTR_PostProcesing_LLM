@@ -2,9 +2,6 @@
 
 from abc import ABC, abstractmethod
 from utils.aux_processing import count_tokens, calculate_pipe
-from utils.logger import setup_logger
-
-logger = setup_logger()
 
 
 class TextProcessingStrategy(ABC):
@@ -14,19 +11,19 @@ class TextProcessingStrategy(ABC):
         pass
 
     @abstractmethod
-    def check_and_correct_text_line(self, text_line,  pipe, tokenizer, train_set_lines):
+    def check_and_correct_text_line(self, text_line,  pipe, tokenizer, train_set_lines, logger):
         pass
 
     @abstractmethod
-    def correct_with_suggestions(self, ocr_text, suggestions, pipe, tokenizer):
+    def correct_with_suggestions(self, ocr_text, suggestions, pipe, tokenizer, logger):
         pass
 
     @abstractmethod
-    def correct_duplicated_words(self, text_line, pipe, tokenizer):
+    def correct_duplicated_words(self, text_line, pipe, tokenizer, logger):
         pass
 
-    def evaluate_corrected_text(self, original_text_line, corrected_text_line, pipe, tokenizer):
-        logger.debug(f"Evaluating the corrected text: '{corrected_text_line}' for the original: '{original_text_line}'")
+    def evaluate_corrected_text(self, original_text_line, corrected_text_line, pipe, tokenizer, logger):
+        logger.info(f"Evaluating the corrected text: '{corrected_text_line}' for the original: '{original_text_line}'")
         system_prompt = (
             f"[INST] Act as an 18th-century text line evaluator. Your task is to analyze the original text line by an "
             f"OCR model and evaluate the corrected text line provided by the LLM. Determine if the LLM's corrected text"

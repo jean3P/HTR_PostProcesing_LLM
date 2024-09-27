@@ -1,3 +1,5 @@
+# ./prompts/gpt/methods/GptTextProcessingM2.py
+
 import re
 import time
 
@@ -288,7 +290,7 @@ class GptTextProcessingM2(TextProcessingStrategy):
 
             # Extract confidence score
             confidence_section = raw_response.split(confidence_marker)[-1].split(justification_marker)[0].strip()
-            confidence = confidence_section.split('\n')[0].strip()
+            confidence = (confidence_section.split('\n')[0].strip())
 
             # Extract justification
             justification_section = raw_response.split(justification_marker)[-1].strip()

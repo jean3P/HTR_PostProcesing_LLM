@@ -1,20 +1,17 @@
 # src/evaluation/evaluate_mistral.py
 
 from evaluations.metrics_evaluation import cer_only, wer_only
-from utils.logger import setup_logger
-
-logger = setup_logger()
 
 
 def evaluate_and_correct_ocr_results_mistral(loaded_data, train_set_lines, text_processing_strategy, pipe,
-                                             mistral_tokenizer, run_id):
+                                             mistral_tokenizer, run_id, logger):
     results = []
     for item in loaded_data:
         ocr_text = item['predicted_label']
         ground_truth_label = item['ground_truth_label']
 
         corrected_text_line, confidence, justification = text_processing_strategy.check_and_correct_text_line(
-                ocr_text, pipe, mistral_tokenizer, train_set_lines
+                ocr_text, pipe, mistral_tokenizer, train_set_lines, logger
             )
 
         if ocr_text == corrected_text_line:
@@ -45,7 +42,9 @@ def evaluate_and_correct_ocr_results_mistral(loaded_data, train_set_lines, text_
     return results
 
 
-def evaluate_and_correct_ocr_results_gpt(loaded_data, train_set_lines, text_processing_strategy, run_id, model_name, openai_token):
+def evaluate_and_correct_ocr_results_gpt(loaded_data, train_set_lines, text_processing_strategy, run_id, model_name,
+                                         openai_token, llm_name_2, logger, max_lines=None):
+
     """
     Generalized function to evaluate and correct OCR results using either the Mistral or GPT model.
 
@@ -60,14 +59,18 @@ def evaluate_and_correct_ocr_results_gpt(loaded_data, train_set_lines, text_proc
     """
     results = []
 
-    for item in loaded_data:
+    for idx, item in enumerate(loaded_data):
+
+        if max_lines is not None and idx >= max_lines:
+            break
+
         ocr_text = item['predicted_label']
         ground_truth_label = item['ground_truth_label']
 
         # For Mistral: Pass (ocr_text, train_set_lines, pipe, mistral_tokenizer)
         # For GPT: Pass (ocr_text, train_set_lines, model_name)
         corrected_text_line, confidence, justification = text_processing_strategy.check_and_correct_text_line(
-            ocr_text, train_set_lines, model_name, openai_token
+            ocr_text, train_set_lines, model_name, openai_token, llm_name_2, logger
         )
 
         # Calculate CER only if the text line was corrected

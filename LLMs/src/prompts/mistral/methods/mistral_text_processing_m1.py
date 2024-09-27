@@ -4,9 +4,6 @@ import re
 from prompts.mistral.text_processing_base import TextProcessingStrategy
 from utils.aux_processing import count_tokens, calculate_pipe, detect_immediate_repeated_words, \
     detect_close_repeated_word_sequences, suggest_corrections_for_ocr_text_m1
-from utils.logger import setup_logger
-
-logger = setup_logger()
 
 
 class MistralTextProcessingM1(TextProcessingStrategy):
@@ -16,23 +13,23 @@ class MistralTextProcessingM1(TextProcessingStrategy):
     def get_name_method(self):
         return "method_1"
 
-    def check_and_correct_text_line(self, text_line, pipe, tokenizer, train_set_line):
+    def check_and_correct_text_line(self, text_line, pipe, tokenizer, train_set_line, logger):
         logger.info(f"Start processing text line: '{text_line}'")
 
         # Suggest corrections based on OCR and training lines
         suggestions = suggest_corrections_for_ocr_text_m1(text_line, train_set_line, self.suggestions_memory)
 
         # Apply suggestions to correct text
-        corrected_text = self.correct_with_suggestions(text_line, suggestions, pipe, tokenizer)
+        corrected_text = self.correct_with_suggestions(text_line, suggestions, pipe, tokenizer, logger)
         logger.info(f"Text after applying corrections for '{text_line}': {corrected_text}")
 
         # Correct duplicated words in the text
-        corrected_text = self.correct_duplicated_words(corrected_text, pipe, tokenizer)
+        corrected_text = self.correct_duplicated_words(corrected_text, pipe, tokenizer, logger)
         logger.info(f"Final text after correcting duplicated words: '{corrected_text}'")
 
         # Evaluate the corrected text
         confidence, justification = self.evaluate_corrected_text(
-            text_line, corrected_text, pipe, tokenizer
+            text_line, corrected_text, pipe, tokenizer, logger
         )
 
         if confidence and justification:
@@ -44,7 +41,7 @@ class MistralTextProcessingM1(TextProcessingStrategy):
         logger.info(f"Finished processing text line: {text_line} ===> {corrected_text}")
         return corrected_text, confidence, justification
 
-    def correct_with_suggestions(self, ocr_text, suggestions, pipe, tokenizer):
+    def correct_with_suggestions(self, ocr_text, suggestions, pipe, tokenizer, logger):
         suggestion_part = "\n".join(
             f"Original word from the text line: {ocr_word}, Suggestions for corrections: {', '.join(set(similar_words))}"
             for ocr_word, similar_words in suggestions if similar_words and set(similar_words) != {ocr_word}
@@ -67,8 +64,8 @@ class MistralTextProcessingM1(TextProcessingStrategy):
             f"\n3. Preserve original word splits or cuts (e.g., 'incomple-' should not be combined into 'incomplete')"
             f"\n4. If the original text line is hyphenated, you have to keep the hyphen "
             f"\n5. Don't delete words that are not duplicated"
-            f"\n6. Words cut off at the end with a hyphen should not be completed"
-            f"\n7. Do not modify the end of the text line by adding new content"
+            f"\n6. Do not modify the end of the text line by adding new content"
+            f"\n7. if there are only numbers in the text line, do not try to correct them"
             f"\n\n## Suggestions of similar words of the training set:"
             f"\n{suggestion_part}"
             f"\nBased on the guidelines and suggestions correct the text line: {ocr_text} [/INST]"
@@ -103,7 +100,7 @@ class MistralTextProcessingM1(TextProcessingStrategy):
 
         return corrected_text
 
-    def correct_duplicated_words(self, text_line, pipe, tokenizer):
+    def correct_duplicated_words(self, text_line, pipe, tokenizer, logger):
         logger.info(f"Checking for duplicated words in: '{text_line}'")
         # First, use the find_immediate_repeated_words function to detect repeated words
         immediate_duplicated_words = detect_immediate_repeated_words(text_line)
