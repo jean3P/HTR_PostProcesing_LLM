@@ -1,3 +1,5 @@
+# ./flor/data/generator.py
+
 """
 Uses generator functions to supply train/test with data.
 Image renderings and text are created on the fly each time.
