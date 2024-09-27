@@ -1,11 +1,11 @@
+# ./prompts/gpt/methods/GptTextProcessingM1.py
+
 import re
 import time
 
 from prompts.gpt.GPTProcessingStrategy import TextProcessingStrategy
 from utils.aux_processing import suggest_corrections_for_ocr_text_m1, count_tokens_gpt, calculate_pipe_openai, \
     detect_immediate_repeated_words, detect_close_repeated_word_sequences, clean_text
-from utils.logger import setup_logger
-logger = setup_logger()
 
 
 class GptTextProcessingM1(TextProcessingStrategy):
@@ -16,23 +16,24 @@ class GptTextProcessingM1(TextProcessingStrategy):
     def get_name_method(self):
         return "method_1"
 
-    def check_and_correct_text_line(self, text_line, train_set_lines, model_name, openai_token):
+    def check_and_correct_text_line(self, text_line, train_set_lines, model_name, openai_token, llm_name_2, logger):
         logger.info(f"Start processing text line: '{text_line}'")
 
         # Suggest corrections based on OCR and training lines
         suggestions = suggest_corrections_for_ocr_text_m1(text_line, train_set_lines, self.suggestions_memory)
 
         # Apply suggestions to correct text
-        corrected_text = self.correct_with_suggestions(text_line, suggestions, model_name, openai_token)
+        corrected_text = self.correct_with_suggestions(text_line, suggestions, model_name, openai_token,
+                                                       llm_name_2, logger)
         logger.info(f"Text after applying corrections for '{text_line}': {corrected_text}")
 
         # Correct duplicated words in the text
-        corrected_text =self.correct_duplicated_words(corrected_text, model_name, openai_token)
+        corrected_text =self.correct_duplicated_words(corrected_text, model_name, openai_token, llm_name_2, logger)
         logger.info(f"Final text after correcting duplicated words: '{corrected_text}'")
 
         # Evaluate the corrected text
         confidence, justification = self.evaluate_corrected_text(
-            text_line, corrected_text, model_name, openai_token
+            text_line, corrected_text, model_name, openai_token, llm_name_2, logger
         )
         if confidence and justification:
             logger.info(
@@ -43,7 +44,7 @@ class GptTextProcessingM1(TextProcessingStrategy):
         logger.info(f"Finished processing text line: {text_line} ===> {corrected_text}")
         return corrected_text, confidence, justification
 
-    def correct_with_suggestions(self, ocr_text, suggestions, model_name, openai_token):
+    def correct_with_suggestions(self, ocr_text, suggestions, model_name, openai_token, llm_name_2, logger):
         suggestion_part = "\n".join(
             f"Original word from the text line: {ocr_word}, Suggestions for corrections: {', '.join(set(similar_words))}"
             for ocr_word, similar_words in suggestions if similar_words and set(similar_words) != {ocr_word}
@@ -63,19 +64,20 @@ class GptTextProcessingM1(TextProcessingStrategy):
             f"\n1. Ensure corrections accurately reflect the 18th-century language and conventions."
             f"\n2. Keep punctuation marks from the original text line and do not add new punctuation that is "
             f"not in the original line."
-            f"\n3. Preserve original word splits or cuts (e.g., 'incomple-' should not be combined into 'incomplete')."
-            f"\n4. If the original text line is hyphenated, retain the hyphen."
-            f"\n5. Do not delete words that are not duplicated."
-            f"\n6. Words cut off at the end with a hyphen should not be completed."
-            f"\n7. Do not modify the end of the text line by adding new content."
+            f"\n3. Preserve original word splits or cuts (e.g., 'incomple-' should not be combined into 'incomplete')"
+            f"at the beginning or at the end of the text line"
+            f"\n4. If the original text line is hyphenated, retain the hyphen"
+            f"\n5. Do not delete words that are not duplicated"
+            f"\n6. Do not modify the end of the text line by adding new content"
+            f"\n7. if there are only numbers in the text line, do not try to correct them"
             f"\n\n## Suggestions of similar words from the training set:"
             f"\n{suggestion_part}"
             f"\n\nBased on the guidelines and suggestions, please correct the following text line:"
-            f"\n'{ocr_text}'"
-            f"\n\nThe corrected text line should be:"
+            f"\n{ocr_text}"
+            f"\n\nThen the corrected text line is:"
         )
 
-        tokens_prompt = count_tokens_gpt(system_prompt) + 25
+        tokens_prompt = count_tokens_gpt(system_prompt, llm_name_2) + 25
         # Retry logic for handling rate limiting (429 Too Many Requests)
         max_retries = 5
         retry_delay = 5  # Start with 5 seconds
@@ -101,16 +103,30 @@ class GptTextProcessingM1(TextProcessingStrategy):
         try:
             # Access response data using the correct attributes
             raw_response = response.choices[0].message.content.strip()
+
         except (AttributeError, KeyError, IndexError):
             logger.error("Unexpected response structure or empty response.")
             return ocr_text  # Return original text if the response is not structured correctly
 
-            # Process and clean the corrected text
-        corrected_text = re.sub(r'\s+', ' ', raw_response).strip()
+        corrected_text = raw_response
+
+        # Remove any leading or trailing text before or after the corrected text
+        corrected_text = corrected_text.strip()
+
+        # In case the model still includes prompt phrases, remove them
+        unwanted_phrases = [
+            "The corrected text line should be:",
+            "Corrected text line:",
+            "Here is the corrected text line:",
+            "Then the corrected text line is:",
+        ]
+        for phrase in unwanted_phrases:
+            corrected_text = corrected_text.replace(phrase, "").strip()
+        corrected_text = re.sub(r'\s+', ' ', corrected_text).strip()
         corrected_text = clean_text(ocr_text, corrected_text)
         return corrected_text
 
-    def correct_duplicated_words(self, text_line, model_name, openai_token):
+    def correct_duplicated_words(self, text_line, model_name, openai_token, llm_name_2, logger):
         logger.info(f"Checking for duplicated words in: '{text_line}'")
         # Detect repeated words
         immediate_duplicated_words = detect_immediate_repeated_words(text_line)
@@ -138,21 +154,21 @@ class GptTextProcessingM1(TextProcessingStrategy):
             f"Your task is to correct duplicated words in the given text line, ensuring the corrected line retains the "
             f"original meaning and style of 18th-century documents."
             f"\n\n## Guidelines:"
-            f"\n1. Identify and correct any duplicated words in the text line."
-            f"\n2. Maintain the original meaning and style of the text."
-            f"\n3. Ensure corrections accurately reflect the 18th-century language and conventions."
-            f"\n4. Just leave one occurrence of the duplicate word, don't delete everything."
-            f"\n5. If it is the same word and one is capitalized and one is lowercase, delete one."
+            f"\n1. Identify and correct any duplicated words in the text line"
+            f"\n2. Maintain the original meaning and style of the text"
+            f"\n3. Ensure corrections accurately reflect the 18th-century language and conventions"
+            f"\n4. Just leave one occurrence of the duplicate word, don't delete everything"
+            f"\n5. If it is the same word and one is capitalized and one is lowercase, delete one"
             f"\n\n## Duplicated words detected in the text line:"
             f"\n{duplicated_words_part}"
             f"\n\n## Repeated word sets detected in the text line:"
             f"\n{repeated_sets_part}"
             f"\nBased on the guidelines, please analyze the following text line and provide the corrected version: {text_line}."
-            f"\n\nThe corrected text line should be:"
+            f"\n\nThen the corrected text line is:"
         )
 
         # Calculate the tokens and prepare for the API call
-        tokens_prompt = count_tokens_gpt(system_prompt) + 25
+        tokens_prompt = count_tokens_gpt(system_prompt, llm_name_2) + 25
         max_retries = 5
         retry_delay = 5  # Start with 5 seconds
         response = None
@@ -176,7 +192,7 @@ class GptTextProcessingM1(TextProcessingStrategy):
             raw_response = response.choices[0].message.content.strip()
 
             # Define the marker to extract the corrected text
-            corrected_text_marker = "Then corrected text line is:"
+            corrected_text_marker = "Then the corrected text line is:"
 
             # Extract the corrected text
             if corrected_text_marker in raw_response:
@@ -198,7 +214,7 @@ class GptTextProcessingM1(TextProcessingStrategy):
             return text_line  # Return original text if the response is not structured correctly
         return corrected_text
 
-    def evaluate_corrected_text(self, original_text_line, corrected_text_line, model_name, openai_token):
+    def evaluate_corrected_text(self, original_text_line, corrected_text_line, model_name, openai_token, llm_name_2, logger):
         logger.info(f"Evaluating the corrected text: '{corrected_text_line}' for the original: '{original_text_line}'")
         # Construct the system prompt for evaluating the corrected text
         system_prompt = (
@@ -213,7 +229,7 @@ class GptTextProcessingM1(TextProcessingStrategy):
         )
 
         # Calculate tokens required for the prompt
-        tokens_prompt = count_tokens_gpt(system_prompt) + 100
+        tokens_prompt = count_tokens_gpt(system_prompt, llm_name_2) + 100
         max_retries = 5
         retry_delay = 5  # Start with 5 seconds
         response = None

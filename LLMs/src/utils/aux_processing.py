@@ -5,11 +5,7 @@ from difflib import get_close_matches, SequenceMatcher
 
 import openai
 from openai import OpenAI
-
-from utils.logger import setup_logger
 import tiktoken
-
-logger = setup_logger()
 
 
 def calculate_pipe(pipe, prompt, nummer_length, top_k):
@@ -63,7 +59,8 @@ def suggest_corrections_for_ocr_text_m1(ocr_text, train_set_lines, suggestions_m
     words = ocr_text.split()
     for idx, word in enumerate(words):
         is_start_of_line = (idx == 0)
-        similar_words = find_top_3_processed_similar_words_m1(word, train_set_lines, suggestions_memory, is_start_of_line)
+        similar_words = find_top_3_processed_similar_words_m1(word, train_set_lines, suggestions_memory,
+                                                              is_start_of_line)
         suggestions.append((word, similar_words))
     return suggestions
 
@@ -111,7 +108,8 @@ def suggest_corrections_for_ocr_text_m2(ocr_text, train_set_lines, suggestions_m
     words = ocr_text.split()
     for idx, word in enumerate(words):
         is_start_of_line = (idx == 0)
-        similar_words = find_top_3_processed_similar_words_m2(word, train_set_lines, suggestions_memory, is_start_of_line)
+        similar_words = find_top_3_processed_similar_words_m2(word, train_set_lines, suggestions_memory,
+                                                              is_start_of_line)
         suggestions.append((word, similar_words))
     return suggestions
 
@@ -258,13 +256,13 @@ def check_missing_or_extra_words(original_text, corrected_text):
     return False
 
 
-def count_tokens_gpt(prompt, model_name="gpt-3.5-turbo"):
+def count_tokens_gpt(prompt, model_name="gpt-3.5-turbo-turbo-turbo"):
     """
     Count the number of tokens in the prompt for GPT models using tiktoken.
 
     Args:
         prompt (str): The text prompt to be tokenized.
-        model_name (str): The name of the GPT model (default is "gpt-3.5-turbo").
+        model_name (str): The name of the GPT model (default is "gpt-3.5-turbo-turbo-turbo").
 
     Returns:
         int: The number of tokens in the prompt.
@@ -284,7 +282,7 @@ def calculate_pipe_openai(model_name, system_prompt, max_tokens, openai_token):
     Call OpenAI's ChatCompletion API to generate a response for the provided prompt.
 
     Args:
-        model_name (str): The OpenAI model name (e.g., 'gpt-3.5-turbo').
+        model_name (str): The OpenAI model name (e.g., 'gpt-3.5-turbo-turbo-turbo').
         system_prompt (str): The prompt to be passed to the model.
         max_tokens (int): The maximum number of tokens to be generated (including prompt tokens).
         openai_token (str): The OpenAI API key.
@@ -323,6 +321,7 @@ def calculate_pipe_openai(model_name, system_prompt, max_tokens, openai_token):
 
 
 import re
+
 
 def clean_text(original_text, corrected_text):
     """

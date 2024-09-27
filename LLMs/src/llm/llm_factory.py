@@ -11,7 +11,7 @@ class LLMFactory:
         """
         if model_name.startswith("mistral"):
             return MistralLLM(model_name)
-        elif model_name.startswith("gpt-3.5-turbo"):
+        elif model_name.startswith("gpt-3.5-turbo") or model_name.startswith("gpt-4"):
             return GptLLM(model_name)
         else:
             raise ValueError(f"Unknown LLM model name: {model_name}")

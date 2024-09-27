@@ -1,3 +1,5 @@
+# ./prompts/gpt/GPTProcessingStrategy.py
+
 class TextProcessingStrategy:
     def get_name_method(self):
         """
