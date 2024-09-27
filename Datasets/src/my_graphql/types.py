@@ -29,6 +29,7 @@ class Statistics(graphene.ObjectType):
     max_cer_llm = graphene.Float()  # Maximum LLM CER
     cer_reduction_percentage = graphene.Float()  # CER reduction percentage
     wer_reduction_percentage = graphene.Float()  # CER reduction percentage
+    average_confidence = graphene.Float()
 
 
 # Add new fields to PartitionData to include LLM and training metadata
