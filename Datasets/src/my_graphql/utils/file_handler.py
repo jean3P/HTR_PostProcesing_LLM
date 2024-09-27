@@ -87,7 +87,17 @@ def load_evaluation_results(name_dataset, name_method, partition, htr_model, llm
     logging.info(f"Loading evaluation file: {eval_file_path}")
     logging.info(f"File contents: {eval_data}")
     run_id = eval_data[0].get("run_id")
-    # Convert evaluation data to FileInfo format
+
+    def parse_confidence(confidence_str):
+        """Helper function to parse the confidence score and handle non-integer values."""
+        try:
+            # Try to convert confidence value to an integer
+            return int(confidence_str)
+        except (ValueError, TypeError):
+            # Return 0 if conversion fails
+            return 0
+
+
     evaluation_data = [
         FileInfo(
             file_name=item['file_name'],
@@ -96,7 +106,7 @@ def load_evaluation_results(name_dataset, name_method, partition, htr_model, llm
             cer_ocr=item['OCR']['cer'],
             predicted_text_llm=item['Prompt correcting']['predicted_label'],
             cer_llm=item['Prompt correcting']['cer'],
-            confidence=item['Prompt correcting']['confidence'],
+            confidence=parse_confidence(item['Prompt correcting'].get('confidence', 0)),
             justification=item['Prompt correcting']['justification'],
             wer_ocr=item['OCR']['wer'],
             wer_llm=item['Prompt correcting']['wer'],
@@ -114,44 +124,48 @@ def calculate_cer_statistics(evaluation_data):
     if not evaluation_data:
         return None  # No data to calculate
 
-    # Collect valid CER values for both OCR and LLM
+    # Collect valid CER and WER values for both OCR and LLM
     cer_ocr_values = [result.cer_ocr for result in evaluation_data if result.cer_ocr is not None]
     cer_llm_values = [result.cer_llm for result in evaluation_data if result.cer_llm is not None]
     wer_ocr_values = [result.wer_ocr for result in evaluation_data if result.wer_ocr is not None]
     wer_llm_values = [result.wer_llm for result in evaluation_data if result.wer_llm is not None]
+    confidence_values = [result.confidence for result in evaluation_data if result.confidence is not None]
 
-    # Ensure there are valid CER values for both OCR and LLM
-    if not cer_ocr_values or not cer_llm_values:
-        return None  # No valid CER values to calculate
+    # Calculate sum of all CER and WER values
+    total_cer_ocr = sum(cer_ocr_values) if cer_ocr_values else 0
+    total_cer_llm = sum(cer_llm_values) if cer_llm_values else 0
+    total_wer_ocr = sum(wer_ocr_values) if wer_ocr_values else 0
+    total_wer_llm = sum(wer_llm_values) if wer_llm_values else 0
+    total_confidence = sum(confidence_values) if confidence_values else 0
 
-    # Sum all CER and WER values
-    total_cer_ocr = sum(cer_ocr_values)
-    total_cer_llm = sum(cer_llm_values)
-    total_wer_ocr = sum(wer_ocr_values)
-    total_wer_llm = sum(wer_llm_values)
-
-    # Calculate overall CER and WER reduction percentages
-    cer_reduction_percentage = ((total_cer_ocr - total_cer_llm) / total_cer_ocr) * 100 if total_cer_ocr > 0 else 0
-    wer_reduction_percentage = ((total_wer_ocr - total_wer_llm) / total_wer_ocr) * 100 if total_wer_ocr > 0 else 0
+    # Calculate CER and WER reduction percentages only if there are valid values
+    cer_reduction_percentage = ((total_cer_ocr - total_cer_llm) / total_cer_ocr * 100) if total_cer_ocr > 0 else None
+    wer_reduction_percentage = ((total_wer_ocr - total_wer_llm) / total_wer_ocr * 100) if total_wer_ocr > 0 else None
 
     # Return the calculated statistics
     return {
-        'average_cer_ocr': round(sum(cer_ocr_values) / len(cer_ocr_values), 3) if cer_ocr_values else None,
+
         'min_cer_ocr': round(min(cer_ocr_values), 3) if cer_ocr_values else None,
         'max_cer_ocr': round(max(cer_ocr_values), 3) if cer_ocr_values else None,
-        'average_cer_llm': round(sum(cer_llm_values) / len(cer_llm_values), 3) if cer_llm_values else None,
         'min_cer_llm': round(min(cer_llm_values), 3) if cer_llm_values else None,
         'max_cer_llm': round(max(cer_llm_values), 3) if cer_llm_values else None,
-        'average_wer_llm': round(sum(wer_llm_values) / len(wer_llm_values), 3) if wer_llm_values else None,
-        'average_wer_ocr': round(sum(wer_ocr_values) / len(wer_ocr_values), 3) if wer_ocr_values else None,
-        'cer_reduction_percentage': round(cer_reduction_percentage, 3),
-        'wer_reduction_percentage': round(wer_reduction_percentage, 3)
+        'average_cer_llm': round(total_cer_llm / len(cer_llm_values), 3) if cer_llm_values else None,
+        'average_wer_llm': round(total_wer_llm / len(wer_llm_values), 3) if wer_llm_values else None,
+        'average_cer_ocr': round(total_cer_ocr / len(cer_ocr_values), 3) if cer_ocr_values else None,
+        'average_wer_ocr': round(total_wer_ocr / len(wer_ocr_values), 3) if wer_ocr_values else None,
+        'average_confidence': round(total_confidence / len(confidence_values), 3) if confidence_values else None,
+        'cer_reduction_percentage': round(cer_reduction_percentage, 3) if cer_reduction_percentage is not None else None,
+        'wer_reduction_percentage': round(wer_reduction_percentage, 3) if wer_reduction_percentage is not None else None
     }
+
 
 
 def retrieve_log_info(log_file, run_id):
     log_entries = []
     capture = False  # Flag to start capturing logs
+
+    if not os.path.exists(log_file):
+        return f"Log file '{log_file}' not found."
 
     # Regex patterns to detect the start and end of log blocks
     run_start_pattern = re.compile(
@@ -181,4 +195,5 @@ def retrieve_log_info(log_file, run_id):
 
     # Join all log entries into a single string to return
     return "\n".join(log_entries)
+
 

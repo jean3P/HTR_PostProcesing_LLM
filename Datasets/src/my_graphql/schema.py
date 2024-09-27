@@ -1,6 +1,8 @@
+import os.path
+
 import graphene
 import time
-from constants import llm_logs_file
+from constants import llm_logs_path, llm_logs_file
 from my_graphql.utils.file_handler import load_partition_data, load_evaluation_results, calculate_cer_statistics, \
     retrieve_log_info
 from my_graphql.types import PartitionData, Statistics
@@ -41,7 +43,14 @@ class Query(graphene.ObjectType):
 
             # Automatically calculate counts for different CER conditions
             run_id = eval_results[0].run_id
-            logs = retrieve_log_info(llm_logs_file, run_id)
+
+            if dict_name == 'noTraining':
+                dict_name = 'empty'
+            log_file = os.path.join(llm_logs_path,
+                                    f'workflow_{name_dataset}_{htr_model}_{llm_name}_{name_method}_{part}_{dict_name}.log')
+            logs = retrieve_log_info(log_file, run_id)
+            # logs = retrieve_log_info(llm_logs_file, run_id)
+
             print(logs)
             cer_llm_greater_count = sum(1 for result in eval_results if result.cer_llm > result.cer_ocr)
             cer_llm_lesser_count = sum(1 for result in eval_results if result.cer_llm < result.cer_ocr)
