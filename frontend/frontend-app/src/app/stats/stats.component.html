@@ -3,19 +3,19 @@
 
 <div class="selection-container">
   <div class="selection-item">
-    <label for="htrModel">HTR Model:</label>
-    <select id="htrModel" (change)="onModelChange($event)">
-      <option value="Flor_model">Flor_model</option>
-      <option value="TrOCR_model">TrOCR_model</option>
-    </select>
-  </div>
-
-  <div class="selection-item">
     <label for="dataset">Dataset:</label>
     <select id="dataset" (change)="onDatasetChange($event)">
       <option value="washington">Washington</option>
       <option value="bentham">Bentham</option>
       <option value="iam">IAM</option>
+    </select>
+  </div>
+
+  <div class="selection-item">
+    <label for="htrModel">HTR Model:</label>
+    <select id="htrModel" (change)="onModelChange($event)">
+      <option value="Flor_model">Flor_model</option>
+      <option value="TrOCR_model">TrOCR_model</option>
     </select>
   </div>
 
@@ -25,7 +25,9 @@
         <mat-label>LLM Model</mat-label>
         <mat-select [value]="selectedLlmNames" (selectionChange)="onLlmChange($event)" multiple>
           <mat-option value="mistral" [disabled]="selectedMethods.length > 1">Mistral</mat-option>
-          <mat-option value="gpt-3.5" [disabled]="selectedMethods.length > 1">GPT-3.5 Turbo</mat-option>
+          <mat-option value="gpt-3.5-turbo" [disabled]="selectedMethods.length > 1">GPT-3.5 Turbo</mat-option>
+<!--          <mat-option value="gpt-4" [disabled]="selectedMethods.length > 1">GPT-4</mat-option>-->
+          <mat-option value="gpt-4o-mini" [disabled]="selectedMethods.length > 1">GPT-4o mini</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -47,6 +49,103 @@
   </div>
 </div>
 
+<div *ngFor="let method of selectedMethods">
+  <!-- Loop through each selected LLM and display a table for each -->
+  <div *ngFor="let llm of selectedLlmNames">
+    <h3>Statistics for {{ method }} and LLM: {{ getDisplayLlmName(llm) }}</h3>
+
+    <table [ngClass]="{'method-1-table': method === 'method_1', 'method-2-table': method === 'method_2'}" class="styled-table">
+      <thead>
+      <tr>
+        <th>Train (%)</th>
+        <th>OCR CER (%)</th>
+        <th>OCR WER (%)</th>
+        <th colspan="5">Washington</th>
+        <th colspan="5">Bentham</th>
+        <th colspan="5">IAM</th>
+        <th colspan="5">No Training Set</th>
+      </tr>
+      <tr>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th>CER</th>
+        <th>WER</th>
+        <th>CER Reduction</th>
+        <th>WER Reduction</th>
+        <th>Confidence</th>
+        <th>CER</th>
+        <th>WER</th>
+        <th>CER Reduction</th>
+        <th>WER Reduction</th>
+        <th>Confidence</th>
+        <th>CER</th>
+        <th>WER</th>
+        <th>CER Reduction</th>
+        <th>WER Reduction</th>
+        <th>Confidence</th>
+        <th>CER</th>
+        <th>WER</th>
+        <th>CER Reduction</th>
+        <th>WER Reduction</th>
+        <th>Confidence</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let statGroup of statistics[method]?.[llm]">
+        <td>{{ statGroup.partition }}</td>
+        <td>{{ statGroup.averageCerOcr || '-' }}</td>
+        <td>{{ statGroup.averageWerOcr || '-' }}</td>
+
+        <!-- Washington -->
+        <td [ngClass]="getClass(statGroup, 'washington', method, llm)"
+            (click)="loadEvaluationData(method,'washington', statGroup.partition, llm)">
+          {{ statGroup.washington?.cer || '-' }}
+        </td>
+        <td>{{ statGroup.washington?.wer || '-' }}</td>
+        <td>{{ statGroup.washington?.reduction || '-' }}</td>
+        <td>{{ statGroup.washington?.werReduction || '-' }}</td>
+        <td>{{ statGroup.washington?.averageConfidence || '-' }}</td>
+
+        <!-- Bentham -->
+        <td [ngClass]="getClass(statGroup, 'bentham', method, llm)"
+            (click)="loadEvaluationData(method,'bentham', statGroup.partition, llm)">
+          {{ statGroup.bentham?.cer || '-' }}
+        </td>
+        <td>{{ statGroup.bentham?.wer || '-' }}</td>
+        <td>{{ statGroup.bentham?.reduction || '-' }}</td>
+        <td>{{ statGroup.bentham?.werReduction || '-' }}</td>
+        <td>{{ statGroup.bentham?.averageConfidence || '-' }}</td>
+
+        <!-- IAM -->
+        <td [ngClass]="getClass(statGroup, 'iam', method, llm)"
+            (click)="loadEvaluationData(method,'iam', statGroup.partition, llm)">
+          {{ statGroup.iam?.cer || '-' }}
+        </td>
+        <td>{{ statGroup.iam?.wer || '-' }}</td>
+        <td>{{ statGroup.iam?.reduction || '-' }}</td>
+        <td>{{ statGroup.iam?.werReduction || '-' }}</td>
+        <td>{{ statGroup.iam?.averageConfidence || '-' }}</td>
+
+        <!-- No Training Set -->
+        <td [ngClass]="getClass(statGroup, 'noTraining', method, llm)"
+            (click)="loadEvaluationData(method,'noTraining', statGroup.partition, llm)">
+          {{ statGroup.noTraining?.cer || '-' }}
+        </td>
+        <td>{{ statGroup.noTraining?.wer || '-' }}</td>
+        <td>{{ statGroup.noTraining?.reduction || '-' }}</td>
+        <td>{{ statGroup.noTraining?.werReduction || '-' }}</td>
+        <td>{{ statGroup.noTraining?.averageConfidence || '-' }}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
+
+<!-- Evaluation Data Table -->
+<h3 *ngIf="selectedEvaluationData.length">Evaluation Details</h3>
 <!-- Filter dropdown and total row count -->
 <div class="filter-container">
   <!-- Filter selection -->
@@ -64,111 +163,47 @@
     Total Rows: {{ filteredEvaluationData.length }}
   </div>
   <!-- Clear table button -->
-  <button class="clear-button" (click)="clearTable()">Clear Table</button>
+  <button class="clear-button" (click)="clearTable()">Clear Details</button>
+  <!-- Download button -->
+  <button class="download-button" (click)="downloadResults()">Download</button>
+  <!-- New Download Table Button -->
+  <button class="download-button" (click)="downloadTable()" [disabled]="!canDownloadTable()">Download Table</button>
+</div>
+<div>
+  <table *ngIf="filteredEvaluationData.length" class="styled-table">
+    <thead>
+    <tr>
+      <th>File Name</th>
+      <th>Ground Truth</th>
+      <th>Predicted Text (OCR)</th>
+      <th>Predicted Text (LLM)</th>
+      <th>CER (LLM)</th>
+      <th>CER (OCR)</th>
+      <th>WER (LLM)</th>
+      <th>WER (OCR)</th>
+      <th>Confidence LLM</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let data of filteredEvaluationData">
+      <td>{{ data.fileName }}</td>
+      <td>{{ data.groundTruth }}</td>
+      <td>{{ data.predictedTextOcr }}</td>
+      <td>{{ data.predictedTextLlm }}</td>
+      <td>{{ data.cerLlm }}</td>
+      <td>{{ data.cerOcr }}</td>
+      <td>{{ data.werLlm }}</td>
+      <td>{{ data.werOcr }}</td>
+      <td>{{ data.confidence }}</td>
+    </tr>
+    </tbody>
+  </table>
+  <!-- Logs -->
+  <h3 *ngIf="filteredLogData">Logs</h3>
+  <pre *ngIf="filteredLogData" class="log-display">
+  {{ filteredLogData }}
+  </pre>
 </div>
 
-
-<div *ngFor="let method of selectedMethods">
-  <!-- Loop through each selected LLM and display a table for each -->
-  <div *ngFor="let llm of selectedLlmNames">
-    <h3>Statistics for {{ method }} and LLM: {{ llm }}</h3>
-
-    <table [ngClass]="{'method-1-table': method === 'method_1', 'method-2-table': method === 'method_2'}" class="styled-table">
-      <thead>
-      <tr>
-        <th>Train (%)</th>
-        <th>OCR CER (%)</th>
-        <th colspan="2">Washington</th>
-        <th colspan="2">Bentham</th>
-        <th colspan="2">Whitefield</th>
-        <th colspan="2">IAM</th>
-        <th colspan="2">No Training Set</th>
-      </tr>
-      <tr>
-        <th></th>
-        <th></th>
-        <th>CER</th>
-        <th>Reduction (%)</th>
-        <th>CER</th>
-        <th>Reduction (%)</th>
-        <th>CER</th>
-        <th>Reduction (%)</th>
-        <th>CER</th>
-        <th>Reduction (%)</th>
-        <th>CER</th>
-        <th>Reduction (%)</th>
-      </tr>
-      </thead>
-      <tbody>
-      <!-- Only show the statistics for the selected method and LLM -->
-      <tr *ngFor="let statGroup of statistics[method]?.[llm]">
-        <td>{{ statGroup.partition }}</td>
-        <td>{{ statGroup.averageCerOcr || '-' }}</td>
-
-        <!-- Washington -->
-        <td [ngClass]="getClass(statGroup, 'washington', method)"
-            (click)="loadEvaluationData(method,'washington', statGroup.partition)">
-          {{ statGroup.washington?.cer || '-' }}
-        </td>
-        <td>{{ statGroup.washington?.reduction || '-' }}</td>
-
-        <!-- Bentham -->
-        <td [ngClass]="getClass(statGroup, 'bentham', method)"
-            (click)="loadEvaluationData(method,'bentham', statGroup.partition)">
-          {{ statGroup.bentham?.cer || '-' }}
-        </td>
-        <td>{{ statGroup.bentham?.reduction || '-' }}</td>
-
-        <!-- Whitefield -->
-        <td [ngClass]="getClass(statGroup, 'whitefield', method)"
-            (click)="loadEvaluationData(method,'whitefield', statGroup.partition)">
-          {{ statGroup.whitefield?.cer || '-' }}
-        </td>
-        <td>{{ statGroup.whitefield?.reduction || '-' }}</td>
-
-        <!-- IAM -->
-        <td [ngClass]="getClass(statGroup, 'iam', method)"
-            (click)="loadEvaluationData(method,'iam', statGroup.partition)">
-          {{ statGroup.iam?.cer || '-' }}
-        </td>
-        <td>{{ statGroup.iam?.reduction || '-' }}</td>
-
-        <!-- No Training Set -->
-        <td [ngClass]="getClass(statGroup, 'noTraining', method)"
-            (click)="loadEvaluationData(method,'noTraining', statGroup.partition)">
-          {{ statGroup.noTraining?.cer || '-' }}
-        </td>
-        <td>{{ statGroup.noTraining?.reduction || '-' }}</td>
-      </tr>
-      </tbody>
-    </table>
-  </div>
-</div>
-
-
-<!-- Evaluation Data Table -->
-<h3 *ngIf="selectedEvaluationData.length">Evaluation Details</h3>
-<table *ngIf="filteredEvaluationData.length" class="styled-table">
-  <thead>
-  <tr>
-    <th>File Name</th>
-    <th>Ground Truth</th>
-    <th>Predicted Text (OCR)</th>
-    <th>Predicted Text (LLM)</th>
-    <th>CER (LLM)</th>
-    <th>CER (OCR)</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let data of filteredEvaluationData">
-    <td>{{ data.fileName }}</td>
-    <td>{{ data.groundTruth }}</td>
-    <td>{{ data.predictedTextOcr }}</td>
-    <td>{{ data.predictedTextLlm }}</td>
-    <td>{{ data.cerLlm }}</td>
-    <td>{{ data.cerOcr }}</td>
-  </tr>
-  </tbody>
-</table>
 
 

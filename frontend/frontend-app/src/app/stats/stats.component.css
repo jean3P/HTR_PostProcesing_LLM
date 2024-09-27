@@ -268,3 +268,41 @@ h3 {
   border: 2px solid #FF5733;  /* Orange border for Method 2 */
 }
 
+.log-display {
+  background-color: #2b2b2b; /* Dark grey background typical of MacOS terminal */
+  color: #e8e8e8;  /* Off-white text */
+  padding: 15px;
+  border: 1px solid #444;  /* Subtle dark border */
+  white-space: pre-wrap;  /* Preserve line breaks and white space */
+  font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;  /* MacOS terminal-like fonts */
+  overflow-x: auto;  /* Allow horizontal scrolling if necessary */
+  border-radius: 8px;  /* Slightly larger border radius for smooth edges */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);  /* Subtle shadow for depth */
+  margin-top: 20px; /* Space above the log section */
+}
+
+.download-button {
+  background-color: #66ccff; /* Softer blue background */
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+}
+
+.download-button:hover {
+  background-color: #3399ff;
+}
+
+.download-button:active {
+  background-color: #267dcc;
+}
+
+.download-button:focus {
+  outline: none;
+  box-shadow: 0px 0px 4px rgba(102, 204, 255, 0.8);
+}
