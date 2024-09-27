@@ -1,0 +1,172 @@
+[
+    {
+        "run_id": "8010edc0-7dce-4ef0-927e-7700ea32feac",
+        "file_name": "096_028_001_01_01.png",
+        "ground_truth_label": "brain.",
+        "OCR": {
+            "predicted_label": "brain .",
+            "cer": 14.286,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "brain.",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "90",
+            "justification": "The original text line 'brain .' contains an unnecessary space before the period, which is a common OCR error. The corrected text line 'brain.' accurately removes this space, resulting in a grammatically correct sentence. However, the confidence score is not a perfect 100 because the original text is extremely minimal, and while the correction is clear, there is a slight ambiguity regarding the context in which 'brain' is used. Nonetheless, the correction itself is valid and improves the text's presentation."
+        }
+    },
+    {
+        "run_id": "8010edc0-7dce-4ef0-927e-7700ea32feac",
+        "file_name": "096_028_001_01_02.png",
+        "ground_truth_label": "From this review then it appears, that",
+        "OCR": {
+            "predicted_label": "From this reien then it apeat that",
+            "cer": 15.789,
+            "wer": 28
+        },
+        "Prompt correcting": {
+            "predicted_label": "From this reign then it apeat that",
+            "cer": 18.421,
+            "wer": 28.571,
+            "confidence": "80",
+            "justification": "The original text line contains the word \"reien,\" which appears to be a misinterpretation of the word \"reign.\" The corrected text line replaces \"reien\" with \"reign,\" which is a plausible correction given the context of 18th-century texts, where discussions of monarchy and governance were prevalent. However, the word \"apeat\" remains unchanged in both lines, which seems to be a typographical error or misreading of \"appears.\" While the correction of \"reien\" to \"reign\" is accurate, the failure to address \"apeat\" reduces the overall confidence in the correction. Therefore, I assign a confidence score of 80, indicating a strong but not complete accuracy in the correction."
+        }
+    },
+    {
+        "run_id": "8010edc0-7dce-4ef0-927e-7700ea32feac",
+        "file_name": "096_028_001_01_03.png",
+        "ground_truth_label": "in paving the way to the consideration of",
+        "OCR": {
+            "predicted_label": "in paving the vag to the cenpcle raging",
+            "cer": 29.268,
+            "wer": 37
+        },
+        "Prompt correcting": {
+            "predicted_label": "in paving the way to the temple raging",
+            "cer": 29.268,
+            "wer": 25.0,
+            "confidence": "85",
+            "justification": "The corrected text line \"in paving the way to the temple raging\" appears to accurately address the OCR errors present in the original text line. The term \"vag\" is likely a misinterpretation of \"way,\" which fits contextually as a common phrase. The word \"cenpcle\" seems to be a misreading of \"temple,\" which is a plausible correction given the context of paving a path. The word \"raging\" remains unchanged, which may suggest a specific meaning or tone intended by the original text. However, the phrase \"temple raging\" is somewhat unusual and could imply a specific context or metaphor that is not entirely clear. Overall, the corrections made by the LLM are logical and contextually appropriate, leading to a high confidence score, though the unusual phrasing slightly lowers the certainty."
+        }
+    },
+    {
+        "run_id": "8010edc0-7dce-4ef0-927e-7700ea32feac",
+        "file_name": "096_028_001_01_04.png",
+        "ground_truth_label": "municipal Law, our Author has spent",
+        "OCR": {
+            "predicted_label": "onunirpal Law , our Aa thor bas paut",
+            "cer": 30.556,
+            "wer": 87
+        },
+        "Prompt correcting": {
+            "predicted_label": "onunirpal Law, our Author has paut",
+            "cer": 20.0,
+            "wer": 33.333,
+            "confidence": "60",
+            "justification": "The corrected text line 'onunirpal Law, our Author has paut' retains some of the original OCR errors, particularly in the word 'onunirpal,' which likely should be 'universal.' The term 'paut' is also questionable, as it does not correspond to a recognizable English word from the 18th century; it may be a misinterpretation of 'pursued' or another similar term. The correction of 'Aa thor' to 'Author' is accurate, but the overall coherence of the corrected line is still compromised due to the other errors. Therefore, while there is some improvement, the presence of significant inaccuracies leads to a moderate confidence score."
+        }
+    },
+    {
+        "run_id": "8010edc0-7dce-4ef0-927e-7700ea32feac",
+        "file_name": "096_028_001_01_05.png",
+        "ground_truth_label": "supposed",
+        "OCR": {
+            "predicted_label": "supore",
+            "cer": 37.5,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "suppore",
+            "cer": 25.0,
+            "wer": 100.0,
+            "confidence": "80",
+            "justification": "The original text line 'supore' appears to be a typographical error or misreading of the intended word 'suppore.' The corrected text line 'suppore' closely resembles a valid form of the word, likely intended to mean 'suppose' or a similar term in the context of 18th-century English. However, the original text could also be a misinterpretation of a different word entirely, which introduces some uncertainty. The correction is plausible, but without additional context, it is difficult to ascertain with complete certainty that 'suppore' is the intended correction. Thus, I assign a confidence score of 80, indicating a strong likelihood of accuracy but acknowledging the potential for alternative interpretations."
+        }
+    },
+    {
+        "run_id": "8010edc0-7dce-4ef0-927e-7700ea32feac",
+        "file_name": "096_028_001_01_06.png",
+        "ground_truth_label": "much time in explaining the nature &",
+        "OCR": {
+            "predicted_label": "dnuch time in explaining the pature o",
+            "cer": 10.811,
+            "wer": 42
+        },
+        "Prompt correcting": {
+            "predicted_label": "much time in explaining the nature o",
+            "cer": 2.778,
+            "wer": 14.286,
+            "confidence": "90",
+            "justification": "The corrected text line \"much time in explaining the nature o\" accurately addresses the OCR errors present in the original text line \"dnuch time in explaining the pature o.\" The first word \"dnuch\" appears to be a misreading of \"much,\" which is a common OCR error due to the similarity in character shapes. The second word \"pature\" is corrected to \"nature,\" which is a logical and contextually appropriate correction, as \"nature\" fits well in the context of explaining something. The only remaining issue is the incomplete word \"o,\" which likely should be \"of,\" but this is a minor detail. Overall, the corrections made by the LLM are highly plausible and contextually sound, leading to a high confidence score."
+        }
+    },
+    {
+        "run_id": "8010edc0-7dce-4ef0-927e-7700ea32feac",
+        "file_name": "096_028_001_01_07.png",
+        "ground_truth_label": "Properties of Laws which do not exist &",
+        "OCR": {
+            "predicted_label": "wrerties ot Laws which do notedish e",
+            "cer": 20.513,
+            "wer": 62
+        },
+        "Prompt correcting": {
+            "predicted_label": "wrerties of Laws which do not edish e",
+            "cer": 15.385,
+            "wer": 37.5,
+            "confidence": "40",
+            "justification": "The corrected text line 'wrerties of Laws which do not edish e' retains some of the original OCR errors, particularly in the words \"wrerties\" and \"edish.\" The word \"wrerties\" appears to be a misinterpretation of \"properties,\" which is a common term in legal texts of the 18th century. The word \"edish\" does not seem to correspond to any recognizable term in this context, and it is likely a misreading of \"establish\" or \"diminish,\" both of which could fit within a legal framework. The phrase \"do not\" is correctly transcribed, but the overall coherence of the line is still compromised due to the remaining errors. Therefore, while the LLM made some corrections, the accuracy of the corrected text is still significantly lacking."
+        }
+    },
+    {
+        "run_id": "8010edc0-7dce-4ef0-927e-7700ea32feac",
+        "file_name": "096_028_001_01_08.png",
+        "ground_truth_label": "in misapplying those which do: & therefore,",
+        "OCR": {
+            "predicted_label": "in nisaplying tho se whch de : & herefore .",
+            "cer": 20.93,
+            "wer": 80
+        },
+        "Prompt correcting": {
+            "predicted_label": "in misapplying tho se which de : & herefore .",
+            "cer": 13.333,
+            "wer": 60.0,
+            "confidence": "85",
+            "justification": "The corrected text line \"in misapplying tho se which de : & herefore .\" appears to address the OCR errors present in the original text line. The term \"nisaplying\" is likely a misrecognition of \"misapplying,\" which is a plausible correction given the context of the sentence. The phrase \"tho se\" is correctly retained, as it seems to be an archaic form of \"those.\" However, the word \"de\" remains ambiguous; it could be a misrecognition of \"deed\" or another word that fits the context better. The phrase \"herefore\" is also retained, which is consistent with 18th-century language. Overall, while the correction improves the clarity and accuracy of the text, the ambiguity of \"de\" prevents a perfect score. Thus, I assign a confidence score of 85, indicating a high level of accuracy with some uncertainty."
+        }
+    },
+    {
+        "run_id": "8010edc0-7dce-4ef0-927e-7700ea32feac",
+        "file_name": "096_028_001_01_09.png",
+        "ground_truth_label": "that the best thing which a Student of the",
+        "OCR": {
+            "predicted_label": "pal he best thing which a Audent of thc",
+            "cer": 16.667,
+            "wer": 44
+        },
+        "Prompt correcting": {
+            "predicted_label": "pal he best thing which a Student of the",
+            "cer": 9.524,
+            "wer": 22.222,
+            "confidence": "85",
+            "justification": "The corrected text line 'pal he best thing which a Student of the' appears to address several OCR errors present in the original text line. The term 'Audent' is likely a misreading of 'Student', which is a reasonable correction given the context. The word 'thc' is corrected to 'the', which is a common OCR error where 'h' and 'c' may be misinterpreted. However, the beginning 'pal' remains unclear; it could be a misreading of 'pal' or part of a larger word that was not captured correctly. While the majority of the correction seems accurate, the uncertainty surrounding 'pal' leads to a slightly lower confidence score. Overall, the corrected line is coherent and aligns with typical 18th-century language, justifying a high confidence level."
+        }
+    },
+    {
+        "run_id": "8010edc0-7dce-4ef0-927e-7700ea32feac",
+        "file_name": "096_028_001_01_10.png",
+        "ground_truth_label": "Law can do is to forget all that our Author",
+        "OCR": {
+            "predicted_label": "Law cando is to foryet al pal ourlalbor",
+            "cer": 25.581,
+            "wer": 70
+        },
+        "Prompt correcting": {
+            "predicted_label": "Law cando is to foryet al pal our labor",
+            "cer": 23.256,
+            "wer": 60.0,
+            "confidence": "90",
+            "justification": "The corrected text line 'Law cando is to foryet al pal our labor' closely resembles the original text line 'Law cando is to foryet al pal ourlalbor', with the primary correction being the separation of the word 'ourlalbor' into 'our labor'. This correction aligns with the expected structure of English words, as 'labor' is a valid term. The other words in the line appear to be unchanged, which suggests that the OCR model may have misrecognized or concatenated letters in 'ourlalbor'. However, the words 'Law', 'cando', 'is', 'to', 'foryet', 'al', and 'pal' remain unchanged, which could indicate that they are either correctly recognized or also contain errors that were not addressed. Given the context and the nature of OCR errors, I am confident that the primary correction is accurate, but there may still be potential issues with the other words. Thus, I assign a high confidence score of 90."
+        }
+    }
+]

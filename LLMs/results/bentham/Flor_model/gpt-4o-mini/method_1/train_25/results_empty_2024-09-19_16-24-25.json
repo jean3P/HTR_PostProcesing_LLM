@@ -1,0 +1,172 @@
+[
+    {
+        "run_id": "9b27368e-4f75-4472-aad2-d594f74fb8d3",
+        "file_name": "096_028_001_01_01.png",
+        "ground_truth_label": "brain.",
+        "OCR": {
+            "predicted_label": "brain .",
+            "cer": 14.286,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "brain.",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "90",
+            "justification": "The original text line 'brain .' contains an unnecessary space before the period, which is a common OCR error. The corrected text line 'brain.' accurately removes this space, resulting in a grammatically correct sentence. However, the original text is very short and lacks context, which slightly lowers the confidence score. Overall, the correction is appropriate and aligns with standard punctuation rules, hence the high confidence score."
+        }
+    },
+    {
+        "run_id": "9b27368e-4f75-4472-aad2-d594f74fb8d3",
+        "file_name": "096_028_001_01_02.png",
+        "ground_truth_label": "From this review then it appears, that",
+        "OCR": {
+            "predicted_label": "Fro m this revren then it xpe act that",
+            "cer": 23.684,
+            "wer": 55
+        },
+        "Prompt correcting": {
+            "predicted_label": "From this reverend then it expect that",
+            "cer": 26.316,
+            "wer": 28.571,
+            "confidence": "85",
+            "justification": "The corrected text line \"From this reverend then it expect that\" accurately addresses several OCR errors present in the original text line. The word \"Fro m\" is corrected to \"From,\" which is a straightforward fix of a spacing error. The term \"revren\" is corrected to \"reverend,\" which is a plausible interpretation given the context of 18th-century texts, where \"reverend\" would be a common term of address. However, the word \"xpe\" is corrected to \"expect,\" which is a reasonable assumption, but the original text could also have been \"express\" or another similar word, leading to some uncertainty. Overall, the corrections made by the LLM are logical and align with the language of the period, but the ambiguity in the last word reduces the confidence slightly."
+        }
+    },
+    {
+        "run_id": "9b27368e-4f75-4472-aad2-d594f74fb8d3",
+        "file_name": "096_028_001_01_03.png",
+        "ground_truth_label": "in paving the way to the consideration of",
+        "OCR": {
+            "predicted_label": "\" in paoing the vag to the cenpde ralen os",
+            "cer": 30.952,
+            "wer": 60
+        },
+        "Prompt correcting": {
+            "predicted_label": "\" in paying the vag to the candle ralen os",
+            "cer": 33.333,
+            "wer": 60.0,
+            "confidence": "60",
+            "justification": "The corrected text line attempts to address the OCR errors present in the original text line. The phrase \"in paoing the vag\" is corrected to \"in paying the vag,\" which seems plausible, as \"paying\" is a common word that fits the context. However, \"vag\" remains unchanged, and its meaning is unclear; it could be a misinterpretation of a word that should be \"bag\" or something else entirely."
+        }
+    },
+    {
+        "run_id": "9b27368e-4f75-4472-aad2-d594f74fb8d3",
+        "file_name": "096_028_001_01_04.png",
+        "ground_truth_label": "municipal Law, our Author has spent",
+        "OCR": {
+            "predicted_label": "onuninpalaw , onr lator bas pout",
+            "cer": 42.857,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "on unimpalaw, onr lator bas pout",
+            "cer": 42.857,
+            "wer": 100.0,
+            "confidence": "70",
+            "justification": "The corrected text line 'on unimpalaw, onr lator bas pout' retains the majority of the original text's structure while making a minor adjustment by adding a space between 'on' and 'unimpalaw'. However, the term 'unimpalaw' appears to be a misspelling or a misinterpretation of a word that may have been intended to be 'unimpeded' or 'unimpaired', which are more common in 18th-century texts. The phrase 'onr lator bas pout' does not seem to correspond to any recognizable 18th-century English, and 'onr' likely should be 'our' or 'one', while 'lator' could be a misspelling of 'later'. The overall coherence of the corrected line is questionable, leading to a moderate confidence score. The OCR model's output seems to have retained some of the original errors, and while the LLM made a small correction, it did not fully rectify the underlying issues."
+        }
+    },
+    {
+        "run_id": "9b27368e-4f75-4472-aad2-d594f74fb8d3",
+        "file_name": "096_028_001_01_05.png",
+        "ground_truth_label": "supposed",
+        "OCR": {
+            "predicted_label": "sapold",
+            "cer": 50.0,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "sapwood",
+            "cer": 50.0,
+            "wer": 100.0,
+            "confidence": "90",
+            "justification": "The original text line 'sapold' appears to be a misreading of the word 'sapwood,' which is a term commonly used in the context of trees and timber. The OCR model likely misinterpreted the letters due to the font or quality of the text. The corrected text line 'sapwood' is a plausible and contextually appropriate correction. However, without additional context or surrounding text to confirm the intended meaning, there remains a slight uncertainty. Thus, I assign a high confidence score of 90, indicating strong belief in the accuracy of the correction while acknowledging a minor possibility of alternative interpretations."
+        }
+    },
+    {
+        "run_id": "9b27368e-4f75-4472-aad2-d594f74fb8d3",
+        "file_name": "096_028_001_01_06.png",
+        "ground_truth_label": "much time in explaining the nature &",
+        "OCR": {
+            "predicted_label": "nuch time in ex plaining the pawre p .",
+            "cer": 21.053,
+            "wer": 66
+        },
+        "Prompt correcting": {
+            "predicted_label": "much time in ex plaining the paure p .",
+            "cer": 15.789,
+            "wer": 55.556,
+            "confidence": "70",
+            "justification": "The corrected text line 'much time in ex plaining the paure p .' appears to address some of the OCR errors present in the original text line. The word 'nuch' has been corrected to 'much', which is a reasonable assumption given the context of the phrase. However, the term 'pawre' has been altered to 'paure', which does not seem to be a standard word in 18th-century English. The original 'pawre' could potentially be a misspelling of 'poor', which would make more sense in context. The presence of 'p .' at the end suggests an abbreviation, but without further context, it is unclear what it stands for. Therefore, while the correction improves the readability of the text, the change from 'pawre' to 'paure' raises some uncertainty about the accuracy of the correction. Thus, I assign a confidence score of 70, indicating a moderate level of certainty in the correction's accuracy."
+        }
+    },
+    {
+        "run_id": "9b27368e-4f75-4472-aad2-d594f74fb8d3",
+        "file_name": "096_028_001_01_07.png",
+        "ground_truth_label": "Properties of Laws which do not exist &",
+        "OCR": {
+            "predicted_label": "Ew rerhies ot Laws which do not exish Cs",
+            "cer": 22.5,
+            "wer": 55
+        },
+        "Prompt correcting": {
+            "predicted_label": "Ew rerhies of Laws which do not exist Cs",
+            "cer": 17.5,
+            "wer": 33.333,
+            "confidence": "90",
+            "justification": "The corrected text line 'Ew rerhies of Laws which do not exist Cs' accurately addresses the primary OCR error in the original text line. The word \"ot\" has been corrected to \"of,\" which is a logical and grammatically appropriate correction in the context of the sentence. Additionally, \"exish\" has been corrected to \"exist,\" which is also a valid correction. However, the presence of \"Ew\" and \"rerhies\" remains unchanged, and these words appear to be OCR errors as well. While the corrections made are significant and improve the clarity of the text, the remaining uncorrected words suggest that there may still be issues with the OCR output. Therefore, I assign a high confidence score of 90, acknowledging the successful corrections while recognizing that further refinement could be necessary."
+        }
+    },
+    {
+        "run_id": "9b27368e-4f75-4472-aad2-d594f74fb8d3",
+        "file_name": "096_028_001_01_08.png",
+        "ground_truth_label": "in misapplying those which do: & therefore,",
+        "OCR": {
+            "predicted_label": "in mnisaplging tho se which de . & therefore ",
+            "cer": 17.778,
+            "wer": 66
+        },
+        "Prompt correcting": {
+            "predicted_label": "in misapplying tho se which de . & therefore",
+            "cer": 11.364,
+            "wer": 55.556,
+            "confidence": "85",
+            "justification": "The corrected text line \"in misapplying tho se which de . & therefore\" appears to address the OCR errors present in the original text line. The term \"mnisaplging\" is likely a misinterpretation of \"misapplying,\" which is a plausible word in the context. The separation of \"tho\" and \"se\" in the original text seems to be an OCR error, and the corrected version maintains this separation, which may be intentional or a result of the OCR's limitations. The phrase \"which de\" is ambiguous, but it could be part of a larger phrase that was not fully captured. The overall structure and meaning of the corrected line are coherent, suggesting that the LLM has made a reasonable attempt to correct the text. However, the presence of \"de\" without further context leaves some uncertainty, hence the confidence score is not at the maximum."
+        }
+    },
+    {
+        "run_id": "9b27368e-4f75-4472-aad2-d594f74fb8d3",
+        "file_name": "096_028_001_01_09.png",
+        "ground_truth_label": "that the best thing which a Student of the",
+        "OCR": {
+            "predicted_label": "pal pe best thing which a SAdeul of the",
+            "cer": 21.429,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "palpe best thing which a schedule of the",
+            "cer": 30.952,
+            "wer": 33.333,
+            "confidence": "85",
+            "justification": "The corrected text line \"palpe best thing which a schedule of the\" appears to address several OCR errors present in the original text line. The term \"SAdeul\" is likely a misinterpretation of \"schedule,\" which is a plausible correction given the context. The word \"palpe\" seems to be a misreading of \"palpe,\" which could be a proper noun or a term relevant to the text, though it is less clear without additional context. The phrase \"best thing which a\" remains unchanged, suggesting that the OCR model accurately captured that portion. Overall, the correction makes sense in the context of 18th-century language, but the uncertainty surrounding \"palpe\" leads to a slightly lower confidence score."
+        }
+    },
+    {
+        "run_id": "9b27368e-4f75-4472-aad2-d594f74fb8d3",
+        "file_name": "096_028_001_01_10.png",
+        "ground_truth_label": "Law can do is to forget all that our Author",
+        "OCR": {
+            "predicted_label": "aw cardo is to forget al thal ouerlather",
+            "cer": 23.256,
+            "wer": 70
+        },
+        "Prompt correcting": {
+            "predicted_label": "aw cardo is to forget al thal ouerlather",
+            "cer": 23.256,
+            "wer": 70,
+            "confidence": "10",
+            "justification": "The corrected text line provided by the LLM is identical to the original text line from the OCR model, indicating that no corrections were made. The original text contains several apparent errors, such as \"aw cardo\" which may be a misinterpretation of \"a card\" or \"a cargo,\" and \"ouerlather,\" which could be a misspelling of \"overlather\" or another term. Given that the LLM did not attempt to rectify any of these potential errors, the confidence in the accuracy of the corrected text line is very low. The lack of any changes suggests that the LLM either did not recognize the errors or deemed them correct, which is unlikely in the context of 18th-century language. Therefore, the confidence score reflects the minimal effort to correct the text."
+        }
+    }
+]

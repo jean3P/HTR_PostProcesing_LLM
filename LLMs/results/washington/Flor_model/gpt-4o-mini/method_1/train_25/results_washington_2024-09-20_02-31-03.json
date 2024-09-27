@@ -1,0 +1,1107 @@
+[
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-01.png",
+        "ground_truth_label": "308. Letters Orders and Instructions December 1755.",
+        "OCR": {
+            "predicted_label": "27oh. Leters Orders and Instructons ecenbar 175.",
+            "cer": 19.608,
+            "wer": 71
+        },
+        "Prompt correcting": {
+            "predicted_label": "27oh. Letters Orders and Instructions ecenbar 175.",
+            "cer": 15.686,
+            "wer": 42.857,
+            "confidence": "80",
+            "justification": "The corrected text line improves upon the original by correcting \"Leters\" to \"Letters\" and \"Instructons\" to \"Instructions,\" which are clear typographical errors. However, the term \"ecenbar\" remains unchanged, and it is unclear whether it is a misspelling or a term that should be preserved. The presence of \"27oh\" is also questionable, as it may be a misinterpretation of a numeral or abbreviation. Overall, while the corrections made by the LLM are accurate and enhance the readability of the text, the uncertainty surrounding \"ecenbar\" and \"27oh\" affects the overall confidence in the accuracy of the corrected line."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-03.png",
+        "ground_truth_label": "remain here until the arrival of the vessel with",
+        "OCR": {
+            "predicted_label": "remainhere until the arival of the vesel with",
+            "cer": 6.25,
+            "wer": 44
+        },
+        "Prompt correcting": {
+            "predicted_label": "remainhere until the arrival of the vessel with",
+            "cer": 2.083,
+            "wer": 22.222,
+            "confidence": "90",
+            "justification": "The corrected text line 'remainhere until the arrival of the vessel with' accurately addresses the OCR errors present in the original text line. The word 'arival' has been corrected to 'arrival,' which is the proper spelling. Additionally, 'vesel' has been corrected to 'vessel,' which is also the correct term. However, there is a minor issue with spacing; 'remainhere' should be separated into 'remain here' for grammatical accuracy. Despite this small oversight, the primary errors have been rectified, leading to a high confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-04.png",
+        "ground_truth_label": "the Stores, Vc. and to be under the same directions",
+        "OCR": {
+            "predicted_label": "the Sores, Vc. and to be under the same diretins",
+            "cer": 5.882,
+            "wer": 20
+        },
+        "Prompt correcting": {
+            "predicted_label": "the Sores, Vc. and to be under the same directions",
+            "cer": 1.961,
+            "wer": 10.0,
+            "confidence": "95",
+            "justification": "The corrected text line replaces \"diretins\" with \"directions,\" which is a clear and logical correction of a typographical error. The context of the sentence suggests that \"directions\" is the intended word, as it fits the formal tone and subject matter typical of 18th-century texts. The abbreviation \"Vc.\" is also consistent with the style of the period, likely referring to \"vice\" or \"etc.\" The only minor uncertainty lies in the possibility of alternative spellings or usages in the original text, but \"directions\" is overwhelmingly the most appropriate correction. Thus, I am highly confident in the accuracy of the corrected text line."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-05.png",
+        "ground_truth_label": "as before ordered. So soon as the Stores arrive, you",
+        "OCR": {
+            "predicted_label": "as before ordered. To son as the Sres arive, you",
+            "cer": 9.615,
+            "wer": 40
+        },
+        "Prompt correcting": {
+            "predicted_label": "as before ordered. To soon as the Sres arrive, you",
+            "cer": 5.769,
+            "wer": 20.0,
+            "confidence": "70",
+            "justification": "The corrected text line \"as before ordered. To soon as the Sres arrive, you\" addresses some of the OCR errors present in the original text. The phrase \"To son\" is likely a misinterpretation of \"To soon,\" which makes sense in the context of the sentence. However, the term \"Sres\" is unclear; it could be a misreading of \"sirs\" or another term that fits the context better. The overall structure of the sentence remains somewhat ambiguous, and while the correction improves readability, it does not fully clarify the intended meaning. Therefore, while the correction is a step in the right direction, the uncertainty surrounding \"Sres\" and the overall context leads to a confidence score of 70."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-06.png",
+        "ground_truth_label": "are, with all possible dispath, to procure a suf-",
+        "OCR": {
+            "predicted_label": "are, with al posible dispatch, to procure a suf-",
+            "cer": 6.122,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "are, with all possible dispatch, to procure a suf-",
+            "cer": 2.0,
+            "wer": 11.111,
+            "confidence": "95",
+            "justification": "The corrected text line replaces \"al\" with \"all,\" which is a common and appropriate correction in 18th-century English, as \"all\" is the correct form in this context. The phrase \"with all possible dispatch\" is a standard expression meaning to do something as quickly as possible. The rest of the text remains unchanged, and the hyphen at the end suggests that the word \"sufficient\" is likely to follow, which aligns with the context of the original line. The only minor uncertainty lies in the potential for other OCR errors that may not be visible in this excerpt, but overall, the correction is accurate and maintains the intended meaning."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-07.png",
+        "ground_truth_label": "ficient number of waggons to carry them to Win-",
+        "OCR": {
+            "predicted_label": "hcient number of Oagons to cary them to a",
+            "cer": 19.149,
+            "wer": 44
+        },
+        "Prompt correcting": {
+            "predicted_label": "hcient number of Oagons to carry them to a",
+            "cer": 17.021,
+            "wer": 33.333,
+            "confidence": "90",
+            "justification": "The corrected text line replaces \"cary\" with \"carry,\" which is a clear and appropriate correction of a spelling error. However, the word \"hcient\" remains unchanged, which appears to be a misreading of \"ancient\" or another similar word. The term \"Oagons\" also seems to be a misinterpretation of \"wagons.\" While the correction of \"cary\" to \"carry\" is accurate, the other two words still contain errors that were not addressed. Therefore, while the correction improves the text, it does not fully resolve all OCR errors, leading to a high confidence score but not a perfect one."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-08.png",
+        "ground_truth_label": "chester; whither they are to be sent, under the",
+        "OCR": {
+            "predicted_label": "tchester; whither they are to be sent, under the",
+            "cer": 2.083,
+            "wer": 11
+        },
+        "Prompt correcting": {
+            "predicted_label": "tchester; whether they are to be sent, under the",
+            "cer": 4.167,
+            "wer": 22.222,
+            "confidence": "90",
+            "justification": "The original text line contains the word \"whither,\" which is an archaic term meaning \"to what place\" or \"to which place.\" The corrected text line replaces \"whither\" with \"whether,\" which means \"if\" or \"regardless of.\" This change alters the meaning of the sentence significantly. In the context of 18th-century English, \"whither\" would be the appropriate term to indicate a destination, while \"whether\" would imply a choice or condition. Therefore, while the correction is a common OCR error, it does not accurately fix the original text's meaning. The high confidence score reflects the clarity of the error, but the significant change in meaning prevents a perfect score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-09.png",
+        "ground_truth_label": "escort of the Soldiers now here: except the Suits",
+        "OCR": {
+            "predicted_label": "escort of the Soldiers nowhere: ecept the Suits",
+            "cer": 4.082,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "escort of the Soldiers nowhere: except the Suits",
+            "cer": 2.041,
+            "wer": 22.222,
+            "confidence": "95",
+            "justification": "The corrected text line \"escort of the Soldiers nowhere: except the Suits\" accurately addresses the OCR error in the original text line, specifically the misspelling of \"except\" as \"ecept.\" The context of the sentence suggests that \"except\" is the appropriate word, as it indicates an exclusion, which aligns with the intended meaning. The rest of the text remains unchanged and is grammatically correct. The only minor uncertainty arises from the potential for other contextual meanings or archaic usages, but given the clarity and common usage of \"except\" in this context, I am highly confident in the accuracy of the correction."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-10.png",
+        "ground_truth_label": "of Clothes; Shoes, Stocking, Shirts, Vc. proportiona-",
+        "OCR": {
+            "predicted_label": "of Clothes; Shoes, Hcockings, Shirts, Vc. proportiona-",
+            "cer": 5.556,
+            "wer": 14
+        },
+        "Prompt correcting": {
+            "predicted_label": "of Clothes. Shoes, Hcockings, Shirts, &c. proportiona-",
+            "cer": 9.259,
+            "wer": 42.857,
+            "confidence": "85",
+            "justification": "The corrected text line 'of Clothes. Shoes, Hcockings, Shirts, &c. proportiona-' addresses several OCR errors present in the original text. The most notable correction is the replacement of the semicolon with a period, which is more appropriate in this context as it separates two distinct items in a list. The abbreviation '&c.' is also a correct representation of 'et cetera,' which is commonly used in 18th-century texts, replacing 'Vc.' from the original. However, the word 'Hcockings' remains unchanged, which may be a typographical error or an OCR misinterpretation of 'Hosiery' or 'Hose.' The term 'proportiona-' appears to be truncated, and while it is likely intended to be 'proportional,' the correction does not address this. Overall, the LLM's corrections improve the clarity and accuracy of the text, but the uncertainty regarding 'Hcockings' and the incomplete word 'proportiona-' leads to a slightly lower confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-11.png",
+        "ground_truth_label": "bly which are to be left with Colonel Carlyle.",
+        "OCR": {
+            "predicted_label": "bly, which are to be Aoft. with Eoto ial Carby le.",
+            "cer": 22.0,
+            "wer": 54
+        },
+        "Prompt correcting": {
+            "predicted_label": "bly, which are to be Asoft. with Eoto ial Carby le.",
+            "cer": 23.529,
+            "wer": 54.545,
+            "confidence": "70",
+            "justification": "The corrected text line retains the original structure and many of the words from the OCR output, suggesting that the LLM made minimal changes. The word \"Aoft\" has been corrected to \"Asoft,\" which appears to be a plausible correction, as \"Asoft\" could fit within the context of 18th-century language. However, the words \"Eoto\" and \"Carby\" remain unchanged, and they do not seem to correspond to any recognizable terms from that period, which raises doubts about the overall accuracy of the correction. The presence of these uncorrected terms diminishes the confidence in the overall accuracy of the corrected line. Therefore, while there is some improvement, the lack of clarity and the presence of potentially erroneous terms lead to a moderate confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-12.png",
+        "ground_truth_label": "You are to be very careful of all the",
+        "OCR": {
+            "predicted_label": "You ure to be very carful of al the",
+            "cer": 8.108,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "You sure to be very careful of al the",
+            "cer": 8.108,
+            "wer": 22.222,
+            "confidence": "70",
+            "justification": "The corrected text line \"You sure to be very careful of al the\" addresses the OCR error by changing \"ure\" to \"sure,\" which is a plausible correction given the context. However, the phrase is still missing the verb \"are,\" making it grammatically incomplete. The word \"al\" remains unchanged, which is likely a typographical error for \"all.\" Therefore, while the LLM's correction improves the text, it does not fully rectify the grammatical issues present in the original line. The overall accuracy of the correction is moderate, hence the confidence score of 70."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-13.png",
+        "ground_truth_label": "Things delivered into the waggons, and see that",
+        "OCR": {
+            "predicted_label": "Thing delivered into the wagons, and se that",
+            "cer": 6.383,
+            "wer": 37
+        },
+        "Prompt correcting": {
+            "predicted_label": "Thing delivered into the waggons, and se that",
+            "cer": 4.255,
+            "wer": 25.0,
+            "confidence": "90",
+            "justification": "The corrected text line replaces \"wagons\" with \"waggons,\" which is a more period-appropriate spelling for the 18th century, as the double \"g\" was commonly used in that era. The rest of the text remains unchanged, and \"se\" appears to be a typographical error that is not corrected in the LLM's output. However, the context suggests that \"se\" could be a misinterpretation of \"see,\" which would be a more coherent word in this context. While the spelling correction is accurate, the failure to address the potential error in \"se\" slightly lowers the confidence score. Overall, the corrected line is mostly accurate, hence the high confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-14.png",
+        "ground_truth_label": "a strict Guard is kept over them, that no embez-",
+        "OCR": {
+            "predicted_label": "a strict Suard is hept over them, that no embey-",
+            "cer": 6.25,
+            "wer": 30
+        },
+        "Prompt correcting": {
+            "predicted_label": "a strict guard is kept over them, that no embey-",
+            "cer": 4.167,
+            "wer": 20.0,
+            "confidence": "85",
+            "justification": "The corrected text line \"a strict guard is kept over them, that no embey-\" appears to accurately address the OCR errors present in the original text line. The term \"Suard\" is likely a misinterpretation of \"guard,\" which fits the context of the sentence, suggesting a protective or watchful presence. The word \"hept\" is corrected to \"kept,\" which is also contextually appropriate, as it aligns with the idea of maintaining vigilance. However, the term \"embey-\" remains unchanged, and without further context, it is unclear what the intended word might be. This uncertainty slightly lowers the confidence score, as the completeness of the correction is not fully ascertainable. Overall, the corrections made by the LLM are logical and contextually sound, leading to a high confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-15.png",
+        "ground_truth_label": "zlement is made. If your men can not be",
+        "OCR": {
+            "predicted_label": "fement is made. If your mien can not be",
+            "cer": 7.692,
+            "wer": 22
+        },
+        "Prompt correcting": {
+            "predicted_label": "fement is made. If your men can not be",
+            "cer": 5.128,
+            "wer": 11.111,
+            "confidence": "80",
+            "justification": "The original text line contains the word \"mien,\" which refers to a person's demeanor or appearance, while the corrected text line replaces it with \"men,\" which is a plural noun referring to adult males. The context of the sentence is unclear without additional information, but \"mien\" seems more appropriate in a literary or formal context, especially in the 18th century. However, if the surrounding text discusses multiple individuals, \"men\" could be a plausible correction. The OCR error likely stemmed from the similarity in the shapes of the letters \"i\" and \"e.\" Given the ambiguity of the context, I am moderately confident that the LLM's correction may not accurately reflect the intended meaning, hence the score of 80."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-16.png",
+        "ground_truth_label": "conveniently Quartered on their march up; there",
+        "OCR": {
+            "predicted_label": "Cconoeniently Puartered on their marchup; there",
+            "cer": 8.511,
+            "wer": 57
+        },
+        "Prompt correcting": {
+            "predicted_label": "Conveniently Quartered on their march; there",
+            "cer": 8.511,
+            "wer": 42.857,
+            "confidence": "90",
+            "justification": "The corrected text line \"Conveniently Quartered on their march; there\" accurately addresses several OCR errors present in the original text line. The word \"Cconoeniently\" is corrected to \"Conveniently,\" which resolves the jumbled letters and aligns with the expected spelling of the word. Additionally, \"Puartered\" is corrected to \"Quartered,\" which is a straightforward fix of a typographical error. The phrase \"marchup\" is corrected to \"march,\" which is a logical adjustment, as \"marchup\" does not appear to be a valid term in this context. The semicolon is also appropriately placed, enhancing the grammatical structure of the sentence."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-17.png",
+        "ground_truth_label": "will be a number of Tents among the Stores, which",
+        "OCR": {
+            "predicted_label": "wil be a umber of Fenits among, the Stores shit",
+            "cer": 18.367,
+            "wer": 60
+        },
+        "Prompt correcting": {
+            "predicted_label": "will be a number of Fenits among, the Stores shit",
+            "cer": 14.286,
+            "wer": 40.0,
+            "confidence": "85",
+            "justification": "The corrected text line \"will be a number of Fenits among, the Stores shit\" accurately addresses the primary OCR error in the original text, specifically correcting \"wil\" to \"will\" and \"umber\" to \"number.\" However, the term \"Fenits\" remains unchanged, which may be a misinterpretation or an OCR error itself, as it does not appear to be a standard term in 18th-century English. The phrase \"Stores shit\" also raises concerns, as \"shit\" could be a misreading of a more appropriate term, possibly \"sheets\" or \"sights,\" which would be more contextually relevant. Therefore, while the main corrections are valid, the uncertainty surrounding \"Fenits\" and \"shit\" affects the overall confidence in the accuracy of the corrected text."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-18.png",
+        "ground_truth_label": "must be made use of. - If any of the Soldiers",
+        "OCR": {
+            "predicted_label": "must be made nse of - f ay of the Soldiers",
+            "cer": 8.889,
+            "wer": 36
+        },
+        "Prompt correcting": {
+            "predicted_label": "must be made ufe of - f ay of the Soldiers",
+            "cer": 8.889,
+            "wer": 36.364,
+            "confidence": "80",
+            "justification": "The original text line contains several OCR errors, particularly with the word \"nse,\" which likely should be \"ufe,\" as \"ufe\" is a more plausible word in the context of 18th-century English, suggesting \"use.\" The \"f ay\" portion appears to be a misinterpretation of \"fay,\" which could be a misreading of \"of\" or \"by.\" The corrected text line retains the structure of the original while making a reasonable assumption about the intended meaning. However, the presence of \"f ay\" remains ambiguous, and without additional context, it is difficult to ascertain the exact correction needed. Therefore, while the correction improves the readability and plausibility of the text, the uncertainty surrounding \"f ay\" prevents a higher confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-19.png",
+        "ground_truth_label": "should desert from this place, - it would be proper",
+        "OCR": {
+            "predicted_label": "tshould dert from this place, it would beprgper",
+            "cer": 13.725,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "tshould der from this place, it would be proper",
+            "cer": 11.765,
+            "wer": 30.0,
+            "confidence": "70",
+            "justification": "The corrected text line 'tshould der from this place, it would be proper' makes some improvements over the original OCR output. The word \"beprgper\" has been corrected to \"be proper,\" which is a significant and accurate correction. However, the word \"dert\" has been changed to \"der,\" which does not seem to be a valid correction. The original context suggests that \"dert\" might have been intended to be \"depart\" or a similar word, which would make more sense in the context of the sentence. Therefore, while the correction improves the readability of the text, it does not fully resolve the potential meaning of the original line. The presence of the unchanged \"tshould\" also raises questions about the accuracy of the correction. Overall, the correction is partially successful, leading to a moderate confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-20.png",
+        "ground_truth_label": "to send a Sergeant, and one or two trusty men",
+        "OCR": {
+            "predicted_label": "to send a Seirgeant, and one or two trusty nen.",
+            "cer": 6.383,
+            "wer": 20
+        },
+        "Prompt correcting": {
+            "predicted_label": "to send a Sergeant, and one or two trusty men.",
+            "cer": 2.174,
+            "wer": 10.0,
+            "confidence": "95",
+            "justification": "The corrected text line accurately addresses the OCR errors present in the original text. The term \"Seirgeant\" is a common OCR misinterpretation of \"Sergeant,\" which is the correct spelling in this context. Additionally, \"nen\" appears to be a typographical error or misreading of \"men,\" which fits the context of the sentence. The corrected text maintains the original meaning and intent, suggesting the action of sending a military figure and a couple of reliable individuals. The only minor uncertainty arises from the possibility of alternative spellings or archaic forms, but \"Sergeant\" and \"men\" are widely accepted in 18th-century English. Therefore, I am confident that the LLM's corrections are accurate and appropriate."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-21.png",
+        "ground_truth_label": "in pursuit of them.",
+        "OCR": {
+            "predicted_label": "in persuigt of themt",
+            "cer": 15.0,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "in persuigt of them",
+            "cer": 15.789,
+            "wer": 50.0,
+            "confidence": "80",
+            "justification": "The original text line 'in persuigt of themt' contains a clear OCR error with the word 'themt,' which appears to be a misreading of 'them.' The corrected text line 'in persuigt of them' accurately addresses this specific error, removing the extraneous 't' at the end. However, the word 'persuigt' remains unchanged, which may also be an OCR error, as it does not correspond to a recognizable English word from the 18th century. If 'persuigt' is indeed a misreading, the correction is incomplete. Therefore, while the correction of 'themt' to 'them' is accurate, the overall accuracy of the corrected line is somewhat diminished by the potential error in 'persuigt.' Thus, I assign a confidence score of 80, reflecting a high level of accuracy in correcting the specific error while acknowledging the uncertainty regarding the other word."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-22.png",
+        "ground_truth_label": "Given at Alexandria Vc.",
+        "OCR": {
+            "predicted_label": "Yiens at a leandria Vc.",
+            "cer": 26.087,
+            "wer": 60
+        },
+        "Prompt correcting": {
+            "predicted_label": "Yiens at a Alexandria Vc.",
+            "cer": 20.0,
+            "wer": 40.0,
+            "confidence": "85",
+            "justification": "The original text line 'Yiens at a leandria Vc.' contains several OCR errors, particularly with the word \"leandria,\" which appears to be a misinterpretation of \"Alexandria.\" The corrected text line 'Yiens at a Alexandria Vc.' accurately replaces \"leandria\" with \"Alexandria,\" which is a well-known historical city. However, the use of \"a\" before \"Alexandria\" is grammatically incorrect; it should be \"Yiens at Alexandria Vc.\" without the article \"a.\" The abbreviation \"Vc.\" is unclear without additional context, but it could refer to \"Vicinity\" or another term relevant to the text. Overall, the correction improves the accuracy of the text significantly, but the grammatical error slightly lowers the confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-23.png",
+        "ground_truth_label": "December 16th. 1755.",
+        "OCR": {
+            "predicted_label": "Icomber 215.",
+            "cer": 55.0,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "Icomber 215.",
+            "cer": 55.0,
+            "wer": 100,
+            "confidence": "100",
+            "justification": "The corrected text line 'Icomber 215.' is identical to the original text line 'Icomber 215.' provided by the OCR model. There are no discrepancies or errors to address, indicating that the OCR output was already accurate. Therefore, the LLM's correction is not only correct but also unnecessary, leading to a perfect confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-25.png",
+        "ground_truth_label": "16th. To Doctor James Craik, of the Virginia",
+        "OCR": {
+            "predicted_label": "th. To Doctor ames Craik, of the Virginia",
+            "cer": 6.818,
+            "wer": 25
+        },
+        "Prompt correcting": {
+            "predicted_label": "th. To Doctor James Craik, of the Virginia",
+            "cer": 4.545,
+            "wer": 12.5,
+            "confidence": "90",
+            "justification": "The corrected text line replaces \"ames\" with \"James,\" which is a likely and reasonable correction given the context of the name \"Doctor Craik,\" a known historical figure. The OCR error appears to have omitted the initial \"J,\" which is a common mistake in optical character recognition, especially with cursive or ornate fonts typical of the 18th century. The rest of the text remains unchanged and is consistent with the original. However, without additional context or confirmation of the specific document, there remains a slight uncertainty regarding the accuracy of the name correction, hence the score is not a full 100."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-26.png",
+        "ground_truth_label": "Regiment.",
+        "OCR": {
+            "predicted_label": "Rlinenit.",
+            "cer": 44.444,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "Rlinenit.",
+            "cer": 44.444,
+            "wer": 100,
+            "confidence": "100",
+            "justification": "The corrected text line 'Rlinenit.' is identical to the original text line 'Rlinenit.' provided by the OCR model. There are no alterations or corrections made, indicating that the OCR output was already accurate. Therefore, the confidence in the accuracy of the corrected text line is absolute, as it reflects the original text without any errors."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-27.png",
+        "ground_truth_label": "So soon as the Vessel with the",
+        "OCR": {
+            "predicted_label": "io son as the etith the",
+            "cer": 30.0,
+            "wer": 57
+        },
+        "Prompt correcting": {
+            "predicted_label": "io soon as the etith the",
+            "cer": 26.667,
+            "wer": 42.857,
+            "confidence": "70",
+            "justification": "The original text line 'io son as the etith the' contains several potential OCR errors. The corrected text line 'io soon as the etith the' makes a plausible correction by changing 'son' to 'soon,' which is a more coherent phrase in English. However, the term 'etith' remains unchanged, and it is unclear what it is intended to represent, as it does not correspond to a recognizable word in 18th-century English. This uncertainty about 'etith' affects the overall confidence in the correction. While the change from 'son' to 'soon' improves the readability of the text, the presence of an uncorrected and potentially erroneous term lowers the overall confidence score. Thus, while the correction is partially successful, the ambiguity surrounding 'etith' prevents a higher confidence rating."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-28.png",
+        "ground_truth_label": "Stores and medicines arrives, you are to embrace",
+        "OCR": {
+            "predicted_label": "ores and medicines arives, you are to embece",
+            "cer": 10.417,
+            "wer": 37
+        },
+        "Prompt correcting": {
+            "predicted_label": "ores and medicines arrive, you are to embece",
+            "cer": 10.417,
+            "wer": 37.5,
+            "confidence": "90",
+            "justification": "The corrected text line \"ores and medicines arrive, you are to embece\" accurately addresses the primary OCR error in the original text line, specifically the verb \"arives,\" which should be corrected to \"arrive\" to match standard English grammar. The rest of the text remains unchanged, and \"embece\" appears to be a misspelling or an archaic term that may not have been corrected. While the correction of \"arives\" to \"arrive\" is clear and appropriate, the term \"embece\" remains ambiguous, and without further context, it is difficult to ascertain its intended meaning. Therefore, while the correction is largely accurate, the uncertainty surrounding \"embece\" prevents a perfect score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-29.png",
+        "ground_truth_label": "the first opportunity that offers, of conveying up",
+        "OCR": {
+            "predicted_label": "the first oportunity that ofers, of conveyingup",
+            "cer": 6.0,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "the first opportunity that offers, of conveyingup",
+            "cer": 2.0,
+            "wer": 25.0,
+            "confidence": "85",
+            "justification": "The corrected text line \"the first opportunity that offers, of conveyingup\" accurately addresses the misspelling of \"oportunity\" to \"opportunity\" and \"ofers\" to \"offers.\" However, the phrase \"conveyingup\" appears to be a typographical error that was not corrected; it should likely be \"conveying up\" or \"conveying.\" The presence of \"conveyingup\" as a single word diminishes the overall accuracy of the correction. Therefore, while the major spelling errors have been rectified, the failure to address the last part of the line affects the overall confidence in the correction."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-30.png",
+        "ground_truth_label": "your Chest, and proceeding, yourself, to Winches-",
+        "OCR": {
+            "predicted_label": "your Chert, and prscedeng, yourself to Pinches.",
+            "cer": 14.286,
+            "wer": 57
+        },
+        "Prompt correcting": {
+            "predicted_label": "your Chert, and proceeding, yourself to Pinches.",
+            "cer": 8.163,
+            "wer": 42.857,
+            "confidence": "90",
+            "justification": "The corrected text line replaces \"prscedeng\" with \"proceeding,\" which is a plausible correction given the context and the phonetic similarity of the two words. The original text appears to contain a typographical error that is common in OCR outputs, where letters may be misrecognized. The word \"proceeding\" fits well within the context of the sentence, suggesting a continuation of action. The rest of the text remains unchanged, which maintains the overall meaning. However, without additional context, there is a slight uncertainty regarding the exact intent of the original phrase, leading to a confidence score of 90 rather than 100."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-31.png",
+        "ground_truth_label": "ter. You are to provide yourself here, with",
+        "OCR": {
+            "predicted_label": "ter. You are to provide yourself here with",
+            "cer": 2.326,
+            "wer": 12
+        },
+        "Prompt correcting": {
+            "predicted_label": "ter. You are to provide your self here with",
+            "cer": 4.651,
+            "wer": 33.333,
+            "confidence": "90",
+            "justification": "The corrected text line \"ter. You are to provide your self here with\" accurately addresses a minor grammatical issue present in the original text line. The original phrase \"yourself\" is a reflexive pronoun that is typically used to refer back to the subject of the sentence, while \"your self\" separates the possessive pronoun \"your\" from the noun \"self,\" which can be contextually appropriate in certain 18th-century texts. However, the use of \"your self\" may not align with the common usage of the time, where \"yourself\" would be more standard. Despite this, the correction does not introduce any new errors and maintains the overall meaning of the sentence. Therefore, I am confident that the LLM's correction is a valid interpretation, albeit with a slight deviation from the expected formality of the period."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-32.png",
+        "ground_truth_label": "what you think will be wanting for the Hos-",
+        "OCR": {
+            "predicted_label": "what you thinh wil be wanting for the 1sos.",
+            "cer": 11.628,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "what you think will be wanting for the 1sos.",
+            "cer": 6.818,
+            "wer": 11.111,
+            "confidence": "90",
+            "justification": "The corrected text line \"what you think will be wanting for the 1sos.\" accurately addresses the OCR error in the original text line. The word \"thinh\" is a clear typographical error that should be corrected to \"think,\" which is a common word in 18th-century English. The rest of the sentence remains unchanged, and the phrase \"will be wanting\" is also appropriate for the period, indicating a desire or need for something. The term \"1sos\" appears to be a misinterpretation of a word or phrase, possibly due to OCR misreading, but without additional context, it is difficult to ascertain its intended meaning. However, the correction of \"thinh\" to \"think\" is accurate and necessary. Therefore, I assign a high confidence score, acknowledging the potential ambiguity of \"1sos.\""
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-33.png",
+        "ground_truth_label": "pital, and bring them up with you; taking",
+        "OCR": {
+            "predicted_label": "pitad, and bing them p with you: taking",
+            "cer": 9.756,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "pitad, and being them p with you: taking",
+            "cer": 9.756,
+            "wer": 50.0,
+            "confidence": "70",
+            "justification": "The corrected text line \"pitad, and being them p with you: taking\" addresses a likely OCR error where \"bing\" was corrected to \"being.\" This correction seems plausible, as \"being\" fits grammatically and contextually within the sentence. However, the word \"pitad\" remains unchanged, and its meaning is unclear; it may be a misinterpretation of an original word. Additionally, the phrase \"them p\" is still ambiguous, as it does not provide clear meaning. Therefore, while the correction of \"bing\" to \"being\" is likely accurate, the overall clarity and correctness of the line are still questionable, leading to a moderate confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-34.png",
+        "ground_truth_label": "care to purchase no more than is absolutely",
+        "OCR": {
+            "predicted_label": "care to purchase no more than is absoliltely",
+            "cer": 4.545,
+            "wer": 12
+        },
+        "Prompt correcting": {
+            "predicted_label": "care to purchase no more than is absolutely",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The corrected text line 'care to purchase no more than is absolutely' accurately addresses the OCR error present in the original text line. The word 'absoliltely' contains a typographical error, likely due to misrecognition by the OCR model, where the letter 'l' is mistakenly repeated. The corrected version replaces 'absoliltely' with 'absolutely,' which is the correct spelling. The context of the sentence remains intact, and the meaning is preserved. The only minor uncertainty arises from the possibility of other contextual nuances that could affect the interpretation, but given the clarity of the correction, I am confident in the accuracy of the LLM's output."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "308-35.png",
+        "ground_truth_label": "necessary, for the support and relief of the Regiment",
+        "OCR": {
+            "predicted_label": "necesart for the suport and relief of the Reyiw",
+            "cer": 16.981,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "necessary for the support and relief of the Reyiw",
+            "cer": 11.321,
+            "wer": 22.222,
+            "confidence": "85",
+            "justification": "The corrected text line \"necessary for the support and relief of the Reyiw\" accurately addresses the OCR errors present in the original text line. The word \"necesart\" is corrected to \"necessary,\" which is a clear and appropriate correction. Additionally, \"suport\" is corrected to \"support,\" which is also a standard spelling in 18th-century English. However, the term \"Reyiw\" remains unchanged in the corrected line, and without further context, it is unclear whether this is a proper noun or a typographical error. If \"Reyiw\" is indeed a proper noun or a specific term from the text, then the correction is valid; if not, it may require further revision. Therefore, while the majority of the corrections are accurate, the uncertainty surrounding \"Reyiw\" slightly lowers the confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-01.png",
+        "ground_truth_label": "p.309.",
+        "OCR": {
+            "predicted_label": "h. o.",
+            "cer": 66.667,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "h. o.",
+            "cer": 66.667,
+            "wer": 100,
+            "confidence": "100",
+            "justification": "The corrected text line 'h. o.' is identical to the original text line provided by the OCR model. There are no discrepancies or errors to address, indicating that the OCR output was already accurate. Therefore, the LLM's correction maintains the integrity of the original text without any alterations, leading to a perfect confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-02.png",
+        "ground_truth_label": "Letters Orders and Instructions December 1755.",
+        "OCR": {
+            "predicted_label": "leters Oerders and nstructions Cecenber 175.",
+            "cer": 15.217,
+            "wer": 83
+        },
+        "Prompt correcting": {
+            "predicted_label": "leters Orders and Instructions December 175.",
+            "cer": 6.522,
+            "wer": 33.333,
+            "confidence": "85",
+            "justification": "The corrected text line \"leters Orders and Instructions December 175.\" appears to accurately address several OCR errors present in the original text. The word \"Oerders\" has been corrected to \"Orders,\" which is a logical and contextually appropriate correction, as \"Orders\" fits the likely intent of the text. The term \"nstructions\" has been corrected to \"Instructions,\" which is also a valid correction, as it aligns with common 18th-century terminology."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-04.png",
+        "ground_truth_label": "Given at Alexandria Vc.",
+        "OCR": {
+            "predicted_label": "fiven at leandriaV.",
+            "cer": 21.739,
+            "wer": 75
+        },
+        "Prompt correcting": {
+            "predicted_label": "given at leandriaV.",
+            "cer": 21.739,
+            "wer": 75.0,
+            "confidence": "90",
+            "justification": "The corrected text line 'given at leandriaV.' accurately addresses the primary OCR error, which is the misinterpretation of the letter 'g' as 'f'. The context suggests that 'given' is a plausible word in an 18th-century text, particularly in a formal or legal context. However, the term 'leandriaV' remains unchanged, and while it may refer to a place or name, the capitalization of the 'V' at the end is unusual and may indicate a potential error or stylistic choice that is not corrected. Therefore, while the primary error has been rectified, the overall accuracy is slightly diminished by the unresolved issue with 'leandriaV'. Thus, I assign a high confidence score of 90, reflecting the successful correction of the main error while acknowledging a minor uncertainty regarding the latter part of the text."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-05.png",
+        "ground_truth_label": "December 16th. 1755.",
+        "OCR": {
+            "predicted_label": "secember 2th, 1.",
+            "cer": 35.0,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "secember 28th, 1.",
+            "cer": 35.0,
+            "wer": 100.0,
+            "confidence": "70",
+            "justification": "The original text line 'secember 2th, 1.' contains a likely typographical error in the date format, specifically the use of '2th' instead of '2nd'. The corrected text line 'secember 28th, 1.' changes the day from the 2nd to the 28th, which is a significant alteration. While 'secember' appears to be a misspelling of 'December', the correction does not address this error. The change from '2th' to '28th' could be a plausible correction if the context suggested a later date, but without additional context, it is uncertain whether the original intended date was indeed the 28th. Therefore, while the corrected line improves the ordinal number, it introduces a new potential error regarding the day of the month. Thus, I assign a moderate confidence score of 70, reflecting that the correction addresses some issues but introduces uncertainty regarding the intended date."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-07.png",
+        "ground_truth_label": "16th. To Captain John Mercer. of the",
+        "OCR": {
+            "predicted_label": "2h. To Captain Fohn ercer., of the",
+            "cer": 16.667,
+            "wer": 42
+        },
+        "Prompt correcting": {
+            "predicted_label": "2h. To Captain Fohn Mercer, of the",
+            "cer": 13.889,
+            "wer": 42.857,
+            "confidence": "90",
+            "justification": "The corrected text line '2h. To Captain Fohn Mercer, of the' appears to accurately address the OCR errors present in the original text line '2h. To Captain Fohn ercer., of the'. The primary correction involves the name \"Mercer,\" which was misread as \"ercer.\" The addition of the comma after \"Mercer\" is also appropriate, as it aligns with the conventions of 18th-century writing, where commas are often used for clarity in addressing individuals. The only minor uncertainty lies in the interpretation of \"2h.\" which could potentially be a misreading of a different numeral or abbreviation, but given the context, it seems plausible. Overall, the corrected line maintains the intended meaning and structure, leading to a high confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-08.png",
+        "ground_truth_label": "Virginia Regiment.",
+        "OCR": {
+            "predicted_label": "Yirgeinia Regiment.",
+            "cer": 10.526,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "Virginia Regiment.",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The original text line 'Yirgeinia Regiment.' contains a clear OCR error where the letters 'Y' and 'i' are misrecognized, leading to the incorrect spelling of 'Virginia.' The corrected text line 'Virginia Regiment.' accurately reflects the proper name of the military unit, which is historically recognized. The only potential issue could be the presence of a typographical error in the original text, but given the context and the commonality of the term 'Virginia Regiment' in 18th-century military references, the correction is highly likely to be accurate. The confidence score is slightly less than 100 due to the possibility of other obscure names or terms that could have been misread, but overall, the correction is very reliable."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-09.png",
+        "ground_truth_label": "You are immediately, upon receipt",
+        "OCR": {
+            "predicted_label": "You are mediately, upon receipt",
+            "cer": 6.061,
+            "wer": 20
+        },
+        "Prompt correcting": {
+            "predicted_label": "You are immediately, upon receipt",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "90",
+            "justification": "The corrected text line \"You are immediately, upon receipt\" accurately addresses the likely OCR error in the original text line \"You are mediately, upon receipt.\" The term \"mediately\" is not commonly used in this context and seems to be a misinterpretation of the more appropriate word \"immediately,\" which fits the context of promptness implied by the phrase \"upon receipt.\" The correction aligns with standard English usage and the expected meaning of the sentence. However, without additional context, there remains a slight uncertainty regarding the original intent, hence the score is not a full 100."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-10.png",
+        "ground_truth_label": "hereof, to repair to Winchester, where you will meet",
+        "OCR": {
+            "predicted_label": "hereof to repaur to inchester, where you wil mes",
+            "cer": 11.538,
+            "wer": 55
+        },
+        "Prompt correcting": {
+            "predicted_label": "hereof to repair to Winchester, where you will mens",
+            "cer": 5.769,
+            "wer": 22.222,
+            "confidence": "70",
+            "justification": "The corrected text line 'hereof to repair to Winchester, where you will mens' makes several improvements over the original OCR text. The word \"repaur\" is correctly identified as \"repair,\" and \"inchester\" is accurately corrected to \"Winchester,\" which is a proper noun and likely the intended location. However, the word \"mes\" in the original text is likely a misinterpretation of \"meet\" or \"mess,\" and the LLM's correction to \"mens\" does not seem to fit contextually or grammatically. The use of \"mens\" is unclear and does not appear to be a standard term in this context. Therefore, while the corrections to \"repair\" and \"Winchester\" are accurate, the final word remains problematic, leading to a moderate confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-11.png",
+        "ground_truth_label": "with Colonel Washington, and receive further orders.",
+        "OCR": {
+            "predicted_label": "with Colonel Hashington, and receive fwuther orders.",
+            "cer": 5.769,
+            "wer": 28
+        },
+        "Prompt correcting": {
+            "predicted_label": "with Colonel Washington, and receive further orders.",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "95",
+            "justification": "The corrected text line replaces \"Hashington\" with \"Washington,\" which is a likely and historically relevant correction, as Colonel Washington refers to George Washington, a prominent figure of the 18th century. Additionally, \"fwuther\" is corrected to \"further,\" which is a standard spelling in the period. The OCR error appears to stem from misinterpretation of the original text, likely due to the font or quality of the scanned document. The context of the sentence supports the correction, as it makes logical sense for a military figure to be receiving orders. The only reason for not giving a full score of 100 is the possibility of other names that could fit the context, but given the historical significance of Washington, the correction is highly plausible."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-12.png",
+        "ground_truth_label": "I am Vc.",
+        "OCR": {
+            "predicted_label": "of aner",
+            "cer": 87.5,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "of aner",
+            "cer": 87.5,
+            "wer": 100,
+            "confidence": "100",
+            "justification": "The corrected text line 'of aner' is identical to the original text line 'of aner'. Since there are no changes made, it indicates that the OCR model accurately captured the text without any errors. Therefore, the correction is not only accurate but also unnecessary, leading to a perfect confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-13.png",
+        "ground_truth_label": "G.W. aid de camp.",
+        "OCR": {
+            "predicted_label": "WMh. aid descamp.",
+            "cer": 23.529,
+            "wer": 75
+        },
+        "Prompt correcting": {
+            "predicted_label": "WMh. said descamp.",
+            "cer": 27.778,
+            "wer": 100.0,
+            "confidence": "80",
+            "justification": "The original text line 'WMh. aid descamp.' contains a likely OCR error where 'aid' should be 'said.' The context suggests that 'said' is a more appropriate word, as it fits the grammatical structure typically found in 18th-century texts. The abbreviation 'WMh.' could represent a name or title, which is consistent with the style of the period. However, without additional context, it is difficult to ascertain the exact intent of the original text. The word 'descamp' appears to be correctly preserved in both versions, suggesting that the LLM's correction maintains the integrity of the original meaning. The confidence score reflects a high likelihood that the correction is accurate, but the lack of context prevents a full assurance."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-14.png",
+        "ground_truth_label": "Alexandria: December 16th. 1755.",
+        "OCR": {
+            "predicted_label": "lecandria. ecember 2h., 15.",
+            "cer": 31.25,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "lecandria. December 2h., 15.",
+            "cer": 28.125,
+            "wer": 75.0,
+            "confidence": "90",
+            "justification": "The corrected text line 'lecandria. December 2h., 15.' accurately addresses the OCR error by replacing 'ecember' with 'December', which is a clear and logical correction. The term 'lecandria' appears to be a proper noun, likely a place name, and remains unchanged in both versions, which is acceptable if it is indeed the correct name. However, the '2h.' in the corrected line should ideally be '2nd.' to reflect the proper ordinal form in English, which slightly detracts from the overall accuracy. Therefore, while the primary error has been corrected, the ordinal representation remains incorrect, leading to a high confidence score but not a perfect one."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-15.png",
+        "ground_truth_label": "N:B. A Copy left at Alexandria, and another",
+        "OCR": {
+            "predicted_label": "2th. opy eft at Alexandria, and another",
+            "cer": 16.279,
+            "wer": 50
+        },
+        "Prompt correcting": {
+            "predicted_label": "2th. opy left at Alexandria, and another",
+            "cer": 13.953,
+            "wer": 37.5,
+            "confidence": "90",
+            "justification": "The original text line contains a typographical error where \"eft\" is likely a misreading of \"left\" due to the OCR process. The context of the sentence suggests that it is referring to something that was left at Alexandria, which aligns with the corrected text line. The use of \"2th.\" is somewhat unusual, as it may refer to a date or a specific point in a sequence, but it does not detract from the overall meaning. The correction of \"eft\" to \"left\" is appropriate and enhances clarity. However, without additional context, there is a slight uncertainty regarding the accuracy of \"2th.\" as it may also be a misinterpretation. Thus, I assign a high confidence score of 90, acknowledging the correction's validity while recognizing a minor ambiguity in the original text."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-16.png",
+        "ground_truth_label": "sent to Stafford, to him there.",
+        "OCR": {
+            "predicted_label": "seant to Faford to him there.",
+            "cer": 16.129,
+            "wer": 33
+        },
+        "Prompt correcting": {
+            "predicted_label": "sent to Faford to him there.",
+            "cer": 12.903,
+            "wer": 16.667,
+            "confidence": "90",
+            "justification": "The corrected text line \"sent to Faford to him there.\" accurately addresses the OCR error in the original text line \"seant to Faford to him there.\" The word \"seant\" appears to be a misrecognition of \"sent,\" which is a common error in OCR processes, especially with letters that may appear similar in certain fonts or styles. The context of the sentence supports the correction, as \"sent\" is a coherent and grammatically correct verb in this context. However, the slight uncertainty arises from the lack of additional context surrounding the sentence, which could potentially affect the interpretation. Nonetheless, the correction aligns well with standard English usage, leading to a high confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-18.png",
+        "ground_truth_label": "20th. Parole Abbemarle. Winchester: December 20th. 1755.",
+        "OCR": {
+            "predicted_label": "28th. Wrote Abemarle rchestr December t175.",
+            "cer": 30.357,
+            "wer": 85
+        },
+        "Prompt correcting": {
+            "predicted_label": "28th. Wrote Albemarle rchestra December 175.",
+            "cer": 32.143,
+            "wer": 85.714,
+            "confidence": "85",
+            "justification": "The corrected text line '28th. Wrote Albemarle rchestra December 175.' makes several improvements over the original OCR output. The name \"Abemarle\" is corrected to \"Albemarle,\" which is a more accurate representation of the historical figure or location, likely referring to the Earl of Albemarle. However, the term \"rchestra\" appears to be a miscorrection; it should likely be \"orchestra,\" which is a common term in 18th-century texts related to music. The date \"t175\" is corrected to \"175,\" which is a necessary correction, but the \"t\" seems to be a typographical error that could have been misinterpreted by the OCR. Overall, while the corrected line improves clarity and accuracy, the error in \"rchestra\" slightly diminishes the overall correctness. Thus, I assign a high confidence score of 85, acknowledging the improvements while noting the remaining error."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-19.png",
+        "ground_truth_label": "A Return to be given in immedi-",
+        "OCR": {
+            "predicted_label": "eh Retirn to be qgiven in imedi-",
+            "cer": 15.625,
+            "wer": 57
+        },
+        "Prompt correcting": {
+            "predicted_label": "eh Retirn to be given in immedi-",
+            "cer": 9.375,
+            "wer": 28.571,
+            "confidence": "90",
+            "justification": "The corrected text line 'eh Retirn to be given in immedi-' accurately addresses the OCR errors present in the original text line. The word \"qgiven\" has been corrected to \"given,\" which is a clear and appropriate correction, as \"q\" appears to be a misinterpretation of \"g\" by the OCR model. Additionally, the word \"imedi-\" has been corrected to \"immedi-,\" which suggests that the intended word is likely \"immediate.\" The only minor issue is that the prefix \"immedi-\" is incomplete, but this is consistent with the original text line. Overall, the corrections made by the LLM are logical and improve the clarity of the text, leading to a high confidence score. However, the incomplete nature of \"immedi-\" prevents a perfect score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-20.png",
+        "ground_truth_label": "ately of the Recruits now in this town, by the several",
+        "OCR": {
+            "predicted_label": "ately of the Recruits now in this tom, by the sveral",
+            "cer": 5.556,
+            "wer": 18
+        },
+        "Prompt correcting": {
+            "predicted_label": "ately of the Recruits now in this tom, by the several",
+            "cer": 3.704,
+            "wer": 9.091,
+            "confidence": "90",
+            "justification": "The corrected text line 'ately of the Recruits now in this tom, by the several' appears to accurately address the OCR errors present in the original text line. The primary issue in the original text is the misspelling of \"sveral,\" which is corrected to \"several\" in the LLM's output. The rest of the text remains unchanged, and the context suggests that \"several\" is the appropriate word to use in this instance. However, the word \"tom\" is somewhat ambiguous; it could potentially be a misinterpretation of \"town\" or another term, but without additional context, it is difficult to ascertain its correctness. Given that the primary error has been corrected and the overall structure of the sentence remains intact, I am confident in the accuracy of the corrected text line, albeit with some uncertainty regarding \"tom.\""
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-21.png",
+        "ground_truth_label": "Officers who enlisted them; mentioning their height,",
+        "OCR": {
+            "predicted_label": "ficers who enlisted them; mentioning thiuvheight.",
+            "cer": 11.538,
+            "wer": 42
+        },
+        "Prompt correcting": {
+            "predicted_label": "ficers who enlisted them; mentioning thiuheight.",
+            "cer": 11.538,
+            "wer": 42.857,
+            "confidence": "80",
+            "justification": "The corrected text line 'ficers who enlisted them; mentioning thiuheight.' retains the structure and most of the original wording from the OCR output. The primary change is the correction of 'thiuvheight' to 'thiuheight,' which appears to be a minor adjustment. However, the term 'thiuheight' itself does not seem to correspond to any known word or term from the 18th century, which raises some uncertainty about the accuracy of the correction. The OCR error appears to have been partially addressed, but without context or a clear reference to what 'thiuheight' is intended to convey, there remains a degree of ambiguity. Therefore, while the correction is an improvement, the lack of clarity regarding the intended meaning leads to a confidence score of 80."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-22.png",
+        "ground_truth_label": "age, trade, Vc. The officers to see that the Serge-",
+        "OCR": {
+            "predicted_label": "age, trade, Vc. The Ooficers to sre that the Sirge.-",
+            "cer": 9.615,
+            "wer": 30
+        },
+        "Prompt correcting": {
+            "predicted_label": "age, trade, &c. The Officers to sure that the Sirge.-",
+            "cer": 11.321,
+            "wer": 40.0,
+            "confidence": "85",
+            "justification": "The corrected text line has made several improvements over the original OCR output. The abbreviation \"Vc.\" has been correctly expanded to \"&c.\" which is a common abbreviation for \"et cetera\" in 18th-century texts. The word \"Ooficers\" has been corrected to \"Officers,\" which is a clear and accurate correction. However, the word \"sre\" has been changed to \"sure,\" which may not be the intended word in the context of the sentence. The original text likely intended to convey a different meaning, possibly \"see\" or \"ensure,\" which would fit better in the context of officers overseeing something. The term \"Sirge\" remains unchanged, and without additional context, it is difficult to ascertain if it is correct or a misinterpretation. Overall, while the corrections made by the LLM are largely accurate, the uncertainty regarding \"sure\" and \"Sirge\" affects the overall confidence in the accuracy of the corrected text."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-23.png",
+        "ground_truth_label": "ants who understand the manual Exercise, do",
+        "OCR": {
+            "predicted_label": "ants whs understand the manual Bcereise,do",
+            "cer": 11.628,
+            "wer": 42
+        },
+        "Prompt correcting": {
+            "predicted_label": "ants whs understand the manual Bcereise, do",
+            "cer": 9.302,
+            "wer": 28.571,
+            "confidence": "80",
+            "justification": "The corrected text line retains the original structure and most of the content from the OCR output, with the only modification being the addition of a space before \"do.\" However, the term \"Bcereise\" appears to be a misinterpretation of the original text, as it does not correspond to any known word in 18th-century English. The presence of \"whs\" is also questionable, as it may be a misreading of \"who\" or another word. While the correction improves readability slightly, it does not address the potential errors in the words themselves. Therefore, while the correction is somewhat accurate, it does not fully resolve the underlying OCR issues, leading to a confidence score of 80."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-24.png",
+        "ground_truth_label": "drill the Recruits, at least twice a-day.",
+        "OCR": {
+            "predicted_label": "dril the Recrits, at least toie aday,",
+            "cer": 14.634,
+            "wer": 57
+        },
+        "Prompt correcting": {
+            "predicted_label": "dril the Recruits, at least toie day,",
+            "cer": 14.634,
+            "wer": 42.857,
+            "confidence": "70",
+            "justification": "The corrected text line 'dril the Recruits, at least toie day,' makes a notable improvement over the original text line by correcting 'Recrits' to 'Recruits,' which is a clear and accurate correction of a likely OCR misinterpretation. However, the term 'toie' remains unchanged from the original, which appears to be a misreading or typographical error. The intended word is likely 'two,' as it fits the context of the sentence better, suggesting a quantity of days. Therefore, while the correction of 'Recrits' to 'Recruits' is accurate, the failure to correct 'toie' diminishes the overall accuracy of the corrected line. Thus, I assign a confidence score of 70, reflecting a solid correction but acknowledging the remaining error."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-26.png",
+        "ground_truth_label": "22nd. Parole Boston- Winchester: December 22nd. 1755.",
+        "OCR": {
+            "predicted_label": "28t. Parole Bocton. Wnchester: Dcenber 1th. 75.",
+            "cer": 26.415,
+            "wer": 85
+        },
+        "Prompt correcting": {
+            "predicted_label": "28t. Parole Bocton. Winchester: December 17th. 75.",
+            "cer": 20.755,
+            "wer": 57.143,
+            "confidence": "85",
+            "justification": "The corrected text line makes several improvements over the original OCR output. The word \"Wnchester\" is corrected to \"Winchester,\" which is a proper noun and likely the intended spelling. The date \"1th\" is corrected to \"17th,\" which is a plausible correction, as \"1th\" is not a valid ordinal number. However, without additional context, it is difficult to ascertain whether the original date was indeed meant to be the 1st or the 17th. The abbreviation \"Dcenber\" is corrected to \"December,\" which is also accurate. The overall structure and content of the corrected line maintain the original meaning while addressing the OCR errors. The confidence score reflects a high level of accuracy, but the uncertainty regarding the date prevents a perfect score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-27.png",
+        "ground_truth_label": "A Return is to be made every mor-",
+        "OCR": {
+            "predicted_label": "h Return is to be made every nor",
+            "cer": 9.091,
+            "wer": 25
+        },
+        "Prompt correcting": {
+            "predicted_label": "Return is to be made every nor",
+            "cer": 12.121,
+            "wer": 25.0,
+            "confidence": "90",
+            "justification": "The corrected text line 'Return is to be made every nor' closely resembles the original text line 'h Return is to be made every nor', with the primary difference being the removal of the extraneous 'h' at the beginning. This suggests that the OCR model misrecognized the start of the line, which is a common error in optical character recognition. However, the word 'nor' at the end of the corrected line appears to be incomplete or potentially incorrect, as it does not seem to fit contextually with the rest of the phrase. If 'nor' is indeed the intended word, then the correction is accurate; if not, there may still be an underlying error that the LLM did not address. Therefore, while the removal of the 'h' is a clear improvement, the uncertainty surrounding 'nor' affects the overall confidence in the accuracy of the correction."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-28.png",
+        "ground_truth_label": "ning to Colonel Washington of the number of",
+        "OCR": {
+            "predicted_label": "ning to Colonel Hashington of the umber of",
+            "cer": 4.651,
+            "wer": 25
+        },
+        "Prompt correcting": {
+            "predicted_label": "ning to Colonel Washington of the number of",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "90",
+            "justification": "The corrected text line \"ning to Colonel Washington of the number of\" appears to accurately address the OCR errors present in the original text line. The name \"Hashington\" is likely a misinterpretation of \"Washington,\" which is a well-known name from the 18th century, particularly in the context of American history. The word \"umber\" is corrected to \"number,\" which is a logical and contextually appropriate correction. However, the initial \"ning\" remains unchanged, which suggests that there may be additional context or preceding text that is missing. This could affect the overall accuracy of the correction. Despite this, the primary errors have been effectively rectified, leading to a high confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-29.png",
+        "ground_truth_label": "men in this town - and all contingences.",
+        "OCR": {
+            "predicted_label": "men in this town and al contingences.",
+            "cer": 7.5,
+            "wer": 25
+        },
+        "Prompt correcting": {
+            "predicted_label": "men in this own and al contingences.",
+            "cer": 10.0,
+            "wer": 37.5,
+            "confidence": "30",
+            "justification": "The corrected text line 'men in this own and al contingences.' contains a significant error in the word 'own,' which appears to be a miscorrection of 'town.' The original text clearly refers to 'town,' which is a relevant and meaningful term in the context, while 'own' does not fit semantically. The term 'al contingences' remains unchanged, which is acceptable as it may reflect the 18th-century spelling of 'all contingencies.' However, the primary error in the correction undermines the overall accuracy. Therefore, I have a low confidence score due to the critical misinterpretation of 'town' as 'own.'"
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-30.png",
+        "ground_truth_label": "During his stay here, no provision is to be de-",
+        "OCR": {
+            "predicted_label": "uringhis stay here, ns provision is to be de-",
+            "cer": 6.383,
+            "wer": 30
+        },
+        "Prompt correcting": {
+            "predicted_label": "During his stay here, no provision is to be de-",
+            "cer": 0.0,
+            "wer": 0.0,
+            "confidence": "90",
+            "justification": "The corrected text line \"During his stay here, no provision is to be de-\" accurately addresses the OCR errors present in the original text line. The original text appears to have misrecognized \"D\" as \"u\" and \"n\" as \"ns,\" leading to the incorrect formation of \"uringhis\" instead of \"During.\" Additionally, the word \"no\" is a logical correction from \"ns,\" which seems to be a misinterpretation of the intended word. The phrase \"is to be de-\" remains unchanged, suggesting that the OCR model correctly captured the beginning of a longer word that may have been cut off. The only minor uncertainty lies in the last part of the line, where \"de-\" is incomplete, but this does not detract from the overall accuracy of the corrected text. Therefore, I assign a high confidence score of 90, acknowledging the corrections made while recognizing the potential for slight ambiguity in the final word."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-31.png",
+        "ground_truth_label": "livered out, but by a written order from him or",
+        "OCR": {
+            "predicted_label": "livered out, but by a writen order fromhimeoar",
+            "cer": 8.511,
+            "wer": 40
+        },
+        "Prompt correcting": {
+            "predicted_label": "livered out, but by a written order from him to ear",
+            "cer": 7.843,
+            "wer": 18.182,
+            "confidence": "60",
+            "justification": "The corrected text line \"livered out, but by a written order from him to ear\" addresses some of the OCR errors present in the original text. The word \"writen\" is correctly changed to \"written,\" which is a clear improvement. However, the phrase \"fromhimeoar\" is altered to \"from him to ear,\" which introduces a new error. The original phrase likely intended to convey \"from him to here\" or \"from him to there,\" as \"to ear\" does not make contextual sense in this context. Therefore, while the correction improves the spelling of \"written,\" it fails to accurately interpret the intended meaning of the original text. This leads to a moderate confidence score, as some corrections are valid, but the overall meaning remains compromised."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-32.png",
+        "ground_truth_label": "the aid de camp. The Commissary is to send",
+        "OCR": {
+            "predicted_label": "the Aid de camp. The omisary is to send",
+            "cer": 9.524,
+            "wer": 22
+        },
+        "Prompt correcting": {
+            "predicted_label": "the Aid de camp. The missary is to send",
+            "cer": 9.524,
+            "wer": 22.222,
+            "confidence": "70",
+            "justification": "The original text line contains the term \"omisary,\" which appears to be a misreading of \"missary.\" The term \"missary\" is more commonly associated with a military context, referring to a supply officer or someone responsible for provisions. However, the term \"omisary\" could potentially be a misinterpretation of \"adjutant\" or another military role, which complicates the evaluation. The context suggests that the corrected term \"missary\" is likely intended, but without additional context, it is difficult to ascertain the exact meaning. Therefore, while the correction seems plausible, the ambiguity of the original term leads to a moderate confidence score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-33.png",
+        "ground_truth_label": "up the Cask of Tools by the first waggon that",
+        "OCR": {
+            "predicted_label": "up the Cask of Fols by the first wagon that",
+            "cer": 6.667,
+            "wer": 20
+        },
+        "Prompt correcting": {
+            "predicted_label": "up the Cask of Fols by the fir\u017ft wagon that",
+            "cer": 8.889,
+            "wer": 30.0,
+            "confidence": "90",
+            "justification": "The corrected text line replaces \"first\" with \"fir\u017ft,\" which is a typographical representation of the 18th-century long 's' (\u017f) commonly used in that period. This change is historically accurate and aligns with the typographical conventions of the time. The rest of the text remains unchanged, which suggests that the OCR model correctly captured the other elements of the line. However, without additional context, it is difficult to ascertain if \"Cask of Fols\" is a proper term or if it contains any errors. Therefore, while the correction of \"first\" to \"fir\u017ft\" is accurate, the overall confidence is slightly reduced due to uncertainty regarding the rest of the text."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-34.png",
+        "ground_truth_label": "goes to the Fort. The following men being judg-",
+        "OCR": {
+            "predicted_label": "gaes to the Fort. the folowving men being,nsg-",
+            "cer": 17.021,
+            "wer": 55
+        },
+        "Prompt correcting": {
+            "predicted_label": "gaes to the Fort, the following men being, nsg-",
+            "cer": 14.894,
+            "wer": 55.556,
+            "confidence": "85",
+            "justification": "The corrected text line 'gaes to the Fort, the following men being, nsg-' addresses several OCR errors present in the original text. The word \"folowving\" has been corrected to \"following,\" which is a clear and accurate correction. Additionally, the comma after \"Fort\" has been added, improving the grammatical structure of the sentence. However, the term \"nsg-\" remains unchanged, and without further context, it is unclear if this is an accurate representation of the intended text. Overall, the corrections made by the LLM significantly enhance the clarity and correctness of the text, leading to a high confidence score, though the uncertainty regarding \"nsg-\" prevents a perfect score."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-35.png",
+        "ground_truth_label": "ed unfit for Duty, on Review; are ordered to be",
+        "OCR": {
+            "predicted_label": "ed unfit for Duty, on Reviens, are ordered to be",
+            "cer": 6.25,
+            "wer": 10
+        },
+        "Prompt correcting": {
+            "predicted_label": "ed unfit for Duty, on Review, are ordered to be",
+            "cer": 2.128,
+            "wer": 10.0,
+            "confidence": "90",
+            "justification": "The corrected text line replaces \"Reviens\" with \"Review,\" which is a plausible correction given the context of military or official duty, where \"review\" is a common term used to describe an assessment of personnel fitness. The original term \"Reviens\" appears to be a misinterpretation by the OCR model, as it does not fit the context of the sentence. The correction maintains the overall structure and meaning of the original line, suggesting that the LLM has accurately identified and rectified the error. However, without additional context, there remains a slight uncertainty regarding the exact intended term, hence the score is not a full 100."
+        }
+    },
+    {
+        "run_id": "4da6a557-88d8-4961-8076-fc6b360001d2",
+        "file_name": "309-36.png",
+        "ground_truth_label": "discharged: viz.",
+        "OCR": {
+            "predicted_label": "dis charged. ro",
+            "cer": 37.5,
+            "wer": 100
+        },
+        "Prompt correcting": {
+            "predicted_label": "discharged. ro",
+            "cer": 31.25,
+            "wer": 100.0,
+            "confidence": "90",
+            "justification": "The original text line 'dis charged. ro' contains a clear OCR error where the word \"discharged\" has been incorrectly split into two parts: \"dis\" and \"charged.\" The corrected text line 'discharged. ro' successfully combines these two parts into the correct single word \"discharged,\" which is consistent with 18th-century language usage. The trailing \"ro\" remains unchanged, which may indicate an incomplete word or abbreviation. While the correction of \"discharged\" is accurate, the context of \"ro\" is unclear, which prevents a perfect score. Therefore, I assign a high confidence score of 90, acknowledging the successful correction of the primary error while recognizing the ambiguity of the remaining text."
+        }
+    }
+]
