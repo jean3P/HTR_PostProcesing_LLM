@@ -2,7 +2,7 @@ import os
 import json
 
 from constants import results_outputs
-from utils.flor.data.evaluation import wer_only
+from utils.flor.data.evaluation import wer_only, cer_only
 
 
 # Assuming wer_only is already defined and available here
@@ -36,9 +36,11 @@ def update_json_with_wer(file_path):
 
     # Calculate WER for each pair using the wer_only function
     for item, gt, pred in zip(data, ground_truths, predictions):
+        cer = cer_only([pred], [gt])
         wer = wer_only([pred], [gt])
         # Update the data structure with the WER result
-        item['wer'] = int(wer)
+        item['cer'] = round(cer, 3)
+        item['wer'] = round(wer, 3)
 
     # Save the updated data back into the file
     with open(file_path, 'w') as file:
