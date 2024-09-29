@@ -63,7 +63,7 @@ def cer_only(predicts, ground_truth, norm_accentuation=False, norm_punctuation=F
 
         pd_cer, gt_cer = list(pd), list(gt)
         dist = editdistance.eval(pd_cer, gt_cer)
-        cer.append(dist / (max(len(pd_cer), len(gt_cer))))
+        cer.append(dist / (len(gt_cer)))
 
     cer_mean = np.mean(cer)
     cer_mean = round(cer_mean * 100, 3)
@@ -106,7 +106,7 @@ def wer_only(predicts, ground_truth, norm_accentuation=False, norm_punctuation=F
         dist = editdistance.eval(pd_words, gt_words)
 
         # Calculate WER as the ratio of the distance to the length of the longer sentence
-        wer.append(dist / max(len(pd_words), len(gt_words)))
+        wer.append(dist / (len(gt_words)))
 
     # Calculate the mean WER and multiply by 100 to express it as a percentage
     mean_wer = np.mean(wer) * 100
