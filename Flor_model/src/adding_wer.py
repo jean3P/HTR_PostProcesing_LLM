@@ -48,5 +48,5 @@ def update_json_with_wer(file_path):
 
 
 # Example usage:
-base_dir = os.path.join(results_outputs, 'washington')  # The base directory containing train_25, train_50, etc.
+base_dir = os.path.join(results_outputs, 'iam')  # The base directory containing train_25, train_50, etc.
 process_json_files_in_subdirectories(base_dir)
