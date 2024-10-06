@@ -3,15 +3,15 @@
         "file_name": "096_028_001_01_01.png",
         "ground_truth_label": "brain.",
         "predicted_label": "brain .",
-        "cer": 16.667,
-        "wer": 200.0
+        "cer": 14.286,
+        "wer": 100.0
     },
     {
         "file_name": "096_028_001_01_02.png",
         "ground_truth_label": "From this review then it appears, that",
         "predicted_label": "From this revien then it ape ars , that",
-        "cer": 10.526,
-        "wer": 57.143
+        "cer": 10.256,
+        "wer": 44.444
     },
     {
         "file_name": "096_028_001_01_03.png",
@@ -24,8 +24,8 @@
         "file_name": "096_028_001_01_04.png",
         "ground_truth_label": "municipal Law, our Author has spent",
         "predicted_label": "mnuniupal Law , our dathor bairs fanst",
-        "cer": 37.143,
-        "wer": 100.0
+        "cer": 34.211,
+        "wer": 85.714
     },
     {
         "file_name": "096_028_001_01_05.png",
@@ -38,22 +38,22 @@
         "file_name": "096_028_001_01_06.png",
         "ground_truth_label": "much time in explaining the nature &",
         "predicted_label": "druct time in explaining the pature ?",
-        "cer": 13.889,
+        "cer": 13.514,
         "wer": 42.857
     },
     {
         "file_name": "096_028_001_01_07.png",
         "ground_truth_label": "Properties of Laws which do not exist &",
         "predicted_label": "owrerties orf Laws which do not exist C .",
-        "cer": 20.513,
-        "wer": 50.0
+        "cer": 19.512,
+        "wer": 44.444
     },
     {
         "file_name": "096_028_001_01_08.png",
         "ground_truth_label": "in misapplying those which do: & therefore,",
         "predicted_label": "in miseplying those which do : 5 Therefore",
         "cer": 13.953,
-        "wer": 71.429
+        "wer": 62.5
     },
     {
         "file_name": "096_028_001_01_09.png",
@@ -73,8 +73,8 @@
         "file_name": "096_028_001_01_11.png",
         "ground_truth_label": "has hitherto advanced.",
         "predicted_label": "has bu tharto adsanced .",
-        "cer": 27.273,
-        "wer": 133.333
+        "cer": 25.0,
+        "wer": 80.0
     },
     {
         "file_name": "096_028_001_02_01.png",
@@ -109,7 +109,7 @@
         "ground_truth_label": "submitt, both mental and corporeal, is far beyond any idea",
         "predicted_label": "subnut both mental and corporeal , is far beyond any ifea",
         "cer": 10.345,
-        "wer": 40.0
+        "wer": 36.364
     },
     {
         "file_name": "097_186_001_01_05.png",
@@ -123,7 +123,7 @@
         "ground_truth_label": "necessary in the Commander in Chief.",
         "predicted_label": "necesary in the Comander in Chief .",
         "cer": 8.333,
-        "wer": 66.667
+        "wer": 57.143
     },
     {
         "file_name": "097_186_001_01_07.png",
@@ -136,22 +136,22 @@
         "file_name": "097_186_001_01_08.png",
         "ground_truth_label": "encouraged me in a hope, which however has in some respects",
         "predicted_label": "encouraged me in a hope , which however has in fope respects",
-        "cer": 5.085,
-        "wer": 27.273
+        "cer": 5.0,
+        "wer": 25.0
     },
     {
         "file_name": "097_186_001_01_09.png",
         "ground_truth_label": "proved delusive: that I should with ease to myself and with",
         "predicted_label": "proved delusive : that I should , with ease to mys & and with",
-        "cer": 10.169,
-        "wer": 45.455
+        "cer": 9.836,
+        "wer": 35.714
     },
     {
         "file_name": "097_186_001_01_10.png",
         "ground_truth_label": "proper effect and advantage to the public, have been able to",
         "predicted_label": "proper efect and advantage to the public , have ben able to",
         "cer": 5.0,
-        "wer": 36.364
+        "wer": 33.333
     },
     {
         "file_name": "097_186_001_01_11.png",
@@ -165,105 +165,105 @@
         "ground_truth_label": "manage all the duties of my office - But I had been long",
         "predicted_label": "manage al the duties of my ofice . _ But I tha ben long",
         "cer": 14.286,
-        "wer": 46.154
+        "wer": 42.857
     },
     {
         "file_name": "097_186_001_01_13.png",
         "ground_truth_label": "entered upon it, before I was awakened from that dream of",
         "predicted_label": "entered upon it , before I was awakened fromf that dream of",
-        "cer": 3.509,
-        "wer": 27.273
+        "cer": 3.39,
+        "wer": 25.0
     },
     {
         "file_name": "097_186_001_01_14.png",
         "ground_truth_label": "comfort and satisfaction, the prospect of which I had so vainly",
         "predicted_label": "comfort and satisfaction ) the prospect of whichf I had so vainly",
-        "cer": 4.762,
-        "wer": 27.273
+        "cer": 4.615,
+        "wer": 25.0
     },
     {
         "file_name": "097_186_001_01_15.png",
         "ground_truth_label": "indulged! The seeds of the vexations which had so disappointed",
         "predicted_label": "indulged I the seds of those vexations which had so disapointed",
-        "cer": 11.29,
-        "wer": 60.0
+        "cer": 11.111,
+        "wer": 54.545
     },
     {
         "file_name": "097_186_001_01_16.png",
         "ground_truth_label": "me, had been sown for a very considerable time; and, being of",
         "predicted_label": ":me , had ben sown for a very considerabl tome ; and , being of",
-        "cer": 11.475,
-        "wer": 66.667
+        "cer": 11.111,
+        "wer": 53.333
     },
     {
         "file_name": "097_186_001_01_17.png",
         "ground_truth_label": "rather a prolific nature amongst such people, had gained so",
         "predicted_label": "rather of a prolific nature anongst suef people , had gained so",
-        "cer": 11.864,
-        "wer": 50.0
+        "cer": 11.111,
+        "wer": 41.667
     },
     {
         "file_name": "097_186_001_01_18.png",
         "ground_truth_label": "much strength. that it will require immense labour to grab them",
         "predicted_label": "much strength , that it wil require inpense labour to grub them",
         "cer": 9.524,
-        "wer": 45.455
+        "wer": 41.667
     },
     {
         "file_name": "097_186_001_01_19.png",
         "ground_truth_label": "up by the root. I have persisted in my attempt to that end, and",
         "predicted_label": "up by the rot . I have persisted infthy atempt to that end , and",
-        "cer": 11.111,
-        "wer": 50.0
+        "cer": 10.938,
+        "wer": 46.667
     },
     {
         "file_name": "097_186_001_01_20.png",
         "ground_truth_label": "mean not to change my system; which, be assured, from being cal-",
         "predicted_label": "mean not to change my systemf hich , be asured , from being cal",
         "cer": 9.375,
-        "wer": 50.0
+        "wer": 42.857
     },
     {
         "file_name": "097_186_001_01_21.png",
         "ground_truth_label": "-culated to lay restraints upon every species of vice and immorality,",
         "predicted_label": "-culated to lay restraints upon ofery Oxecies of vice & imorality ,",
         "cer": 13.043,
-        "wer": 45.455
+        "wer": 41.667
     },
     {
         "file_name": "097_186_001_01_22.png",
         "ground_truth_label": "cannot, amongst such character be a very popular one; that however",
         "predicted_label": "canot , amongst such charactery be a very popular one ; that however",
-        "cer": 6.061,
-        "wer": 45.455
+        "cer": 5.882,
+        "wer": 38.462
     },
     {
         "file_name": "097_186_001_01_23.png",
         "ground_truth_label": "will be a matter of no immediate concern to me; if I succeed only",
         "predicted_label": "wil be a mater of no infnediate concern to me ; & if I suced only",
         "cer": 15.385,
-        "wer": 50.0
+        "wer": 43.75
     },
     {
         "file_name": "097_186_001_01_24.png",
         "ground_truth_label": "in a small degree, to check the growing profligacy and abandoned",
         "predicted_label": "in a smal degre , to elfh the growing profligacy and abandoned",
         "cer": 10.938,
-        "wer": 36.364
+        "wer": 33.333
     },
     {
         "file_name": "097_186_001_01_25.png",
         "ground_truth_label": "turn of the lower classes of the people.",
         "predicted_label": "turn of the lower clasts of the people . _",
-        "cer": 12.5,
-        "wer": 50.0
+        "cer": 11.905,
+        "wer": 40.0
     },
     {
         "file_name": "097_186_001_01_26.png",
         "ground_truth_label": "This is a good Country, and will do well: but its progress",
         "predicted_label": "his is a god Lasty , and wil do wel : but its progres",
         "cer": 18.966,
-        "wer": 66.667
+        "wer": 57.143
     },
     {
         "file_name": "097_186_001_01_27.png",
@@ -276,7 +276,7 @@
         "file_name": "097_186_001_01_28.png",
         "ground_truth_label": "be prevailed upon not to overstock us with the worst description",
         "predicted_label": "be prevailed sapor )not to overstock us with the worst description",
-        "cer": 6.25,
+        "cer": 6.061,
         "wer": 18.182
     },
     {
@@ -284,14 +284,14 @@
         "ground_truth_label": "of characters: for, whilst the mass of the people continue to be of",
         "predicted_label": "of charactes ofof , whilst the mas of the people continue to be of",
         "cer": 8.955,
-        "wer": 30.769
+        "wer": 28.571
     },
     {
         "file_name": "097_186_001_01_30.png",
         "ground_truth_label": "that class, our difficulties will ever be very considerable: the",
         "predicted_label": "that claf uf dificulties wil ever be very considerable : the",
         "cer": 12.5,
-        "wer": 60.0
+        "wer": 54.545
     },
     {
         "file_name": "097_186_001_01_31.png",
@@ -305,14 +305,14 @@
         "ground_truth_label": "idle and worthless.",
         "predicted_label": "idly and worthles .",
         "cer": 10.526,
-        "wer": 100.0
+        "wer": 75.0
     },
     {
         "file_name": "096_038_003_01_01.png",
         "ground_truth_label": "person, or body of men who are invested with",
         "predicted_label": "person , or body of men who are invested with",
-        "cer": 2.273,
-        "wer": 22.222
+        "cer": 2.222,
+        "wer": 20.0
     },
     {
         "file_name": "096_038_003_01_02.png",
@@ -332,71 +332,71 @@
         "file_name": "096_038_003_01_04.png",
         "ground_truth_label": "are convertible terms. So that, our definition",
         "predicted_label": "are convertible terms . So that , our definition",
-        "cer": 4.348,
-        "wer": 57.143
+        "cer": 4.167,
+        "wer": 44.444
     },
     {
         "file_name": "096_038_003_01_05.png",
         "ground_truth_label": "receives little light from the addition of these",
         "predicted_label": "receives litle light from the adition of these .",
         "cer": 8.333,
-        "wer": 37.5
+        "wer": 33.333
     },
     {
         "file_name": "096_038_003_01_06.png",
         "ground_truth_label": "words: it amounting only to this, that law",
         "predicted_label": "words : it amounting only to this , that law",
-        "cer": 4.762,
-        "wer": 50.0
+        "cer": 4.545,
+        "wer": 40.0
     },
     {
         "file_name": "096_038_003_01_07.png",
         "ground_truth_label": "is a rule of action prescribed by him, who",
         "predicted_label": "is a rule of action presribed by him , who-",
-        "cer": 7.143,
-        "wer": 44.444
+        "cer": 6.977,
+        "wer": 40.0
     },
     {
         "file_name": "096_038_003_01_08.png",
         "ground_truth_label": "prescribes it.",
         "predicted_label": "prescribes it .",
-        "cer": 7.143,
-        "wer": 100.0
+        "cer": 6.667,
+        "wer": 66.667
     },
     {
         "file_name": "096_038_003_01_09.png",
         "ground_truth_label": "[\"It is also, says our Author, a rule, command-",
         "predicted_label": "[ \" Ofis also , says our Author , a rul , comand-",
-        "cer": 17.021,
-        "wer": 111.111
+        "cer": 16.327,
+        "wer": 76.923
     },
     {
         "file_name": "096_038_003_01_10.png",
         "ground_truth_label": "\"ing what is right, and forbidding what is",
         "predicted_label": "\" ing what is right , and forbid ding what is",
-        "cer": 7.143,
-        "wer": 75.0
+        "cer": 6.667,
+        "wer": 54.545
     },
     {
         "file_name": "096_038_003_01_11.png",
         "ground_truth_label": "wrong.\" [If You ask our author, what he means",
         "predicted_label": "\" wrong \" ( 7y Youask our wuthor , what he means",
-        "cer": 22.222,
-        "wer": 88.889
+        "cer": 20.833,
+        "wer": 66.667
     },
     {
         "file_name": "096_038_003_01_12.png",
         "ground_truth_label": "by w right, and wrong, he will tell You, that",
         "predicted_label": "by a right , and wrong he wil tel Jow , that",
         "cer": 17.778,
-        "wer": 80.0
+        "wer": 66.667
     },
     {
         "file_name": "096_038_003_01_13.png",
         "ground_truth_label": "is right which the law declares to be right,",
         "predicted_label": "is right which the law declares to be right ,",
-        "cer": 2.273,
-        "wer": 22.222
+        "cer": 2.222,
+        "wer": 20.0
     },
     {
         "file_name": "096_038_003_01_14.png",
@@ -409,8 +409,8 @@
         "file_name": "096_038_003_01_15.png",
         "ground_truth_label": "to be wrong. So that, here again no new light",
         "predicted_label": "to be wrong . So that , here again no newlight",
-        "cer": 6.667,
-        "wer": 60.0
+        "cer": 6.522,
+        "wer": 54.545
     },
     {
         "file_name": "096_038_003_01_16.png",
@@ -444,15 +444,15 @@
         "file_name": "071_163_004_03_01.png",
         "ground_truth_label": "Frauds relative to the Coin.",
         "predicted_label": "Frauds relative to the Coin .",
-        "cer": 3.571,
-        "wer": 40.0
+        "cer": 3.448,
+        "wer": 33.333
     },
     {
         "file_name": "071_163_004_04_01.png",
         "ground_truth_label": "entirely cut off.",
         "predicted_label": "entirely cut of .",
         "cer": 5.882,
-        "wer": 66.667
+        "wer": 50.0
     },
     {
         "file_name": "071_163_004_04_02.png",
@@ -472,15 +472,15 @@
         "file_name": "071_163_004_04_04.png",
         "ground_truth_label": "operations",
         "predicted_label": "oseration .",
-        "cer": 30.0,
-        "wer": 200.0
+        "cer": 27.273,
+        "wer": 100.0
     },
     {
         "file_name": "071_163_004_04_05.png",
         "ground_truth_label": "=liminary Acts which a man has occasion to perform, and",
         "predicted_label": "=liminary Orter which a man has ocasion to perform , and",
-        "cer": 10.909,
-        "wer": 40.0
+        "cer": 10.714,
+        "wer": 36.364
     },
     {
         "file_name": "071_163_004_04_06.png",
@@ -493,8 +493,8 @@
         "file_name": "071_163_004_04_07.png",
         "ground_truth_label": "to put himself into, before he can be in a condition to",
         "predicted_label": "to put himself into , before he can be in a condition to",
-        "cer": 1.818,
-        "wer": 16.667
+        "cer": 1.786,
+        "wer": 15.385
     },
     {
         "file_name": "071_163_004_04_08.png",
@@ -507,8 +507,8 @@
         "file_name": "071_163_004_04_09.png",
         "ground_truth_label": "perform the act intrinsically obnoxious. Of these acts",
         "predicted_label": "perform the act intrinsicaly obnoxious . Of these antos",
-        "cer": 7.407,
-        "wer": 50.0
+        "cer": 7.273,
+        "wer": 44.444
     },
     {
         "file_name": "071_163_004_04_10.png",
@@ -521,29 +521,29 @@
         "file_name": "071_163_004_04_11.png",
         "ground_truth_label": "a greater surface; as it were, to observation ( and from",
         "predicted_label": "a greater surface , as it were , to observation ( and from",
-        "cer": 5.357,
-        "wer": 36.364
+        "cer": 5.172,
+        "wer": 30.769
     },
     {
         "file_name": "071_163_004_04_12.png",
         "ground_truth_label": "thence to testimony) than the act itself of Coining: and",
         "predicted_label": "thence to testimony ) than the act itself of Coining : and",
-        "cer": 3.571,
-        "wer": 40.0
+        "cer": 3.448,
+        "wer": 33.333
     },
     {
         "file_name": "071_163_004_04_13.png",
         "ground_truth_label": "this even when taken separately; much more when they",
         "predicted_label": "this even when taken separately ; much more when they",
-        "cer": 1.923,
-        "wer": 22.222
+        "cer": 1.887,
+        "wer": 20.0
     },
     {
         "file_name": "071_163_004_04_14.png",
         "ground_truth_label": "come to be added altogether. The more ample then and",
         "predicted_label": "come to be aded altogether . The more ample then and",
         "cer": 3.846,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "071_163_004_04_15.png",
@@ -557,7 +557,7 @@
         "ground_truth_label": "preliminary offences, the better chance there is of effecting",
         "predicted_label": "preliminary ofences , the beter chance there is of efecting",
         "cer": 6.557,
-        "wer": 44.444
+        "wer": 40.0
     },
     {
         "file_name": "071_163_004_04_17.png",
@@ -570,8 +570,8 @@
         "file_name": "071_163_004_04_18.png",
         "ground_truth_label": "are introductory.",
         "predicted_label": "are introductony .",
-        "cer": 11.765,
-        "wer": 100.0
+        "cer": 11.111,
+        "wer": 66.667
     },
     {
         "file_name": "071_163_004_04_19.png",
@@ -585,7 +585,7 @@
         "ground_truth_label": "some degree to answer that design. They are taken with",
         "predicted_label": "some degre to answer that design . They are taken with",
         "cer": 3.704,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "071_163_004_04_21.png",
@@ -612,8 +612,8 @@
         "file_name": "071_108_002_03_01.png",
         "ground_truth_label": "Of Matrimonial Desertion.",
         "predicted_label": "Of Matrimonial Desertion .",
-        "cer": 4.0,
-        "wer": 66.667
+        "cer": 3.846,
+        "wer": 50.0
     },
     {
         "file_name": "071_108_002_04_01.png",
@@ -626,15 +626,15 @@
         "file_name": "071_108_002_04_02.png",
         "ground_truth_label": "Desertion, distinguishing it from the case of lawful Absence;",
         "predicted_label": "Desertion , distinguishing it from the case of lawful Absence ;",
-        "cer": 3.279,
-        "wer": 44.444
+        "cer": 3.175,
+        "wer": 36.364
     },
     {
         "file_name": "071_108_002_04_03.png",
         "ground_truth_label": "and what steps shall be taken for giving notice.",
         "predicted_label": "and what steps shal be taken for giving Notice .",
         "cer": 6.25,
-        "wer": 33.333
+        "wer": 30.0
     },
     {
         "file_name": "071_108_002_04_04.png",
@@ -654,8 +654,8 @@
         "file_name": "071_108_002_04_06.png",
         "ground_truth_label": "one another at stated intervals: and let a failure on either part",
         "predicted_label": "one another at stated intervals : and let a failure on either part",
-        "cer": 1.538,
-        "wer": 16.667
+        "cer": 1.515,
+        "wer": 15.385
     },
     {
         "file_name": "071_108_002_04_07.png",
@@ -675,22 +675,22 @@
         "file_name": "071_108_002_04_09.png",
         "ground_truth_label": "desertion. Within the dominions of the state they might be manag=",
         "predicted_label": "desertion . Within the dominions of the state they might be manag =",
-        "cer": 3.077,
-        "wer": 36.364
+        "cer": 2.985,
+        "wer": 30.769
     },
     {
         "file_name": "071_108_002_04_10.png",
         "ground_truth_label": "=ed in the manner mentioned in the Book of Procedure. Tit.",
         "predicted_label": "-:ed in the maner mentioned in the Bok of Procedure . Tit .",
-        "cer": 10.345,
-        "wer": 63.636
+        "cer": 10.169,
+        "wer": 53.846
     },
     {
         "file_name": "071_108_002_04_11.png",
         "ground_truth_label": "As to foreigners, upon their coming into the country",
         "predicted_label": "As to Foreigners , upon their coming into the country",
-        "cer": 3.846,
-        "wer": 22.222
+        "cer": 3.774,
+        "wer": 20.0
     },
     {
         "file_name": "071_108_002_04_12.png",
@@ -703,57 +703,57 @@
         "file_name": "071_108_002_04_13.png",
         "ground_truth_label": "or single; and if single whether Bachelors or Spinsters, Widowers",
         "predicted_label": "or single ; and if single whether Bachelors or Spinsters , Widowers",
-        "cer": 3.077,
-        "wer": 40.0
+        "cer": 2.985,
+        "wer": 33.333
     },
     {
         "file_name": "071_108_002_04_14.png",
         "ground_truth_label": "or Widows. Of these declarations let Registers be kept, of which,",
         "predicted_label": "or Widows . Of these declarations let Registers be kept , of which",
-        "cer": 4.615,
-        "wer": 45.455
+        "cer": 4.545,
+        "wer": 38.462
     },
     {
         "file_name": "071_108_002_04_15.png",
         "ground_truth_label": "previous to their being married, copies should be required to be",
         "predicted_label": "previous to their being maried , copies should be required to be",
         "cer": 3.125,
-        "wer": 18.182
+        "wer": 16.667
     },
     {
         "file_name": "071_108_002_04_16.png",
         "ground_truth_label": "produced. If married, certificates of the death of the Wife or",
         "predicted_label": "produced . If maried , certificates of the death of the Wife or",
-        "cer": 4.839,
-        "wer": 36.364
+        "cer": 4.762,
+        "wer": 30.769
     },
     {
         "file_name": "071_108_002_04_17.png",
         "ground_truth_label": "Husband. At present these important enquiries are left to the",
         "predicted_label": "Husband . At present these important enquries are left to the",
         "cer": 3.279,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "071_108_002_04_18.png",
         "ground_truth_label": "uncertain prudence of individuals. The declarations above men=",
         "predicted_label": "uncertain prudence of individuals . The declarations above men=",
-        "cer": 1.613,
-        "wer": 25.0
+        "cer": 1.587,
+        "wer": 22.222
     },
     {
         "file_name": "071_108_002_04_19.png",
         "ground_truth_label": ":tioned should be accompanied with some details respecting their",
         "predicted_label": ": tioned should be acompanied with some details respecting their",
         "cer": 3.125,
-        "wer": 33.333
+        "wer": 30.0
     },
     {
         "file_name": "071_108_002_04_20.png",
         "ground_truth_label": "birth, parentage and last abode; such as may lead to detection",
         "predicted_label": "birth parentage and last abode ; such as may lead to detection",
         "cer": 3.226,
-        "wer": 27.273
+        "wer": 25.0
     },
     {
         "file_name": "071_108_002_04_21.png",
@@ -781,7 +781,7 @@
         "ground_truth_label": "as follows_",
         "predicted_label": "as folows _",
         "cer": 18.182,
-        "wer": 100.0
+        "wer": 66.667
     },
     {
         "file_name": "115_007_002_01_04.png",
@@ -794,22 +794,22 @@
         "file_name": "115_007_002_01_05.png",
         "ground_truth_label": "of wholesome food, not limited in quantity, but ade-",
         "predicted_label": "of wholesome fod , not limited in quantity , but ade-",
-        "cer": 5.769,
-        "wer": 44.444
+        "cer": 5.66,
+        "wer": 36.364
     },
     {
         "file_name": "115_007_002_01_06.png",
         "ground_truth_label": "-quate to each man's desires.",
         "predicted_label": "-quate to each man ' s desires .",
-        "cer": 10.345,
-        "wer": 100.0
+        "cer": 9.375,
+        "wer": 62.5
     },
     {
         "file_name": "115_007_002_01_07.png",
         "ground_truth_label": "2nd. To keep them clad in state of lightness and",
         "predicted_label": "2nd To kep them clad in a state of tightnes and",
         "cer": 12.5,
-        "wer": 40.0
+        "wer": 36.364
     },
     {
         "file_name": "115_007_002_01_08.png",
@@ -823,56 +823,56 @@
         "ground_truth_label": "classes or even in the improved prisons.",
         "predicted_label": "clases or even in the improved prisons .",
         "cer": 5.0,
-        "wer": 42.857
+        "wer": 37.5
     },
     {
         "file_name": "115_007_002_01_10.png",
         "ground_truth_label": "3rd. To keep them supplyed with separate beds and",
         "predicted_label": "3 .d To kep them suplyed with separate beds and",
         "cer": 10.204,
-        "wer": 44.444
+        "wer": 40.0
     },
     {
         "file_name": "115_007_002_01_11.png",
         "ground_truth_label": "bedding, competent to their situation, and in a state of",
         "predicted_label": "-beding , competent to their situation , and in a state of",
-        "cer": 7.143,
-        "wer": 40.0
+        "cer": 6.897,
+        "wer": 33.333
     },
     {
         "file_name": "115_007_002_01_12.png",
         "ground_truth_label": "cleanliness scarce any where conjoined with liberty.",
         "predicted_label": "cleanlines scarce any where conjoined with liberty .",
         "cer": 3.846,
-        "wer": 42.857
+        "wer": 37.5
     },
     {
         "file_name": "115_007_002_01_13.png",
         "ground_truth_label": "4th. To insure to them a sufficient supply of artificial",
         "predicted_label": "4.th . To insure to them a suficient suply of artificial",
         "cer": 7.143,
-        "wer": 40.0
+        "wer": 36.364
     },
     {
         "file_name": "115_007_002_01_14.png",
         "ground_truth_label": "warmth and light, whenever the season renders it ne-",
         "predicted_label": "warmth and light , whenever the season renders it ne-",
-        "cer": 1.923,
-        "wer": 22.222
+        "cer": 1.887,
+        "wer": 20.0
     },
     {
         "file_name": "115_007_002_01_15.png",
         "ground_truth_label": "-cessary, and thereby preserve them from being obli-",
         "predicted_label": "-cesary , and thereby preserve them from being obli-",
         "cer": 3.846,
-        "wer": 25.0
+        "wer": 22.222
     },
     {
         "file_name": "115_007_002_01_16.png",
         "ground_truth_label": "-ged as in other places, to desist from their work, as",
         "predicted_label": "-ged as in other places , to desist from their work , as",
-        "cer": 3.704,
-        "wer": 36.364
+        "cer": 3.571,
+        "wer": 30.769
     },
     {
         "file_name": "115_007_002_01_17.png",
@@ -885,50 +885,50 @@
         "file_name": "115_007_002_01_18.png",
         "ground_truth_label": "weather.",
         "predicted_label": "weather .",
-        "cer": 12.5,
-        "wer": 200.0
+        "cer": 11.111,
+        "wer": 100.0
     },
     {
         "file_name": "115_007_002_01_19.png",
         "ground_truth_label": "5th. To keep constantly from them, in conformity to",
         "predicted_label": "5th To kep constantly from them , in conformity to",
         "cer": 5.882,
-        "wer": 44.444
+        "wer": 40.0
     },
     {
         "file_name": "115_007_002_01_20.png",
         "ground_truth_label": "the practice so happily received, every kind of strong",
         "predicted_label": "the practice so hapily received , every kind of strong",
         "cer": 3.704,
-        "wer": 33.333
+        "wer": 30.0
     },
     {
         "file_name": "115_007_002_01_21.png",
         "ground_truth_label": "and spirituous liquor, unless where ordered in the",
         "predicted_label": "and spirituous liquor , unles where ordered in the",
         "cer": 4.0,
-        "wer": 37.5
+        "wer": 33.333
     },
     {
         "file_name": "115_007_002_01_22.png",
         "ground_truth_label": "way of medicine.",
         "predicted_label": "way of medicine .",
-        "cer": 6.25,
-        "wer": 66.667
+        "cer": 5.882,
+        "wer": 50.0
     },
     {
         "file_name": "115_007_002_01_23.png",
         "ground_truth_label": "6th. To maintain them in a state of inviolable though",
         "predicted_label": "6th . To maintain them in a state of inviolable though",
-        "cer": 1.887,
-        "wer": 20.0
+        "cer": 1.852,
+        "wer": 18.182
     },
     {
         "file_name": "115_007_002_01_24.png",
         "ground_truth_label": "mitigated seclusion, in small assorted companies,",
         "predicted_label": "mitigated seclusion , in smal asorted companies ,",
         "cer": 8.163,
-        "wer": 100.0
+        "wer": 75.0
     },
     {
         "file_name": "115_007_002_01_25.png",
@@ -942,7 +942,7 @@
         "ground_truth_label": "association, which in other improved prisons disturb",
         "predicted_label": "asociation , which in other improved prisons disturl",
         "cer": 5.769,
-        "wer": 42.857
+        "wer": 37.5
     },
     {
         "file_name": "115_007_002_01_27.png",
@@ -956,7 +956,7 @@
         "ground_truth_label": "from solitude. 7th. To",
         "predicted_label": "from solitude . 7th To",
         "cer": 9.091,
-        "wer": 75.0
+        "wer": 60.0
     },
     {
         "file_name": "072_069_002_01_01.png",
@@ -977,42 +977,42 @@
         "ground_truth_label": "Offences against Justice.",
         "predicted_label": "Ofences against Justice .",
         "cer": 8.0,
-        "wer": 100.0
+        "wer": 75.0
     },
     {
         "file_name": "072_069_002_04_01.png",
         "ground_truth_label": "particulars have concurred, in that case Justice cannot",
         "predicted_label": "particulars have concured , in that case Justice canot",
         "cer": 5.455,
-        "wer": 37.5
+        "wer": 33.333
     },
     {
         "file_name": "072_069_002_04_02.png",
         "ground_truth_label": "but have been properly administered. In any case let",
         "predicted_label": "hut have ben properly administered . In any case let",
         "cer": 5.769,
-        "wer": 44.444
+        "wer": 40.0
     },
     {
         "file_name": "072_069_002_04_03.png",
         "ground_truth_label": "any of them have failed, in that case Justice cannot",
         "predicted_label": "any of them have failed , in that case Justice canot",
         "cer": 3.846,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "072_069_002_04_04.png",
         "ground_truth_label": "have been properly administered. There cannot therefore",
         "predicted_label": "have ben properly administered . There canot therefore",
         "cer": 5.455,
-        "wer": 57.143
+        "wer": 50.0
     },
     {
         "file_name": "072_069_002_04_05.png",
         "ground_truth_label": "impediment to",
         "predicted_label": "impediment . to ",
-        "cer": 23.077,
-        "wer": 50.0
+        "cer": 18.75,
+        "wer": 33.333
     },
     {
         "file_name": "072_069_002_04_06.png",
@@ -1025,15 +1025,15 @@
         "file_name": "072_069_002_04_07.png",
         "ground_truth_label": "one of the tendencies just mentioned. Not that this deter=",
         "predicted_label": "one of the tendencies just mentioned . Not that this deter=",
-        "cer": 1.724,
-        "wer": 20.0
+        "cer": 1.695,
+        "wer": 18.182
     },
     {
         "file_name": "072_069_002_04_08.png",
         "ground_truth_label": ":minateness of the nature of these offences excludes",
         "predicted_label": ": minatenes of the nature of these Ofences excludes",
         "cer": 7.692,
-        "wer": 37.5
+        "wer": 33.333
     },
     {
         "file_name": "072_069_002_04_09.png",
@@ -1046,8 +1046,8 @@
         "file_name": "072_069_002_04_10.png",
         "ground_truth_label": ":gislation: for as long as the Legislator can devise any",
         "predicted_label": ": gislation : for as long as the Legislator can devise any",
-        "cer": 3.571,
-        "wer": 30.0
+        "cer": 3.448,
+        "wer": 25.0
     },
     {
         "file_name": "072_069_002_04_11.png",
@@ -1067,8 +1067,8 @@
         "file_name": "072_069_002_04_13.png",
         "ground_truth_label": "attainment of these ends and it accordingly,",
         "predicted_label": "atainment of these ends and hemeate it acordingly ,",
-        "cer": 25.0,
-        "wer": 57.143
+        "cer": 21.569,
+        "wer": 44.444
     },
     {
         "file_name": "072_069_002_04_14.png",
@@ -1082,7 +1082,7 @@
         "ground_truth_label": "of such offences. As",
         "predicted_label": "of such ofences . As",
         "cer": 10.0,
-        "wer": 50.0
+        "wer": 40.0
     },
     {
         "file_name": "072_069_002_05_01.png",
@@ -1096,7 +1096,7 @@
         "ground_truth_label": "begins earlier. The business of a civil Judge extends to the in=",
         "predicted_label": "begins earlier . The busines of a civil Judge extends to the in=",
         "cer": 3.125,
-        "wer": 25.0
+        "wer": 23.077
     },
     {
         "file_name": "072_069_002_05_03.png",
@@ -1117,28 +1117,28 @@
         "ground_truth_label": "would be offences: A man may commit an offence in",
         "predicted_label": "would be ofences : a man may comit an ofence in",
         "cer": 10.204,
-        "wer": 50.0
+        "wer": 45.455
     },
     {
         "file_name": "072_069_002_05_06.png",
         "ground_truth_label": "either of two ways, by usurping advantages that do not",
         "predicted_label": "either of two ways , by usurping advantages that do not",
-        "cer": 1.852,
-        "wer": 20.0
+        "cer": 1.818,
+        "wer": 18.182
     },
     {
         "file_name": "072_069_002_05_07.png",
         "ground_truth_label": "belong to him; or by declining burthens that do belong to",
         "predicted_label": "belong to him ; or by declining burthens that do belong to",
-        "cer": 1.754,
-        "wer": 18.182
+        "cer": 1.724,
+        "wer": 16.667
     },
     {
         "file_name": "072_069_002_05_08.png",
         "ground_truth_label": "him.",
         "predicted_label": "him .",
-        "cer": 25.0,
-        "wer": 200.0
+        "cer": 20.0,
+        "wer": 100.0
     },
     {
         "file_name": "072_069_002_05_09.png",
@@ -1152,7 +1152,7 @@
         "ground_truth_label": "to [apply] for such information: an active way and a passive: by",
         "predicted_label": "to aply ) for such information : an active way and a pasive : by",
         "cer": 10.938,
-        "wer": 50.0
+        "wer": 40.0
     },
     {
         "file_name": "116_064_001_01_01.png",
@@ -1179,267 +1179,267 @@
         "file_name": "116_064_001_02_01.png",
         "ground_truth_label": "which so alarmed and terrified them, that they instantly fled,",
         "predicted_label": "\" which so alarmed and terified them , that they instantly fled ,",
-        "cer": 8.065,
-        "wer": 60.0
+        "cer": 7.692,
+        "wer": 46.154
     },
     {
         "file_name": "116_064_001_02_02.png",
         "ground_truth_label": "leaving behind them their spears, &c. and about 20 bushels of",
         "predicted_label": "\" leaving behind them their spears , &c and about 20 bushels of",
-        "cer": 6.557,
-        "wer": 36.364
+        "cer": 6.349,
+        "wer": 30.769
     },
     {
         "file_name": "116_064_001_02_03.png",
         "ground_truth_label": "Indian-corn which they had stolen.",
         "predicted_label": "\" Indiln-corn which they had stolen .",
-        "cer": 11.765,
-        "wer": 80.0
+        "cer": 10.811,
+        "wer": 57.143
     },
     {
         "file_name": "116_064_001_02_04.png",
         "ground_truth_label": "\"It was distressing to observe that every endeavour to",
         "predicted_label": "\" It was distresing to observe , that every endeavous to",
-        "cer": 9.259,
-        "wer": 55.556
+        "cer": 8.929,
+        "wer": 45.455
     },
     {
         "file_name": "116_064_001_02_05.png",
         "ground_truth_label": "\"civilize these people proved fruitless. Although they lived among",
         "predicted_label": "\" civilize these people proved fruitles . Although they lived among",
-        "cer": 3.03,
-        "wer": 44.444
+        "cer": 2.985,
+        "wer": 36.364
     },
     {
         "file_name": "116_064_001_02_06.png",
         "ground_truth_label": "\"the inhabitants of the different settlements, were kindly treated,",
         "predicted_label": "\" the inhabitants of the diferent setlements , were kindly treated ,",
-        "cer": 7.463,
-        "wer": 77.778
+        "cer": 7.353,
+        "wer": 58.333
     },
     {
         "file_name": "116_064_001_02_07.png",
         "ground_truth_label": "\"fed, and often cloathed, yet they were never found to profess the",
         "predicted_label": "\" fed , and often cloathed , yet they were never found to poses the",
-        "cer": 9.091,
-        "wer": 50.0
+        "cer": 8.955,
+        "wer": 40.0
     },
     {
         "file_name": "116_064_001_02_08.png",
         "ground_truth_label": "\"smallest degree of gratitude for such favours. Even Even Ben-nil-long",
         "predicted_label": "\" smalest dgre of gratitude for such favours . Lwe Even Ben-nib-long",
         "cer": 12.857,
-        "wer": 70.0
+        "wer": 58.333
     },
     {
         "file_name": "116_064_001_02_09.png",
         "ground_truth_label": "\"was as destitute of this quality as the most ignorant of his coun-",
         "predicted_label": "\" was as destitute of this quality as the most ignoraut of his coun-",
-        "cer": 2.985,
-        "wer": 23.077
+        "cer": 2.941,
+        "wer": 21.429
     },
     {
         "file_name": "116_064_001_02_10.png",
         "ground_truth_label": "-\"trymen. \"It is an extraordinary fact, that even their children, who",
         "predicted_label": "\" trymen . It is an extraordinary fact , that even their children , who",
-        "cer": 8.696,
-        "wer": 72.727
+        "cer": 8.451,
+        "wer": 53.333
     },
     {
         "file_name": "116_064_001_02_11.png",
         "ground_truth_label": "\"had been bred among the white people, and who, from being",
         "predicted_label": "\" had ben bred among the white people , and who , from being",
-        "cer": 6.897,
-        "wer": 63.636
+        "cer": 6.667,
+        "wer": 50.0
     },
     {
         "file_name": "116_064_001_02_12.png",
         "ground_truth_label": "\"accustomed to follow their manner of living, might have been",
         "predicted_label": "\" acustomed to folow their maner of living , might have ben",
         "cer": 9.836,
-        "wer": 70.0
+        "wer": 58.333
     },
     {
         "file_name": "116_064_001_02_13.png",
         "ground_truth_label": "\"supposed to ill relish the life of their parents, when grown up,",
         "predicted_label": "\" suposed to il relish the life of their parents , when grown uh ,",
-        "cer": 9.231,
-        "wer": 58.333
+        "cer": 9.091,
+        "wer": 46.667
     },
     {
         "file_name": "116_064_001_02_14.png",
         "ground_truth_label": "\"have quitted their comfortable abodes, females as well as males,",
         "predicted_label": "\" have guited their comfortable abodes , females as wel as males ,",
-        "cer": 9.231,
-        "wer": 80.0
+        "cer": 9.091,
+        "wer": 61.538
     },
     {
         "file_name": "116_064_001_02_15.png",
         "ground_truth_label": "\"and taken to the same savage mode of living, where the sup-",
         "predicted_label": "\" and taken to the same savaly mode of living , where the sup",
-        "cer": 8.333,
-        "wer": 50.0
+        "cer": 8.197,
+        "wer": 42.857
     },
     {
         "file_name": "116_064_001_02_16.png",
         "ground_truth_label": "-\"ply \"of food was often precarious, their comforts not to be called",
         "predicted_label": "\" ply of fod was often precarious , their comforts not to be caled",
         "cer": 8.824,
-        "wer": 58.333
+        "wer": 50.0
     },
     {
         "file_name": "116_064_001_02_17.png",
         "ground_truth_label": "\"such, and their lives perpetually in danger. As a proof of the little",
         "predicted_label": "\" such , and their lives perpetualy in danger . As a prof of the liter",
         "cer": 11.429,
-        "wer": 61.538
+        "wer": 50.0
     },
     {
         "file_name": "116_064_001_02_18.png",
         "ground_truth_label": "\"personal safety which they enjoyed, a young young woman, the",
         "predicted_label": "\" personal safety which they enjoyed , a yoreg young woman , the",
-        "cer": 8.197,
-        "wer": 70.0
+        "cer": 7.812,
+        "wer": 53.846
     },
     {
         "file_name": "116_064_001_02_19.png",
         "ground_truth_label": "\"wife of a man named Ye-ra-ni-be , both of whom had been",
         "predicted_label": "\" wife of a man named ye -ra-nbe , both of whom had ben",
         "cer": 10.714,
-        "wer": 41.667
+        "wer": 35.714
     },
     {
         "file_name": "116_064_001_02_20.png",
         "ground_truth_label": "\"brought up in the settlement from their childhood, was cruelly",
         "predicted_label": "\" brought up in the setlement from their childhod , was cruely",
         "cer": 7.937,
-        "wer": 60.0
+        "wer": 50.0
     },
     {
         "file_name": "116_064_001_02_21.png",
         "ground_truth_label": "\"murdered at the brickfields by her husband, assisted by another",
         "predicted_label": " murdered at the brick fields by hes husband , asisted by another",
-        "cer": 7.812,
-        "wer": 70.0
+        "cer": 7.692,
+        "wer": 58.333
     },
     {
         "file_name": "116_064_001_02_22.png",
         "ground_truth_label": "\"native, Cole-be , who first beat her dreadfully about the head (the",
         "predicted_label": "\" native , Cole-be , who first beat her dreadfuly about the head ( the",
-        "cer": 5.882,
-        "wer": 50.0
+        "cer": 5.714,
+        "wer": 40.0
     },
     {
         "file_name": "116_064_001_02_23.png",
         "ground_truth_label": "\"common mode of chastising their women), and then put an end to",
         "predicted_label": "\" comon mode of chastising their women ) , and then put an end to",
-        "cer": 6.349,
-        "wer": 41.667
+        "cer": 6.154,
+        "wer": 33.333
     },
     {
         "file_name": "116_064_001_02_24.png",
         "ground_truth_label": "\"her existence by driving a spear through her heart.",
         "predicted_label": "\" her existence by driving a spear through her heart .",
-        "cer": 3.846,
-        "wer": 44.444
+        "cer": 3.704,
+        "wer": 36.364
     },
     {
         "file_name": "116_064_001_02_25.png",
         "ground_truth_label": "\"When spoken to or censured for robbing the maize grounds,",
         "predicted_label": "\" When spoken to or censured for robing the maize grounds ,",
-        "cer": 5.172,
-        "wer": 50.0
+        "cer": 5.085,
+        "wer": 41.667
     },
     {
         "file_name": "116_064_001_02_26.png",
         "ground_truth_label": "\"these people, to be revenged, were accustomed to assemble in large",
         "predicted_label": "\" these people , to be revenged , were acustomed to asemble in large",
-        "cer": 7.463,
-        "wer": 72.727
+        "cer": 7.353,
+        "wer": 57.143
     },
     {
         "file_name": "116_064_001_02_27.png",
         "ground_truth_label": "\"bodies, burn the homes of the settlers if they stood in lonely situa-",
         "predicted_label": "\" bodies , burn the houses of the setlers if they stod in lonely situa-",
-        "cer": 8.571,
-        "wer": 46.154
+        "cer": 8.451,
+        "wer": 40.0
     },
     {
         "file_name": "116_064_001_02_28.png",
         "ground_truth_label": "-\"tions, \"and frequently attempted to take their lives; yet they were",
         "predicted_label": "\" -tions , and frequently atempted to takte their lives ; yet they were",
-        "cer": 11.594,
-        "wer": 72.727
+        "cer": 11.268,
+        "wer": 57.143
     },
     {
         "file_name": "116_064_001_02_29.png",
         "ground_truth_label": "\"seldom refused a live corn when they were asked for it. It was",
         "predicted_label": "\" seldom refused a litle corn when they were asked for it . It was",
-        "cer": 6.349,
-        "wer": 38.462
+        "cer": 6.061,
+        "wer": 33.333
     },
     {
         "file_name": "116_064_001_02_30.png",
         "ground_truth_label": "\"imagined that they were stimulated to this destructive conduct by",
         "predicted_label": "\" imagined that they were stimulated to this destructive conduct by",
-        "cer": 1.515,
-        "wer": 20.0
+        "cer": 1.493,
+        "wer": 18.182
     },
     {
         "file_name": "116_064_001_02_31.png",
         "ground_truth_label": "\"some run-away convicts who were known to be among them at",
         "predicted_label": "\" some nun away convicts who were known to be among them at",
-        "cer": 5.172,
-        "wer": 36.364
+        "cer": 5.085,
+        "wer": 30.769
     },
     {
         "file_name": "116_064_001_02_32.png",
         "ground_truth_label": "\"the time of their committing these depravations. In order to get",
         "predicted_label": "\" the time of their comiting these depredations . In order to get",
         "cer": 9.231,
-        "wer": 45.455
+        "wer": 38.462
     },
     {
         "file_name": "116_064_001_02_33.png",
         "ground_truth_label": "\"possession of these pests, a proclamation was issued, calling on",
         "predicted_label": "\" posesion of these perts , a proclamation was isied , caling on",
         "cer": 13.846,
-        "wer": 70.0
+        "wer": 53.846
     },
     {
         "file_name": "116_064_001_02_34.png",
         "ground_truth_label": "\"them by name to surrender themselves within 14 days, declaring",
         "predicted_label": "\" them by name to surender themselves within 14 days , declaring",
-        "cer": 4.762,
-        "wer": 50.0
+        "cer": 4.688,
+        "wer": 41.667
     },
     {
         "file_name": "116_064_001_02_35.png",
         "ground_truth_label": "\"them outlaws if they refused, and requiring the inhabitants, as",
         "predicted_label": "\" them outlaws if they refused , and requiring the inhabitants , as",
-        "cer": 4.688,
-        "wer": 60.0
+        "cer": 4.478,
+        "wer": 46.154
     },
     {
         "file_name": "116_064_001_02_36.png",
         "ground_truth_label": "\"they valued the peace and good order of the settlement, and their",
         "predicted_label": "\" they valued the peace and god order of the setlement , and their",
         "cer": 6.061,
-        "wer": 41.667
+        "wer": 35.714
     },
     {
         "file_name": "116_064_001_02_37.png",
         "ground_truth_label": "\"own security, to assist in apprehending and bringing them to",
         "predicted_label": "\" own security , to asist in aprehending and bringing them to",
         "cer": 6.557,
-        "wer": 60.0
+        "wer": 50.0
     },
     {
         "file_name": "116_064_001_02_38.png",
         "ground_truth_label": "\"justice. The governor also signified his determination, if any of the",
         "predicted_label": "\" justice . The governor also signified his determination , if any of the",
-        "cer": 4.286,
-        "wer": 45.455
+        "cer": 4.11,
+        "wer": 35.714
     },
     {
         "file_name": "116_064_001_02_39.png",
@@ -1459,64 +1459,64 @@
         "file_name": "035_321_001_02_01.png",
         "ground_truth_label": "(3",
         "predicted_label": "( 3",
-        "cer": 50.0,
-        "wer": 200.0
+        "cer": 33.333,
+        "wer": 100.0
     },
     {
         "file_name": "035_321_001_02_02.png",
         "ground_truth_label": "parties whether or no Quasi-Trial shall have",
         "predicted_label": "pacties , whother or no Duase (Irial shal have",
-        "cer": 22.727,
-        "wer": 85.714
+        "cer": 21.739,
+        "wer": 66.667
     },
     {
         "file_name": "035_321_001_02_03.png",
         "ground_truth_label": "place: if any one says yes, he appoints day &",
         "predicted_label": "place : f any one says ye , he apoints day6",
         "cer": 13.333,
-        "wer": 80.0
+        "wer": 72.727
     },
     {
         "file_name": "035_321_001_02_04.png",
         "ground_truth_label": "hour: earlier or ulterior time, if applied for, are",
         "predicted_label": "hour : cardier or ulterior time , f aplied for , are",
-        "cer": 13.725,
-        "wer": 100.0
+        "cer": 13.462,
+        "wer": 75.0
     },
     {
         "file_name": "035_321_001_02_05.png",
         "ground_truth_label": "granted by him or refused: if Quasi Trial be",
         "predicted_label": "grunted by him as refused . if Dvase Priab be",
-        "cer": 22.727,
-        "wer": 66.667
+        "cer": 22.222,
+        "wer": 60.0
     },
     {
         "file_name": "035_321_001_02_06.png",
         "ground_truth_label": "not applied for, the provisional decrees, from",
         "predicted_label": "not .plied for , the provisional decres , suon",
         "cer": 17.391,
-        "wer": 85.714
+        "wer": 66.667
     },
     {
         "file_name": "035_321_001_02_07.png",
         "ground_truth_label": "provisional, become absolute.",
         "predicted_label": "provisional , becowe abslute .",
-        "cer": 13.793,
-        "wer": 166.667
+        "cer": 13.333,
+        "wer": 100.0
     },
     {
         "file_name": "035_321_001_02_08.png",
         "ground_truth_label": "Art. 8. The Quasi Trial is performed at",
         "predicted_label": "Ant . 8 . ( he Quase Orial is perfomced at",
-        "cer": 23.077,
-        "wer": 112.5
+        "cer": 21.429,
+        "wer": 81.818
     },
     {
         "file_name": "035_321_001_02_09.png",
         "ground_truth_label": "one Sitting or if more be necessary at divers sittings:",
         "predicted_label": "ove diting or f enore be mcpacy at divers titlng .",
         "cer": 30.909,
-        "wer": 70.0
+        "wer": 63.636
     },
     {
         "file_name": "035_321_001_02_10.png",
@@ -1530,7 +1530,7 @@
         "ground_truth_label": "-signed, it is gone through at one sitting, unless",
         "predicted_label": " signed , & is gove through at are sithny nl",
         "cer": 30.0,
-        "wer": 77.778
+        "wer": 70.0
     },
     {
         "file_name": "035_321_001_02_12.png",
@@ -1551,35 +1551,35 @@
         "ground_truth_label": "rendered ripe for definitive decrees.",
         "predicted_label": "reudered he for definctive deres .",
         "cer": 21.622,
-        "wer": 100.0
+        "wer": 83.333
     },
     {
         "file_name": "035_321_001_02_15.png",
         "ground_truth_label": "Art. 9. At this recapitulatory examination",
         "predicted_label": "int 9 . Wh this recapitulatony exainination",
-        "cer": 21.429,
-        "wer": 100.0
+        "cer": 20.93,
+        "wer": 85.714
     },
     {
         "file_name": "035_321_001_02_16.png",
         "ground_truth_label": "no evidence is receivable, that was not exhibited",
         "predicted_label": "no wiridence is seceivable , that was not exlubted",
-        "cer": 16.327,
-        "wer": 50.0
+        "cer": 16.0,
+        "wer": 44.444
     },
     {
         "file_name": "035_321_001_02_17.png",
         "ground_truth_label": "in the course of the original examination.",
         "predicted_label": "\" . the course of the oreginal examation .",
         "cer": 16.667,
-        "wer": 71.429
+        "wer": 55.556
     },
     {
         "file_name": "035_321_001_02_18.png",
         "ground_truth_label": "Art. 10. At this Quasi Trial may be re-",
         "predicted_label": "Act . Id . iAh this Eunse Pinial wany be ve-",
-        "cer": 41.026,
-        "wer": 100.0
+        "cer": 36.364,
+        "wer": 81.818
     },
     {
         "file_name": "035_321_001_02_19.png",
@@ -1592,15 +1592,15 @@
         "file_name": "035_321_001_02_20.png",
         "ground_truth_label": "gued and considered, the question of law.",
         "predicted_label": "gued aed conizdeced , the question of law ,",
-        "cer": 17.073,
-        "wer": 71.429
+        "cer": 16.279,
+        "wer": 55.556
     },
     {
         "file_name": "035_321_001_02_21.png",
         "ground_truth_label": "Art. 11. The incidental occasional on",
         "predicted_label": "Ant . 1 . hi .ndental ocasiouald on",
         "cer": 29.73,
-        "wer": 116.667
+        "wer": 87.5
     },
     {
         "file_name": "035_321_001_02_22.png",
@@ -1620,7 +1620,7 @@
         "file_name": "035_321_001_02_24.png",
         "ground_truth_label": "may",
         "predicted_label": "wrey",
-        "cer": 100.0,
+        "cer": 75.0,
         "wer": 100.0
     },
     {
@@ -1641,15 +1641,15 @@
         "file_name": "072_167_002_03_01.png",
         "ground_truth_label": "Of Simple Personal Injuries.",
         "predicted_label": "Of Simple Personal Injuries .",
-        "cer": 3.571,
-        "wer": 50.0
+        "cer": 3.448,
+        "wer": 40.0
     },
     {
         "file_name": "072_167_002_04_01.png",
         "ground_truth_label": "(a)",
         "predicted_label": "( a )",
-        "cer": 66.667,
-        "wer": 300.0
+        "cer": 40.0,
+        "wer": 100.0
     },
     {
         "file_name": "072_167_002_04_02.png",
@@ -1663,14 +1663,14 @@
         "ground_truth_label": "[(D) Uneasiness] It matters not how slight the contact + is by",
         "predicted_label": "[ ( B ) Uneasines ] It maters not how slight the Contact is by",
         "cer": 14.516,
-        "wer": 75.0
+        "wer": 60.0
     },
     {
         "file_name": "072_167_002_04_04.png",
         "ground_truth_label": "which the uneasiness is produced: the touch however slight may",
         "predicted_label": "which the uneasines is produced : the touch however slight may .",
-        "cer": 6.452,
-        "wer": 40.0
+        "cer": 6.25,
+        "wer": 33.333
     },
     {
         "file_name": "072_167_002_04_05.png",
@@ -1690,8 +1690,8 @@
         "file_name": "072_167_002_04_07.png",
         "ground_truth_label": "Will.",
         "predicted_label": "Wwil .",
-        "cer": 40.0,
-        "wer": 200.0
+        "cer": 33.333,
+        "wer": 100.0
     },
     {
         "file_name": "072_167_002_05_01.png",
@@ -1704,92 +1704,92 @@
         "file_name": "072_167_002_05_02.png",
         "ground_truth_label": "(a)",
         "predicted_label": "( a )",
-        "cer": 66.667,
-        "wer": 300.0
+        "cer": 40.0,
+        "wer": 100.0
     },
     {
         "file_name": "072_167_002_05_03.png",
         "ground_truth_label": "1. For the cases in which a man may happen to be con=",
         "predicted_label": "1 . For the cases in which a man may hapen to be con=",
         "cer": 3.774,
-        "wer": 23.077
+        "wer": 21.429
     },
     {
         "file_name": "072_167_002_05_04.png",
         "ground_truth_label": ":cerned in occasioning bodily pain or uneasiness in another by",
         "predicted_label": ": cerned in ocasioning , bodily pain or uneasines in another by",
-        "cer": 8.065,
-        "wer": 50.0
+        "cer": 7.937,
+        "wer": 41.667
     },
     {
         "file_name": "072_167_002_05_05.png",
         "ground_truth_label": "permanent practices, such as the carrying on of dangerous, offen=",
         "predicted_label": "permanent practices , such as the carying on of dangerous , ofen=",
         "cer": 6.154,
-        "wer": 60.0
+        "wer": 50.0
     },
     {
         "file_name": "072_167_002_05_06.png",
         "ground_truth_label": ":sive, or unwholesome, occupations. See",
         "predicted_label": "sive , or unwholes ome , ocupations . Se .",
-        "cer": 20.513,
-        "wer": 180.0
+        "cer": 19.048,
+        "wer": 90.0
     },
     {
         "file_name": "072_167_002_05_07.png",
         "ground_truth_label": "1. Laws relative to Householders in general.",
         "predicted_label": "1 . Laws relative to Housholders in general .",
-        "cer": 6.818,
-        "wer": 71.429
+        "cer": 6.667,
+        "wer": 55.556
     },
     {
         "file_name": "072_167_002_05_08.png",
         "ground_truth_label": "2. Laws relative to the several sorts of Manufactorers or Shop=",
         "predicted_label": "2 . Laws relative to the several sorts of Manufactorers or shop=",
-        "cer": 3.175,
-        "wer": 27.273
+        "cer": 3.125,
+        "wer": 25.0
     },
     {
         "file_name": "072_167_002_05_09.png",
         "ground_truth_label": "Keepers whose trades are apt to occasion danger or annoyance; such",
         "predicted_label": "Rcepers whose trades are apt to ocasion danger or anoyance ; such",
         "cer": 7.576,
-        "wer": 36.364
+        "wer": 33.333
     },
     {
         "file_name": "072_167_002_05_10.png",
         "ground_truth_label": "as Gun powder Manufactorers, Turpentine Distillers, Manufactorers",
         "predicted_label": "as Gun powder Manufactorers , Surpentine Distilers , Manufactorers",
-        "cer": 6.154,
-        "wer": 71.429
+        "cer": 6.061,
+        "wer": 55.556
     },
     {
         "file_name": "072_167_002_05_11.png",
         "ground_truth_label": "of Oil of Vitriol, Tanners, Tallow Chandlers, Brasiers, Pewterers &c.",
         "predicted_label": "of dil of Vitriol , Faners , Falow Chandlers , Brasiers , Pewtererste .",
-        "cer": 17.391,
-        "wer": 120.0
+        "cer": 16.901,
+        "wer": 85.714
     },
     {
         "file_name": "072_167_002_05_12.png",
         "ground_truth_label": "&c. In all these cases the damage, if any, is commonly either unintentio=",
         "predicted_label": " &c . In al these cases the damage , if any , is comonly either unintentio=",
-        "cer": 8.219,
-        "wer": 61.538
+        "cer": 8.0,
+        "wer": 50.0
     },
     {
         "file_name": "072_167_002_05_13.png",
         "ground_truth_label": ":nal, or at most not directly but only indirectly intentional. See Introd.",
         "predicted_label": "-nal , or at most not directly but only indirectly intentional . Se Introd .",
-        "cer": 6.757,
-        "wer": 58.333
+        "cer": 6.579,
+        "wer": 46.667
     },
     {
         "file_name": "072_167_002_05_14.png",
         "ground_truth_label": "Ch. Of Intention and Consciousness.",
         "predicted_label": "Ch . Of Intention and Consciousnes .",
-        "cer": 5.714,
-        "wer": 80.0
+        "cer": 5.556,
+        "wer": 57.143
     },
     {
         "file_name": "072_167_002_05_15.png",
@@ -1803,7 +1803,7 @@
         "ground_truth_label": "in producing bodily pain or uneasiness by selling unwholesome provisions,",
         "predicted_label": "in producing bodily pain or uneasines by seling unwholesome provisions ,",
         "cer": 4.11,
-        "wer": 40.0
+        "wer": 36.364
     },
     {
         "file_name": "072_167_002_05_17.png",
@@ -1817,105 +1817,105 @@
         "ground_truth_label": "25. _ The Police-Offices to be open for business from",
         "predicted_label": "25 . _ The Police-Ofices to be open for busines from",
         "cer": 5.66,
-        "wer": 40.0
+        "wer": 36.364
     },
     {
         "file_name": "116_406_001_01_02.png",
         "ground_truth_label": "nine, in the morning, till nine, at night.",
         "predicted_label": "nive , in the morning til nine , at night .",
-        "cer": 14.286,
-        "wer": 100.0
+        "cer": 13.953,
+        "wer": 72.727
     },
     {
         "file_name": "116_406_001_01_03.png",
         "ground_truth_label": "26. _ The present number of Runners, or Constables,",
         "predicted_label": "26 . _ The present number of Runers , or Constables ,",
-        "cer": 7.843,
-        "wer": 66.667
+        "cer": 7.547,
+        "wer": 50.0
     },
     {
         "file_name": "116_406_001_01_04.png",
         "ground_truth_label": "to the Police-Offices, are very insufficient.",
         "predicted_label": "to the Police Ofices , are very insuficient .",
         "cer": 11.111,
-        "wer": 83.333
+        "wer": 55.556
     },
     {
         "file_name": "116_406_001_01_05.png",
         "ground_truth_label": "27. _ No soldier should ever appear in the streets with:",
         "predicted_label": "27 . _ No Soldier should ever apear in the strects with",
         "cer": 8.929,
-        "wer": 54.545
+        "wer": 50.0
     },
     {
         "file_name": "116_406_001_01_06.png",
         "ground_truth_label": ":out his uniform.",
         "predicted_label": "rout his wniform .",
-        "cer": 17.647,
-        "wer": 100.0
+        "cer": 16.667,
+        "wer": 75.0
     },
     {
         "file_name": "116_406_001_01_07.png",
         "ground_truth_label": "28. _ The penalty on forfeiture of recognizances, in",
         "predicted_label": "28 . _ _ The penalty on forfeiture of recognizances , in",
-        "cer": 7.692,
-        "wer": 55.556
+        "cer": 7.143,
+        "wer": 41.667
     },
     {
         "file_name": "116_406_001_01_08.png",
         "ground_truth_label": "case of non-prosecution, should be considerably",
         "predicted_label": "case of non -prosecution , should be considerably",
-        "cer": 4.255,
-        "wer": 50.0
+        "cer": 4.082,
+        "wer": 37.5
     },
     {
         "file_name": "116_406_001_01_09.png",
         "ground_truth_label": "increased, and the payment thereof be enforced.",
         "predicted_label": "increased , and the payment thereof enforced .",
         "cer": 10.638,
-        "wer": 57.143
+        "wer": 50.0
     },
     {
         "file_name": "116_406_001_01_10.png",
         "ground_truth_label": "29. _ The Expences allowed to Prosecutors & Witnesses",
         "predicted_label": "29 . _ The expences alowed to Prosecutors & Wetneses",
         "cer": 9.434,
-        "wer": 55.556
+        "wer": 50.0
     },
     {
         "file_name": "116_406_001_01_11.png",
         "ground_truth_label": "from distant parts, are not sufficiently liberal; on",
         "predicted_label": "from distant parts , are not suficiently liberal ; on",
-        "cer": 5.769,
-        "wer": 62.5
+        "cer": 5.66,
+        "wer": 50.0
     },
     {
         "file_name": "116_406_001_01_12.png",
         "ground_truth_label": "which account many Delinquents evade justice.",
         "predicted_label": "which acount many Delionquents evade justice .",
-        "cer": 6.667,
-        "wer": 66.667
+        "cer": 6.522,
+        "wer": 57.143
     },
     {
         "file_name": "116_406_001_01_13.png",
         "ground_truth_label": "30. _ A Barrister and sufficient number of Atornies",
         "predicted_label": "38 . _ A Barister and suficient number of Atornies",
         "cer": 7.843,
-        "wer": 44.444
+        "wer": 40.0
     },
     {
         "file_name": "116_406_001_01_14.png",
         "ground_truth_label": "should be appointed to prosecute for the Crown, in",
         "predicted_label": "should be apointed to prosecute for the Crown , in",
         "cer": 4.0,
-        "wer": 33.333
+        "wer": 30.0
     },
     {
         "file_name": "116_406_001_01_15.png",
         "ground_truth_label": "criminal cases; and to conduct indictments for",
         "predicted_label": "criminal cases ; and to conduct indictments for",
-        "cer": 2.174,
-        "wer": 28.571
+        "cer": 2.128,
+        "wer": 25.0
     },
     {
         "file_name": "116_406_001_01_16.png",
@@ -1929,91 +1929,91 @@
         "ground_truth_label": "on their own account.",
         "predicted_label": "on thair own acount .",
         "cer": 14.286,
-        "wer": 75.0
+        "wer": 60.0
     },
     {
         "file_name": "116_406_001_01_18.png",
         "ground_truth_label": "31. _ The City of London ought to build a House",
         "predicted_label": "31 . _ The lity of London ought to build a House",
-        "cer": 4.255,
-        "wer": 27.273
+        "cer": 4.167,
+        "wer": 25.0
     },
     {
         "file_name": "116_406_001_01_19.png",
         "ground_truth_label": "of Correction; where all the London-Prisoners, who",
         "predicted_label": "of Corection ; where al the Londo Prisoners , who",
         "cer": 12.0,
-        "wer": 85.714
+        "wer": 60.0
     },
     {
         "file_name": "116_406_001_01_20.png",
         "ground_truth_label": "under",
         "predicted_label": "wnchat .",
-        "cer": 140.0,
-        "wer": 200.0
+        "cer": 87.5,
+        "wer": 100.0
     },
     {
         "file_name": "116_406_001_01_21.png",
         "ground_truth_label": "are sentence of temporary imprisonment, should",
         "predicted_label": "are sentence of terporary imprisonment , sh ould",
-        "cer": 6.522,
-        "wer": 83.333
+        "cer": 6.25,
+        "wer": 62.5
     },
     {
         "file_name": "116_406_001_01_22.png",
         "ground_truth_label": "be kept and compelled to work. No prisoners, under",
         "predicted_label": "be kept and compeled to work . No prisoners , under",
-        "cer": 6.0,
-        "wer": 55.556
+        "cer": 5.882,
+        "wer": 45.455
     },
     {
         "file_name": "116_406_001_01_23.png",
         "ground_truth_label": "fines, or temporary confinement, should be permitted",
         "predicted_label": "fines , or temporary confinement , should be permited",
-        "cer": 5.769,
-        "wer": 71.429
+        "cer": 5.66,
+        "wer": 55.556
     },
     {
         "file_name": "116_406_001_01_24.png",
         "ground_truth_label": "to remain in Newgate, or the Compters, after sen:",
         "predicted_label": "to rerain in Newgate , or the Compters , after sen-",
-        "cer": 8.163,
-        "wer": 66.667
+        "cer": 7.843,
+        "wer": 54.545
     },
     {
         "file_name": "116_406_001_01_25.png",
         "ground_truth_label": ":tence has been once passed.",
         "predicted_label": ":terce has ben once pased .",
         "cer": 14.286,
-        "wer": 80.0
+        "wer": 66.667
     },
     {
         "file_name": "116_406_001_01_26.png",
         "ground_truth_label": "32. _ Executions are of no utility, either for punishing",
         "predicted_label": "32 . _ Executions are of no utility , either for punishing",
-        "cer": 3.571,
-        "wer": 40.0
+        "cer": 3.448,
+        "wer": 33.333
     },
     {
         "file_name": "116_406_001_01_27.png",
         "ground_truth_label": "or deterring: _ if, however, they must be inflicted,",
         "predicted_label": "or detering : _ if , however , they must be inflicted ,",
-        "cer": 9.615,
-        "wer": 88.889
+        "cer": 9.091,
+        "wer": 61.538
     },
     {
         "file_name": "116_406_001_01_28.png",
         "ground_truth_label": "they should be done, as speedily as possible, after",
         "predicted_label": "they should be done , as spe dily as posible , after",
-        "cer": 7.843,
-        "wer": 66.667
+        "cer": 7.692,
+        "wer": 50.0
     },
     {
         "file_name": "116_406_001_01_29.png",
         "ground_truth_label": "passing sentence. Solitary confinement & labour",
         "predicted_label": "pasing sentence . Solitary confinement & labour",
         "cer": 4.255,
-        "wer": 50.0
+        "wer": 42.857
     },
     {
         "file_name": "115_080_003_01_01.png",
@@ -2026,8 +2026,8 @@
         "file_name": "115_080_003_02_01.png",
         "ground_truth_label": "the whole produce and profit of their labour, and the",
         "predicted_label": "the whole produce and profit of their labour , and the",
-        "cer": 1.887,
-        "wer": 20.0
+        "cer": 1.852,
+        "wer": 18.182
     },
     {
         "file_name": "115_080_003_02_02.png",
@@ -2047,22 +2047,22 @@
         "file_name": "115_080_003_02_04.png",
         "ground_truth_label": "mentioned.",
         "predicted_label": "mentioned .",
-        "cer": 10.0,
-        "wer": 200.0
+        "cer": 9.091,
+        "wer": 100.0
     },
     {
         "file_name": "115_080_003_02_05.png",
         "ground_truth_label": "Art.7. Each Prisoner shall be supplied every day",
         "predicted_label": "Art7 . Each Prisoner shal be suplied every day",
         "cer": 8.333,
-        "wer": 50.0
+        "wer": 44.444
     },
     {
         "file_name": "115_080_003_02_06.png",
         "ground_truth_label": "with wholesome food, as much as he shall choose:",
         "predicted_label": "with wholesome fod , as mush as he shal chose :",
         "cer": 12.5,
-        "wer": 66.667
+        "wer": 54.545
     },
     {
         "file_name": "115_080_003_02_07.png",
@@ -2096,8 +2096,8 @@
         "file_name": "115_080_003_02_11.png",
         "ground_truth_label": "their hands to labour.",
         "predicted_label": "theve hands to labour _",
-        "cer": 18.182,
-        "wer": 75.0
+        "cer": 17.391,
+        "wer": 60.0
     },
     {
         "file_name": "115_080_003_02_12.png",
@@ -2111,7 +2111,7 @@
         "ground_truth_label": "Art.8. Each prisoner shall be kept properly clo thed,",
         "predicted_label": "Art.8 . Each prisoner shal be kept properly clothed ,",
         "cer": 7.547,
-        "wer": 55.556
+        "wer": 50.0
     },
     {
         "file_name": "115_080_003_02_14.png",
@@ -2132,21 +2132,21 @@
         "ground_truth_label": "be allotted, and with a clean shirt at least twice in",
         "predicted_label": "be aloted , and with a clean shirt at least twice in",
         "cer": 5.66,
-        "wer": 18.182
+        "wer": 16.667
     },
     {
         "file_name": "115_080_003_02_17.png",
         "ground_truth_label": "every week.",
         "predicted_label": "every wek .",
         "cer": 18.182,
-        "wer": 100.0
+        "wer": 66.667
     },
     {
         "file_name": "115_080_003_02_18.png",
         "ground_truth_label": "Art.9. Each prisoner shall be constantly suppli-",
         "predicted_label": "Art9 . Each prisoner shal be constantly supli",
         "cer": 10.417,
-        "wer": 57.143
+        "wer": 50.0
     },
     {
         "file_name": "115_080_003_02_19.png",
@@ -2160,7 +2160,7 @@
         "ground_truth_label": "warmth, and kept in a state of constant cleanliness",
         "predicted_label": "warmth , and kept in a state of constant cleanlines",
         "cer": 3.922,
-        "wer": 33.333
+        "wer": 30.0
     },
     {
         "file_name": "115_080_003_02_21.png",
@@ -2180,8 +2180,8 @@
         "file_name": "115_080_003_02_23.png",
         "ground_truth_label": "Art.10. The Prison shall at all proper seasons",
         "predicted_label": "Art . 10 . The Prison shal at al proper seasons",
-        "cer": 10.87,
-        "wer": 75.0
+        "cer": 10.638,
+        "wer": 54.545
     },
     {
         "file_name": "115_080_003_02_24.png",
@@ -2194,22 +2194,22 @@
         "file_name": "115_080_003_02_25.png",
         "ground_truth_label": "lighted.",
         "predicted_label": "lighted .",
-        "cer": 12.5,
-        "wer": 200.0
+        "cer": 11.111,
+        "wer": 100.0
     },
     {
         "file_name": "115_080_003_02_26.png",
         "ground_truth_label": "Art.11. No prisoner shall be suffered to have access",
         "predicted_label": "Art.1 . No prisoner shal be sufered to have aces",
         "cer": 9.615,
-        "wer": 55.556
+        "wer": 50.0
     },
     {
         "file_name": "115_080_003_02_27.png",
         "ground_truth_label": "to any kind of spirituous or fermented liquor, except",
         "predicted_label": "to any kind of spirituous or fermented liquor , except",
-        "cer": 1.887,
-        "wer": 22.222
+        "cer": 1.852,
+        "wer": 20.0
     },
     {
         "file_name": "115_080_003_02_28.png",
@@ -2229,8 +2229,8 @@
         "file_name": "071_021_002_01_01.png",
         "ground_truth_label": "18.",
         "predicted_label": "18 .",
-        "cer": 33.333,
-        "wer": 200.0
+        "cer": 25.0,
+        "wer": 100.0
     },
     {
         "file_name": "071_021_002_02_01.png",
@@ -2243,22 +2243,22 @@
         "file_name": "071_021_002_03_01.png",
         "ground_truth_label": "Simple Corporal Injuries",
         "predicted_label": "Simple Ofdndatase Crporal Enjurses",
-        "cer": 58.333,
-        "wer": 100.0
+        "cer": 41.176,
+        "wer": 75.0
     },
     {
         "file_name": "071_021_002_04_01.png",
         "ground_truth_label": "constitute some degree of excuse extenuation.",
         "predicted_label": "constitute some degre of tcuse extenuction .",
         "cer": 11.111,
-        "wer": 66.667
+        "wer": 57.143
     },
     {
         "file_name": "071_021_002_04_02.png",
         "ground_truth_label": "2. It matters not whether the Mis-supposal in this case",
         "predicted_label": "2 . It maters not whether the mis-suposal in this case",
         "cer": 7.273,
-        "wer": 40.0
+        "wer": 36.364
     },
     {
         "file_name": "071_021_002_04_03.png",
@@ -2286,28 +2286,28 @@
         "ground_truth_label": "have been done you by your adversary, whereas in fact",
         "predicted_label": "have ben done you by your adversary , whereas in fact",
         "cer": 3.774,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "071_021_002_04_07.png",
         "ground_truth_label": "he has done you no such damage. It regards the mat=",
         "predicted_label": "he has done you no such damage . It regards the mat=",
-        "cer": 1.961,
-        "wer": 18.182
+        "cer": 1.923,
+        "wer": 16.667
     },
     {
         "file_name": "071_021_002_04_08.png",
         "ground_truth_label": ":ter of law, where you suppose him to have no right",
         "predicted_label": ": ter of law , where you supose him to have no right",
-        "cer": 5.882,
-        "wer": 45.455
+        "cer": 5.769,
+        "wer": 38.462
     },
     {
         "file_name": "071_021_002_04_09.png",
         "ground_truth_label": "to do you such damage, whereas in truth he had a",
         "predicted_label": "to do you such damage , whereas in truth he had a",
-        "cer": 2.083,
-        "wer": 18.182
+        "cer": 2.041,
+        "wer": 16.667
     },
     {
         "file_name": "071_021_002_04_10.png",
@@ -2320,64 +2320,64 @@
         "file_name": "071_021_002_04_11.png",
         "ground_truth_label": "right. See Excuse II. Ignorance of the Law.",
         "predicted_label": "right . Se Gexale t . Ignorance of the Law .",
-        "cer": 23.256,
-        "wer": 100.0
+        "cer": 22.727,
+        "wer": 72.727
     },
     {
         "file_name": "071_021_002_04_12.png",
         "ground_truth_label": "[(B1 Injury] It matters not to whom the injury in ques=",
         "predicted_label": "[ ( ) Injury ] It maters not to whom the injury in ques=",
-        "cer": 9.091,
-        "wer": 54.545
+        "cer": 8.929,
+        "wer": 42.857
     },
     {
         "file_name": "071_021_002_04_13.png",
         "ground_truth_label": "=tion immediately relates, whether",
         "predicted_label": ": tion imediately relates , whether",
-        "cer": 11.765,
-        "wer": 125.0
+        "cer": 11.429,
+        "wer": 83.333
     },
     {
         "file_name": "071_021_002_04_14.png",
         "ground_truth_label": "1. To the party himself who is provoked.",
         "predicted_label": "1 . To the party himself who is provoked .",
-        "cer": 5.0,
-        "wer": 50.0
+        "cer": 4.762,
+        "wer": 40.0
     },
     {
         "file_name": "071_021_002_04_15.png",
         "ground_truth_label": "2. To any one who is particularly dear to him.",
         "predicted_label": "2 . To any one who is particularly dear to him .",
-        "cer": 4.348,
-        "wer": 40.0
+        "cer": 4.167,
+        "wer": 33.333
     },
     {
         "file_name": "071_021_002_04_16.png",
         "ground_truth_label": "3. To the Public: For the interests of the Public ought",
         "predicted_label": "3 . To the Public : for the interests of the Public ought",
-        "cer": 5.455,
-        "wer": 45.455
+        "cer": 5.263,
+        "wer": 38.462
     },
     {
         "file_name": "071_021_002_04_17.png",
         "ground_truth_label": "to be dear to every man.",
         "predicted_label": "to be dear to every man .",
-        "cer": 4.167,
-        "wer": 33.333
+        "cer": 4.0,
+        "wer": 28.571
     },
     {
         "file_name": "071_021_002_04_18.png",
         "ground_truth_label": "4. Even to the party himself by whom the provocation is",
         "predicted_label": "4 . Even to the party himself by whom the provocation is",
-        "cer": 1.818,
-        "wer": 18.182
+        "cer": 1.786,
+        "wer": 16.667
     },
     {
         "file_name": "071_021_002_04_19.png",
         "ground_truth_label": "given: for every man ought to be dear to every man.",
         "predicted_label": "given : for every man aught to be dear to every man .",
-        "cer": 5.882,
-        "wer": 45.455
+        "cer": 5.66,
+        "wer": 38.462
     },
     {
         "file_name": "071_021_002_04_20.png",
@@ -2390,22 +2390,22 @@
         "file_name": "071_021_002_04_21.png",
         "ground_truth_label": "into any kind of vice, and, from the pain which it gives",
         "predicted_label": "into any kind of vice , and , from the pain which it gives",
-        "cer": 3.571,
-        "wer": 33.333
+        "cer": 3.448,
+        "wer": 28.571
     },
     {
         "file_name": "071_021_002_04_22.png",
         "ground_truth_label": "you to think of his behaviour, are provoked to strike",
         "predicted_label": "you to think of his behaviour , are provoked to strike",
-        "cer": 1.887,
-        "wer": 20.0
+        "cer": 1.852,
+        "wer": 18.182
     },
     {
         "file_name": "071_021_002_04_23.png",
         "ground_truth_label": "him, it is a less offence than if you struck him in the",
         "predicted_label": "him , it is a les ofence than if you struck him in the",
         "cer": 5.455,
-        "wer": 30.769
+        "wer": 28.571
     },
     {
         "file_name": "071_021_002_04_24.png",
@@ -2439,8 +2439,8 @@
         "file_name": "115_070_002_02_03.png",
         "ground_truth_label": "persons intitled to take out Administration to, the personal",
         "predicted_label": "persons intitled to take out Administration to , the personal",
-        "cer": 1.667,
-        "wer": 22.222
+        "cer": 1.639,
+        "wer": 20.0
     },
     {
         "file_name": "115_070_002_02_04.png",
@@ -2545,7 +2545,7 @@
         "ground_truth_label": "-ings improvements and stock to be settled by two referees, one",
         "predicted_label": "-ings improvements and stock to be setled by two referes , one",
         "cer": 4.762,
-        "wer": 27.273
+        "wer": 25.0
     },
     {
         "file_name": "115_070_002_02_19.png",
@@ -2572,8 +2572,8 @@
         "file_name": "115_070_002_02_22.png",
         "ground_truth_label": "an umpire.",
         "predicted_label": "an umpire .",
-        "cer": 10.0,
-        "wer": 100.0
+        "cer": 9.091,
+        "wer": 66.667
     },
     {
         "file_name": "115_077_002_01_01.png",
@@ -2600,8 +2600,8 @@
         "file_name": "115_077_002_02_03.png",
         "ground_truth_label": "and for such considerations, terms, conditions, powers,",
         "predicted_label": "and for such considerations , terms , conditions , powers ,",
-        "cer": 7.273,
-        "wer": 114.286
+        "cer": 6.78,
+        "wer": 72.727
     },
     {
         "file_name": "115_077_002_02_04.png",
@@ -2615,7 +2615,7 @@
         "ground_truth_label": "shall deem necessary and expedient, and shall cause",
         "predicted_label": "shal dem necesary and expedient , and shal cause",
         "cer": 9.804,
-        "wer": 75.0
+        "wer": 66.667
     },
     {
         "file_name": "115_077_002_02_06.png",
@@ -2629,7 +2629,7 @@
         "ground_truth_label": "-ful clauses, covenants and agreements, as shall be re-",
         "predicted_label": "-ful claises , covenants and agrements , as shal be re-",
         "cer": 9.091,
-        "wer": 55.556
+        "wer": 45.455
     },
     {
         "file_name": "115_077_002_02_08.png",
@@ -2643,7 +2643,7 @@
         "ground_truth_label": "-ly, and within a time to be limited And Whereas",
         "predicted_label": "ly , and within a time to be limited And Whereas",
         "cer": 4.167,
-        "wer": 20.0
+        "wer": 18.182
     },
     {
         "file_name": "115_077_002_02_10.png",
@@ -2691,8 +2691,8 @@
         "file_name": "115_077_002_02_16.png",
         "ground_truth_label": "for such considerations as are herein after mentioned,",
         "predicted_label": "for such considerations as are herein after mentioned ,",
-        "cer": 1.852,
-        "wer": 25.0
+        "cer": 1.818,
+        "wer": 22.222
     },
     {
         "file_name": "115_077_002_02_17.png",
@@ -2726,8 +2726,8 @@
         "file_name": "115_077_002_02_21.png",
         "ground_truth_label": "her Imperial Majesty's Service, Brother of the said",
         "predicted_label": "her Imperial Majesty ' s Service , Brother of the said",
-        "cer": 5.882,
-        "wer": 62.5
+        "cer": 5.556,
+        "wer": 45.455
     },
     {
         "file_name": "115_077_002_02_22.png",
@@ -2768,7 +2768,7 @@
         "file_name": "115_077_002_02_27.png",
         "ground_truth_label": "charge",
         "predicted_label": "chtanse",
-        "cer": 50.0,
+        "cer": 42.857,
         "wer": 100.0
     },
     {
@@ -2782,50 +2782,50 @@
         "file_name": "115_111_004_02_01.png",
         "ground_truth_label": "extension of the Colony Plan, or adoption of some",
         "predicted_label": "extension of the Colony Plan , or adoption of some",
-        "cer": 2.041,
-        "wer": 22.222
+        "cer": 2.0,
+        "wer": 20.0
     },
     {
         "file_name": "115_111_004_02_02.png",
         "ground_truth_label": "other mode of disposing of Convicts) perhaps not above",
         "predicted_label": "other mode of disposing of Convicts ) perhaps not abore",
-        "cer": 3.704,
-        "wer": 33.333
+        "cer": 3.636,
+        "wer": 30.0
     },
     {
         "file_name": "115_111_004_02_03.png",
         "ground_truth_label": "100 are received into this \u00a3100,000 House. What is",
         "predicted_label": "10 are received into this 10,0 House . What is",
         "cer": 12.0,
-        "wer": 44.444
+        "wer": 40.0
     },
     {
         "file_name": "115_111_004_02_04.png",
         "ground_truth_label": "the consequence? that for each Convict House rent",
         "predicted_label": "the consequence ? _ that for each Convict House rent",
-        "cer": 6.122,
-        "wer": 37.5
+        "cer": 5.769,
+        "wer": 30.0
     },
     {
         "file_name": "115_111_004_02_05.png",
         "ground_truth_label": "alone (\u00a35000 at 5 per Cent) comes to \u00a350 a year.",
         "predicted_label": "alone ( 50 at 5 per Cent ) comes to 50 a year .",
         "cer": 12.5,
-        "wer": 63.636
+        "wer": 50.0
     },
     {
         "file_name": "115_111_004_02_06.png",
         "ground_truth_label": "On Mr Bentham's plan it comes to \u00a39 a year, and",
         "predicted_label": "On Mr Bentham ' s plan it comes to 9 a year , and",
-        "cer": 8.511,
-        "wer": 54.545
+        "cer": 8.163,
+        "wer": 42.857
     },
     {
         "file_name": "115_111_004_02_07.png",
         "ground_truth_label": "that for two years only.",
         "predicted_label": "that for two years only .",
-        "cer": 4.167,
-        "wer": 40.0
+        "cer": 4.0,
+        "wer": 33.333
     },
     {
         "file_name": "115_111_004_02_08.png",
@@ -2838,22 +2838,22 @@
         "file_name": "115_111_004_02_09.png",
         "ground_truth_label": "out of the question, or rather that it was perfectly",
         "predicted_label": "out of the question , or rather that it was perfectly",
-        "cer": 1.923,
-        "wer": 20.0
+        "cer": 1.887,
+        "wer": 18.182
     },
     {
         "file_name": "115_111_004_02_10.png",
         "ground_truth_label": "understood that nothing should be refunded, is, that",
         "predicted_label": "understod that nothing should be refunded , is , that",
-        "cer": 5.769,
-        "wer": 62.5
+        "cer": 5.66,
+        "wer": 50.0
     },
     {
         "file_name": "115_111_004_02_11.png",
         "ground_truth_label": "Mr Bentham was, for months together, with the",
         "predicted_label": "Mr Bentham was , for months together , with the",
-        "cer": 4.444,
-        "wer": 50.0
+        "cer": 4.255,
+        "wer": 40.0
     },
     {
         "file_name": "115_111_004_02_12.png",
@@ -2867,14 +2867,14 @@
         "ground_truth_label": "Government, in treaty on his own account with the",
         "predicted_label": "Government , in treaty on his own acount with the",
         "cer": 4.082,
-        "wer": 33.333
+        "wer": 30.0
     },
     {
         "file_name": "115_111_004_02_14.png",
         "ground_truth_label": "Proprietors for the purchase of the Land: Government",
         "predicted_label": "Proprietors for the purchase of the Land : Government",
-        "cer": 1.923,
-        "wer": 25.0
+        "cer": 1.887,
+        "wer": 22.222
     },
     {
         "file_name": "115_111_004_02_15.png",
@@ -2887,50 +2887,50 @@
         "file_name": "115_111_004_02_16.png",
         "ground_truth_label": "case to Mr Bentham for a short time. The Pro-",
         "predicted_label": "case to Mr Bentham for a short time . The Pro-",
-        "cer": 2.222,
-        "wer": 20.0
+        "cer": 2.174,
+        "wer": 18.182
     },
     {
         "file_name": "115_111_004_02_17.png",
         "ground_truth_label": "-prietors not complying; an Act of Parliament for",
         "predicted_label": "-prietors not complying , an Act of Parliament for",
-        "cer": 4.082,
-        "wer": 25.0
+        "cer": 4.0,
+        "wer": 22.222
     },
     {
         "file_name": "115_111_004_02_18.png",
         "ground_truth_label": "this and other purposes was thought necessary: and",
         "predicted_label": "this and other purposes was thought necesary : and",
         "cer": 4.0,
-        "wer": 25.0
+        "wer": 22.222
     },
     {
         "file_name": "115_111_004_02_19.png",
         "ground_truth_label": "upon that occasion it was, that it was notified to",
         "predicted_label": "upon that ocasion it was , that it was notified to",
         "cer": 4.0,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "115_111_004_02_20.png",
         "ground_truth_label": "Mr Bentham, as the determination of Government,",
         "predicted_label": "Mr Bentham , as the determination of Government ,",
-        "cer": 4.255,
-        "wer": 57.143
+        "cer": 4.082,
+        "wer": 44.444
     },
     {
         "file_name": "115_111_004_02_21.png",
         "ground_truth_label": "that the Ground should be purchased, not on Mr",
         "predicted_label": "that the Gound should be purchosed , not on Mr",
         "cer": 6.522,
-        "wer": 33.333
+        "wer": 30.0
     },
     {
         "file_name": "115_111_004_02_22.png",
         "ground_truth_label": "Bentham's account, but on the account of Government:",
         "predicted_label": "Bentham ' s acount , but on the acount of Government :",
-        "cer": 11.538,
-        "wer": 100.0
+        "cer": 11.111,
+        "wer": 66.667
     },
     {
         "file_name": "115_111_004_02_23.png",
@@ -2943,22 +2943,22 @@
         "file_name": "115_111_004_02_24.png",
         "ground_truth_label": "Bentham and his Representatives. No reason was",
         "predicted_label": "Bentham and his Representatives . No reason was",
-        "cer": 2.174,
-        "wer": 28.571
+        "cer": 2.128,
+        "wer": 25.0
     },
     {
         "file_name": "115_111_004_02_25.png",
         "ground_truth_label": "assigned for this departure: Mr Bentham's consent to it",
         "predicted_label": "asigned for this departure : Mr Bentham ' s consent to it",
-        "cer": 7.273,
-        "wer": 66.667
+        "cer": 7.018,
+        "wer": 50.0
     },
     {
         "file_name": "115_111_004_02_26.png",
         "ground_truth_label": "was not called for: it was not given: he was not heard",
         "predicted_label": "was not caled for : it was not given : he was not heard",
-        "cer": 5.556,
-        "wer": 41.667
+        "cer": 5.455,
+        "wer": 35.714
     },
     {
         "file_name": "115_111_004_02_27.png",
@@ -2978,22 +2978,22 @@
         "file_name": "072_050_003_02_01.png",
         "ground_truth_label": "15.",
         "predicted_label": "15 .",
-        "cer": 33.333,
-        "wer": 200.0
+        "cer": 25.0,
+        "wer": 100.0
     },
     {
         "file_name": "072_050_003_03_01.png",
         "ground_truth_label": "Offences against the external Security of the State.",
         "predicted_label": "Ofences against the external Security of the State .",
         "cer": 3.846,
-        "wer": 37.5
+        "wer": 33.333
     },
     {
         "file_name": "072_050_003_04_01.png",
         "ground_truth_label": "is commonly distinguished by the name Piracy.",
         "predicted_label": "is comonly distinguished by the name of Piracy .",
-        "cer": 11.111,
-        "wer": 57.143
+        "cer": 10.417,
+        "wer": 44.444
     },
     {
         "file_name": "072_050_003_04_02.png",
@@ -3020,29 +3020,29 @@
         "file_name": "072_050_003_04_05.png",
         "ground_truth_label": "as another . If therefore the primary mischief of such an Of:",
         "predicted_label": "as another . If therefore the primary mischief of such-an Of :",
-        "cer": 3.279,
+        "cer": 3.226,
         "wer": 25.0
     },
     {
         "file_name": "072_050_003_04_06.png",
         "ground_truth_label": ":fence be confined to a single state, the secondary mischief,",
         "predicted_label": ": fence be confined to a single state , the secondary mischief ,",
-        "cer": 4.918,
-        "wer": 60.0
+        "cer": 4.688,
+        "wer": 46.154
     },
     {
         "file_name": "072_050_003_04_07.png",
         "ground_truth_label": "however, extends itself to all states the members of which",
         "predicted_label": "however , extends itself to al states the members of which",
         "cer": 3.448,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "072_050_003_04_08.png",
         "ground_truth_label": "are likely to come in the offender's way. An act of Piracy is",
         "predicted_label": "are likely to come in the ofender ' s way . An act of Piracy is",
-        "cer": 6.557,
-        "wer": 38.462
+        "cer": 6.349,
+        "wer": 31.25
     },
     {
         "file_name": "072_050_003_04_09.png",
@@ -3091,7 +3091,7 @@
         "ground_truth_label": ":nishing him : as likewise in punishing any accomplices",
         "predicted_label": ": nishing him : as likewise in punishing any acomplices",
         "cer": 3.636,
-        "wer": 33.333
+        "wer": 30.0
     },
     {
         "file_name": "072_050_003_04_16.png",
@@ -3132,8 +3132,8 @@
         "file_name": "072_050_003_04_21.png",
         "ground_truth_label": ":nions of a particular state which his excursions are",
         "predicted_label": ": nions of a particular state which his excursions are",
-        "cer": 1.887,
-        "wer": 22.222
+        "cer": 1.852,
+        "wer": 20.0
     },
     {
         "file_name": "072_050_003_04_22.png",
@@ -3146,8 +3146,8 @@
         "file_name": "072_050_003_04_23.png",
         "ground_truth_label": "=kind.",
         "predicted_label": "=kendo .",
-        "cer": 50.0,
-        "wer": 200.0
+        "cer": 37.5,
+        "wer": 100.0
     },
     {
         "file_name": "115_009_002_01_01.png",
@@ -3168,49 +3168,49 @@
         "ground_truth_label": "as follows_",
         "predicted_label": "as folows _",
         "cer": 18.182,
-        "wer": 100.0
+        "wer": 66.667
     },
     {
         "file_name": "115_009_002_02_03.png",
         "ground_truth_label": "1.st To furnish the prisoners with a constant supply",
         "predicted_label": "1 . st To furnish the prisoners with a constant suply",
-        "cer": 5.769,
-        "wer": 44.444
+        "cer": 5.66,
+        "wer": 36.364
     },
     {
         "file_name": "115_009_002_02_04.png",
         "ground_truth_label": "of wholesome food, not limited in quantity, but a-",
         "predicted_label": "of wholesome fod , not limited in quantity , but a-",
-        "cer": 6.0,
-        "wer": 44.444
+        "cer": 5.882,
+        "wer": 36.364
     },
     {
         "file_name": "115_009_002_02_05.png",
         "ground_truth_label": "-dequate to each man's desires.",
         "predicted_label": "-dequate to each man s desires .",
-        "cer": 6.452,
-        "wer": 80.0
+        "cer": 6.25,
+        "wer": 57.143
     },
     {
         "file_name": "115_009_002_02_06.png",
         "ground_truth_label": "2. To keep them clad in a state of lightness & neat-",
         "predicted_label": "2 . To kep them clad in a state of tightnes & neat-",
         "cer": 7.692,
-        "wer": 33.333
+        "wer": 30.769
     },
     {
         "file_name": "115_009_002_02_07.png",
         "ground_truth_label": "-ness, superior to what is usual among the lower clas-",
         "predicted_label": "-nes , superior to what is usual among the lower clas-",
         "cer": 1.852,
-        "wer": 20.0
+        "wer": 18.182
     },
     {
         "file_name": "115_009_002_02_08.png",
         "ground_truth_label": "-ses or even in the improved prisons.",
         "predicted_label": "-ses or even in the improved prisons .",
-        "cer": 2.703,
-        "wer": 28.571
+        "cer": 2.632,
+        "wer": 25.0
     },
     {
         "file_name": "115_009_002_02_09.png",
@@ -3223,43 +3223,43 @@
         "file_name": "115_009_002_02_10.png",
         "ground_truth_label": "bedding, competent to their situation, and in a state",
         "predicted_label": "-beding , competent to their situation , and in a state",
-        "cer": 7.547,
-        "wer": 44.444
+        "cer": 7.273,
+        "wer": 36.364
     },
     {
         "file_name": "115_009_002_02_11.png",
         "ground_truth_label": "of cleanliness scarce any where conjoined with liberty.",
         "predicted_label": "of cleanlines scarce any where conjoined with liberty .",
         "cer": 3.636,
-        "wer": 37.5
+        "wer": 33.333
     },
     {
         "file_name": "115_009_002_02_12.png",
         "ground_truth_label": "4th To insure to them a sufficient supply of artificial",
         "predicted_label": "4th . To insure to them a suficient suply of artificial",
         "cer": 7.273,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "115_009_002_02_13.png",
         "ground_truth_label": "warmth and light, whenever the season renders it",
         "predicted_label": "warmth and light , whenever the season renders it",
-        "cer": 2.083,
-        "wer": 25.0
+        "cer": 2.041,
+        "wer": 22.222
     },
     {
         "file_name": "115_009_002_02_14.png",
         "ground_truth_label": "necessary, and thereby preserve them from being",
         "predicted_label": "necesary , and thereby preserve them from being",
         "cer": 4.255,
-        "wer": 28.571
+        "wer": 25.0
     },
     {
         "file_name": "115_009_002_02_15.png",
         "ground_truth_label": "obliged as in other places, to desist from their work,",
         "predicted_label": "obliged as in other places , to desist from their work ,",
-        "cer": 3.704,
-        "wer": 40.0
+        "cer": 3.571,
+        "wer": 33.333
     },
     {
         "file_name": "115_009_002_02_16.png",
@@ -3272,36 +3272,36 @@
         "file_name": "115_009_002_02_17.png",
         "ground_truth_label": "the weather.",
         "predicted_label": "the weather .",
-        "cer": 8.333,
-        "wer": 100.0
+        "cer": 7.692,
+        "wer": 66.667
     },
     {
         "file_name": "115_009_002_02_18.png",
         "ground_truth_label": "5.th To keep constantly from them, in conformity to the",
         "predicted_label": "5.h . To kep constantly from them , in conformity to the",
-        "cer": 9.091,
-        "wer": 50.0
+        "cer": 8.929,
+        "wer": 41.667
     },
     {
         "file_name": "115_009_002_02_19.png",
         "ground_truth_label": "practice so happily received, every kind of strong &",
         "predicted_label": "practice so hapily received , every kind of strong &",
         "cer": 3.846,
-        "wer": 33.333
+        "wer": 30.0
     },
     {
         "file_name": "115_009_002_02_20.png",
         "ground_truth_label": "spirituous liquor, unless where ordered in the way of",
         "predicted_label": "spirituous liquor , unles where ordered in the way of",
         "cer": 3.774,
-        "wer": 33.333
+        "wer": 30.0
     },
     {
         "file_name": "115_009_002_02_21.png",
         "ground_truth_label": "medicine.",
         "predicted_label": "medicine .",
-        "cer": 11.111,
-        "wer": 200.0
+        "cer": 10.0,
+        "wer": 100.0
     },
     {
         "file_name": "115_009_002_02_22.png",
@@ -3315,21 +3315,21 @@
         "ground_truth_label": "though mitigated seclusion, in small assorted com-",
         "predicted_label": "though mitigated seclusion , in smal asorted com-",
         "cer": 6.0,
-        "wer": 57.143
+        "wer": 50.0
     },
     {
         "file_name": "115_009_002_02_24.png",
         "ground_truth_label": "panies, without any of those opportunities of pro",
         "predicted_label": "-panies , without any of those oportunities of pro",
-        "cer": 6.122,
-        "wer": 37.5
+        "cer": 6.0,
+        "wer": 33.333
     },
     {
         "file_name": "115_009_002_02_25.png",
         "ground_truth_label": "-miscuous association, which in other improved pri-",
         "predicted_label": "-miscuous asociation , which in other improved pri-",
         "cer": 3.922,
-        "wer": 28.571
+        "wer": 25.0
     },
     {
         "file_name": "115_009_002_02_26.png",
@@ -3343,35 +3343,35 @@
         "ground_truth_label": "have been expected from solitude.",
         "predicted_label": "have ben expected from solitude .",
         "cer": 6.061,
-        "wer": 60.0
+        "wer": 50.0
     },
     {
         "file_name": "115_009_002_02_28.png",
         "ground_truth_label": "7. To",
         "predicted_label": "7 . To ",
-        "cer": 40.0,
-        "wer": 100.0
+        "cer": 28.571,
+        "wer": 66.667
     },
     {
         "file_name": "073_068_001_01_01.png",
         "ground_truth_label": "62",
         "predicted_label": "62 .",
-        "cer": 100.0,
-        "wer": 100.0
+        "cer": 50.0,
+        "wer": 50.0
     },
     {
         "file_name": "073_068_001_02_01.png",
         "ground_truth_label": "THEFT",
         "predicted_label": "THEFT ",
-        "cer": 20.0,
+        "cer": 16.667,
         "wer": 0.0
     },
     {
         "file_name": "073_068_001_03_01.png",
         "ground_truth_label": "wherefrom this Consciousness might be infer'd were",
         "predicted_label": "wherefrom this Consicousnes might be infer ' d were",
-        "cer": 10.0,
-        "wer": 57.143
+        "cer": 9.804,
+        "wer": 44.444
     },
     {
         "file_name": "073_068_001_03_02.png",
@@ -3384,8 +3384,8 @@
         "file_name": "073_068_001_03_03.png",
         "ground_truth_label": "those 4.",
         "predicted_label": "those 4 .",
-        "cer": 12.5,
-        "wer": 100.0
+        "cer": 11.111,
+        "wer": 66.667
     },
     {
         "file_name": "073_068_001_03_04.png",
@@ -3398,15 +3398,15 @@
         "file_name": "073_068_001_03_05.png",
         "ground_truth_label": "But I had Cause at length to abandon",
         "predicted_label": "But I hao leause at length to abandon",
-        "cer": 8.333,
+        "cer": 8.108,
         "wer": 25.0
     },
     {
         "file_name": "073_068_001_03_06.png",
         "ground_truth_label": "the pursuit, in the Persuasion that this",
         "predicted_label": "the Pursuit , in the Persuasion that this",
-        "cer": 5.0,
-        "wer": 28.571
+        "cer": 4.878,
+        "wer": 25.0
     },
     {
         "file_name": "073_068_001_03_07.png",
@@ -3433,8 +3433,8 @@
         "file_name": "073_068_001_03_10.png",
         "ground_truth_label": "the Medium of any of those specific Heads: the",
         "predicted_label": "the Medium of any of those specific Heads : the",
-        "cer": 2.174,
-        "wer": 22.222
+        "cer": 2.128,
+        "wer": 20.0
     },
     {
         "file_name": "073_068_001_03_11.png",
@@ -3447,15 +3447,15 @@
         "file_name": "073_068_001_03_12.png",
         "ground_truth_label": "Questions to the Jury would therefore have no Use; and",
         "predicted_label": "Questions to the Jury would therefore have no Use ; and",
-        "cer": 1.852,
-        "wer": 20.0
+        "cer": 1.818,
+        "wer": 18.182
     },
     {
         "file_name": "073_068_001_03_13.png",
         "ground_truth_label": "it might have this Inconvenience, that the",
         "predicted_label": "it might have this Inconvenience , that the",
-        "cer": 2.381,
-        "wer": 28.571
+        "cer": 2.326,
+        "wer": 25.0
     },
     {
         "file_name": "073_068_001_03_14.png",
@@ -3476,7 +3476,7 @@
         "ground_truth_label": "so clear, as that the Jury could concur in affirming",
         "predicted_label": "so clear , as that the Jury could concur in afirming",
         "cer": 3.846,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "073_068_001_03_17.png",
@@ -3489,15 +3489,15 @@
         "file_name": "073_068_001_03_18.png",
         "ground_truth_label": "that of the others: hence if the Interrogatories",
         "predicted_label": "-ing that of the others : hence if the Interogatories",
-        "cer": 14.583,
-        "wer": 50.0
+        "cer": 13.208,
+        "wer": 40.0
     },
     {
         "file_name": "073_068_001_03_19.png",
         "ground_truth_label": "concerning each were put separately, tho' some one",
         "predicted_label": "concerning each were put separately , tho some one",
         "cer": 4.0,
-        "wer": 37.5
+        "wer": 33.333
     },
     {
         "file_name": "073_068_001_03_20.png",
@@ -3510,8 +3510,8 @@
         "file_name": "073_068_001_03_21.png",
         "ground_truth_label": "Existence, yet not knowing precisely which, they",
         "predicted_label": "Existence , yet not knowing precisely which , they",
-        "cer": 4.167,
-        "wer": 57.143
+        "cer": 4.0,
+        "wer": 44.444
     },
     {
         "file_name": "073_068_001_03_22.png",
@@ -3525,7 +3525,7 @@
         "ground_truth_label": "them all.",
         "predicted_label": "them al .",
         "cer": 11.111,
-        "wer": 100.0
+        "wer": 66.667
     },
     {
         "file_name": "073_068_001_03_24.png",
@@ -3538,8 +3538,8 @@
         "file_name": "116_387_001_01_01.png",
         "ground_truth_label": "My Lords, Whitehall 14 Oct. 1799.",
         "predicted_label": "Aty Lord , Whitshal t4 Sct . 1749,",
-        "cer": 30.303,
-        "wer": 133.333
+        "cer": 29.412,
+        "wer": 100.0
     },
     {
         "file_name": "116_387_001_01_02.png",
@@ -3553,28 +3553,28 @@
         "ground_truth_label": "Mr Long of the 27th ulto, desiring, by command of",
         "predicted_label": "Mr Long of the 27 ulto , dinring , by comand of",
         "cer": 16.327,
-        "wer": 60.0
+        "wer": 50.0
     },
     {
         "file_name": "116_387_001_01_04.png",
         "ground_truth_label": "your Lordships, to be apprized of the number of Con-",
         "predicted_label": "your Lordstisps , to be aprized of the unmber of Cons",
-        "cer": 13.462,
-        "wer": 50.0
+        "cer": 13.208,
+        "wer": 45.455
     },
     {
         "file_name": "116_387_001_01_05.png",
         "ground_truth_label": "-victs, which the Panopticon proposed to be erected by",
         "predicted_label": "-victs , which the Panopticon , proposed to be cruted by",
-        "cer": 11.111,
-        "wer": 44.444
+        "cer": 10.714,
+        "wer": 36.364
     },
     {
         "file_name": "116_387_001_01_06.png",
         "ground_truth_label": "Mr Bentham, is intended to accommodate. I have",
         "predicted_label": "Mr Bentham , is intended to acomodate , I have",
         "cer": 10.87,
-        "wer": 50.0
+        "wer": 40.0
     },
     {
         "file_name": "116_387_001_01_07.png",
@@ -3587,22 +3587,22 @@
         "file_name": "116_387_001_01_08.png",
         "ground_truth_label": "Majesty, relative to the building of Penitentiary Houses",
         "predicted_label": "Majesty , relative to the biulding of Penstentiary Honses",
-        "cer": 8.929,
-        "wer": 62.5
+        "cer": 8.772,
+        "wer": 55.556
     },
     {
         "file_name": "116_387_001_01_09.png",
         "ground_truth_label": "for confining and employing in hard labour, Persons",
         "predicted_label": "for consing and employiny in hard lebonr , Persons",
         "cer": 13.725,
-        "wer": 50.0
+        "wer": 44.444
     },
     {
         "file_name": "116_387_001_01_10.png",
         "ground_truth_label": "convicted of transportable and other Crimes.",
         "predicted_label": " convictut of trausportable and other Crsmes .",
-        "cer": 13.636,
-        "wer": 66.667
+        "cer": 13.043,
+        "wer": 57.143
     },
     {
         "file_name": "116_387_001_01_11.png",
@@ -3637,14 +3637,14 @@
         "ground_truth_label": "from the time of their receiving sentence, till an",
         "predicted_label": "from the ture of ther riceiomy . Sentonce , til an",
         "cer": 26.0,
-        "wer": 77.778
+        "wer": 63.636
     },
     {
         "file_name": "116_387_001_01_16.png",
         "ground_truth_label": "opportunity may offer for their being transported.",
         "predicted_label": "oprhonty incy ofer for thar being tauported e",
         "cer": 32.0,
-        "wer": 85.714
+        "wer": 75.0
     },
     {
         "file_name": "116_387_001_01_17.png",
@@ -3664,22 +3664,22 @@
         "file_name": "116_387_001_01_19.png",
         "ground_truth_label": "no safer rule can be adopted, than by taking the",
         "predicted_label": "nio tafr rule can be udopted , than by taking the",
-        "cer": 10.417,
-        "wer": 40.0
+        "cer": 10.204,
+        "wer": 36.364
     },
     {
         "file_name": "116_387_001_01_20.png",
         "ground_truth_label": "greatest number of the four last years of Peace:",
         "predicted_label": "grialest number of the foror last apears of Peace .",
-        "cer": 16.667,
-        "wer": 55.556
+        "cer": 15.686,
+        "wer": 50.0
     },
     {
         "file_name": "116_387_001_01_21.png",
         "ground_truth_label": "though it may increase, yet the increase of live",
         "predicted_label": "thrugh it mory increase , yet the encruse of twe",
         "cer": 20.833,
-        "wer": 66.667
+        "wer": 60.0
     },
     {
         "file_name": "116_387_001_01_22.png",
@@ -3693,7 +3693,7 @@
         "ground_truth_label": "difference.]",
         "predicted_label": "lfrun .",
         "cer": 66.667,
-        "wer": 200.0
+        "wer": 100.0
     },
     {
         "file_name": "116_387_001_01_24.png",
@@ -3713,183 +3713,183 @@
         "file_name": "116_072_001_02_01.png",
         "ground_truth_label": "P. 126. September 1790. \"In order to encourage as far as possible",
         "predicted_label": "P . 126 . September 1798 . \" In order to encourage as far as posible",
-        "cer": 9.231,
-        "wer": 75.0
+        "cer": 8.824,
+        "wer": 56.25
     },
     {
         "file_name": "116_072_001_02_02.png",
         "ground_truth_label": "\"the rearing of swine in the colony, as well as of every other",
         "predicted_label": "\" the rearing of swine in the colony , as wel as of every other",
-        "cer": 4.839,
-        "wer": 38.462
+        "cer": 4.762,
+        "wer": 33.333
     },
     {
         "file_name": "116_072_001_02_03.png",
         "ground_truth_label": "\"kind of live stock, a circumstance that must not only prove",
         "predicted_label": "\" hind of live stock , a circumstance that must not inbonly prove",
-        "cer": 10.0,
-        "wer": 45.455
+        "cer": 9.231,
+        "wer": 38.462
     },
     {
         "file_name": "116_072_001_02_04.png",
         "ground_truth_label": "\"a great benefit to the public, but be also highly to the advantage",
         "predicted_label": "\" a great benefit to the public , but be aho highly to the advantage",
-        "cer": 5.97,
-        "wer": 38.462
+        "cer": 5.882,
+        "wer": 33.333
     },
     {
         "file_name": "116_072_001_02_05.png",
         "ground_truth_label": "\"of those who devoted a part of their time to this useful purpose,",
         "predicted_label": "\" of those who devoted a part of their time to this useful purpose ,",
-        "cer": 3.03,
-        "wer": 30.769
+        "cer": 2.941,
+        "wer": 26.667
     },
     {
         "file_name": "116_072_001_02_06.png",
         "ground_truth_label": "\"and which, from the advanced state of the private farmers, might",
         "predicted_label": "\" and which , from the advanced state of the private farmes , might",
-        "cer": 6.154,
-        "wer": 54.545
+        "cer": 5.97,
+        "wer": 42.857
     },
     {
         "file_name": "116_072_001_02_07.png",
         "ground_truth_label": "\"now be done with far less trouble and expence than formerly, the",
         "predicted_label": "\" now be done with far les trouble and expence than formerly , the",
-        "cer": 4.615,
-        "wer": 41.667
+        "cer": 4.545,
+        "wer": 35.714
     },
     {
         "file_name": "116_072_001_02_08.png",
         "ground_truth_label": "\"settlers and others were informed, that when any individual should",
         "predicted_label": "\" setlers and others were informed , that when any individual should",
-        "cer": 4.478,
-        "wer": 40.0
+        "cer": 4.412,
+        "wer": 33.333
     },
     {
         "file_name": "116_072_001_02_09.png",
         "ground_truth_label": "\"have prepared a number of such animals fit for the public",
         "predicted_label": "\" have prepared a number of such ancials fit for the public",
-        "cer": 5.172,
-        "wer": 27.273
+        "cer": 5.085,
+        "wer": 25.0
     },
     {
         "file_name": "116_072_001_02_10.png",
         "ground_truth_label": "\"store, they might make the same known to the commissary,",
         "predicted_label": "\" store , they might make the same known to the comisary ,",
-        "cer": 8.772,
-        "wer": 50.0
+        "cer": 8.621,
+        "wer": 38.462
     },
     {
         "file_name": "116_072_001_02_11.png",
         "ground_truth_label": "\"who, in order to prevent any unnecessary expence to the feeder,",
         "predicted_label": "\" who , in order to prevent any unecesary expence to the feder ,",
         "cer": 9.375,
-        "wer": 54.545
+        "wer": 42.857
     },
     {
         "file_name": "116_072_001_02_12.png",
         "ground_truth_label": "\"would get give immediate notice of the day and place when",
         "predicted_label": "\" would gue give imediale notice of the day and place when",
         "cer": 8.621,
-        "wer": 36.364
+        "wer": 33.333
     },
     {
         "file_name": "116_072_001_02_13.png",
         "ground_truth_label": "\"and where he would receive them. He was also at liberty to",
         "predicted_label": "\" and whese he would receive them . He was also at liberty to",
-        "cer": 5.085,
-        "wer": 41.667
+        "cer": 4.918,
+        "wer": 35.714
     },
     {
         "file_name": "116_072_001_02_14.png",
         "ground_truth_label": "\"enter into an agreement or contract for a certain length of time,",
         "predicted_label": "\" enter into an agrement or contract for a certain length of time ,",
-        "cer": 4.545,
-        "wer": 41.667
+        "cer": 4.478,
+        "wer": 35.714
     },
     {
         "file_name": "116_072_001_02_15.png",
         "ground_truth_label": "\"and on such conditions as should be agreed, with any person who",
         "predicted_label": "\" and on such conditions as should be agrled , with any person who",
-        "cer": 4.688,
-        "wer": 33.333
+        "cer": 4.545,
+        "wer": 28.571
     },
     {
         "file_name": "116_072_001_02_16.png",
         "ground_truth_label": "\"would engage to furnish the public store either at Sydney, Parra-",
         "predicted_label": "\" would engage to furnish the public stere either at Syoney , Para-",
-        "cer": 7.576,
-        "wer": 54.545
+        "cer": 7.463,
+        "wer": 46.154
     },
     {
         "file_name": "116_072_001_02_17.png",
         "ground_truth_label": "-\"matta, or the Hawkesbury, with any certain quantity at stated",
         "predicted_label": "- mate , or the Hawherloury , with any certain quantity at stated",
-        "cer": 12.698,
-        "wer": 50.0
+        "cer": 12.308,
+        "wer": 38.462
     },
     {
         "file_name": "116_072_001_02_18.png",
         "ground_truth_label": "\"periods.\"",
         "predicted_label": " tunods \"",
         "cer": 60.0,
-        "wer": 200.0
+        "wer": 100.0
     },
     {
         "file_name": "116_072_001_02_19.png",
         "ground_truth_label": "P. 196 January 1799. \"That he [the Governor] might ascertain what",
         "predicted_label": "P. 196 January 179 . \" That he ( the hovernor ) might ancertain what",
-        "cer": 12.308,
-        "wer": 81.818
+        "cer": 11.765,
+        "wer": 60.0
     },
     {
         "file_name": "116_072_001_02_20.png",
         "ground_truth_label": "\"quantity of grain he had to depend on, all those who cultivated",
         "predicted_label": "\" quantity of grain he had to depend on , al those aho cultiated",
         "cer": 7.812,
-        "wer": 58.333
+        "wer": 50.0
     },
     {
         "file_name": "116_072_001_02_21.png",
         "ground_truth_label": "\"ground were directed to give in by a certain time a return of the",
         "predicted_label": "\" groused were directed to give in by a certain time a return of the",
-        "cer": 4.545,
-        "wer": 14.286
+        "cer": 4.412,
+        "wer": 13.333
     },
     {
         "file_name": "116_072_001_02_22.png",
         "ground_truth_label": "\"wheat and other grain in their possession.\"",
         "predicted_label": "\" wheat and other grain in their posesion \" _",
-        "cer": 13.636,
-        "wer": 71.429
+        "cer": 13.333,
+        "wer": 50.0
     },
     {
         "file_name": "116_072_001_02_23.png",
         "ground_truth_label": "P. 196. January 1799. \"Wheat at this time bore a high price",
         "predicted_label": "5 . 196 Janwary 179 . \" Wheat at this time bore a high price.",
-        "cer": 11.864,
-        "wer": 75.0
+        "cer": 11.475,
+        "wer": 60.0
     },
     {
         "file_name": "116_072_001_02_24.png",
         "ground_truth_label": "\"in Norfolk Island, the settlers who had raised refusing to sell it,",
         "predicted_label": "\" in Norfolk Istand , the setlers who had raired refusing to sel it ,",
-        "cer": 10.294,
-        "wer": 75.0
+        "cer": 10.145,
+        "wer": 60.0
     },
     {
         "file_name": "116_072_001_02_25.png",
         "ground_truth_label": "\"on account of the high wages, at less than fifteen shillings per",
         "predicted_label": "\" on acount of the high wages , at les than fiften shilings per",
         "cer": 9.231,
-        "wer": 66.667
+        "wer": 57.143
     },
     {
         "file_name": "116_072_001_02_26.png",
         "ground_truth_label": "\"bushel.\"",
         "predicted_label": "cbushl . 1 1_",
-        "cer": 88.889,
-        "wer": 400.0
+        "cer": 61.538,
+        "wer": 100.0
     },
     {
         "file_name": "072_049_002_01_01.png",
@@ -3902,8 +3902,8 @@
         "file_name": "072_049_002_02_01.png",
         "ground_truth_label": "10.",
         "predicted_label": "10 .",
-        "cer": 33.333,
-        "wer": 200.0
+        "cer": 25.0,
+        "wer": 100.0
     },
     {
         "file_name": "072_049_002_03_01.png",
@@ -3938,7 +3938,7 @@
         "ground_truth_label": "may be affected by them. They are offences against person,",
         "predicted_label": "may be afected by them . They are ofences against person ,",
         "cer": 6.897,
-        "wer": 60.0
+        "wer": 50.0
     },
     {
         "file_name": "072_049_002_04_05.png",
@@ -3951,15 +3951,15 @@
         "file_name": "072_049_002_04_06.png",
         "ground_truth_label": "offences against property, offences against reputation, and",
         "predicted_label": " ofences against property , ofences against reputation , and",
-        "cer": 8.475,
-        "wer": 85.714
+        "cer": 8.333,
+        "wer": 66.667
     },
     {
         "file_name": "072_049_002_04_07.png",
         "ground_truth_label": "so forth, as the case may be.",
         "predicted_label": "so forth as the case may be .",
         "cer": 6.897,
-        "wer": 42.857
+        "wer": 37.5
     },
     {
         "file_name": "072_049_002_04_08.png",
@@ -4001,28 +4001,28 @@
         "ground_truth_label": "property as well as person of the offender being out of",
         "predicted_label": "property as wel as person of the ofender being out of .",
         "cer": 7.273,
-        "wer": 27.273
+        "wer": 25.0
     },
     {
         "file_name": "072_049_002_04_14.png",
         "ground_truth_label": "its reach, the injured state may naturally enough be dis=",
         "predicted_label": "its reach , the injured state may naturaly enough be dis=",
         "cer": 3.509,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "072_049_002_04_15.png",
         "ground_truth_label": ":posed to resort to that of which the offender is a mem=",
         "predicted_label": ": posed to resort to that of which the ofend er is a mem=",
-        "cer": 5.357,
-        "wer": 33.333
+        "cer": 5.263,
+        "wer": 28.571
     },
     {
         "file_name": "072_049_002_04_16.png",
         "ground_truth_label": ":ber. It may perhaps expect the same punishment to",
         "predicted_label": ": ber . It may perhaps expect the same punishment to",
-        "cer": 4.0,
-        "wer": 33.333
+        "cer": 3.846,
+        "wer": 27.273
     },
     {
         "file_name": "072_049_002_04_17.png",
@@ -4043,7 +4043,7 @@
         "ground_truth_label": "of a fellow member; it will hardly expect more.",
         "predicted_label": "of a felow-member ; it wil hardly expect more .",
         "cer": 10.638,
-        "wer": 55.556
+        "wer": 50.0
     },
     {
         "file_name": "072_049_002_04_20.png",
@@ -4056,36 +4056,36 @@
         "file_name": "072_049_002_04_21.png",
         "ground_truth_label": ":nions of any state, the state of which the offender is a mem=",
         "predicted_label": ": nions of any state , the state of which the ofender is a mem=",
-        "cer": 4.839,
-        "wer": 38.462
+        "cer": 4.762,
+        "wer": 33.333
     },
     {
         "file_name": "072_049_002_04_22.png",
         "ground_truth_label": ":ber will naturally be that to which the injured state",
         "predicted_label": ": ber wil naturaly be that to which the injured state",
         "cer": 5.556,
-        "wer": 40.0
+        "wer": 36.364
     },
     {
         "file_name": "072_049_002_04_23.png",
         "ground_truth_label": "will resort in the first instance. It may however resort",
         "predicted_label": "wil resort in the first instance . It may however resort",
         "cer": 3.571,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "072_049_002_04_24.png",
         "ground_truth_label": "in",
         "predicted_label": "ins",
-        "cer": 50.0,
+        "cer": 33.333,
         "wer": 100.0
     },
     {
         "file_name": "071_022_003_01_01.png",
         "ground_truth_label": "23.",
         "predicted_label": "23 3",
-        "cer": 66.667,
-        "wer": 200.0
+        "cer": 50.0,
+        "wer": 100.0
     },
     {
         "file_name": "071_022_003_02_01.png",
@@ -4106,14 +4106,14 @@
         "ground_truth_label": "Simple Of Extenuations.",
         "predicted_label": "Simple Oflclurn ton .",
         "cer": 39.13,
-        "wer": 100.0
+        "wer": 75.0
     },
     {
         "file_name": "071_022_003_04_01.png",
         "ground_truth_label": "employed; nor shall it be considered whether a person revolving",
         "predicted_label": "employed ; nor shal it be considered whether a person revolving",
         "cer": 3.175,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "071_022_003_04_02.png",
@@ -4140,22 +4140,22 @@
         "file_name": "071_022_003_04_05.png",
         "ground_truth_label": "the time.",
         "predicted_label": "the time .",
-        "cer": 11.111,
-        "wer": 100.0
+        "cer": 10.0,
+        "wer": 66.667
     },
     {
         "file_name": "071_022_003_04_06.png",
         "ground_truth_label": "Exposition.",
         "predicted_label": "Exposition .",
-        "cer": 9.091,
-        "wer": 200.0
+        "cer": 8.333,
+        "wer": 100.0
     },
     {
         "file_name": "071_022_003_04_07.png",
         "ground_truth_label": "[(A) Les mischief] As if a man were suddenly to assault",
         "predicted_label": "[ ( A ) Les mischief . ] As if a man were sudenly to asault .",
-        "cer": 18.182,
-        "wer": 90.909
+        "cer": 16.393,
+        "wer": 58.824
     },
     {
         "file_name": "071_022_003_04_08.png",
@@ -4168,8 +4168,8 @@
         "file_name": "071_022_003_04_09.png",
         "ground_truth_label": "bar of the same size were both lying within your reach:",
         "predicted_label": "bar of the same size were both bying within your reach :",
-        "cer": 3.636,
-        "wer": 27.273
+        "cer": 3.571,
+        "wer": 25.0
     },
     {
         "file_name": "071_022_003_04_10.png",
@@ -4183,14 +4183,14 @@
         "ground_truth_label": "such a manner as to give him dangerous bruise or kill",
         "predicted_label": "such a maner as to give him a dangerous bruise or kil",
         "cer": 7.547,
-        "wer": 27.273
+        "wer": 25.0
     },
     {
         "file_name": "071_022_003_04_12.png",
         "ground_truth_label": "him. In such case unless it appears that you deliberately took",
         "predicted_label": "him . In such case unles it apears that you deliberately tok",
         "cer": 6.452,
-        "wer": 45.455
+        "wer": 41.667
     },
     {
         "file_name": "071_022_003_04_13.png",
@@ -4203,8 +4203,8 @@
         "file_name": "071_022_003_04_14.png",
         "ground_truth_label": ":with to kill him or hurt him more than was necessary, it",
         "predicted_label": ": with to kil him or hurt him more : than was neresary , it",
-        "cer": 12.281,
-        "wer": 50.0
+        "cer": 11.864,
+        "wer": 40.0
     },
     {
         "file_name": "071_022_003_04_15.png",
@@ -4217,78 +4217,78 @@
         "file_name": "071_022_003_04_16.png",
         "ground_truth_label": "[(B) Uncertain efficacy] As if in the case just mentioned it hap=",
         "predicted_label": "[ ( B ) Uncertain eficacy ] As if in the case just mentioned it hap",
-        "cer": 9.231,
-        "wer": 58.333
+        "cer": 8.955,
+        "wer": 43.75
     },
     {
         "file_name": "071_022_003_04_17.png",
         "ground_truth_label": ":pened that you were much weaker than the assailant; inso=",
         "predicted_label": ": pened that you were much weaker than the asailant ; inso =",
-        "cer": 6.897,
-        "wer": 60.0
+        "cer": 6.667,
+        "wer": 46.154
     },
     {
         "file_name": "071_022_003_04_18.png",
         "ground_truth_label": ":much that it would have been doubtful whether with the less",
         "predicted_label": ": much that it would have ben doubtficl whether with the les",
         "cer": 8.333,
-        "wer": 45.455
+        "wer": 41.667
     },
     {
         "file_name": "071_022_003_04_19.png",
         "ground_truth_label": "powerful weapon of the two, you could have effectually defend=",
         "predicted_label": "powerful weapon of the two , you could have efectualy defend=",
         "cer": 4.839,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "071_022_003_04_20.png",
         "ground_truth_label": ":ed Yourself.",
         "predicted_label": ": ed Yourself .",
-        "cer": 15.385,
-        "wer": 200.0
+        "cer": 13.333,
+        "wer": 100.0
     },
     {
         "file_name": "073_002_002_01_01.png",
         "ground_truth_label": "may depend venture to depend on? If after pay-",
         "predicted_label": "may defarod venture to depend on ? If aften pay-",
-        "cer": 13.043,
-        "wer": 44.444
+        "cer": 12.5,
+        "wer": 40.0
     },
     {
         "file_name": "073_002_002_01_02.png",
         "ground_truth_label": "to this Lawyer",
         "predicted_label": "to this of awyer",
-        "cer": 21.429,
-        "wer": 66.667
+        "cer": 18.75,
+        "wer": 50.0
     },
     {
         "file_name": "073_002_002_01_03.png",
         "ground_truth_label": "ing four Guineas for four Volumes of his Truths,",
         "predicted_label": "-ing fom Guineas for four Volumes of his Tuths ,",
         "cer": 10.417,
-        "wer": 44.444
+        "wer": 40.0
     },
     {
         "file_name": "073_002_002_01_04.png",
         "ground_truth_label": "I pay a couple to another, for any one that I",
         "predicted_label": "I pay a couple to another , for any one that Is",
-        "cer": 4.444,
-        "wer": 27.273
+        "cer": 4.255,
+        "wer": 25.0
     },
     {
         "file_name": "073_002_002_01_05.png",
         "ground_truth_label": "self-",
         "predicted_label": "sef _",
         "cer": 60.0,
-        "wer": 200.0
+        "wer": 100.0
     },
     {
         "file_name": "073_002_002_01_06.png",
         "ground_truth_label": "may want, will his be all of the same sort?",
         "predicted_label": "may want , wil his be at of the same Sort .",
         "cer": 16.279,
-        "wer": 60.0
+        "wer": 50.0
     },
     {
         "file_name": "073_002_002_01_07.png",
@@ -4301,22 +4301,22 @@
         "file_name": "073_002_002_01_08.png",
         "ground_truth_label": "True it is that about 65 pages after, under",
         "predicted_label": "True it is that about to pages after , under",
-        "cer": 6.977,
-        "wer": 33.333
+        "cer": 6.818,
+        "wer": 30.0
     },
     {
         "file_name": "073_002_002_01_09.png",
         "ground_truth_label": "another Title if I happen to fall upon it, I may",
         "predicted_label": "another Title if I hapen to fal upon it , I may",
         "cer": 6.25,
-        "wer": 36.364
+        "wer": 33.333
     },
     {
         "file_name": "073_002_002_01_10.png",
         "ground_truth_label": "see, that by her Husbands License \"which he",
         "predicted_label": "se , that by her Husbands License which he",
         "cer": 4.651,
-        "wer": 37.5
+        "wer": 33.333
     },
     {
         "file_name": "073_002_002_01_11.png",
@@ -4330,14 +4330,14 @@
         "ground_truth_label": "her a Wife may make a Will: or rather as",
         "predicted_label": "her a Wife may make a Wil : or rather as",
         "cer": 2.5,
-        "wer": 20.0
+        "wer": 18.182
     },
     {
         "file_name": "073_002_002_01_13.png",
         "ground_truth_label": "the Author I may also see, that \"if she has",
         "predicted_label": "the Auther I may also se , that \" if she Thas",
-        "cer": 9.302,
-        "wer": 60.0
+        "cer": 8.889,
+        "wer": 50.0
     },
     {
         "file_name": "073_002_002_01_14.png",
@@ -4371,22 +4371,22 @@
         "file_name": "073_002_002_01_18.png",
         "ground_truth_label": "Power assures me, as far as it is in the power of",
         "predicted_label": "Power s asures me , as far as it is in the Power of",
-        "cer": 10.204,
-        "wer": 41.667
+        "cer": 9.804,
+        "wer": 35.714
     },
     {
         "file_name": "073_002_002_01_19.png",
         "ground_truth_label": "general Words to assure, me that she cannot have,",
         "predicted_label": "general Words to asure ,me that she canot have ,",
         "cer": 10.204,
-        "wer": 55.556
+        "wer": 50.0
     },
     {
         "file_name": "073_002_002_01_20.png",
         "ground_truth_label": "such and such Consequences will follow. But",
         "predicted_label": "such and such Consequences wil folow . But",
         "cer": 6.977,
-        "wer": 42.857
+        "wer": 37.5
     },
     {
         "file_name": "073_002_002_01_21.png",
@@ -4399,15 +4399,15 @@
         "file_name": "073_002_002_01_22.png",
         "ground_truth_label": "on any single Point but upon Terms [and those not",
         "predicted_label": " on any single Point but upon Terms ( and those not",
-        "cer": 6.122,
-        "wer": 20.0
+        "cer": 5.882,
+        "wer": 18.182
     },
     {
         "file_name": "073_002_002_01_23.png",
         "ground_truth_label": "declared] of his reading the whole Book? And",
         "predicted_label": "declared ) of his reading the whole Bok ? And",
-        "cer": 9.091,
-        "wer": 50.0
+        "cer": 8.889,
+        "wer": 40.0
     },
     {
         "file_name": "073_002_002_01_24.png",
@@ -4434,50 +4434,50 @@
         "file_name": "035_327_001_02_01.png",
         "ground_truth_label": "(4",
         "predicted_label": "( 4",
-        "cer": 50.0,
-        "wer": 200.0
+        "cer": 33.333,
+        "wer": 100.0
     },
     {
         "file_name": "035_327_001_02_02.png",
         "ground_truth_label": "Art. II. VII. Appeal warranting function. A certain",
         "predicted_label": "or . 1 .I . Enpeal , waranting function . An certaind",
-        "cer": 29.412,
-        "wer": 150.0
+        "cer": 28.302,
+        "wer": 100.0
     },
     {
         "file_name": "035_327_001_02_03.png",
         "ground_truth_label": "class of penal cases there is, in relation to which by",
         "predicted_label": "clas of penal cases there is ; in relation to which by",
         "cer": 5.556,
-        "wer": 27.273
+        "wer": 25.0
     },
     {
         "file_name": "035_327_001_02_04.png",
         "ground_truth_label": "reason of the concurrence of certain circumstances, it",
         "predicted_label": "beason of the covcurence of certain circumstances , it",
         "cer": 7.407,
-        "wer": 50.0
+        "wer": 44.444
     },
     {
         "file_name": "035_327_001_02_05.png",
         "ground_truth_label": "may happen that in the eyes of the Legislature the",
         "predicted_label": "may has pen that in the eves of the Legulature the",
         "cer": 10.0,
-        "wer": 40.0
+        "wer": 36.364
     },
     {
         "file_name": "035_327_001_02_06.png",
         "ground_truth_label": "certain evil composed of delay, vexation and expence",
         "predicted_label": "Pentain evil comnpoded of delay . veration and ax pence",
-        "cer": 17.308,
-        "wer": 87.5
+        "cer": 16.364,
+        "wer": 70.0
     },
     {
         "file_name": "035_327_001_02_07.png",
         "ground_truth_label": "to parties injured, might perhaps be not improperly",
         "predicted_label": "to parties ingured , might perhats be not inprosarly",
-        "cer": 11.765,
-        "wer": 50.0
+        "cer": 11.538,
+        "wer": 44.444
     },
     {
         "file_name": "035_327_001_02_08.png",
@@ -4511,29 +4511,29 @@
         "file_name": "035_327_001_02_12.png",
         "ground_truth_label": "-gislature, in the framing of the Penal Code, to",
         "predicted_label": "gislature , in the framiney of the Penal Cade , to",
-        "cer": 12.5,
-        "wer": 55.556
+        "cer": 12.0,
+        "wer": 45.455
     },
     {
         "file_name": "035_327_001_02_13.png",
         "ground_truth_label": "lay down as the general rule, that in these easy",
         "predicted_label": "la down as the general snle , that in these cars",
         "cer": 14.583,
-        "wer": 40.0
+        "wer": 36.364
     },
     {
         "file_name": "035_327_001_02_14.png",
         "ground_truth_label": "Appeal shall not have place. Offences of indigent",
         "predicted_label": "Apeal thal not have place . Afences of indigent",
         "cer": 12.245,
-        "wer": 62.5
+        "wer": 55.556
     },
     {
         "file_name": "035_327_001_02_15.png",
         "ground_truth_label": "depredation, or say of predatory indigence, is the",
         "predicted_label": "depredation , or say of predatony didignce , is the",
-        "cer": 12.0,
-        "wer": 62.5
+        "cer": 11.765,
+        "wer": 50.0
     },
     {
         "file_name": "035_327_001_02_16.png",
@@ -4547,35 +4547,35 @@
         "ground_truth_label": "of the class of offences here in view. As to the enu-",
         "predicted_label": "of the clas of ofences here in vim . As to the cun-",
         "cer": 13.208,
-        "wer": 41.667
+        "wer": 38.462
     },
     {
         "file_name": "035_327_001_02_18.png",
         "ground_truth_label": "meration of these offences, See Procedure Code tit.",
         "predicted_label": "meration of these ofences , be Procedure ( Fode tit .",
-        "cer": 15.686,
-        "wer": 87.5
+        "cer": 15.094,
+        "wer": 63.636
     },
     {
         "file_name": "035_327_001_02_19.png",
         "ground_truth_label": "Quasi Trial",
         "predicted_label": "duas . inl",
         "cer": 45.455,
-        "wer": 150.0
+        "wer": 100.0
     },
     {
         "file_name": "035_327_001_02_20.png",
         "ground_truth_label": "Art. 12. Among two circumstances, by the consider-",
         "predicted_label": "Art . 12 . Amnonl these circumstances , by the cousidu .",
-        "cer": 26.0,
-        "wer": 125.0
+        "cer": 23.214,
+        "wer": 83.333
     },
     {
         "file_name": "035_327_001_02_21.png",
         "ground_truth_label": "-ation of which, this opinion may on the part of the",
         "predicted_label": "-ation of which , this osinion enay on the pant of the",
-        "cer": 9.615,
-        "wer": 45.455
+        "cer": 9.259,
+        "wer": 41.667
     },
     {
         "file_name": "035_327_001_02_22.png",
@@ -4609,8 +4609,8 @@
         "file_name": "002_579_001_02_02.png",
         "ground_truth_label": "(a)The distinction is material: for as fixed income comes",
         "predicted_label": " ( a ) The distinction is material : for as , fixid income comis",
-        "cer": 15.789,
-        "wer": 100.0
+        "cer": 14.062,
+        "wer": 64.286
     },
     {
         "file_name": "002_579_001_02_03.png",
@@ -4644,8 +4644,8 @@
         "file_name": "002_579_001_02_07.png",
         "ground_truth_label": "way as that in question in the former case as in the latter.",
         "predicted_label": "way as that in question in the former case as in the later . [ ",
-        "cer": 8.333,
-        "wer": 23.077
+        "cer": 7.937,
+        "wer": 20.0
     },
     {
         "file_name": "071_181_004_01_01.png",
@@ -4665,29 +4665,29 @@
         "file_name": "071_181_004_03_01.png",
         "ground_truth_label": "Of Frauds relative to the Coin.",
         "predicted_label": "Of Frauds relative to the Coin .",
-        "cer": 3.226,
-        "wer": 33.333
+        "cer": 3.125,
+        "wer": 28.571
     },
     {
         "file_name": "071_181_004_04_01.png",
         "ground_truth_label": "Quest. III. Why Coins of different Metal are put u=",
         "predicted_label": "Quest . I . Why Coins of diferent metal are put u=",
         "cer": 9.804,
-        "wer": 60.0
+        "wer": 50.0
     },
     {
         "file_name": "071_181_004_04_02.png",
         "ground_truth_label": ":pon the same footing.",
         "predicted_label": "\" pon the same foting .",
-        "cer": 18.182,
-        "wer": 100.0
+        "cer": 17.391,
+        "wer": 66.667
     },
     {
         "file_name": "071_181_004_04_03.png",
         "ground_truth_label": "Reasons.",
         "predicted_label": "Reasons .",
-        "cer": 12.5,
-        "wer": 200.0
+        "cer": 11.111,
+        "wer": 100.0
     },
     {
         "file_name": "071_181_004_04_04.png",
@@ -4714,8 +4714,8 @@
         "file_name": "071_181_004_04_07.png",
         "ground_truth_label": "as the Silver or even the Gold Coin, since the profit that",
         "predicted_label": "as the Silver or even the Gold Coin , since the profit that",
-        "cer": 1.724,
-        "wer": 16.667
+        "cer": 1.695,
+        "wer": 15.385
     },
     {
         "file_name": "071_181_004_04_08.png",
@@ -4728,15 +4728,15 @@
         "file_name": "071_181_004_04_09.png",
         "ground_truth_label": "metal is not near so great as that which may be made",
         "predicted_label": ":metal is not near so great as that which may be made",
-        "cer": 1.923,
+        "cer": 1.887,
         "wer": 8.333
     },
     {
         "file_name": "071_181_004_04_10.png",
         "ground_truth_label": "by the falsifying of the more precious metal. But the case",
         "predicted_label": "by the falsifying of the more precious metal . But the case",
-        "cer": 1.724,
-        "wer": 18.182
+        "cer": 1.695,
+        "wer": 16.667
     },
     {
         "file_name": "071_181_004_04_11.png",
@@ -4749,8 +4749,8 @@
         "file_name": "071_181_004_04_12.png",
         "ground_truth_label": ":fects of a single Act but from the effects of the Habit. Now",
         "predicted_label": ": fects of a single Act but from the efects of the Habit . Now",
-        "cer": 4.918,
-        "wer": 38.462
+        "cer": 4.839,
+        "wer": 33.333
     },
     {
         "file_name": "071_181_004_04_13.png",
@@ -4770,29 +4770,29 @@
         "file_name": "071_181_004_04_15.png",
         "ground_truth_label": ":er punishment than the other. Where the profit upon a",
         "predicted_label": ": er punishment than the other . Where the profit upon a",
-        "cer": 3.704,
-        "wer": 40.0
+        "cer": 3.571,
+        "wer": 33.333
     },
     {
         "file_name": "071_181_004_04_16.png",
         "ground_truth_label": "single piece is the greatest, the difficulty of getting it off is",
         "predicted_label": "single piece is the greatest , the dificulty of geting it of is",
         "cer": 6.154,
-        "wer": 41.667
+        "wer": 38.462
     },
     {
         "file_name": "071_181_004_04_17.png",
         "ground_truth_label": "the greatest. The profit upon a base shilling may, it is",
         "predicted_label": "the greatest . The profit upon a base shiling may , it is",
-        "cer": 5.357,
-        "wer": 45.455
+        "cer": 5.263,
+        "wer": 38.462
     },
     {
         "file_name": "071_181_004_04_18.png",
         "ground_truth_label": "true be 24 times as great (or perhaps more) as the profit",
         "predicted_label": "true be 2ts times as great ( or perhaps more ) as the profit",
-        "cer": 7.018,
-        "wer": 41.667
+        "cer": 6.667,
+        "wer": 35.714
     },
     {
         "file_name": "071_181_004_04_19.png",
@@ -4805,7 +4805,7 @@
         "file_name": "071_151_003_01_01.png",
         "ground_truth_label": "7 8",
         "predicted_label": "70 .",
-        "cer": 66.667,
+        "cer": 50.0,
         "wer": 100.0
     },
     {
@@ -4841,7 +4841,7 @@
         "ground_truth_label": "which the several articles happen to be in use. Mean while any",
         "predicted_label": "which the reveral articles hapen to be in use . Mean while any",
         "cer": 4.839,
-        "wer": 33.333
+        "wer": 30.769
     },
     {
         "file_name": "071_151_003_04_04.png",
@@ -4855,14 +4855,14 @@
         "ground_truth_label": "will not go unpunished: since they will all come under the general",
         "predicted_label": "wil not go unpunished : since they wil al come under the gene=",
         "cer": 10.606,
-        "wer": 50.0
+        "wer": 46.154
     },
     {
         "file_name": "071_151_003_04_06.png",
         "ground_truth_label": "head of Sharping. ordinary defraudment.",
         "predicted_label": ": ral head of Rcepinge ordinary defrauedment .",
-        "cer": 33.333,
-        "wer": 100.0
+        "cer": 28.261,
+        "wer": 62.5
     },
     {
         "file_name": "071_151_003_04_07.png",
@@ -4875,29 +4875,29 @@
         "file_name": "071_151_003_04_08.png",
         "ground_truth_label": "The notion of a false standard supposes the existence",
         "predicted_label": "2s The notion of a false standard suposes the existence",
-        "cer": 7.547,
-        "wer": 22.222
+        "cer": 7.273,
+        "wer": 20.0
     },
     {
         "file_name": "071_151_003_04_09.png",
         "ground_truth_label": "of a genuine one. To establish these genuine ones for every pur:",
         "predicted_label": "of a genuine one . To establish these genuine ones for every pur=",
-        "cer": 3.125,
-        "wer": 25.0
+        "cer": 3.077,
+        "wer": 23.077
     },
     {
         "file_name": "071_151_003_04_10.png",
         "ground_truth_label": ":pose and in every convenient place is the business of the Sove:",
         "predicted_label": ": pose and in every convenient place is the busines of the Sove=",
         "cer": 4.688,
-        "wer": 33.333
+        "wer": 30.769
     },
     {
         "file_name": "071_151_003_04_11.png",
         "ground_truth_label": ":reign. To give these institutions their full effect and render the",
         "predicted_label": ": reign . To give these institutions their ful efect and render the",
         "cer": 5.97,
-        "wer": 45.455
+        "wer": 38.462
     },
     {
         "file_name": "071_151_003_04_12.png",
@@ -4910,71 +4910,71 @@
         "file_name": "071_151_003_04_13.png",
         "ground_truth_label": "expedients might be of use in the character of",
         "predicted_label": "expedinto might he of ase in the character of excepruantive",
-        "cer": 39.13,
-        "wer": 44.444
+        "cer": 30.508,
+        "wer": 40.0
     },
     {
         "file_name": "071_151_003_04_14.png",
         "ground_truth_label": "preventive measures. might be of use.",
         "predicted_label": "preventive measures , might he of use .",
-        "cer": 10.811,
-        "wer": 83.333
+        "cer": 10.256,
+        "wer": 62.5
     },
     {
         "file_name": "071_151_003_04_15.png",
         "ground_truth_label": "I. To establish public standards of each kind in the Metro:",
         "predicted_label": "I . To establish public standards of each kind in the metro=",
-        "cer": 5.085,
-        "wer": 27.273
+        "cer": 5.0,
+        "wer": 25.0
     },
     {
         "file_name": "071_151_003_04_16.png",
         "ground_truth_label": ":polis of every judicial district. See B. Of Procedure.",
         "predicted_label": ": polis of every judicial district . Su B . Of Poveidure .",
-        "cer": 16.364,
-        "wer": 100.0
+        "cer": 15.517,
+        "wer": 69.231
     },
     {
         "file_name": "071_151_003_04_17.png",
         "ground_truth_label": "Tit. Of Jurisdiction.",
         "predicted_label": "Tit . Of Jurisdichion .",
-        "cer": 14.286,
-        "wer": 133.333
+        "cer": 13.043,
+        "wer": 80.0
     },
     {
         "file_name": "071_151_003_04_18.png",
         "ground_truth_label": "II. To permit none to be used by any trader but what are",
         "predicted_label": "I . To permit none to be used by any trader but what are",
         "cer": 1.786,
-        "wer": 15.385
+        "wer": 14.286
     },
     {
         "file_name": "071_151_003_04_19.png",
         "ground_truth_label": "stamped by authority.",
         "predicted_label": "stamped by authority .",
-        "cer": 4.762,
-        "wer": 66.667
+        "cer": 4.545,
+        "wer": 50.0
     },
     {
         "file_name": "071_151_003_04_20.png",
         "ground_truth_label": "III. To cause frequent visitations to be made by certain offi:",
         "predicted_label": "I . To cause frequent visitations to be made by certain ofi=",
         "cer": 6.452,
-        "wer": 27.273
+        "wer": 25.0
     },
     {
         "file_name": "071_151_003_04_21.png",
         "ground_truth_label": ":cers at unexpected times (which, to ensure their being unexpected,",
         "predicted_label": ": cers at unexpected times ( which , to ensure their being unexpected ",
-        "cer": 5.97,
-        "wer": 60.0
+        "cer": 5.714,
+        "wer": 46.154
     },
     {
         "file_name": "071_151_003_04_22.png",
         "ground_truth_label": "may be determined by lot) in the Shops of the several Tradesmen;",
         "predicted_label": "may be determined by lot ) in the Shops of the several Tradesmen ;",
-        "cer": 3.125,
-        "wer": 33.333
+        "cer": 3.03,
+        "wer": 28.571
     },
     {
         "file_name": "071_151_003_04_23.png",
@@ -5001,29 +5001,29 @@
         "file_name": "071_201_003_03_01.png",
         "ground_truth_label": "Of State-Tumults.",
         "predicted_label": "Of State -Tumults .",
-        "cer": 11.765,
-        "wer": 150.0
+        "cer": 10.526,
+        "wer": 75.0
     },
     {
         "file_name": "071_201_003_04_01.png",
         "ground_truth_label": "of distant danger: nor whether by fear of danger to his per=",
         "predicted_label": "of distant danger : nor whether by fear of danger to his per=",
-        "cer": 1.667,
-        "wer": 16.667
+        "cer": 1.639,
+        "wer": 15.385
     },
     {
         "file_name": "071_201_003_04_02.png",
         "ground_truth_label": ":son, his property or his authority.",
         "predicted_label": ": son , his property or to his authority .",
-        "cer": 16.667,
-        "wer": 100.0
+        "cer": 14.286,
+        "wer": 60.0
     },
     {
         "file_name": "071_201_003_04_03.png",
         "ground_truth_label": "A State Tumult is a Misdemeanour.",
         "predicted_label": "A State Tumult is a Misdemeanour .",
-        "cer": 3.03,
-        "wer": 33.333
+        "cer": 2.941,
+        "wer": 28.571
     },
     {
         "file_name": "071_201_003_04_04.png",
@@ -5037,21 +5037,21 @@
         "ground_truth_label": "course of a tumult all offenders concerned in the same tumult",
         "predicted_label": "course of a tumult al ofenders concerned in the same to mult",
         "cer": 6.557,
-        "wer": 36.364
+        "wer": 33.333
     },
     {
         "file_name": "071_201_003_04_06.png",
         "ground_truth_label": "are liable, whether it can or cannot be proved that they act",
         "predicted_label": "are liable , whether it can or canot be proved that they act",
         "cer": 3.333,
-        "wer": 25.0
+        "wer": 23.077
     },
     {
         "file_name": "071_201_003_04_07.png",
         "ground_truth_label": "in concert.",
         "predicted_label": "in concert .",
-        "cer": 9.091,
-        "wer": 100.0
+        "cer": 8.333,
+        "wer": 66.667
     },
     {
         "file_name": "071_201_003_04_08.png",
@@ -5065,70 +5065,70 @@
         "ground_truth_label": "tumult which are committed on the same occasion, or not",
         "predicted_label": "tumult which are comited on the same ocasion , or not",
         "cer": 7.273,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "071_201_003_04_10.png",
         "ground_truth_label": "more than [Ten] miles distance from each other in point",
         "predicted_label": "more than [ Fen ) miles distance from each other in point",
-        "cer": 7.273,
-        "wer": 30.0
+        "cer": 7.018,
+        "wer": 25.0
     },
     {
         "file_name": "071_201_003_04_11.png",
         "ground_truth_label": "of place, nor more than [Ten] days distance from each other",
         "predicted_label": "of place , nor more than [ Ten ) days distance from each other",
-        "cer": 6.78,
-        "wer": 45.455
+        "cer": 6.452,
+        "wer": 35.714
     },
     {
         "file_name": "071_201_003_04_12.png",
         "ground_truth_label": "in point of time.",
         "predicted_label": "in point of time .",
-        "cer": 5.882,
-        "wer": 50.0
+        "cer": 5.556,
+        "wer": 40.0
     },
     {
         "file_name": "071_201_003_04_13.png",
         "ground_truth_label": "Reasons.",
         "predicted_label": "Reasons .",
-        "cer": 12.5,
-        "wer": 200.0
+        "cer": 11.111,
+        "wer": 100.0
     },
     {
         "file_name": "071_201_003_04_14.png",
         "ground_truth_label": "1. This makes it the interest of all persons concerned in the",
         "predicted_label": "1 . This makes it the interest of al persons concerned in the",
         "cer": 3.279,
-        "wer": 25.0
+        "wer": 23.077
     },
     {
         "file_name": "071_201_003_04_15.png",
         "ground_truth_label": "same tumult to sit a watch upon each other, and do what",
         "predicted_label": "same tumult to sil a walch upon each other , and do what",
-        "cer": 5.455,
-        "wer": 33.333
+        "cer": 5.357,
+        "wer": 30.769
     },
     {
         "file_name": "071_201_003_04_16.png",
         "ground_truth_label": "is in their power to moderate each others violence. By this",
         "predicted_label": "is in their power to moderate each others violence . By this",
-        "cer": 1.695,
-        "wer": 18.182
+        "cer": 1.667,
+        "wer": 16.667
     },
     {
         "file_name": "071_201_003_04_17.png",
         "ground_truth_label": "means it is subservient to the purpose of prevention.",
         "predicted_label": "means it is subservient to the purpose of preventior .",
-        "cer": 3.774,
-        "wer": 22.222
+        "cer": 3.704,
+        "wer": 20.0
     },
     {
         "file_name": "071_201_003_04_18.png",
         "ground_truth_label": "2. It also gives a much better chance to parties injured",
         "predicted_label": "2 . It also gives a much beter chance to parties injured",
         "cer": 3.571,
-        "wer": 27.273
+        "wer": 25.0
     },
     {
         "file_name": "071_201_003_04_19.png",
@@ -5141,22 +5141,22 @@
         "file_name": "071_201_003_04_20.png",
         "ground_truth_label": ":wise have: and making the damage fall upon the au=",
         "predicted_label": ": wise have : and making the damage fal upon the an=",
-        "cer": 7.843,
-        "wer": 60.0
+        "cer": 7.692,
+        "wer": 50.0
     },
     {
         "file_name": "071_201_003_04_21.png",
         "ground_truth_label": ":thors.",
         "predicted_label": ": thars .",
-        "cer": 42.857,
-        "wer": 300.0
+        "cer": 33.333,
+        "wer": 100.0
     },
     {
         "file_name": "071_201_003_04_22.png",
         "ground_truth_label": "3. It facilitates the detection of offenders; by making it",
         "predicted_label": "3 . It facilitates the detection of ofenders ; by making it",
-        "cer": 5.172,
-        "wer": 40.0
+        "cer": 5.085,
+        "wer": 33.333
     },
     {
         "file_name": "071_201_003_04_23.png",
@@ -5176,8 +5176,8 @@
         "file_name": "116_633_002_02_01.png",
         "ground_truth_label": "few drops from it to save this worthy gentleman.",
         "predicted_label": "few drops from it to save this worthy gentleman .",
-        "cer": 2.083,
-        "wer": 22.222
+        "cer": 2.041,
+        "wer": 20.0
     },
     {
         "file_name": "116_633_002_02_02.png",
@@ -5190,36 +5190,36 @@
         "file_name": "116_633_002_02_03.png",
         "ground_truth_label": "mercy, has he not virtue to comm command it?",
         "predicted_label": "mercy , has he not virtue to comor comand it ?",
-        "cer": 11.364,
-        "wer": 66.667
+        "cer": 10.87,
+        "wer": 54.545
     },
     {
         "file_name": "116_633_002_02_04.png",
         "ground_truth_label": "This faith, his hope, his charity, do they not all",
         "predicted_label": "His faith , his hope , his charity , do they not al",
-        "cer": 12.0,
-        "wer": 80.0
+        "cer": 11.765,
+        "wer": 61.538
     },
     {
         "file_name": "116_633_002_02_05.png",
         "ground_truth_label": "center in great persons?",
         "predicted_label": "center in great persons ?",
-        "cer": 4.167,
-        "wer": 50.0
+        "cer": 4.0,
+        "wer": 40.0
     },
     {
         "file_name": "116_633_002_02_06.png",
         "ground_truth_label": "Speak to him then, my Lord, once more: _",
         "predicted_label": "Speak to him then , m Lord , once more : _",
-        "cer": 10.0,
-        "wer": 77.778
+        "cer": 9.524,
+        "wer": 58.333
     },
     {
         "file_name": "116_633_002_02_07.png",
         "ground_truth_label": "say to him any thing that will make him easy.",
         "predicted_label": "say to him any thing that wil make him easy .",
         "cer": 4.444,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "116_633_002_02_08.png",
@@ -5233,7 +5233,7 @@
         "ground_truth_label": "circumstances: _ whisper to him that all this Ma-",
         "predicted_label": "circumstances : _ whisper to him that al this Ma-",
         "cer": 4.082,
-        "wer": 33.333
+        "wer": 30.0
     },
     {
         "file_name": "116_633_002_02_10.png",
@@ -5246,8 +5246,8 @@
         "file_name": "116_633_002_02_11.png",
         "ground_truth_label": "was a mere make-believe: satisfy him that nothing",
         "predicted_label": "was a mere maker believe : _ satisfy him that nothing",
-        "cer": 10.204,
-        "wer": 50.0
+        "cer": 9.434,
+        "wer": 36.364
     },
     {
         "file_name": "116_633_002_02_12.png",
@@ -5260,106 +5260,106 @@
         "file_name": "116_633_002_02_13.png",
         "ground_truth_label": "any body than it is to great persons in what Jal",
         "predicted_label": "any body than it is to great persons in what Jail",
-        "cer": 2.083,
+        "cer": 2.041,
         "wer": 9.091
     },
     {
         "file_name": "116_633_002_02_14.png",
         "ground_truth_label": "Jail, or Hulk, or improved Colony, and in what numbers,",
         "predicted_label": "gail , or Hutk , or improved Colony , and in what number ,",
-        "cer": 10.909,
-        "wer": 80.0
+        "cer": 10.345,
+        "wer": 57.143
     },
     {
         "file_name": "116_633_002_02_15.png",
         "ground_truth_label": "human creatures starve or poison one another, so that",
         "predicted_label": "human creatures starve or poison one another , so that",
-        "cer": 1.887,
-        "wer": 22.222
+        "cer": 1.852,
+        "wer": 20.0
     },
     {
         "file_name": "116_633_002_02_16.png",
         "ground_truth_label": "there be not a \"Panopticon for them to be sent to\": _",
         "predicted_label": "there be not a \" Panopticon for them to be sent to \" : _",
-        "cer": 5.66,
-        "wer": 41.667
+        "cer": 5.357,
+        "wer": 33.333
     },
     {
         "file_name": "116_633_002_02_17.png",
         "ground_truth_label": "remind him, that in the place he has in view, no",
         "predicted_label": "remind him , that in the place he has in view , no",
-        "cer": 4.167,
-        "wer": 36.364
+        "cer": 4.0,
+        "wer": 30.769
     },
     {
         "file_name": "116_633_002_02_18.png",
         "ground_truth_label": "offence can, by any Jail or number of Jails, improved",
         "predicted_label": "ofence can , by any jail or number of Iails , improved",
-        "cer": 9.434,
-        "wer": 60.0
+        "cer": 9.259,
+        "wer": 50.0
     },
     {
         "file_name": "116_633_002_02_19.png",
         "ground_truth_label": "or unimproved, be ever given to Noble Lords, whose",
         "predicted_label": "or unimproved , be ever given to Noble dords , whose",
-        "cer": 6.0,
-        "wer": 44.444
+        "cer": 5.769,
+        "wer": 36.364
     },
     {
         "file_name": "116_633_002_02_20.png",
         "ground_truth_label": "veto, when they are pleased to pronounce it, is so",
         "predicted_label": "veto , when they are pleased to pronounce it , is so .",
-        "cer": 8.0,
-        "wer": 50.0
+        "cer": 7.407,
+        "wer": 38.462
     },
     {
         "file_name": "116_633_002_02_21.png",
         "ground_truth_label": "fatal to Acts of Parliament: _ assure him, that neither",
         "predicted_label": "fatal to Acts of Parliament : _ asure him , that neither",
-        "cer": 5.455,
-        "wer": 50.0
+        "cer": 5.357,
+        "wer": 41.667
     },
     {
         "file_name": "116_633_002_02_22.png",
         "ground_truth_label": "by the great person, nor by any other, is the purse",
         "predicted_label": "by the one great person , nor by any other , is the purte",
-        "cer": 13.725,
-        "wer": 54.545
+        "cer": 12.281,
+        "wer": 42.857
     },
     {
         "file_name": "116_633_002_02_23.png",
         "ground_truth_label": "ever taken out of the hands of Parliament, unless for",
         "predicted_label": "ever taken out of the hands of Parliament , unles for",
         "cer": 3.774,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "116_633_002_02_24.png",
         "ground_truth_label": "a particular purpose, and to oblige a friend: certify",
         "predicted_label": "a particular purpose , and to oblige a friend : certify",
-        "cer": 3.774,
-        "wer": 44.444
+        "cer": 3.636,
+        "wer": 36.364
     },
     {
         "file_name": "116_633_002_02_25.png",
         "ground_truth_label": "to him, that measures of this sort are disposed of, mo-",
         "predicted_label": "to him , that measures of this sort are dispoted of , mo-",
-        "cer": 5.455,
-        "wer": 45.455
+        "cer": 5.263,
+        "wer": 38.462
     },
     {
         "file_name": "116_633_002_02_26.png",
         "ground_truth_label": "-ment after moment, sometimes upon one principle,",
         "predicted_label": "-ment after moment , sometimes upon one principle ,",
-        "cer": 4.082,
-        "wer": 57.143
+        "cer": 3.922,
+        "wer": 44.444
     },
     {
         "file_name": "116_633_002_02_27.png",
         "ground_truth_label": "sometimes upon opposite principles, as the cove",
         "predicted_label": "sometimes upon oposite principles , as the cowe",
         "cer": 6.383,
-        "wer": 57.143
+        "wer": 50.0
     },
     {
         "file_name": "116_633_002_02_28.png",
@@ -5373,14 +5373,14 @@
         "ground_truth_label": "minds: explain to him, that when persons are approved of,",
         "predicted_label": "minds : explain to him , that when persons are aprovedf ,",
         "cer": 10.526,
-        "wer": 60.0
+        "wer": 50.0
     },
     {
         "file_name": "116_633_002_02_30.png",
         "ground_truth_label": "& the purpose of the moment is to be seve served;",
         "predicted_label": "o the purpose of the moment is to be seven seoved ,",
-        "cer": 10.204,
-        "wer": 36.364
+        "cer": 9.804,
+        "wer": 33.333
     },
     {
         "file_name": "116_633_002_02_31.png",
@@ -5393,8 +5393,8 @@
         "file_name": "071_030_001_01_01.png",
         "ground_truth_label": "1.",
         "predicted_label": "4 .",
-        "cer": 100.0,
-        "wer": 200.0
+        "cer": 66.667,
+        "wer": 100.0
     },
     {
         "file_name": "071_030_001_02_01.png",
@@ -5407,8 +5407,8 @@
         "file_name": "071_030_001_03_01.png",
         "ground_truth_label": "Of Irreparable Personal Injuries",
         "predicted_label": "Of Preparable Personal Injurils .",
-        "cer": 15.625,
-        "wer": 75.0
+        "cer": 15.152,
+        "wer": 60.0
     },
     {
         "file_name": "071_030_001_04_01.png",
@@ -5422,28 +5422,28 @@
         "ground_truth_label": "Irreparable Personal Injuries are either 1. Irre=",
         "predicted_label": "freparable Personal Injuries are either 1 . Ire=",
         "cer": 8.163,
-        "wer": 57.143
+        "wer": 50.0
     },
     {
         "file_name": "071_030_001_04_03.png",
         "ground_truth_label": ":parable Disfigurement: 2. Irreparable Disablement: or 3.",
         "predicted_label": "-parabler Disfigurement : 2 . Ireparable Disablement : or 3.",
-        "cer": 10.526,
-        "wer": 114.286
+        "cer": 10.0,
+        "wer": 80.0
     },
     {
         "file_name": "071_030_001_04_04.png",
         "ground_truth_label": "Mutilation.",
         "predicted_label": "Atutilation .",
-        "cer": 27.273,
-        "wer": 200.0
+        "cer": 23.077,
+        "wer": 100.0
     },
     {
         "file_name": "071_030_001_04_05.png",
         "ground_truth_label": "II",
         "predicted_label": "( )",
-        "cer": 150.0,
-        "wer": 200.0
+        "cer": 100.0,
+        "wer": 100.0
     },
     {
         "file_name": "071_030_001_04_06.png",
@@ -5470,8 +5470,8 @@
         "file_name": "071_030_001_04_09.png",
         "ground_truth_label": "of a man's person any unalterable change is produced",
         "predicted_label": "of a man ' s person any unalterable change is prodiced",
-        "cer": 5.769,
-        "wer": 44.444
+        "cer": 5.556,
+        "wer": 36.364
     },
     {
         "file_name": "071_030_001_04_10.png",
@@ -5485,7 +5485,7 @@
         "ground_truth_label": "the effect of which is to render his aspect less agreeable.",
         "predicted_label": "the efect of which is to render his aspect les agreable .",
         "cer": 6.78,
-        "wer": 36.364
+        "wer": 33.333
     },
     {
         "file_name": "071_030_001_04_12.png",
@@ -5505,22 +5505,22 @@
         "file_name": "071_030_001_04_14.png",
         "ground_truth_label": "[A Shape] As if his nose or ears or lips be split, or",
         "predicted_label": "[ ( A Thape ] As if his nose or ears or lips be slit , or",
-        "cer": 13.208,
-        "wer": 53.846
+        "cer": 12.281,
+        "wer": 41.176
     },
     {
         "file_name": "071_030_001_04_15.png",
         "ground_truth_label": "a deep scar be made in any part of his body: so as",
         "predicted_label": "a dep scar be made in any part of his body : To as",
         "cer": 6.0,
-        "wer": 30.769
+        "wer": 28.571
     },
     {
         "file_name": "071_030_001_04_16.png",
         "ground_truth_label": "either a",
         "predicted_label": "either 1 a",
-        "cer": 25.0,
-        "wer": 50.0
+        "cer": 20.0,
+        "wer": 33.333
     },
     {
         "file_name": "071_030_001_04_17.png",
@@ -5540,36 +5540,36 @@
         "file_name": "071_030_001_04_19.png",
         "ground_truth_label": "[(B) Colour] As if a slight scar be made on any part",
         "predicted_label": " [ ( ) Colour ] As if a slight Sear be made on any part",
-        "cer": 11.538,
-        "wer": 50.0
+        "cer": 10.909,
+        "wer": 40.0
     },
     {
         "file_name": "071_030_001_04_20.png",
         "ground_truth_label": "so as to leave neither hollow nor protuberance:",
         "predicted_label": "so at to leave neither holow nor protuberasc .",
         "cer": 10.638,
-        "wer": 50.0
+        "wer": 44.444
     },
     {
         "file_name": "071_030_001_04_21.png",
         "ground_truth_label": "of his body; or any part of his body be marked with",
         "predicted_label": "of his body ; or any part of his body be marked with",
-        "cer": 1.961,
-        "wer": 16.667
+        "cer": 1.923,
+        "wer": 15.385
     },
     {
         "file_name": "071_030_001_04_22.png",
         "ground_truth_label": "an indelible stain.",
         "predicted_label": "an indelible stain .",
-        "cer": 5.263,
-        "wer": 66.667
+        "cer": 5.0,
+        "wer": 50.0
     },
     {
         "file_name": "071_030_001_04_23.png",
         "ground_truth_label": "Main-Text.",
         "predicted_label": "Main Seat .",
-        "cer": 40.0,
-        "wer": 300.0
+        "cer": 36.364,
+        "wer": 100.0
     },
     {
         "file_name": "071_030_001_04_24.png",
@@ -5603,8 +5603,8 @@
         "file_name": "071_030_001_04_28.png",
         "ground_truth_label": "or incompleat: it is compleat where a man is deprived",
         "predicted_label": "or incompleat ; it is compleat where a man is deprived",
-        "cer": 3.774,
-        "wer": 20.0
+        "cer": 3.704,
+        "wer": 18.182
     },
     {
         "file_name": "071_030_001_04_29.png",
@@ -5617,15 +5617,15 @@
         "file_name": "071_030_001_04_30.png",
         "ground_truth_label": "of the use of a member altogether: incompleat when he",
         "predicted_label": "of the use of a member altogether ; incompleat when he",
-        "cer": 3.774,
-        "wer": 20.0
+        "cer": 3.704,
+        "wer": 18.182
     },
     {
         "file_name": "071_030_001_04_31.png",
         "ground_truth_label": "is deprived of the use of it in part.",
         "predicted_label": "is deprived of the use of it in part .",
-        "cer": 2.703,
-        "wer": 22.222
+        "cer": 2.632,
+        "wer": 20.0
     },
     {
         "file_name": "071_030_001_04_32.png",
@@ -5660,7 +5660,7 @@
         "ground_truth_label": "very quantity which eventually ensues, the act may be said",
         "predicted_label": "very quantity which evertualy ensues , the act may be said",
         "cer": 5.172,
-        "wer": 30.0
+        "wer": 27.273
     },
     {
         "file_name": "073_083_001_03_03.png",
@@ -5673,8 +5673,8 @@
         "file_name": "073_083_001_03_04.png",
         "ground_truth_label": "-quences; when not so much, inadequately; when more,",
         "predicted_label": "=quences , when not somuch , inadequately ; when more ,",
-        "cer": 13.462,
-        "wer": 100.0
+        "cer": 12.727,
+        "wer": 72.727
     },
     {
         "file_name": "073_083_001_03_05.png",
@@ -5687,29 +5687,29 @@
         "file_name": "073_083_001_03_06.png",
         "ground_truth_label": "You intended for instance to strike the porter,",
         "predicted_label": "You intended for instance to strike the porter ,",
-        "cer": 2.128,
-        "wer": 25.0
+        "cer": 2.083,
+        "wer": 22.222
     },
     {
         "file_name": "073_083_001_03_07.png",
         "ground_truth_label": "whose leg you have broken. If",
         "predicted_label": "whose by you have broken . . 1",
-        "cer": 24.138,
-        "wer": 83.333
+        "cer": 23.333,
+        "wer": 62.5
     },
     {
         "file_name": "073_083_001_03_08.png",
         "ground_truth_label": "If your intention was to strike him in the leg in such",
         "predicted_label": "1 Of your intention was to strike him in the leg in such",
-        "cer": 5.556,
-        "wer": 16.667
+        "cer": 5.357,
+        "wer": 15.385
     },
     {
         "file_name": "073_083_001_03_09.png",
         "ground_truth_label": "manner that he might be obliged to have it cut off, or if",
         "predicted_label": "maner that he might be obliged to have it cut of , or if",
         "cer": 3.509,
-        "wer": 23.077
+        "wer": 21.429
     },
     {
         "file_name": "073_083_001_03_10.png",
@@ -5723,7 +5723,7 @@
         "ground_truth_label": "that he might be obliged to have his fore-arm cut off, and the",
         "predicted_label": "that he might be obliged to have his fore arm cut of , and the",
         "cer": 3.226,
-        "wer": 30.769
+        "wer": 26.667
     },
     {
         "file_name": "073_083_001_03_12.png",
@@ -5744,7 +5744,7 @@
         "ground_truth_label": "would suffer from the loss of a fore-arm, in either of these",
         "predicted_label": "would sufer from the los of a forearm , in either of these",
         "cer": 6.667,
-        "wer": 33.333
+        "wer": 30.769
     },
     {
         "file_name": "073_083_001_03_15.png",
@@ -5757,8 +5757,8 @@
         "file_name": "073_083_001_03_16.png",
         "ground_truth_label": "the quality of damage.",
         "predicted_label": "the quantity of damage .",
-        "cer": 13.636,
-        "wer": 75.0
+        "cer": 12.5,
+        "wer": 60.0
     },
     {
         "file_name": "073_083_001_03_17.png",
@@ -5771,8 +5771,8 @@
         "file_name": "073_083_001_03_18.png",
         "ground_truth_label": "arm or the leg without depriving him of either, the act",
         "predicted_label": "arm or the leg without depriving him of either , the act",
-        "cer": 1.818,
-        "wer": 18.182
+        "cer": 1.786,
+        "wer": 16.667
     },
     {
         "file_name": "073_083_001_03_19.png",
@@ -5785,7 +5785,7 @@
         "file_name": "073_083_001_03_20.png",
         "ground_truth_label": "was inad quately intentional: if your intention was to",
         "predicted_label": "was inadquately intentionals : if your intention was to",
-        "cer": 5.556,
+        "cer": 5.455,
         "wer": 33.333
     },
     {
@@ -5799,8 +5799,8 @@
         "file_name": "073_083_001_03_22.png",
         "ground_truth_label": "was-",
         "predicted_label": "was a",
-        "cer": 50.0,
-        "wer": 200.0
+        "cer": 40.0,
+        "wer": 100.0
     },
     {
         "file_name": "116_286_002_01_01.png",
@@ -5820,43 +5820,43 @@
         "file_name": "116_286_002_02_02.png",
         "ground_truth_label": "never come back again. The plan, if there had been any",
         "predicted_label": "never come ( back again . The plan , if there had ben any",
-        "cer": 9.259,
-        "wer": 54.545
+        "cer": 8.772,
+        "wer": 42.857
     },
     {
         "file_name": "116_286_002_02_03.png",
         "ground_truth_label": "such thing, about the return of Convicts, would have been",
         "predicted_label": "such thing , about the return of Convicts , would have ben",
-        "cer": 5.263,
-        "wer": 50.0
+        "cer": 5.172,
+        "wer": 41.667
     },
     {
         "file_name": "116_286_002_02_04.png",
         "ground_truth_label": "dictated either by what I call justice (in which case it would",
         "predicted_label": "dictated either by what I cal justice ( in which case it would",
         "cer": 3.226,
-        "wer": 25.0
+        "wer": 23.077
     },
     {
         "file_name": "116_286_002_02_05.png",
         "ground_truth_label": "have run counter to the design) or by the supposed profitable",
         "predicted_label": "have run counter to the design ) or by the suposed profitable",
         "cer": 3.279,
-        "wer": 27.273
+        "wer": 25.0
     },
     {
         "file_name": "116_286_002_02_06.png",
         "ground_truth_label": "injustice. On the former supposition, arrangements would have been",
         "predicted_label": "injustice . On the fomer suposition , arangements would have ben",
         "cer": 9.091,
-        "wer": 77.778
+        "wer": 63.636
     },
     {
         "file_name": "116_286_002_02_07.png",
         "ground_truth_label": "taken in the first place, for preventing the emigration of each",
         "predicted_label": "taken _ in the first place , for preventing the emigration of each",
-        "cer": 4.762,
-        "wer": 27.273
+        "cer": 4.545,
+        "wer": 23.077
     },
     {
         "file_name": "116_286_002_02_08.png",
@@ -5870,28 +5870,28 @@
         "ground_truth_label": "in the next place, for affording him the means of quitting the",
         "predicted_label": "in the next place , for afording him the means of quiting the",
         "cer": 4.839,
-        "wer": 33.333
+        "wer": 30.769
     },
     {
         "file_name": "116_286_002_02_10.png",
         "ground_truth_label": "Country immediately after _ if such should be his choice: _ ar-",
         "predicted_label": "Country imediately after _ if such should be his choice : _ ar",
         "cer": 4.762,
-        "wer": 33.333
+        "wer": 30.769
     },
     {
         "file_name": "116_286_002_02_11.png",
         "ground_truth_label": "-rangements, if not of the positive cast, at any rate of the negative",
         "predicted_label": "- rangements , if not of the positive cast , at any rate of the nega",
         "cer": 10.145,
-        "wer": 46.154
+        "wer": 37.5
     },
     {
         "file_name": "116_286_002_02_12.png",
         "ground_truth_label": "viz: by removing from that time forwards whatever",
         "predicted_label": "tive viz : by removing from that time forwards whatever",
-        "cer": 12.245,
-        "wer": 37.5
+        "cer": 10.909,
+        "wer": 30.0
     },
     {
         "file_name": "116_286_002_02_13.png",
@@ -5904,8 +5904,8 @@
         "file_name": "116_286_002_02_14.png",
         "ground_truth_label": "Whatever had been the term of punishment fixed by each man's",
         "predicted_label": "Whatever had ben the term of punishment fixed by each man ' s",
-        "cer": 5.0,
-        "wer": 36.364
+        "cer": 4.918,
+        "wer": 30.769
     },
     {
         "file_name": "116_286_002_02_15.png",
@@ -5925,15 +5925,15 @@
         "file_name": "116_286_002_02_17.png",
         "ground_truth_label": "any rate, that from and after the expiration of it, his return",
         "predicted_label": "any rate , that from and after the expiration of it , his return",
-        "cer": 3.226,
-        "wer": 33.333
+        "cer": 3.125,
+        "wer": 28.571
     },
     {
         "file_name": "116_286_002_02_18.png",
         "ground_truth_label": "should not be opposed by any positive and_factitious obstacle, the",
         "predicted_label": "should not be oposed by any positive and- factitious dstacle , the",
         "cer": 9.091,
-        "wer": 50.0
+        "wer": 41.667
     },
     {
         "file_name": "116_286_002_02_19.png",
@@ -5947,21 +5947,21 @@
         "ground_truth_label": "new spot than it used to be from the old spots, to which this",
         "predicted_label": "new spot than it used to be from the d spots , to which this",
         "cer": 4.918,
-        "wer": 21.429
+        "wer": 20.0
     },
     {
         "file_name": "116_286_002_02_21.png",
         "ground_truth_label": "new discovered one was now substituted. _",
         "predicted_label": "new disconered one was now substituted . _",
-        "cer": 4.878,
-        "wer": 42.857
+        "cer": 4.762,
+        "wer": 37.5
     },
     {
         "file_name": "116_286_002_02_22.png",
         "ground_truth_label": "Not to oppose, or suffer to be opposed, any obstruction to the",
         "predicted_label": "Not to opose , or sufer to be oposed , any obstruction to the",
         "cer": 8.065,
-        "wer": 41.667
+        "wer": 35.714
     },
     {
         "file_name": "116_286_002_02_23.png",
@@ -5981,29 +5981,29 @@
         "file_name": "116_286_002_02_25.png",
         "ground_truth_label": "system, or, if that could not be done, still easier _ one or other of",
         "predicted_label": "system , or , if that could not be done , stil easier _ one or other of",
-        "cer": 5.797,
-        "wer": 46.667
+        "cer": 5.634,
+        "wer": 38.889
     },
     {
         "file_name": "116_286_002_02_26.png",
         "ground_truth_label": "those distinguishable lines of conduct would (in my humble",
         "predicted_label": "those distinguishable lines of conduct would ( in my humble",
-        "cer": 1.724,
-        "wer": 22.222
+        "cer": 1.695,
+        "wer": 20.0
     },
     {
         "file_name": "116_286_002_02_27.png",
         "ground_truth_label": "conception) have been the line of justice: which of them (since",
         "predicted_label": " conception ) have ben the line of jurtice : which of them ( since",
-        "cer": 9.524,
-        "wer": 63.636
+        "cer": 9.091,
+        "wer": 50.0
     },
     {
         "file_name": "116_286_002_02_28.png",
         "ground_truth_label": "no one of them was pursued) is scarce worth arguing about.",
         "predicted_label": "no one of them was pursued ) is scarce worth argning about .",
-        "cer": 5.172,
-        "wer": 45.455
+        "cer": 5.0,
+        "wer": 38.462
     },
     {
         "file_name": "116_286_002_02_29.png",

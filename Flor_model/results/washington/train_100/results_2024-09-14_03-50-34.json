@@ -59,15 +59,15 @@
         "file_name": "308-10.png",
         "ground_truth_label": "of Clothes; Shoes, Stocking, Shirts, Vc. proportiona-",
         "predicted_label": "of Clothes; Shoes, Stockings, Shirts, Vc. proportiona-",
-        "cer": 1.887,
+        "cer": 1.852,
         "wer": 14.286
     },
     {
         "file_name": "308-11.png",
         "ground_truth_label": "bly which are to be left with Colonel Carlyle.",
         "predicted_label": "bly, which are to be left with Colomel Carly le.",
-        "cer": 6.522,
-        "wer": 44.444
+        "cer": 6.25,
+        "wer": 40.0
     },
     {
         "file_name": "308-12.png",
@@ -129,14 +129,14 @@
         "file_name": "308-20.png",
         "ground_truth_label": "to send a Sergeant, and one or two trusty men",
         "predicted_label": "to send a Sergeant, and one or two trusty men,",
-        "cer": 2.222,
+        "cer": 2.174,
         "wer": 10.0
     },
     {
         "file_name": "308-21.png",
         "ground_truth_label": "in pursuit of them.",
         "predicted_label": "in pursuit of themt.",
-        "cer": 5.263,
+        "cer": 5.0,
         "wer": 25.0
     },
     {
@@ -235,7 +235,7 @@
         "ground_truth_label": "p.309.",
         "predicted_label": "R. 30.",
         "cer": 50.0,
-        "wer": 200.0
+        "wer": 100.0
     },
     {
         "file_name": "309-02.png",
@@ -333,7 +333,7 @@
         "ground_truth_label": "20th. Parole Abbemarle. Winchester: December 20th. 1755.",
         "predicted_label": "28th. P arole Albemarle Ienchester. December to. 175.",
         "cer": 19.643,
-        "wer": 100.0
+        "wer": 87.5
     },
     {
         "file_name": "309-19.png",
@@ -451,7 +451,7 @@
         "file_name": "309-36.png",
         "ground_truth_label": "discharged: viz.",
         "predicted_label": "dis charged: Viro",
-        "cer": 25.0,
-        "wer": 150.0
+        "cer": 23.529,
+        "wer": 100.0
     }
 ]

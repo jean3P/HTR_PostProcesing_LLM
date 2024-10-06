@@ -45,7 +45,7 @@
         "file_name": "308-08.png",
         "ground_truth_label": "chester; whither they are to be sent, under the",
         "predicted_label": "tchester; whither they are to be sent, under the",
-        "cer": 2.128,
+        "cer": 2.083,
         "wer": 11.111
     },
     {
@@ -59,15 +59,15 @@
         "file_name": "308-10.png",
         "ground_truth_label": "of Clothes; Shoes, Stocking, Shirts, Vc. proportiona-",
         "predicted_label": "of Clothes; Shoes, Hcockings, Shirts, Vc. proportiona-",
-        "cer": 5.66,
+        "cer": 5.556,
         "wer": 14.286
     },
     {
         "file_name": "308-11.png",
         "ground_truth_label": "bly which are to be left with Colonel Carlyle.",
         "predicted_label": "bly, which are to be Aoft. with Eoto ial Carby le.",
-        "cer": 23.913,
-        "wer": 66.667
+        "cer": 22.0,
+        "wer": 54.545
     },
     {
         "file_name": "308-12.png",
@@ -129,14 +129,14 @@
         "file_name": "308-20.png",
         "ground_truth_label": "to send a Sergeant, and one or two trusty men",
         "predicted_label": "to send a Seirgeant, and one or two trusty nen.",
-        "cer": 6.667,
+        "cer": 6.383,
         "wer": 20.0
     },
     {
         "file_name": "308-21.png",
         "ground_truth_label": "in pursuit of them.",
         "predicted_label": "in persuigt of themt",
-        "cer": 15.789,
+        "cer": 15.0,
         "wer": 50.0
     },
     {
@@ -144,7 +144,7 @@
         "ground_truth_label": "Given at Alexandria Vc.",
         "predicted_label": "Yiens at a leandria Vc.",
         "cer": 26.087,
-        "wer": 75.0
+        "wer": 60.0
     },
     {
         "file_name": "308-23.png",
@@ -220,7 +220,7 @@
         "file_name": "308-34.png",
         "ground_truth_label": "care to purchase no more than is absolutely",
         "predicted_label": "care to purchase no more than is absoliltely",
-        "cer": 4.651,
+        "cer": 4.545,
         "wer": 12.5
     },
     {
@@ -235,7 +235,7 @@
         "ground_truth_label": "p.309.",
         "predicted_label": "h. o.",
         "cer": 66.667,
-        "wer": 200.0
+        "wer": 100.0
     },
     {
         "file_name": "309-02.png",
@@ -269,7 +269,7 @@
         "file_name": "309-08.png",
         "ground_truth_label": "Virginia Regiment.",
         "predicted_label": "Yirgeinia Regiment.",
-        "cer": 11.111,
+        "cer": 10.526,
         "wer": 50.0
     },
     {
@@ -339,7 +339,7 @@
         "file_name": "309-19.png",
         "ground_truth_label": "A Return to be given in immedi-",
         "predicted_label": "eh Retirn to be qgiven in imedi-",
-        "cer": 16.129,
+        "cer": 15.625,
         "wer": 57.143
     },
     {
@@ -360,7 +360,7 @@
         "file_name": "309-22.png",
         "ground_truth_label": "age, trade, Vc. The officers to see that the Serge-",
         "predicted_label": "age, trade, Vc. The Ooficers to sre that the Sirge.-",
-        "cer": 9.804,
+        "cer": 9.615,
         "wer": 30.0
     },
     {
@@ -444,7 +444,7 @@
         "file_name": "309-35.png",
         "ground_truth_label": "ed unfit for Duty, on Review; are ordered to be",
         "predicted_label": "ed unfit for Duty, on Reviens, are ordered to be",
-        "cer": 6.383,
+        "cer": 6.25,
         "wer": 10.0
     },
     {
@@ -452,6 +452,6 @@
         "ground_truth_label": "discharged: viz.",
         "predicted_label": "dis charged. ro",
         "cer": 37.5,
-        "wer": 150.0
+        "wer": 100.0
     }
 ]

@@ -59,8 +59,8 @@
         "file_name": "308-10.png",
         "ground_truth_label": "of Clothes; Shoes, Stocking, Shirts, Vc. proportiona-",
         "predicted_label": "of Clo thes; Shoes, Stockings, Shirts, Vc. proportiona-",
-        "cer": 3.774,
-        "wer": 42.857
+        "cer": 3.636,
+        "wer": 37.5
     },
     {
         "file_name": "308-11.png",
@@ -87,8 +87,8 @@
         "file_name": "308-14.png",
         "ground_truth_label": "a strict Guard is kept over them, that no embez-",
         "predicted_label": "a strict Suard is kept over them, that no embey -",
-        "cer": 6.25,
-        "wer": 30.0
+        "cer": 6.122,
+        "wer": 27.273
     },
     {
         "file_name": "308-15.png",
@@ -101,7 +101,7 @@
         "file_name": "308-16.png",
         "ground_truth_label": "conveniently Quartered on their march up; there",
         "predicted_label": "conveniently Suartered on their Mmarchs upothere",
-        "cer": 10.638,
+        "cer": 10.417,
         "wer": 57.143
     },
     {
@@ -129,7 +129,7 @@
         "file_name": "308-20.png",
         "ground_truth_label": "to send a Sergeant, and one or two trusty men",
         "predicted_label": "to send a Sergeant, and one or two trusty men,",
-        "cer": 2.222,
+        "cer": 2.174,
         "wer": 10.0
     },
     {
@@ -144,7 +144,7 @@
         "ground_truth_label": "Given at Alexandria Vc.",
         "predicted_label": "Given af e leundria Vc.",
         "cer": 21.739,
-        "wer": 75.0
+        "wer": 60.0
     },
     {
         "file_name": "308-23.png",
@@ -157,8 +157,8 @@
         "file_name": "308-25.png",
         "ground_truth_label": "16th. To Doctor James Craik, of the Virginia",
         "predicted_label": "th. To Doctor Ia mes Craik, of the Veirginice",
-        "cer": 15.909,
-        "wer": 50.0
+        "cer": 15.556,
+        "wer": 44.444
     },
     {
         "file_name": "308-26.png",
@@ -235,7 +235,7 @@
         "ground_truth_label": "p.309.",
         "predicted_label": "9 S5g.",
         "cer": 83.333,
-        "wer": 200.0
+        "wer": 100.0
     },
     {
         "file_name": "309-02.png",
@@ -263,7 +263,7 @@
         "ground_truth_label": "16th. To Captain John Mercer. of the",
         "predicted_label": "28h. To Captain I ohn Lercer. of the",
         "cer": 16.667,
-        "wer": 57.143
+        "wer": 50.0
     },
     {
         "file_name": "309-08.png",
@@ -333,7 +333,7 @@
         "ground_truth_label": "20th. Parole Abbemarle. Winchester: December 20th. 1755.",
         "predicted_label": "28th. Pote ebemarle 6 Wrchestr. December to 275.",
         "cer": 32.143,
-        "wer": 100.0
+        "wer": 87.5
     },
     {
         "file_name": "309-19.png",
@@ -451,7 +451,7 @@
         "file_name": "309-36.png",
         "ground_truth_label": "discharged: viz.",
         "predicted_label": "dis char ged :. Wiro",
-        "cer": 43.75,
-        "wer": 250.0
+        "cer": 35.0,
+        "wer": 100.0
     }
 ]

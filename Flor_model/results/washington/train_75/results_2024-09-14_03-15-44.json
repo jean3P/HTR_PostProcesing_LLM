@@ -59,14 +59,14 @@
         "file_name": "308-10.png",
         "ground_truth_label": "of Clothes; Shoes, Stocking, Shirts, Vc. proportiona-",
         "predicted_label": "of Clothes; Shoes, Stockings, Shirts, Vc. proportiona-",
-        "cer": 1.887,
+        "cer": 1.852,
         "wer": 14.286
     },
     {
         "file_name": "308-11.png",
         "ground_truth_label": "bly which are to be left with Colonel Carlyle.",
         "predicted_label": "bly, which are to be left with Colonel Carlyle.",
-        "cer": 2.174,
+        "cer": 2.128,
         "wer": 11.111
     },
     {
@@ -129,7 +129,7 @@
         "file_name": "308-20.png",
         "ground_truth_label": "to send a Sergeant, and one or two trusty men",
         "predicted_label": "to send a Sergeant, and one or two trusty men,",
-        "cer": 2.222,
+        "cer": 2.174,
         "wer": 10.0
     },
     {
@@ -234,7 +234,7 @@
         "file_name": "309-01.png",
         "ground_truth_label": "p.309.",
         "predicted_label": "p.do0d.",
-        "cer": 50.0,
+        "cer": 42.857,
         "wer": 100.0
     },
     {
@@ -263,7 +263,7 @@
         "ground_truth_label": "16th. To Captain John Mercer. of the",
         "predicted_label": "3th. To Captain I ohn Mercer. of the",
         "cer": 11.111,
-        "wer": 42.857
+        "wer": 37.5
     },
     {
         "file_name": "309-08.png",
@@ -318,7 +318,7 @@
         "file_name": "309-15.png",
         "ground_truth_label": "N:B. A Copy left at Alexandria, and another",
         "predicted_label": "N.0sB. ACopy left at Alexandria, and another",
-        "cer": 9.302,
+        "cer": 9.091,
         "wer": 37.5
     },
     {
@@ -374,15 +374,15 @@
         "file_name": "309-24.png",
         "ground_truth_label": "drill the Recruits, at least twice a-day.",
         "predicted_label": "dril the Recruits, at least twilce a day,.",
-        "cer": 9.756,
-        "wer": 57.143
+        "cer": 9.524,
+        "wer": 50.0
     },
     {
         "file_name": "309-26.png",
         "ground_truth_label": "22nd. Parole Boston- Winchester: December 22nd. 1755.",
         "predicted_label": "52. Perole Boston - Winchester: December 28th. 175.",
         "cer": 16.981,
-        "wer": 85.714
+        "wer": 75.0
     },
     {
         "file_name": "309-27.png",
@@ -451,7 +451,7 @@
         "file_name": "309-36.png",
         "ground_truth_label": "discharged: viz.",
         "predicted_label": "dis chargect. Viro",
-        "cer": 43.75,
-        "wer": 150.0
+        "cer": 38.889,
+        "wer": 100.0
     }
 ]
