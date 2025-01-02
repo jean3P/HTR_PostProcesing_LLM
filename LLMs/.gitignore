@@ -38,6 +38,6 @@ models/
 
 # For Visual Studio
 .vs/
-
+logs
 # Ignore large data files
 datasets/
