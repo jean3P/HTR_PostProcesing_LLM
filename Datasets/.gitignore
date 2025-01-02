@@ -19,7 +19,7 @@ env/
 *.png
 # Ignore Jupyter Notebook checkpoints
 .ipynb_checkpoints/
-
+*.uuid
 # Ignore system files
 .DS_Store
 Thumbs.db
