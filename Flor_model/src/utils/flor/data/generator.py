@@ -16,7 +16,7 @@ from utils.flor.data import preproc as pp
 class DataGenerator:
     """Generator class with data streaming"""
 
-    def __init__(self, source, batch_size, charset, max_text_length, train_partition, predict=False,
+    def __init__(self, source, batch_size, charset, max_text_length, train_partition, test_partition=False,
                  stream=False, external_labels=None):
         """
         Initialize the data generator.
@@ -32,7 +32,8 @@ class DataGenerator:
         self.tokenizer = Tokenizer(charset, max_text_length)
         self.batch_size = batch_size
         self.external_labels = external_labels
-        self.train_partition = train_partition  # Store the training partition
+        self.train_partition = train_partition
+        self.test_partition = test_partition
 
         self.size = dict()
         self.steps = dict()
@@ -42,14 +43,15 @@ class DataGenerator:
             self.dataset = h5py.File(source, "r")
 
             # Load the specified training partition and valid/test sets
-            for pt in [self.train_partition, 'valid', 'test']:
+            for pt in [self.train_partition, 'valid', self.test_partition]:
                 self.size[pt] = self.dataset[pt]['gt'][:].shape[0]
                 self.steps[pt] = int(np.ceil(self.size[pt] / self.batch_size))
         else:
             self.dataset = dict()
 
             with h5py.File(source, "r") as f:
-                for pt in [self.train_partition, 'valid', 'test']:
+                # Load all available partitions
+                for pt in f.keys():
                     self.dataset[pt] = dict()
                     self.dataset[pt]['dt'] = np.array(f[pt]['dt'])
                     self.dataset[pt]['gt'] = np.array(f[pt]['gt'])
@@ -57,6 +59,7 @@ class DataGenerator:
 
                     self.size[pt] = len(self.dataset[pt]['gt'])
                     self.steps[pt] = int(np.ceil(self.size[pt] / self.batch_size))
+
         self.stream = stream
         self.arange = np.arange(len(self.dataset[self.train_partition]['gt']))
         np.random.seed(42)
@@ -138,18 +141,18 @@ class DataGenerator:
     def next_test_batch(self):
         """Return model predict parameters"""
 
-        self.index['test'] = 0
+        self.index[self.test_partition] = 0
 
         while True:
-            if self.index['test'] >= self.size['test']:
-                self.index['test'] = 0
+            if self.index[self.test_partition] >= self.size[self.test_partition]:
+                self.index[self.test_partition] = 0
                 break
 
-            index = self.index['test']
+            index = self.index[self.test_partition]
             until = index + self.batch_size
-            self.index['test'] = until
+            self.index[self.test_partition] = until
 
-            x_test = self.dataset['test']['dt'][index:until]
+            x_test = self.dataset[self.test_partition]['dt'][index:until]
             x_test = pp.normalization(x_test)
 
             # names = self.dataset['test']['path'][index:until]  # Extract filenames

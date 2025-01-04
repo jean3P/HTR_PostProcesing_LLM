@@ -39,12 +39,16 @@ def save_to_json(dict_data, path_file):
         json.dump(dict_data, file, indent=4)
 
 
-def create_testing_file(base_dir, dataset, partition, result):
+def create_testing_file(base_dir, dataset, partition, result, test_partition=None):
     # Get current date and time in the format YYYY-MM-DD_HH-MM-SS
     current_time = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
 
     # Define the directory structure (without date)
-    test_dir = os.path.join(base_dir, dataset, partition)
+    if test_partition and test_partition != 'test':
+        remaining_percent = test_partition.split('_')[1]
+        test_dir = os.path.join(base_dir, dataset, partition, f'remaining_{remaining_percent}')
+    else:
+        test_dir = os.path.join(base_dir, dataset, partition)
 
     # Create the directory if it doesn't exist
     os.makedirs(test_dir, exist_ok=True)

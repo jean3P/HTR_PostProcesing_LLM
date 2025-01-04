@@ -20,25 +20,81 @@ if __name__ == '__main__':
         input_size = (1024, 128, 1)
         max_text_length = 256
 
-        # Initialize the Dataset class for Bentham
+        # Initialize the Dataset class for Washington
+        # washington_dataset = Dataset(source=washington_path, name="washington", partition_name="cv0")
+        # washington_dataset.read_partitions()
+        # washington_dataset.save_partitions(target_dir=splits_washington_path, image_input_size=input_size,
+        #                                    max_text_length=max_text_length)
+
+        # Define the list of train and remaining partitions
+        train_partitions = ['train_25', 'train_50', 'train_75']
+        remaining_partitions = ['remaining_75', 'remaining_50', 'remaining_25']
+
+        # For each combination, create the combined datasets
+        # for train_partition, remaining_partition in zip(train_partitions, remaining_partitions):
+        #     washington_dataset.create_combined_dataset_with_llm_labels(
+        #         target_dir=splits_washington_path,
+        #         image_input_size=input_size,
+        #         max_text_length=max_text_length,
+        #         ocr_model='Flor_model',
+        #         llm_model='mistral',
+        #         method='method_1_paper',
+        #         train_partition=train_partition,
+        #         remaining_partition=remaining_partition,
+        #         mode='best',
+        #     )
+
         bentham_dataset = Dataset(source=bentham_path, name="bentham")
         bentham_dataset.read_partitions()
-        bentham_dataset.save_partitions(target_dir=splits_bentham_path, image_input_size=input_size,
-                                        max_text_length=max_text_length)
+
+        for train_partition, remaining_partition in zip(train_partitions, remaining_partitions):
+            bentham_dataset.create_combined_dataset_with_llm_labels(
+                target_dir=splits_bentham_path,
+                image_input_size=input_size,
+                max_text_length=max_text_length,
+                ocr_model='Flor_model',
+                llm_model='mistral',
+                method='method_1_paper',
+                train_partition=train_partition,
+                remaining_partition=remaining_partition,
+                mode='llm',
+            )
+
+        # iam_dataset = Dataset(source=iam_path, name="iam")
+        # iam_dataset.read_partitions()
+        # for train_partition, remaining_partition in zip(train_partitions, remaining_partitions):
+        #     iam_dataset.create_combined_dataset_with_llm_labels(
+        #         target_dir=splits_iam_path,
+        #         image_input_size=input_size,
+        #         max_text_length=max_text_length,
+        #         ocr_model='Flor_model',
+        #         llm_model='mistral',
+        #         method='method_1_paper',
+        #         train_partition=train_partition,
+        #         remaining_partition=remaining_partition,
+        #         mode='llm',
+        #     )
+
+        # ==============================================================================
+        # Initialize the Dataset class for Bentham
+        # bentham_dataset = Dataset(source=bentham_path, name="bentham")
+        # bentham_dataset.read_partitions()
+        # bentham_dataset.save_partitions(target_dir=splits_bentham_path, image_input_size=input_size,
+        #                                 max_text_length=max_text_length)
 
         # Initialize the Dataset class for Washington (partition "cv0")
-        washington_dataset = Dataset(source=washington_path, name="washington", partition_name="cv0")
-        washington_dataset.read_partitions()
-        washington_dataset.save_partitions(target_dir=splits_washington_path, image_input_size=input_size,
-                                           max_text_length=max_text_length)
+        # washington_dataset = Dataset(source=washington_path, name="washington", partition_name="cv0")
+        # washington_dataset.read_partitions()
+        # washington_dataset.save_partitions(target_dir=splits_washington_path, image_input_size=input_size,
+        #                                    max_text_length=max_text_length)
 
         # Initialize and process the IAM dataset
-        iam_dataset = Dataset(source=iam_path, name="iam")
-        iam_dataset.read_partitions()
-        iam_dataset.save_partitions(target_dir=splits_iam_path, image_input_size=input_size,
-                                    max_text_length=max_text_length)
-
-        result = r.publish("project_channel", "datasets_done")
-        logging.info(f"Message published to Redis with result: {result}")
+        # iam_dataset = Dataset(source=iam_path, name="iam")
+        # iam_dataset.read_partitions()
+        # iam_dataset.save_partitions(target_dir=splits_iam_path, image_input_size=input_size,
+        #                             max_text_length=max_text_length)
+        #
+        # result = r.publish("project_channel", "datasets_done")
+        # logging.info(f"Message published to Redis with result: {result}")
     except Exception as e:
         logging.error(f"Error while loading the dataset: {e}")

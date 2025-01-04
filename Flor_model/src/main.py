@@ -34,7 +34,8 @@ def run_training():
     # Iterate over each dataset
     for dataset_name in datasets:
         # Construct the HDF5 file path for the current dataset
-        hdf5_file_path = os.path.join(outputs_hdf5, dataset_name, f'{dataset_name}_dataset.hdf5')
+        # hdf5_file_path = os.path.join(outputs_hdf5, dataset_name, f'{dataset_name}_dataset.hdf5')
+        hdf5_file_path = os.path.join(outputs_hdf5, dataset_name, f'combined_{dataset_name}_dataset.hdf5')
 
         # Check if the HDF5 file exists
         if os.path.exists(hdf5_file_path):

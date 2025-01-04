@@ -17,20 +17,47 @@ DATASET_PATHS = {
 
 def load_partition_data(name_dataset, partition, number_of_rows):
     """Load partition data from HDF5 file."""
-    hdf5_path = os.path.join(DATASET_PATHS.get(name_dataset), f'{name_dataset}_dataset.hdf5')
+    # Paths to the standard and combined datasets
+    standard_hdf5_path = os.path.join(DATASET_PATHS.get(name_dataset), f'{name_dataset}_dataset.hdf5')
+    combined_hdf5_path = os.path.join(DATASET_PATHS.get(name_dataset), f'combined_{name_dataset}_dataset.hdf5')
 
-    if not os.path.exists(hdf5_path):
-        raise FileNotFoundError(f"The dataset file {hdf5_path} does not exist.")
+    # Flags to indicate where the partition was found
+    partition_found = False
+    hdf5_path = ''
 
+    # First, check in the standard dataset file
+    if os.path.exists(standard_hdf5_path):
+        with File(standard_hdf5_path, "r") as f:
+            if partition in f:
+                partition_found = True
+                hdf5_path = standard_hdf5_path
+                dataset_file = f
+                # Global total across standard partitions
+                global_total = sum(len(f[f"{pt}/dt"]) for pt in ['train_100', 'train_75', 'train_50', 'train_25', 'valid', 'test'])
+    else:
+        # Standard dataset file does not exist
+        print(f"The standard dataset file {standard_hdf5_path} does not exist.")
+
+    # If not found, check in the combined dataset file
+    if not partition_found and os.path.exists(combined_hdf5_path):
+        with File(combined_hdf5_path, "r") as f:
+            if partition in f:
+                partition_found = True
+                hdf5_path = combined_hdf5_path
+                dataset_file = f
+                # Global total across all partitions in the combined dataset
+                global_total = sum(len(f[f"{pt}/dt"]) for pt in f.keys())
+    elif not partition_found:
+        # Combined dataset file does not exist or partition not found
+        raise FileNotFoundError(f"Partition '{partition}' not found in both standard and combined datasets.")
+
+    if not partition_found:
+        raise ValueError(f"Partition '{partition}' not found in any dataset.")
+
+    # Now, load the partition data from the appropriate dataset file
     with File(hdf5_path, "r") as f:
-        if partition not in f:
-            raise ValueError(f"Partition '{partition}' not found in the dataset.")
-
-        # Global total across all partitions
-        global_total = sum(len(f[f"{pt}/dt"]) for pt in ['train_100', 'train_75', 'train_50', 'train_25', 'valid', 'test'])
-
         total_count = len(f[f"{partition}/dt"])
-        full_path = f.attrs['full_image_path']
+        full_path = f.attrs.get('full_image_path', '').decode('utf-8') if isinstance(f.attrs.get('full_image_path', ''), bytes) else f.attrs.get('full_image_path', '')
 
         # Load partition data
         dt_data = f[f"{partition}/dt"][:number_of_rows]
@@ -38,8 +65,8 @@ def load_partition_data(name_dataset, partition, number_of_rows):
         path_data = f[f"{partition}/path"][:number_of_rows]
 
         # Decode byte strings
-        decoded_path_data = [path.decode('utf-8') for path in path_data]
-        decoded_gt_data = [gt.decode('utf-8') for gt in gt_data]
+        decoded_path_data = [path.decode('utf-8') if isinstance(path, bytes) else path for path in path_data]
+        decoded_gt_data = [gt.decode('utf-8') if isinstance(gt, bytes) else gt for gt in gt_data]
 
         partition_data = [
             FileInfo(

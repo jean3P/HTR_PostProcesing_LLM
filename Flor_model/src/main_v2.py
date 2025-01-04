@@ -64,25 +64,4 @@ def test_model(partition, dtgen, model, results_dir, remaining_dir):
     )
 
 
-def run_testing_pipeline(base_dir, dataset_name, partitions, model_output_dir):
-    """
-    Run the entire pipeline to test the trained models on Washington dataset.
-    """
-    for partition in partitions:
-        print(f"Processing partition: {partition}")
-
-        # Step 1: Setup directories
-        results_dir, remaining_dir = setup_result_directories(base_dir, dataset_name, partition)
-
-        # Step 2: Initialize data generator
-        dtgen = initialize_data_generator(dataset_name, partition)
-
-        # Step 3: Load the trained model
-        checkpoint_path = os.path.join(model_output_dir, dataset_name, partition, "checkpoint_weights.hdf5")
-        model = load_trained_model(checkpoint_path, dtgen)
-
-        # Step 4: Perform predictions and save results
-        test_model(dataset_name, partition, dtgen, model, results_dir, remaining_dir)
-
-        print(f"Completed partition: {partition}")
 
