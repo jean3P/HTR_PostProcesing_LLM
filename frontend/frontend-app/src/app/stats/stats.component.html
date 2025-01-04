@@ -1,4 +1,3 @@
-
 <h2>Improving handwriting recognition using LLMs as OCR post-processing</h2>
 
 <div class="selection-container">
@@ -24,10 +23,11 @@
       <mat-form-field appearance="fill">
         <mat-label>LLM Model</mat-label>
         <mat-select [value]="selectedLlmNames" (selectionChange)="onLlmChange($event)" multiple>
-          <mat-option value="mistral" [disabled]="selectedMethods.length > 1">Mistral</mat-option>
-          <mat-option value="gpt-3.5-turbo" [disabled]="selectedMethods.length > 1">GPT-3.5 Turbo</mat-option>
-<!--          <mat-option value="gpt-4" [disabled]="selectedMethods.length > 1">GPT-4</mat-option>-->
-          <mat-option value="gpt-4o-mini" [disabled]="selectedMethods.length > 1">GPT-4o mini</mat-option>
+          <mat-option value="mistral" [disabled]="selectedMethods.length > 2">Mistral</mat-option>
+          <mat-option value="gpt-3.5-turbo" [disabled]="selectedMethods.length > 2">GPT-3.5 Turbo</mat-option>
+          <!--          <mat-option value="gpt-4" [disabled]="selectedMethods.length > 1">GPT-4</mat-option>-->
+          <mat-option value="gpt-4o-mini" [disabled]="selectedMethods.length > 2">GPT-4o mini</mat-option>
+          <mat-option value="llama-3-8B-I" [disabled]="selectedMethods.length > 2">Llama-3-8B-Instruct</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -36,8 +36,16 @@
       <mat-form-field appearance="fill">
         <mat-label>Name Method</mat-label>
         <mat-select [value]="selectedMethods" (selectionChange)="onMethodChange($event)" multiple>
-          <mat-option value="method_1" [disabled]="selectedLlmNames.length > 1">Method 1</mat-option>
-          <mat-option value="method_2" [disabled]="selectedLlmNames.length > 1">Method 2</mat-option>
+          <mat-option value="method_0" [disabled]="selectedLlmNames.length > 2">Method 0</mat-option>
+          <mat-option value="method_0_simple_2" [disabled]="selectedLlmNames.length > 2">Method 0 - S2</mat-option>
+          <mat-option value="method_0_complex_2" [disabled]="selectedLlmNames.length > 2">Method 0 - C2</mat-option>
+          <mat-option value="method_1_paper" [disabled]="selectedLlmNames.length > 2">Method 1 - Paper</mat-option>
+          <mat-option value="method_1_paper_07" [disabled]="selectedLlmNames.length > 2">Method 1-07 - Paper</mat-option>
+          <mat-option value="method_1" [disabled]="selectedLlmNames.length > 2">Method 1</mat-option>
+          <mat-option value="method_1_V1" [disabled]="selectedLlmNames.length > 2">Method 1-V1</mat-option>
+          <mat-option value="method_1_V2" [disabled]="selectedLlmNames.length > 2">Method 1-V2</mat-option>
+          <mat-option value="method_1_V3_F" [disabled]="selectedLlmNames.length > 2">Method 1-V3_F</mat-option>
+          <mat-option value="method_2" [disabled]="selectedLlmNames.length > 2">Method 2</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
@@ -50,97 +58,136 @@
 </div>
 
 <div *ngFor="let method of selectedMethods">
-  <!-- Loop through each selected LLM and display a table for each -->
   <div *ngFor="let llm of selectedLlmNames">
     <h3>Statistics for {{ method }} and LLM: {{ getDisplayLlmName(llm) }}</h3>
 
-    <table [ngClass]="{'method-1-table': method === 'method_1', 'method-2-table': method === 'method_2'}" class="styled-table">
+    <table class="styled-table">
       <thead>
       <tr>
         <th>Train (%)</th>
         <th>OCR CER (%)</th>
         <th>OCR WER (%)</th>
-        <th colspan="5">Washington</th>
-        <th colspan="5">Bentham</th>
-        <th colspan="5">IAM</th>
-        <th colspan="5">No Training Set</th>
+        <th *ngIf="selectedDataset === 'washington'" colspan="4">Washington</th>
+        <th *ngIf="selectedDataset === 'bentham'" colspan="4">Bentham</th>
+        <th *ngIf="selectedDataset === 'iam'" colspan="4">IAM</th>
+        <th colspan="4">No Training Set</th>
       </tr>
       <tr>
         <th></th>
         <th></th>
         <th></th>
+        <!-- Washington -->
+        <th *ngIf="selectedDataset === 'washington'">CER</th>
+        <th *ngIf="selectedDataset === 'washington'">WER</th>
+        <th *ngIf="selectedDataset === 'washington'">CER Reduction</th>
+        <th *ngIf="selectedDataset === 'washington'">WER Reduction</th>
+        <!-- Bentham -->
+        <th *ngIf="selectedDataset === 'bentham'">CER</th>
+        <th *ngIf="selectedDataset === 'bentham'">WER</th>
+        <th *ngIf="selectedDataset === 'bentham'">CER Reduction</th>
+        <th *ngIf="selectedDataset === 'bentham'">WER Reduction</th>
+        <!-- IAM -->
+        <th *ngIf="selectedDataset === 'iam'">CER</th>
+        <th *ngIf="selectedDataset === 'iam'">WER</th>
+        <th *ngIf="selectedDataset === 'iam'">CER Reduction</th>
+        <th *ngIf="selectedDataset === 'iam'">WER Reduction</th>
+        <!-- No Training Set -->
         <th>CER</th>
         <th>WER</th>
         <th>CER Reduction</th>
         <th>WER Reduction</th>
-        <th>Confidence</th>
-        <th>CER</th>
-        <th>WER</th>
-        <th>CER Reduction</th>
-        <th>WER Reduction</th>
-        <th>Confidence</th>
-        <th>CER</th>
-        <th>WER</th>
-        <th>CER Reduction</th>
-        <th>WER Reduction</th>
-        <th>Confidence</th>
-        <th>CER</th>
-        <th>WER</th>
-        <th>CER Reduction</th>
-        <th>WER Reduction</th>
-        <th>Confidence</th>
       </tr>
       </thead>
       <tbody>
-      <tr *ngFor="let statGroup of statistics[method]?.[llm]">
-        <td>{{ statGroup.partition }}</td>
-        <td>{{ statGroup.averageCerOcr || '-' }}</td>
-        <td>{{ statGroup.averageWerOcr || '-' }}</td>
+      <ng-container *ngFor="let statGroup of statistics[method]?.[llm]; let i = index">
+        <!-- Insert group headers at specific indices -->
+        <tr *ngIf="i === 0">
+          <td colspan="17" class="group-label">Standard Training Partitions</td>
+        </tr>
+        <tr *ngIf="i === 4">
+          <td colspan="17" class="group-label">Self-learning using weak labels with suggestions</td>
+        </tr>
+        <tr *ngIf="i === 7">
+          <td colspan="17" class="group-label">Self-learning using weak labels without suggestions</td>
+        </tr>
+        <!-- Data Row -->
+        <tr>
+          <td>{{ formatPartitionName(statGroup.partition) }}</td>
+          <td>{{ statGroup.averageCerOcr || '-' }}</td>
+          <td>{{ statGroup.averageWerOcr || '-' }}</td>
 
-        <!-- Washington -->
-        <td [ngClass]="getClass(statGroup, 'washington', method, llm)"
-            (click)="loadEvaluationData(method,'washington', statGroup.partition, llm)">
-          {{ statGroup.washington?.cer || '-' }}
-        </td>
-        <td>{{ statGroup.washington?.wer || '-' }}</td>
-        <td>{{ statGroup.washington?.reduction || '-' }}</td>
-        <td>{{ statGroup.washington?.werReduction || '-' }}</td>
-        <td>{{ statGroup.washington?.averageConfidence || '-' }}</td>
+          <!-- Washington -->
+          <td
+            *ngIf="selectedDataset === 'washington'"
+            [ngClass]="getClass(statGroup, 'washington', method, llm)"
+            (click)="loadEvaluationData(method, 'washington', statGroup.partition, llm)"
+          >
+            {{ statGroup.washington?.cer || '-' }}
+          </td>
+          <td *ngIf="selectedDataset === 'washington'">
+            {{ statGroup.washington?.wer || '-' }}
+          </td>
+          <td *ngIf="selectedDataset === 'washington'">
+            {{ statGroup.washington?.reduction || '-' }}
+          </td>
+          <td *ngIf="selectedDataset === 'washington'">
+            {{ statGroup.washington?.werReduction || '-' }}
+          </td>
 
-        <!-- Bentham -->
-        <td [ngClass]="getClass(statGroup, 'bentham', method, llm)"
-            (click)="loadEvaluationData(method,'bentham', statGroup.partition, llm)">
-          {{ statGroup.bentham?.cer || '-' }}
-        </td>
-        <td>{{ statGroup.bentham?.wer || '-' }}</td>
-        <td>{{ statGroup.bentham?.reduction || '-' }}</td>
-        <td>{{ statGroup.bentham?.werReduction || '-' }}</td>
-        <td>{{ statGroup.bentham?.averageConfidence || '-' }}</td>
+          <!-- Bentham -->
+          <td
+            *ngIf="selectedDataset === 'bentham'"
+            [ngClass]="getClass(statGroup, 'bentham', method, llm)"
+            (click)="loadEvaluationData(method, 'bentham', statGroup.partition, llm)"
+          >
+            {{ statGroup.bentham?.cer || '-' }}
+          </td>
+          <td *ngIf="selectedDataset === 'bentham'">
+            {{ statGroup.bentham?.wer || '-' }}
+          </td>
+          <td *ngIf="selectedDataset === 'bentham'">
+            {{ statGroup.bentham?.reduction || '-' }}
+          </td>
+          <td *ngIf="selectedDataset === 'bentham'">
+            {{ statGroup.bentham?.werReduction || '-' }}
+          </td>
 
-        <!-- IAM -->
-        <td [ngClass]="getClass(statGroup, 'iam', method, llm)"
-            (click)="loadEvaluationData(method,'iam', statGroup.partition, llm)">
-          {{ statGroup.iam?.cer || '-' }}
-        </td>
-        <td>{{ statGroup.iam?.wer || '-' }}</td>
-        <td>{{ statGroup.iam?.reduction || '-' }}</td>
-        <td>{{ statGroup.iam?.werReduction || '-' }}</td>
-        <td>{{ statGroup.iam?.averageConfidence || '-' }}</td>
+          <!-- IAM -->
+          <td
+            *ngIf="selectedDataset === 'iam'"
+            [ngClass]="getClass(statGroup, 'iam', method, llm)"
+            (click)="loadEvaluationData(method, 'iam', statGroup.partition, llm)"
+          >
+            {{ statGroup.iam?.cer || '-' }}
+          </td>
+          <td *ngIf="selectedDataset === 'iam'">
+            {{ statGroup.iam?.wer || '-' }}
+          </td>
+          <td *ngIf="selectedDataset === 'iam'">
+            {{ statGroup.iam?.reduction || '-' }}
+          </td>
+          <td *ngIf="selectedDataset === 'iam'">
+            {{ statGroup.iam?.werReduction || '-' }}
+          </td>
 
-        <!-- No Training Set -->
-        <td [ngClass]="getClass(statGroup, 'noTraining', method, llm)"
-            (click)="loadEvaluationData(method,'noTraining', statGroup.partition, llm)">
-          {{ statGroup.noTraining?.cer || '-' }}
-        </td>
-        <td>{{ statGroup.noTraining?.wer || '-' }}</td>
-        <td>{{ statGroup.noTraining?.reduction || '-' }}</td>
-        <td>{{ statGroup.noTraining?.werReduction || '-' }}</td>
-        <td>{{ statGroup.noTraining?.averageConfidence || '-' }}</td>
-      </tr>
+          <!-- No Training Set -->
+          <td
+            [ngClass]="getClass(statGroup, 'noTraining', method, llm)"
+            (click)="loadEvaluationData(method, 'noTraining', statGroup.partition, llm)"
+          >
+            {{ statGroup.noTraining?.cer || '-' }}
+          </td>
+          <td>{{ statGroup.noTraining?.wer || '-' }}</td>
+          <td>{{ statGroup.noTraining?.reduction || '-' }}</td>
+          <td>{{ statGroup.noTraining?.werReduction || '-' }}</td>
+        </tr>
+      </ng-container>
       </tbody>
     </table>
   </div>
 </div>
+
+
 
 
 
@@ -177,11 +224,26 @@
       <th>Ground Truth</th>
       <th>Predicted Text (OCR)</th>
       <th>Predicted Text (LLM)</th>
-      <th>CER (LLM)</th>
-      <th>CER (OCR)</th>
-      <th>WER (LLM)</th>
-      <th>WER (OCR)</th>
-      <th>Confidence LLM</th>
+      <th (click)="sortTable('cerLlm')">CER (LLM)
+        <span *ngIf="sortColumn === 'cerLlm'">
+            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': sortOrder === 'desc'}"></i>
+          </span>
+      </th>
+      <th (click)="sortTable('cerOcr')">CER (OCR)
+        <span *ngIf="sortColumn === 'cerOcr'">
+            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': sortOrder === 'desc'}"></i>
+          </span>
+      </th>
+      <th (click)="sortTable('werLlm')">WER (LLM)
+        <span *ngIf="sortColumn === 'werLlm'">
+            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': sortOrder === 'desc'}"></i>
+          </span>
+      </th>
+      <th (click)="sortTable('werOcr')">WER (OCR)
+        <span *ngIf="sortColumn === 'werOcr'">
+            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': sortOrder === 'desc'}"></i>
+          </span>
+      </th>
     </tr>
     </thead>
     <tbody>
@@ -194,7 +256,6 @@
       <td>{{ data.cerOcr }}</td>
       <td>{{ data.werLlm }}</td>
       <td>{{ data.werOcr }}</td>
-      <td>{{ data.confidence }}</td>
     </tr>
     </tbody>
   </table>
@@ -204,6 +265,4 @@
   {{ filteredLogData }}
   </pre>
 </div>
-
-
 

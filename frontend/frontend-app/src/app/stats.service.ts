@@ -21,29 +21,26 @@ export class StatsService {
   ): Observable<any> {
     const query = {
       query: `
-        query {
-          partitionData(
-            partition: ${JSON.stringify(partition)},
-            nameDataset: "${nameDataset}",
-            htrModel: "${htrModel}",
-            llmName: "${llmName}",
-            dictName: "${dictName}",
-            nameMethod: "${nameMethod}"
-          ) {
-            statistics {
-              averageCerOcr
-              averageCerLlm
-              averageWerOcr
-              averageWerLlm
-              averageConfidence
-              cerReductionPercentage
-              werReductionPercentage
-            }
+      query {
+        partitionData(
+          partition: ${JSON.stringify(partition)},
+          nameDataset: "${nameDataset}",
+          htrModel: "${htrModel}",
+          llmName: "${llmName}",
+          dictName: "${dictName}",
+          nameMethod: "${nameMethod}"
+        ) {
+          statistics {
+            averageCerOcr
+            averageCerLlm
           }
         }
-      `
+      }
+    `
     };
-    return this.http.post<any>(this.apiUrl, query);
+
+    const headers = { 'Content-Type': 'application/json' };
+    return this.http.post<any>(this.apiUrl, query, { headers });
   }
 
   getEvaluationData(

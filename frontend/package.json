@@ -1,3 +1,7 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:df8e9418e5305a6aa02f935027a074a0204f7dc3c71993b54bcb129ed9a0d813
-size 124
+{
+  "dependencies": {
+    "@angular/cli": "^18.2.4",
+    "devextreme": "^24.1.5",
+    "devextreme-angular": "^24.1.5"
+  }
+}

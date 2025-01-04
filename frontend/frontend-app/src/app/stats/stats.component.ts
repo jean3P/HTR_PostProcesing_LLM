@@ -35,6 +35,8 @@ export class StatsComponent implements OnInit {
   selectedPartition: string = 'train_25';
   logData: string =''
   filteredLogData: string = '';
+  sortColumn: string = '';
+  sortOrder: string = 'asc';
 
   constructor(private statsService: StatsService) {
   }
@@ -76,6 +78,37 @@ export class StatsComponent implements OnInit {
     this.loadStats();
   }
 
+  sortTable(column: string): void {
+    if (this.sortColumn === column) {
+      // Toggle sort order if the same column is clicked again
+      this.sortOrder = this.sortOrder === 'asc' ? 'desc' : 'asc';
+    } else {
+      // Set the sort column and reset to ascending order if a new column is clicked
+      this.sortColumn = column;
+      this.sortOrder = 'asc';
+    }
+
+    // Perform the sorting based on the selected column and order
+    this.filteredEvaluationData.sort((a, b) => {
+      const valueA = a[column];
+      const valueB = b[column];
+
+      // Handle null/undefined values by treating them as lower than numbers
+      if (valueA === null || valueA === undefined) return 1;
+      if (valueB === null || valueB === undefined) return -1;
+
+      if (typeof valueA === 'string') {
+        // Sort strings alphabetically
+        return this.sortOrder === 'asc'
+          ? valueA.localeCompare(valueB)
+          : valueB.localeCompare(valueA);
+      } else {
+        // Sort numbers
+        return this.sortOrder === 'asc' ? valueA - valueB : valueB - valueA;
+      }
+    });
+  }
+
   // Clear all previously selected data
   clearSelection(): void {
     this.selectedCells = {}; // Reset selected cells
@@ -83,6 +116,7 @@ export class StatsComponent implements OnInit {
     this.filteredEvaluationData = []; // Clear filtered data
     this.logData = ''; // Clear logs
     this.filteredLogData = ''; // Clear filtered logs
+    this.sortColumn = '';
   }
 
 
@@ -167,9 +201,40 @@ export class StatsComponent implements OnInit {
     this.loadStats(); // Re-fetch or reload the statistics data
   }
 
+  formatPartitionName(partition: string): string {
+    // Remove 'train_' prefix
+    let name = partition.replace('train_', '');
+    let isEmpty = false;
+
+    if (name.includes('_empty')) {
+      isEmpty = true;
+      name = name.replace('_empty', '');
+    }
+
+    if (name.includes('_remaining_')) {
+      // Split by '_remaining_'
+      const parts = name.split('_remaining_');
+      const trainPercent = parts[0];
+      const remainingPercent = parts[1];
+      let displayName = `${trainPercent}% + ${remainingPercent}%`;
+      if (isEmpty) {
+        displayName += '';
+      }
+      return displayName;
+    } else {
+      return `${name}%`;
+    }
+  }
+
+
   // Load statistics for each selected method
   loadStats(): void {
-    const partitions = ['train_25', 'train_50', 'train_75', 'train_100'];
+    const partitions = [
+      'train_25', 'train_50', 'train_75', 'train_100',
+      'train_25_remaining_75', 'train_50_remaining_50', 'train_75_remaining_25',
+      'train_25_empty_remaining_75', 'train_50_empty_remaining_50', 'train_75_empty_remaining_25'
+    ];
+
     const dictionaries = ['washington', 'bentham', 'iam', 'empty'];
 
     // Clear existing statistics
@@ -374,138 +439,132 @@ export class StatsComponent implements OnInit {
   }
 
   downloadTable(): void {
-    // Check if at least one LLM is selected and one dataset is selected
-    if (this.selectedLlmNames.length >= 1 && this.selectedDataset) {
-      // Proceed only if one method is selected
-      if (this.selectedMethods.length === 1) {
-        const method = this.selectedMethods[0];
+    if (this.selectedLlmNames.length < 1 || !this.selectedDataset) {
+      alert('Please select at least one LLM and one dataset to generate the table.');
+      return;
+    }
 
-        // Prepare data for the LaTeX table
-        const partitions = ['train_25', 'train_50', 'train_75', 'train_100'];
-        const llmDisplayNames: { [key in LLMName]: string } = {
-          'mistral': 'Mis-7B',
-          'gpt-3.5-turbo': 'G3.5-T',
-          'gpt-4o-mini': 'G4o-M'
-        };
+    if (this.selectedMethods.length !== 1) {
+      alert('Please select exactly one method to generate the table.');
+      return;
+    }
 
-        // Initialize table content
-        let tableContent = `
-\\begin{table}[h]
-\\centering
-\\setlength{\\tabcolsep}{0.4pt}
-\\caption{Results for ${this.capitalizeFirstLetter(this.selectedDataset)} Dataset.}
-\\label{tab:results_${this.selectedDataset}}
-\\begin{tabular}{lccc|cccc|cccc}
-    \\toprule
-    \\multirow{2}{*}{\\textbf{Size}} & \\multicolumn{2}{c}{\\textbf{OCR}} & \\multirow{2}{*}{\\textbf{LLMs}} & \\multicolumn{4}{c}{\\textbf{Empty Suggestions}} & \\multicolumn{4}{c}{\\textbf{Non-Empty Suggestions}} \\\\ \\cmidrule(lr){2-3} \\cmidrule(lr){5-8} \\cmidrule(lr){9-12}
-    & \\textbf{CER} & \\textbf{WER} & & \\textbf{CER} & \\textbf{CER-r} & \\textbf{WER} & \\textbf{WER-r} & \\textbf{CER} & \\textbf{CER-r} & \\textbf{WER} & \\textbf{WER-r} \\\\ \\midrule
+    const method = this.selectedMethods[0];
+    const partitions = ['train_25', 'train_50', 'train_75', 'train_100'];
+    const llmDisplayNames: { [key in LLMName]: string } = {
+      'mistral': 'Mis-7B',
+      'gpt-3.5-turbo': 'G3.5-T',
+      'gpt-4o-mini': 'G4o-M'
+    };
+
+    const formatValue = (value: number, isBold: boolean = false): string => {
+      return isNaN(value)
+        ? '-'
+        : isBold
+          ? `\\textbf{${value.toFixed(2)}}`
+          : value.toFixed(2);
+    };
+
+    let tableContent = `
+\\begin{table}
+    \\centering
+    \\setlength{\\tabcolsep}{1.7pt}
+    \\caption{Results for ${this.capitalizeFirstLetter(this.selectedDataset)} Dataset.}
+    \\label{tab:results_${this.selectedDataset}}
+    \\begin{tabular}{ccc||cccc|cccc}
+        \\toprule
+        \\multicolumn{3}{c||}{\\textbf{Setup}} & \\multicolumn{4}{c|}{\\textbf{No Word Suggestions}} & \\multicolumn{4}{c}{\\textbf{With Word Suggestions}} \\\\
+        \\cmidrule(lr){1-3} \\cmidrule(lr){4-7} \\cmidrule(lr){8-11}
+        \\multicolumn{2}{c}{\\textbf{HTR}} & \\textbf{LLMs} & \\textbf{CER} & \\textbf{CER-r} & \\textbf{WER} & \\textbf{WER-r} & \\textbf{CER} & \\textbf{CER-r} & \\textbf{WER} & \\textbf{WER-r} \\\\ \\midrule
   `;
 
-        partitions.forEach((partition) => {
-          let firstLlmInPartition = true;
-          const numLlms = this.selectedLlmNames.length;
+    partitions.forEach((partition) => {
+      const llmDataForPartition: {
+        llm: string;
+        emptyCer: number;
+        nonEmptyCer: number;
+        rowData: number[];
+      }[] = [];
 
-          this.selectedLlmNames.forEach((llm, index) => {
-            const statGroup = this.statistics[method]?.[llm]?.find(group => group.partition === partition);
+      let averageCerOcr: number | undefined;
+      let averageWerOcr: number | undefined;
 
-            if (statGroup) {
-              // Extract OCR values
-              const ocrCer = parseFloat(statGroup.averageCerOcr);
-              const ocrWer = parseFloat(statGroup.averageWerOcr);
+      // Gather data for each LLM
+      for (const llm of this.selectedLlmNames) {
+        const statGroup = this.statistics[method]?.[llm]?.find(g => g.partition === partition);
+        if (statGroup) {
+          const emptyCer = parseFloat(statGroup.noTraining.cer);
+          const emptyCerReduction = parseFloat(statGroup.noTraining.reduction);
+          const emptyWer = parseFloat(statGroup.noTraining.wer);
+          const emptyWerReduction = parseFloat(statGroup.noTraining.werReduction);
 
-              // Extract Empty Suggestions (No Training) values
-              const emptyCer = parseFloat(statGroup.noTraining.cer);
-              const emptyCerReduction = parseFloat(statGroup.noTraining.reduction);
-              const emptyWer = parseFloat(statGroup.noTraining.wer);
-              const emptyWerReduction = parseFloat(statGroup.noTraining.werReduction);
+          const datasetStats = statGroup[this.selectedDataset];
+          const nonEmptyCer = parseFloat(datasetStats.cer);
+          const nonEmptyCerReduction = parseFloat(datasetStats.reduction);
+          const nonEmptyWer = parseFloat(datasetStats.wer);
+          const nonEmptyWerReduction = parseFloat(datasetStats.werReduction);
 
-              // Extract Non-Empty Suggestions (Selected Dataset) values
-              const datasetStats = statGroup[this.selectedDataset];
-              const nonEmptyCer = parseFloat(datasetStats.cer);
-              const nonEmptyCerReduction = parseFloat(datasetStats.reduction);
-              const nonEmptyWer = parseFloat(datasetStats.wer);
-              const nonEmptyWerReduction = parseFloat(datasetStats.werReduction);
-
-              // Determine best CER values among Empty and Non-Empty Suggestions
-              const cerValues = [emptyCer, nonEmptyCer].filter(v => !isNaN(v));
-              const bestCer = Math.min(...cerValues);
-
-              // Function to format and bold best CER values
-              const formatCerValue = (value: number, bestCer: number): string => {
-                const formattedValue = value.toFixed(2);
-                return value === bestCer ? `\\textbf{${formattedValue}}` : formattedValue;
-              };
-
-              // Function to format WER values (no bold)
-              const formatWerValue = (value: number): string => {
-                return value.toFixed(2);
-              };
-
-              // Build the table row
-              let row = '';
-              if (firstLlmInPartition) {
-                row += `\\multirow{${numLlms}}{*}{\\textbf{${partition.replace('train_', '')}\\%}} & `;
-                row += `\\multirow{${numLlms}}{*}{${!isNaN(ocrCer) ? ocrCer.toFixed(2) : '-'}} & `;
-                row += `\\multirow{${numLlms}}{*}{${!isNaN(ocrWer) ? ocrWer.toFixed(2) : '-'}} & `;
-                firstLlmInPartition = false;
-              } else {
-                // For subsequent LLMs, skip the 'Size' and 'OCR' columns
-                row += ' & & & ';
-              }
-
-              row += `${llmDisplayNames[llm]} & `;
-              row += !isNaN(emptyCer) ? formatCerValue(emptyCer, bestCer) : '-';
-              row += ' & ';
-              row += !isNaN(emptyCerReduction) ? emptyCerReduction.toFixed(2) : '-';
-              row += ' & ';
-              row += !isNaN(emptyWer) ? formatWerValue(emptyWer) : '-';
-              row += ' & ';
-              row += !isNaN(emptyWerReduction) ? emptyWerReduction.toFixed(2) : '-';
-              row += ' & ';
-              row += !isNaN(nonEmptyCer) ? formatCerValue(nonEmptyCer, bestCer) : '-';
-              row += ' & ';
-              row += !isNaN(nonEmptyCerReduction) ? nonEmptyCerReduction.toFixed(2) : '-';
-              row += ' & ';
-              row += !isNaN(nonEmptyWer) ? formatWerValue(nonEmptyWer) : '-';
-              row += ' & ';
-              row += !isNaN(nonEmptyWerReduction) ? nonEmptyWerReduction.toFixed(2) : '-';
-              row += ' \\\\ ';
-
-              // Add midrule after the last LLM in the partition
-              if (index === numLlms - 1) {
-                row += '\\midrule\n';
-              }
-
-              tableContent += row;
-            }
+          llmDataForPartition.push({
+            llm: llmDisplayNames[llm],
+            emptyCer,
+            nonEmptyCer,
+            rowData: [
+              emptyCer, emptyCerReduction, emptyWer, emptyWerReduction,
+              nonEmptyCer, nonEmptyCerReduction, nonEmptyWer, nonEmptyWerReduction
+            ]
           });
+
+          if (llm === 'gpt-3.5-turbo') {
+            averageCerOcr = parseFloat(statGroup.averageCerOcr);
+          } else if (llm === 'gpt-4o-mini') {
+            averageWerOcr = parseFloat(statGroup.averageWerOcr);
+          }
+        }
+      }
+
+      if (llmDataForPartition.length > 0) {
+        llmDataForPartition.forEach((d, index) => {
+          // Decide which CER value to bold for this row
+          const boldEmptyCer = d.emptyCer < d.nonEmptyCer;
+          const formattedValues = d.rowData.map((v, idx) => {
+            // idx=0 corresponds to "No Word Suggestions" CER, idx=4 corresponds to "With Word Suggestions" CER
+            if ((idx === 0 && boldEmptyCer) || (idx === 4 && !boldEmptyCer)) {
+              return formatValue(v, true); // Bold the smaller value
+            }
+            return formatValue(v);
+          }).join(' & ');
+
+          // Determine the row prefix
+          let prefix: string;
+          if (d.llm === 'G3.5-T') {
+            prefix = `CER & ${formatValue(averageCerOcr!)} & ${d.llm}`;
+          } else if (d.llm === 'G4o-M') {
+            prefix = `WER & ${formatValue(averageWerOcr!)} & ${d.llm}`;
+          } else if (index === 0) {
+            prefix = `Train & ${partition.replace('train_', '')}\\% & ${d.llm}`;
+          } else {
+            prefix = d.llm;
+          }
+
+          tableContent += `${prefix} & ${formattedValues} \\\\ \n`;
         });
 
-        // Close the LaTeX table
-        tableContent += `
-\\end{tabular}
-\\end{table}
-      `;
-
-        // Get current date and time
-        const currentDate = new Date();
-        const formattedDate = currentDate.toISOString().split('T')[0]; // YYYY-MM-DD
-        const formattedTime = currentDate.toTimeString().split(' ')[0].replace(/:/g, '-'); // HH-MM-SS
-
-        // Create the file name with date and time
-        const fileName = `results_${this.selectedDataset}_table_${formattedDate}_${formattedTime}.txt`;
-
-        // Create a Blob and trigger download as a .txt file
-        const blob = new Blob([tableContent], { type: 'text/plain' });
-        saveAs(blob, fileName);
-      } else {
-        // Show an alert if conditions are not met
-        alert('Please select exactly one method to generate the table.');
+        tableContent += '\\midrule\n';
       }
-    } else {
-      // Show an alert if conditions are not met
-      alert('Please select at least one LLM and one dataset to generate the table.');
-    }
+    });
+
+    tableContent += `
+    \\end{tabular}
+\\end{table}
+  `;
+
+    const currentDate = new Date();
+    const formattedDate = currentDate.toISOString().split('T')[0];
+    const formattedTime = currentDate.toTimeString().split(' ')[0].replace(/:/g, '-');
+    const fileName = `results_${this.selectedDataset}_table_${formattedDate}_${formattedTime}.txt`;
+
+    const blob = new Blob([tableContent], { type: 'text/plain' });
+    saveAs(blob, fileName);
   }
 
 
@@ -527,3 +586,5 @@ const llmDisplayNames: { [key in LLMName]: string } = {
   'gpt-3.5-turbo': 'G3.5-T',
   'gpt-4o-mini': 'G4o-M'
 };
+
+
