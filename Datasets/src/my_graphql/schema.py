@@ -18,7 +18,12 @@ class Query(graphene.ObjectType):
         name_method=graphene.String(required=True),
         htr_model=graphene.String(required=True),
         dict_name=graphene.String(required=True),
-        training_sizes=graphene.List(graphene.String, default_value=['train_25', 'train_50', 'train_75', 'train_100']),
+        training_sizes=graphene.List(graphene.String, default_value=['train_25', 'train_50', 'train_75', 'train_100',
+                                                                     'train_25_remaining_75', 'train_50_remaining_50',
+                                                                     'train_75_remaining_25',
+                                                                     'train_25_empty_remaining_75',
+                                                                     'train_50_empty_remaining_50',
+                                                                     'train_75_empty_remaining_25']),
         training_suggestion=graphene.List(graphene.String,
                                           default_value=['bentham', 'iam', 'washington', 'whitefield', 'empty']),
         llm_name=graphene.String(required=True)
