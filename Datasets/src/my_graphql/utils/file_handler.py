@@ -1,3 +1,5 @@
+# repos/HTR_PostProcesing_LLM/Datasets/my_graphql/utils/file_handler.py
+
 import os
 import json
 import logging
@@ -84,22 +86,60 @@ def load_evaluation_results(name_dataset, name_method, partition, htr_model, llm
     """Load the most recent evaluation results from a JSON file."""
     eval_dir_path = os.path.join(llm_outputs_path, name_dataset, htr_model, llm_name, name_method, partition)
 
+    # Handle different dictionary naming patterns
     if dict_name == 'noTraining':
-        dict_name = 'empty'
+        search_dict_name = 'empty'
+    elif dict_name == name_dataset:
+        # When using the dataset's own dictionary, filename uses dataset name
+        search_dict_name = name_dataset
+    else:
+        # For cross-dataset dictionaries, use the dictionary name
+        search_dict_name = dict_name
+
     logging.info(f"Checking evaluation directory: {eval_dir_path}")
+    logging.info(f"Searching for dictionary: {dict_name} -> filename pattern: results_{search_dict_name}_*.json")
 
     if not os.path.exists(eval_dir_path):
-        logging.warning(f"Evaluation directory not found for {name_dataset} - {name_method} - {partition}. Path: {eval_dir_path}")
+        logging.warning(
+            f"Evaluation directory not found for {name_dataset} - {name_method} - {partition}. Path: {eval_dir_path}")
         return []
+
+    # Debug: Log all files in directory
+    all_files = os.listdir(eval_dir_path)
+    json_files = [f for f in all_files if f.endswith('.json')]
+    logging.info(f"All JSON files in directory: {json_files}")
 
     # Find all files that match the 'results_*.json' pattern
-    result_files = [f for f in os.listdir(eval_dir_path) if f.startswith(f'results_{dict_name}_') and f.endswith('.json')]
+    result_files = [f for f in json_files if f.startswith(f'results_{search_dict_name}_')]
+
+    # Special handling for 'empty' dictionary - also check for 'no_suggestions' files
+    if search_dict_name == 'empty' and not result_files:
+        # Check for 'no_suggestions' files which are equivalent to 'empty'
+        no_suggestions_files = [f for f in json_files if f.startswith('results_no_suggestions_')]
+        if no_suggestions_files:
+            logging.info(f"No 'results_empty_*.json' files found, but found {len(no_suggestions_files)} "
+                        f"'results_no_suggestions_*.json' files (treating as equivalent)")
+            result_files = no_suggestions_files
 
     if not result_files:
-        logging.warning(f"No results found for {name_dataset} - {partition} - dictionary: {dict_name}. Path: {eval_dir_path}")
+        # Try fallback: if looking for cross-dataset dictionary, check if dataset's own dictionary exists
+        if dict_name != name_dataset and dict_name != 'noTraining':
+            logging.info(f"No files found for {dict_name}, trying fallback to dataset dictionary: {name_dataset}")
+            fallback_files = [f for f in json_files if f.startswith(f'results_{name_dataset}_')]
+            if fallback_files:
+                result_files = fallback_files
+                search_dict_name = name_dataset
+                logging.info(f"Using fallback files with pattern: results_{name_dataset}_*.json")
+
+    if not result_files:
+        logging.warning(
+            f"No results found for {name_dataset} - {partition} - dictionary: {dict_name}. Path: {eval_dir_path}")
+        logging.warning(f"Searched for pattern: results_{search_dict_name}_*.json")
+        if search_dict_name == 'empty':
+            logging.warning(f"Also searched for pattern: results_no_suggestions_*.json")
         return []
 
-    logging.info(f"Result files found: {len(result_files)}")
+    logging.info(f"Result files found: {len(result_files)} - {result_files}")
 
     # Sort the result files by the timestamp in the filename (most recent first)
     result_files.sort(reverse=True)
@@ -108,12 +148,67 @@ def load_evaluation_results(name_dataset, name_method, partition, htr_model, llm
     most_recent_file = result_files[0]
     eval_file_path = os.path.join(eval_dir_path, most_recent_file)
 
-    with open(eval_file_path, 'r') as eval_file:
-        eval_data = json.load(eval_file)
+    # Check if file exists and has content
+    if not os.path.exists(eval_file_path):
+        logging.error(f"Evaluation file does not exist: {eval_file_path}")
+        return []
 
-    logging.info(f"Loading evaluation file: {eval_file_path}")
-    logging.info(f"File contents: {eval_data}")
-    run_id = eval_data[0].get("run_id")
+    file_size = os.path.getsize(eval_file_path)
+    if file_size == 0:
+        logging.error(f"Evaluation file is empty: {eval_file_path}")
+        return []
+
+    logging.info(f"Reading file: {eval_file_path} (size: {file_size} bytes)")
+
+    try:
+        with open(eval_file_path, 'r', encoding='utf-8') as eval_file:
+            # Read raw content first for debugging
+            content = eval_file.read()
+            logging.info(f"File raw content (first 200 chars): {content[:200]}")
+
+            if not content.strip():
+                logging.error(f"File is empty or contains only whitespace: {eval_file_path}")
+                return []
+
+            # Parse JSON
+            eval_data = json.loads(content)
+
+            if not eval_data:
+                logging.warning(f"JSON file contains no data: {eval_file_path}")
+                return []
+
+            if not isinstance(eval_data, list):
+                logging.error(f"Expected list but got {type(eval_data)}: {eval_file_path}")
+                return []
+
+            logging.info(f"Successfully loaded {len(eval_data)} evaluation records")
+
+    except json.JSONDecodeError as e:
+        logging.error(f"JSON decode error in {eval_file_path}: {e}")
+        logging.error(f"Error at line {e.lineno}, column {e.colno}: {e.msg}")
+        # Try to show the problematic content around the error
+        try:
+            lines = content.split('\n')
+            if e.lineno <= len(lines):
+                logging.error(f"Problematic line: {lines[e.lineno - 1]}")
+        except:
+            pass
+        return []
+    except UnicodeDecodeError as e:
+        logging.error(f"Unicode decode error in {eval_file_path}: {e}")
+        return []
+    except Exception as e:
+        logging.error(f"Unexpected error reading {eval_file_path}: {e}")
+        return []
+
+    # Get run_id safely
+    run_id = ""
+    try:
+        if eval_data and len(eval_data) > 0 and isinstance(eval_data[0], dict):
+            run_id = eval_data[0].get("run_id", "")
+        logging.info(f"Extracted run_id: {run_id}")
+    except Exception as e:
+        logging.warning(f"Could not extract run_id: {e}")
 
     def parse_confidence(confidence_str):
         """Helper function to parse the confidence score and handle non-integer values."""
@@ -124,27 +219,61 @@ def load_evaluation_results(name_dataset, name_method, partition, htr_model, llm
             # Return 0 if conversion fails
             return 0
 
+    # Process evaluation data with error handling
+    evaluation_data = []
+    try:
+        for i, item in enumerate(eval_data):
+            try:
+                if not isinstance(item, dict):
+                    logging.warning(f"Skipping non-dict item at index {i}: {type(item)}")
+                    continue
 
-    evaluation_data = [
-        FileInfo(
-            file_name=item['file_name'],
-            ground_truth=item['ground_truth_label'],
-            predicted_text_ocr=item['OCR']['predicted_label'],
-            cer_ocr=item['OCR']['cer'],
-            predicted_text_llm=item['Prompt correcting']['predicted_label'],
-            cer_llm=item['Prompt correcting']['cer'],
-            confidence=parse_confidence(item['Prompt correcting'].get('confidence', 0)),
-            justification=item['Prompt correcting']['justification'],
-            wer_ocr=item['OCR']['wer'],
-            wer_llm=item['Prompt correcting']['wer'],
-            run_id=run_id,
-            image_data=None
-        )
-        for item in eval_data
-    ]
+                # Check required fields exist
+                required_fields = ['file_name', 'ground_truth_label', 'OCR', 'Prompt correcting']
+                missing_fields = [field for field in required_fields if field not in item]
+                if missing_fields:
+                    logging.warning(f"Skipping item {i} due to missing fields: {missing_fields}")
+                    continue
+
+                # Check OCR and Prompt correcting structures
+                if not isinstance(item.get('OCR'), dict):
+                    logging.warning(f"Skipping item {i}: OCR field is not a dict")
+                    continue
+
+                if not isinstance(item.get('Prompt correcting'), dict):
+                    logging.warning(f"Skipping item {i}: 'Prompt correcting' field is not a dict")
+                    continue
+
+                # Create FileInfo object with safe field access
+                file_info = FileInfo(
+                    file_name=item.get('file_name', ''),
+                    ground_truth=item.get('ground_truth_label', ''),
+                    predicted_text_ocr=item.get('OCR', {}).get('predicted_label', ''),
+                    cer_ocr=item.get('OCR', {}).get('cer', 0),
+                    predicted_text_llm=item.get('Prompt correcting', {}).get('predicted_label', ''),
+                    cer_llm=item.get('Prompt correcting', {}).get('cer', 0),
+                    confidence=parse_confidence(item.get('Prompt correcting', {}).get('confidence', 0)),
+                    justification=item.get('Prompt correcting', {}).get('justification', ''),
+                    wer_ocr=item.get('OCR', {}).get('wer', 0),
+                    wer_llm=item.get('Prompt correcting', {}).get('wer', 0),
+                    run_id=run_id,
+                    image_data=None
+                )
+                evaluation_data.append(file_info)
+
+            except Exception as e:
+                logging.error(f"Error processing evaluation item {i}: {e}")
+                continue
+
+        logging.info(f"Successfully processed {len(evaluation_data)} evaluation records out of {len(eval_data)} total")
+
+    except Exception as e:
+        logging.error(f"Error processing evaluation data: {e}")
+        return []
 
     return evaluation_data
 
+# Update the return statement in calculate_cer_statistics to match GraphQL field names:
 
 def calculate_cer_statistics(evaluation_data):
     """Calculate average, minimum, and maximum CER for both OCR and LLM correction."""
@@ -169,9 +298,8 @@ def calculate_cer_statistics(evaluation_data):
     cer_reduction_percentage = ((total_cer_ocr - total_cer_llm) / total_cer_ocr * 100) if total_cer_ocr > 0 else None
     wer_reduction_percentage = ((total_wer_ocr - total_wer_llm) / total_wer_ocr * 100) if total_wer_ocr > 0 else None
 
-    # Return the calculated statistics
+    # 🔧 FIXED: Return with snake_case field names to match GraphQL schema
     return {
-
         'min_cer_ocr': round(min(cer_ocr_values), 3) if cer_ocr_values else None,
         'max_cer_ocr': round(max(cer_ocr_values), 3) if cer_ocr_values else None,
         'min_cer_llm': round(min(cer_llm_values), 3) if cer_llm_values else None,
@@ -184,7 +312,6 @@ def calculate_cer_statistics(evaluation_data):
         'cer_reduction_percentage': round(cer_reduction_percentage, 3) if cer_reduction_percentage is not None else None,
         'wer_reduction_percentage': round(wer_reduction_percentage, 3) if wer_reduction_percentage is not None else None
     }
-
 
 
 def retrieve_log_info(log_file, run_id):
@@ -222,5 +349,3 @@ def retrieve_log_info(log_file, run_id):
 
     # Join all log entries into a single string to return
     return "\n".join(log_entries)
-
-

@@ -1,0 +1,16 @@
+[project]
+name = "datasets"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "editdistance>=0.8.1",
+    "flask>=3.1.1",
+    "flask-cors>=6.0.1",
+    "graphene>=3.4.3",
+    "graphql-server>=3.0.0b7",
+    "h5py>=3.14.0",
+    "redis>=6.2.0",
+    "tqdm>=4.67.1",
+]

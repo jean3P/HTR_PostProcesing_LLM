@@ -1,4 +1,5 @@
-import json
+# repos/HTR_PostProcesing_LLM/Datasets/utils/text_processing.py
+
 import re
 import glob
 from datetime import datetime
@@ -140,4 +141,3 @@ def load_llm_corrected_labels(json_file_path, mode='llm'):
         print(f"Best Mode Statistics: {ocr_percentage:.2f}% labels from OCR, {llm_percentage:.2f}% labels from LLM.")
 
     return label_mapping
-

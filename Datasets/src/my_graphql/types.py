@@ -1,3 +1,5 @@
+# repos/HTR_PostProcesing_LLM/Datasets/my_graphql/types.py
+
 import graphene
 
 
@@ -5,45 +7,60 @@ import graphene
 class FileInfo(graphene.ObjectType):
     file_name = graphene.String()
     ground_truth = graphene.String()
-    predicted_text_ocr = graphene.String()  # Predicted text from OCR model
-    cer_ocr = graphene.Float()  # CER from OCR model
-    predicted_text_llm = graphene.String()  # Predicted text after LLM correction
-    cer_llm = graphene.Float()  # CER after LLM correction
-    confidence = graphene.String()  # Confidence from LLM correction
-    justification = graphene.String()  # Justification from LLM correction
+    predicted_text_ocr = graphene.String()
+    cer_ocr = graphene.Float()
+    predicted_text_llm = graphene.String()
+    cer_llm = graphene.Float()
+    confidence = graphene.String()
+    justification = graphene.String()
     wer_ocr = graphene.Float()
     wer_llm = graphene.Float()
     run_id = graphene.String()
-    image_data = graphene.List(graphene.Float)  # Image data as floats
+    image_data = graphene.List(graphene.Float)
 
 
-# Define a new Statistics type to hold CER aggregation data
+# Define Statistics type with consistent camelCase field names
 class Statistics(graphene.ObjectType):
-    average_cer_ocr = graphene.Float()  # Average OCR CER
-    min_cer_ocr = graphene.Float()  # Minimum OCR CER
-    max_cer_ocr = graphene.Float()  # Maximum OCR CER
-    average_cer_llm = graphene.Float()  # Average LLM CER
-    average_wer_llm = graphene.Float()
+    # OCR fields
+    average_cer_ocr = graphene.Float()
     average_wer_ocr = graphene.Float()
-    min_cer_llm = graphene.Float()  # Minimum LLM CER
-    max_cer_llm = graphene.Float()  # Maximum LLM CER
-    cer_reduction_percentage = graphene.Float()  # CER reduction percentage
-    wer_reduction_percentage = graphene.Float()  # CER reduction percentage
+    min_cer_ocr = graphene.Float()
+    max_cer_ocr = graphene.Float()
+
+    # LLM fields
+    average_cer_llm = graphene.Float()
+    average_wer_llm = graphene.Float()
+    min_cer_llm = graphene.Float()
+    max_cer_llm = graphene.Float()
+    average_confidence = graphene.Float()
+
+    # Reduction percentages
+    cer_reduction_percentage = graphene.Float()
+    wer_reduction_percentage = graphene.Float()
 
 
-# Add new fields to PartitionData to include LLM and training metadata
+# PartitionData type for LLM-focused results
 class PartitionData(graphene.ObjectType):
+    # Optional HTR data (only when loadHdf5Data=true)
     total_count = graphene.Int()
     global_total = graphene.Int()
-    data = graphene.List(FileInfo)  # Actual partition data
+    data = graphene.List(FileInfo)
     path = graphene.String()
-    evaluation_data = graphene.List(FileInfo)  # Evaluation results
-    statistics = graphene.Field(Statistics)  # Add the statistics field
-    training_sizes = graphene.List(graphene.String)  # List of training sizes (train_25, train_50, etc.)
-    training_suggestion = graphene.List(graphene.String)  # List of training suggestions
-    llm_name = graphene.String()  # Name of the LLM used
-    cer_llm_greater_count = graphene.Int()  # New field for count of LLM CER greater than OCR CER
+
+    # LLM evaluation data (always available)
+    evaluation_data = graphene.List(FileInfo)
+    statistics = graphene.Field(Statistics)
+
+    # Metadata
+    training_sizes = graphene.List(graphene.String)
+    training_suggestion = graphene.List(graphene.String)
+    llm_name = graphene.String()
+
+    # CER comparison counts
+    cer_llm_greater_count = graphene.Int()
     cer_llm_lesser_count = graphene.Int()
-    cer_llm_equal_count = graphene.Int()  # New field for count of LLM CER equal to OCR CER
+    cer_llm_equal_count = graphene.Int()
+
+    # Logs and run info
     run_id = graphene.String()
     logs = graphene.String()

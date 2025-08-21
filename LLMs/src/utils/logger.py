@@ -18,7 +18,7 @@ def setup_logger(log_file_path=None):
 
         # Always log to console
         console_handler = logging.StreamHandler()
-        console_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+        console_handler.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] (%(filename)s:%(lineno)d): %(message)s'))
         logger.addHandler(console_handler)
 
         # If a log file path is provided, append to that file
@@ -27,7 +27,7 @@ def setup_logger(log_file_path=None):
                 os.makedirs(os.path.dirname(log_file_path), exist_ok=True)
                 print(f"Directory created or already exists: {os.path.dirname(log_file_path)}")
                 file_handler = logging.FileHandler(log_file_path, mode='a')  # Append mode
-                file_handler.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+                file_handler.setFormatter(logging.Formatter('%(asctime)s [%(levelname)s] (%(filename)s:%(lineno)d): %(message)s'))
                 logger.addHandler(file_handler)
                 print(f"Log file handler added for {log_file_path}")
             except Exception as e:

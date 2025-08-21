@@ -1,4 +1,4 @@
-# src/utils/aux_processing.py
+# repos/HTR_PostProcesing_LLM/LLMs/src/utils/aux_processing.py
 
 from collections import defaultdict
 from difflib import get_close_matches, SequenceMatcher
@@ -351,3 +351,66 @@ def clean_text(original_text, corrected_text):
         corrected_text = corrected_text.rstrip("'").rstrip()
 
     return corrected_text
+
+
+# Add these functions to your utils/aux_processing.py file
+
+def get_time(dataset_name):
+    """
+    Get the century period based on dataset name.
+
+    Args:
+        dataset_name (str): Name of the dataset
+
+    Returns:
+        str: Century period string
+    """
+    dataset_name_lower = dataset_name.lower()
+
+    if dataset_name_lower == 'washington':
+        return "18th"
+    elif dataset_name_lower == 'bentham':
+        return "18th-19th"
+    elif dataset_name_lower == 'iam':
+        return "20th"
+    else:
+        # Default fallback
+        return "18th"
+
+
+def calculate_pipe_mistral(pipe, prompt, max_length, top_k=1, temperature=0.7, do_sample=True):
+    """
+    Calculate response using Mistral pipeline with specific parameters.
+
+    Args:
+        pipe: Mistral pipeline object
+        prompt (str): Input prompt
+        max_length (int): Maximum length of generated text
+        top_k (int): Top-k sampling parameter
+        temperature (float): Temperature for sampling
+        do_sample (bool): Whether to use sampling
+
+    Returns:
+        list: Generated response from pipeline
+    """
+    try:
+        response = pipe(
+            prompt,
+            max_length=max_length,
+            do_sample=do_sample,
+            top_k=top_k,
+            temperature=temperature,
+            num_return_sequences=1,
+            pad_token_id=pipe.tokenizer.eos_token_id,
+            truncation=True,
+            return_full_text=False  # Only return the generated part
+        )
+        return response
+    except Exception as e:
+        # Fallback to basic pipeline call if advanced parameters fail
+        return pipe(
+            prompt,
+            max_length=max_length,
+            num_return_sequences=1,
+            pad_token_id=pipe.tokenizer.eos_token_id
+        )

@@ -1,3 +1,5 @@
+# repos/HTR_PostProcesing_LLM/Datasets/constants.py
+
 import os
 
 # Get the absolute path of the directory where the script is located
@@ -22,4 +24,3 @@ llm_outputs_path = os.path.join(current_dir, '../../LLMs/results')
 
 llm_logs_path = os.path.join(current_dir, '../../LLMs/src/logs')
 llm_logs_file= os.path.join(current_dir, '../../LLMs/src/workflow.log')
-
