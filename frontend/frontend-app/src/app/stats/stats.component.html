@@ -1,247 +1,273 @@
+<!--src/app/stats/stats.component.html-->
+
 <h2>Improving handwriting recognition using LLMs as OCR post-processing</h2>
+
+<!-- Loading indicator -->
+<div *ngIf="isLoading" class="loading-indicator" style="text-align: center; padding: 20px; background-color: #f0f8ff; border: 1px solid #007bff; border-radius: 5px; margin: 10px 0;">
+  🔄 Loading statistics... Please wait.
+</div>
+
+<!-- Debug section (remove in production) -->
+<div class="debug-section" style="background: #f0f0f0; padding: 10px; margin: 10px 0; border: 1px dashed #999; display: flex; justify-content: space-between; align-items: center;">
+  <div>
+    <h4 style="margin: 0 0 5px 0;">Debug Info:</h4>
+    <p style="margin: 0;">Selected Methods: {{ selectedMethods.length }} - {{ selectedMethods.join(', ') }}</p>
+    <p style="margin: 0;">Selected LLMs: {{ selectedLlmNames.length }} - {{ selectedLlmNames.join(', ') }}</p>
+    <p style="margin: 0;">Expected Tables: {{ selectedMethods.length * selectedLlmNames.length }}</p>
+  </div>
+  <button (click)="debugStatistics()" class="debug-button" style="background-color: #ffc107; padding: 8px 15px; border: none; border-radius: 4px; cursor: pointer;">
+    🔍 Log Statistics to Console
+  </button>
+</div>
 
 <div class="selection-container">
   <div class="selection-item">
     <label for="dataset">Dataset:</label>
-    <select id="dataset" (change)="onDatasetChange($event)">
-      <option value="washington">Washington</option>
-      <option value="bentham">Bentham</option>
-      <option value="iam">IAM</option>
+    <select id="dataset" (change)="onDatasetChange($event)" [disabled]="isLoading">
+      <option value="washington" [selected]="selectedDataset==='washington'">Washington</option>
+      <option value="bentham" [selected]="selectedDataset==='bentham'">Bentham</option>
+      <option value="iam" [selected]="selectedDataset==='iam'">IAM</option>
     </select>
   </div>
 
   <div class="selection-item">
     <label for="htrModel">HTR Model:</label>
-    <select id="htrModel" (change)="onModelChange($event)">
-      <option value="Flor_model">Flor_model</option>
-      <option value="TrOCR_model">TrOCR_model</option>
+    <select id="htrModel" (change)="onModelChange($event)" [disabled]="isLoading">
+      <option value="Flor_model" [selected]="selectedHtrModel==='Flor_model'">Flor_model</option>
+      <option value="TrOCR_model" [selected]="selectedHtrModel==='TrOCR_model'">TrOCR_model</option>
     </select>
   </div>
 
   <div class="full-width">
     <div class="selection-item">
       <mat-form-field appearance="fill">
-        <mat-label>LLM Model</mat-label>
-        <mat-select [value]="selectedLlmNames" (selectionChange)="onLlmChange($event)" multiple>
-          <mat-option value="mistral" [disabled]="selectedMethods.length > 2">Mistral</mat-option>
-          <mat-option value="gpt-3.5-turbo" [disabled]="selectedMethods.length > 2">GPT-3.5 Turbo</mat-option>
-          <!--          <mat-option value="gpt-4" [disabled]="selectedMethods.length > 1">GPT-4</mat-option>-->
-          <mat-option value="gpt-4o-mini" [disabled]="selectedMethods.length > 2">GPT-4o mini</mat-option>
-          <mat-option value="llama-3-8B-I" [disabled]="selectedMethods.length > 2">Llama-3-8B-Instruct</mat-option>
+        <mat-label>LLM Model(s)</mat-label>
+        <mat-select
+          [value]="selectedLlmNames"
+          (selectionChange)="onLlmChange($event)"
+          multiple
+          [disabled]="isLoading"
+          [panelClass]="'custom-panel-class'">
+          <mat-option value="mistral">Mistral</mat-option>
+          <mat-option value="gpt-3.5-turbo">GPT-3.5 Turbo</mat-option>
+          <mat-option value="gpt-4o-mini">GPT-4o mini</mat-option>
+          <mat-option value="llama-3-8B-I">Llama-3-8B-Instruct</mat-option>
+          <mat-option value="qwen-2.5-vl-72b">Qwen-2.5-vl-72b</mat-option>
+          <mat-option value="phi-4">Phi-4</mat-option>
+          <mat-option value="internalvl3">internalvl3</mat-option>
+          <mat-option value="gemini-2.5-pro">Gemini 2.5 Pro</mat-option>
+          <mat-option value="gpt-4.1-mini">GPT-4.1 mini</mat-option>
+          <mat-option value="claude-sonnet-4">Claude Sonnet 4</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
 
     <div class="selection-item">
       <mat-form-field appearance="fill">
-        <mat-label>Name Method</mat-label>
-        <mat-select [value]="selectedMethods" (selectionChange)="onMethodChange($event)" multiple>
-          <mat-option value="method_0" [disabled]="selectedLlmNames.length > 2">Method 0</mat-option>
-          <mat-option value="method_0_simple_2" [disabled]="selectedLlmNames.length > 2">Method 0 - S2</mat-option>
-          <mat-option value="method_0_complex_2" [disabled]="selectedLlmNames.length > 2">Method 0 - C2</mat-option>
-          <mat-option value="method_1_paper" [disabled]="selectedLlmNames.length > 2">Method 1 - Paper</mat-option>
-          <mat-option value="method_1_paper_07" [disabled]="selectedLlmNames.length > 2">Method 1-07 - Paper</mat-option>
-          <mat-option value="method_1" [disabled]="selectedLlmNames.length > 2">Method 1</mat-option>
-          <mat-option value="method_1_V1" [disabled]="selectedLlmNames.length > 2">Method 1-V1</mat-option>
-          <mat-option value="method_1_V2" [disabled]="selectedLlmNames.length > 2">Method 1-V2</mat-option>
-          <mat-option value="method_1_V3_F" [disabled]="selectedLlmNames.length > 2">Method 1-V3_F</mat-option>
-          <mat-option value="method_2" [disabled]="selectedLlmNames.length > 2">Method 2</mat-option>
+        <mat-label>Name Method(s)</mat-label>
+        <mat-select
+          [value]="selectedMethods"
+          (selectionChange)="onMethodChange($event)"
+          multiple
+          [disabled]="isLoading"
+          [panelClass]="'custom-panel-class'">
+          <mat-option value="promptOR_1">Prompt 1</mat-option>
+          <mat-option value="promptOR_2">Prompt 2</mat-option>
+          <mat-option value="promptOR_3">Prompt 3</mat-option>
+          <mat-option value="promptOR_4">Prompt 4</mat-option>
+          <mat-option value="method_0">Method 0</mat-option>
+          <mat-option value="method_0_simple_2">Method 0 - S2</mat-option>
+          <mat-option value="method_0_complex_2">Method 0 - C2</mat-option>
+          <mat-option value="method_1_paper">Method 1 - Paper</mat-option>
+          <mat-option value="method_1_paper_07">Method 1-07 - Paper</mat-option>
+          <mat-option value="method_1">Method 1</mat-option>
+          <mat-option value="method_1_V1">Method 1-V1</mat-option>
+          <mat-option value="method_1_V2">Method 1-V2</mat-option>
+          <mat-option value="method_1_V3_F">Method 1-V3_F</mat-option>
+          <mat-option value="method_2">Method 2</mat-option>
         </mat-select>
       </mat-form-field>
     </div>
-
   </div>
+
   <!-- Refresh Button -->
   <div class="selection-item refresh-item">
-    <button class="refresh-button" (click)="refreshData()">Refresh</button>
+    <button class="refresh-button" (click)="refreshData()" [disabled]="isLoading">
+      {{ isLoading ? 'Loading...' : 'Refresh' }}
+    </button>
+  </div>
+
+  <!-- Test Connection Button -->
+  <div class="selection-item refresh-item">
+    <button class="test-button" (click)="testConnection()" style="background-color: #28a745; color: white; border: none; padding: 10px 15px; border-radius: 5px; cursor: pointer;">
+      Test Connection
+    </button>
   </div>
 </div>
 
-<div *ngFor="let method of selectedMethods">
-  <div *ngFor="let llm of selectedLlmNames">
-    <h3>Statistics for {{ method }} and LLM: {{ getDisplayLlmName(llm) }}</h3>
+<!-- Statistics Tables Container -->
+<div class="statistics-tables-container" style="max-height: none; overflow: visible; margin-bottom: 20px;">
+  <div *ngFor="let method of selectedMethods; let methodIndex = index">
+    <div *ngFor="let llm of selectedLlmNames; let llmIndex = index">
+      <!-- Table counter for debugging -->
+      <h3>Table {{ (methodIndex * selectedLlmNames.length) + llmIndex + 1 }} of {{ selectedMethods.length * selectedLlmNames.length }} • {{ method }} • LLM: {{ getDisplayLlmName(llm) }}</h3>
 
-    <table class="styled-table">
-      <thead>
-      <tr>
-        <th>Train (%)</th>
-        <th>OCR CER (%)</th>
-        <th>OCR WER (%)</th>
-        <th *ngIf="selectedDataset === 'washington'" colspan="4">Washington</th>
-        <th *ngIf="selectedDataset === 'bentham'" colspan="4">Bentham</th>
-        <th *ngIf="selectedDataset === 'iam'" colspan="4">IAM</th>
-        <th colspan="4">No Training Set</th>
-      </tr>
-      <tr>
-        <th></th>
-        <th></th>
-        <th></th>
-        <!-- Washington -->
-        <th *ngIf="selectedDataset === 'washington'">CER</th>
-        <th *ngIf="selectedDataset === 'washington'">WER</th>
-        <th *ngIf="selectedDataset === 'washington'">CER Reduction</th>
-        <th *ngIf="selectedDataset === 'washington'">WER Reduction</th>
-        <!-- Bentham -->
-        <th *ngIf="selectedDataset === 'bentham'">CER</th>
-        <th *ngIf="selectedDataset === 'bentham'">WER</th>
-        <th *ngIf="selectedDataset === 'bentham'">CER Reduction</th>
-        <th *ngIf="selectedDataset === 'bentham'">WER Reduction</th>
-        <!-- IAM -->
-        <th *ngIf="selectedDataset === 'iam'">CER</th>
-        <th *ngIf="selectedDataset === 'iam'">WER</th>
-        <th *ngIf="selectedDataset === 'iam'">CER Reduction</th>
-        <th *ngIf="selectedDataset === 'iam'">WER Reduction</th>
-        <!-- No Training Set -->
-        <th>CER</th>
-        <th>WER</th>
-        <th>CER Reduction</th>
-        <th>WER Reduction</th>
-      </tr>
-      </thead>
-      <tbody>
-      <ng-container *ngFor="let statGroup of statistics[method]?.[llm]; let i = index">
-        <!-- Insert group headers at specific indices -->
-        <tr *ngIf="i === 0">
-          <td colspan="17" class="group-label">Standard Training Partitions</td>
-        </tr>
-        <tr *ngIf="i === 4">
-          <td colspan="17" class="group-label">Self-learning using weak labels with suggestions</td>
-        </tr>
-        <tr *ngIf="i === 7">
-          <td colspan="17" class="group-label">Self-learning using weak labels without suggestions</td>
-        </tr>
-        <!-- Data Row -->
+      <!-- Check if data exists -->
+      <div *ngIf="!statistics[method] || !statistics[method][llm]" class="no-data-warning" style="padding: 20px; text-align: center; background-color: #fff3cd; border: 1px solid #ffeaa7; border-radius: 5px; color: #856404; margin: 10px 0;">
+        ⚠️ No data available for this combination ({{ method }} - {{ llm }})
+      </div>
+
+      <table class="styled-table" *ngIf="statistics[method] && statistics[method][llm]">
+        <thead>
         <tr>
-          <td>{{ formatPartitionName(statGroup.partition) }}</td>
-          <td>{{ statGroup.averageCerOcr || '-' }}</td>
-          <td>{{ statGroup.averageWerOcr || '-' }}</td>
-
-          <!-- Washington -->
-          <td
-            *ngIf="selectedDataset === 'washington'"
-            [ngClass]="getClass(statGroup, 'washington', method, llm)"
-            (click)="loadEvaluationData(method, 'washington', statGroup.partition, llm)"
-          >
-            {{ statGroup.washington?.cer || '-' }}
-          </td>
-          <td *ngIf="selectedDataset === 'washington'">
-            {{ statGroup.washington?.wer || '-' }}
-          </td>
-          <td *ngIf="selectedDataset === 'washington'">
-            {{ statGroup.washington?.reduction || '-' }}
-          </td>
-          <td *ngIf="selectedDataset === 'washington'">
-            {{ statGroup.washington?.werReduction || '-' }}
-          </td>
-
-          <!-- Bentham -->
-          <td
-            *ngIf="selectedDataset === 'bentham'"
-            [ngClass]="getClass(statGroup, 'bentham', method, llm)"
-            (click)="loadEvaluationData(method, 'bentham', statGroup.partition, llm)"
-          >
-            {{ statGroup.bentham?.cer || '-' }}
-          </td>
-          <td *ngIf="selectedDataset === 'bentham'">
-            {{ statGroup.bentham?.wer || '-' }}
-          </td>
-          <td *ngIf="selectedDataset === 'bentham'">
-            {{ statGroup.bentham?.reduction || '-' }}
-          </td>
-          <td *ngIf="selectedDataset === 'bentham'">
-            {{ statGroup.bentham?.werReduction || '-' }}
-          </td>
-
-          <!-- IAM -->
-          <td
-            *ngIf="selectedDataset === 'iam'"
-            [ngClass]="getClass(statGroup, 'iam', method, llm)"
-            (click)="loadEvaluationData(method, 'iam', statGroup.partition, llm)"
-          >
-            {{ statGroup.iam?.cer || '-' }}
-          </td>
-          <td *ngIf="selectedDataset === 'iam'">
-            {{ statGroup.iam?.wer || '-' }}
-          </td>
-          <td *ngIf="selectedDataset === 'iam'">
-            {{ statGroup.iam?.reduction || '-' }}
-          </td>
-          <td *ngIf="selectedDataset === 'iam'">
-            {{ statGroup.iam?.werReduction || '-' }}
-          </td>
-
-          <!-- No Training Set -->
-          <td
-            [ngClass]="getClass(statGroup, 'noTraining', method, llm)"
-            (click)="loadEvaluationData(method, 'noTraining', statGroup.partition, llm)"
-          >
-            {{ statGroup.noTraining?.cer || '-' }}
-          </td>
-          <td>{{ statGroup.noTraining?.wer || '-' }}</td>
-          <td>{{ statGroup.noTraining?.reduction || '-' }}</td>
-          <td>{{ statGroup.noTraining?.werReduction || '-' }}</td>
+          <th rowspan="2">Train (%)</th>
+          <th rowspan="2">OCR CER (%)</th>
+          <th rowspan="2">OCR WER (%)</th>
+          <th colspan="4">No Word Suggestions</th>
+          <th colspan="4">With Word Suggestions</th>
         </tr>
-      </ng-container>
-      </tbody>
-    </table>
+        <tr>
+          <th>CER</th>
+          <th>CER-r</th>
+          <th>WER</th>
+          <th>WER-r</th>
+          <th>CER</th>
+          <th>CER-r</th>
+          <th>WER</th>
+          <th>WER-r</th>
+        </tr>
+        </thead>
+        <tbody>
+        <ng-container *ngFor="let statGroup of statistics[method][llm]; let i = index">
+          <tr>
+            <td>{{ formatPartitionName(statGroup.partition) }}</td>
+            <td>{{ statGroup.averageCerOcr || '-' }}</td>
+            <td>{{ statGroup.averageWerOcr || '-' }}</td>
+
+            <!-- No Word Suggestions (empty dictionary) -->
+            <td
+              [ngClass]="getClass(statGroup, 'noTraining', method, llm)"
+              (click)="loadEvaluationData(method, 'empty', statGroup.partition, llm)"
+              style="cursor: pointer;"
+            >
+              {{ statGroup.noTraining?.cer || '-' }}
+            </td>
+            <td>{{ statGroup.noTraining?.reduction || '-' }}</td>
+            <td>{{ statGroup.noTraining?.wer || '-' }}</td>
+            <td>{{ statGroup.noTraining?.werReduction || '-' }}</td>
+
+            <!-- With Word Suggestions (dataset dictionary) -->
+            <td
+              [ngClass]="getClass(statGroup, selectedDataset, method, llm)"
+              (click)="loadEvaluationData(method, selectedDataset, statGroup.partition, llm)"
+              style="cursor: pointer;"
+            >
+              {{ statGroup[selectedDataset]?.cer || '-' }}
+            </td>
+            <td>{{ statGroup[selectedDataset]?.reduction || '-' }}</td>
+            <td>{{ statGroup[selectedDataset]?.wer || '-' }}</td>
+            <td>{{ statGroup[selectedDataset]?.werReduction || '-' }}</td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </div>
   </div>
 </div>
-
-
-
-
 
 <!-- Evaluation Data Table -->
 <h3 *ngIf="selectedEvaluationData.length">Evaluation Details</h3>
-<!-- Filter dropdown and total row count -->
-<div class="filter-container">
-  <!-- Filter selection -->
+
+<div class="filter-container" *ngIf="selectedEvaluationData.length">
   <div class="filter-item">
     <label for="evaluationFilter">Filter Evaluation Cases:</label>
     <select id="evaluationFilter" (change)="onFilterChange($event)">
-      <option value="all">All</option>
-      <option value="llm_greater">LLM > OCR</option>
-      <option value="llm_lesser">LLM < OCR</option>
-      <option value="llm_equal">LLM = OCR</option>
+      <option value="all" [selected]="selectedFilter==='all'">All</option>
+      <option value="llm_greater" [selected]="selectedFilter==='llm_greater'">LLM > OCR</option>
+      <option value="llm_lesser" [selected]="selectedFilter==='llm_lesser'">LLM < OCR</option>
+      <option value="llm_equal" [selected]="selectedFilter==='llm_equal'">LLM = OCR</option>
     </select>
   </div>
-  <!-- Row count display -->
+
   <div class="total-rows">
     Total Rows: {{ filteredEvaluationData.length }}
   </div>
-  <!-- Clear table button -->
+
   <button class="clear-button" (click)="clearTable()">Clear Details</button>
-  <!-- Download button -->
-  <button class="download-button" (click)="downloadResults()">Download</button>
-  <!-- New Download Table Button -->
-  <button class="download-button" (click)="downloadTable()" [disabled]="!canDownloadTable()">Download Table</button>
+  <button class="download-button" (click)="downloadResults()" [disabled]="!filteredEvaluationData.length">
+    📊 Download Results
+  </button>
+
+  <!-- LaTeX Download Button - Now clearly visible! -->
+  <button
+    class="download-button latex-button"
+    (click)="downloadTable()"
+    [disabled]="!canDownloadTable()"
+    style="background-color: #6f42c1; color: white; margin-left: 10px;">
+    📄 Download LaTeX Table
+  </button>
 </div>
-<div>
-  <table *ngIf="filteredEvaluationData.length" class="styled-table">
+
+<!-- Additional LaTeX Download Button for statistics tables (always visible when conditions are met) -->
+<div *ngIf="canDownloadTable() && selectedMethods.length > 0" style="text-align: center; margin: 20px 0; padding: 20px; background-color: #f0f8ff; border-radius: 8px;">
+  <h4 style="margin: 0 0 10px 0;">Export Statistics Tables</h4>
+  <button
+    class="download-button latex-button"
+    (click)="downloadTable()"
+    style="background-color: #6f42c1; color: white; padding: 12px 24px; font-size: 1.1rem;">
+    📄 Download All Statistics as LaTeX Tables
+  </button>
+  <p style="margin: 10px 0 0 0; color: #666; font-size: 0.9rem;">
+    This will export {{ selectedMethods.length }} table(s) for the selected methods
+  </p>
+</div>
+
+<!-- Comparative Table Export Section -->
+<div *ngIf="canDownloadComparativeTable()"
+     style="text-align: center; margin: 20px 0; padding: 20px; background-color: #e8f5e9; border-radius: 8px;">
+  <h4 style="margin: 0 0 10px 0;">Export Comparative Analysis</h4>
+  <button
+    class="download-button comparative-button"
+    (click)="downloadComparativeTable()"
+    style="background-color: #28a745; color: white; padding: 12px 24px; font-size: 1.1rem;">
+    📊 Download Comparative LaTeX Table
+  </button>
+  <p style="margin: 10px 0 0 0; color: #666; font-size: 0.9rem;">
+    Compare all selected promptOR methods side-by-side in a single table
+  </p>
+</div>
+
+<!-- Evaluation rows -->
+<div *ngIf="filteredEvaluationData.length">
+  <table class="styled-table">
     <thead>
     <tr>
       <th>File Name</th>
       <th>Ground Truth</th>
       <th>Predicted Text (OCR)</th>
       <th>Predicted Text (LLM)</th>
-      <th (click)="sortTable('cerLlm')">CER (LLM)
+      <th (click)="sortTable('cerLlm')" style="cursor: pointer;">
+        CER (LLM)
         <span *ngIf="sortColumn === 'cerLlm'">
-            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': sortOrder === 'desc'}"></i>
+            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': 'desc' === sortOrder}"></i>
           </span>
       </th>
-      <th (click)="sortTable('cerOcr')">CER (OCR)
+      <th (click)="sortTable('cerOcr')" style="cursor: pointer;">
+        CER (OCR)
         <span *ngIf="sortColumn === 'cerOcr'">
-            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': sortOrder === 'desc'}"></i>
+            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': 'desc' === sortOrder}"></i>
           </span>
       </th>
-      <th (click)="sortTable('werLlm')">WER (LLM)
+      <th (click)="sortTable('werLlm')" style="cursor: pointer;">
+        WER (LLM)
         <span *ngIf="sortColumn === 'werLlm'">
-            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': sortOrder === 'desc'}"></i>
+            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': 'desc' === sortOrder}"></i>
           </span>
       </th>
-      <th (click)="sortTable('werOcr')">WER (OCR)
+      <th (click)="sortTable('werOcr')" style="cursor: pointer;">
+        WER (OCR)
         <span *ngIf="sortColumn === 'werOcr'">
-            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': sortOrder === 'desc'}"></i>
+            <i class="sort-icon" [ngClass]="{'asc-icon': sortOrder === 'asc', 'desc-icon': 'desc' === sortOrder}"></i>
           </span>
       </th>
     </tr>
@@ -259,10 +285,53 @@
     </tr>
     </tbody>
   </table>
-  <!-- Logs -->
-  <h3 *ngIf="filteredLogData">Logs</h3>
-  <pre *ngIf="filteredLogData" class="log-display">
-  {{ filteredLogData }}
-  </pre>
 </div>
 
+<!-- Logs -->
+<h3 *ngIf="filteredLogData">Logs</h3>
+<pre *ngIf="filteredLogData" class="log-display">{{ filteredLogData }}</pre>
+
+<style>
+  .loading-indicator { font-weight: bold; color: #007bff; }
+  .test-button:hover { background-color: #218838 !important; }
+  .test-button:disabled { background-color: #6c757d !important; cursor: not-allowed !important; }
+
+  /* Fix for Material Select panel to allow more items */
+  ::ng-deep .custom-panel-class {
+    max-height: 400px !important;
+  }
+
+  /* LaTeX button styling */
+  .latex-button {
+    background-color: #6f42c1 !important;
+    transition: all 0.3s ease;
+  }
+
+  .latex-button:hover:not(:disabled) {
+    background-color: #5a32a3 !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(111, 66, 193, 0.3);
+  }
+
+  .statistics-tables-container {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  }
+
+  .debug-section {
+    font-family: monospace;
+    font-size: 0.9em;
+  }
+
+  .no-data-warning {
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+</style>

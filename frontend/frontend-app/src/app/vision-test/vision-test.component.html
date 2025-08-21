@@ -1,0 +1,224 @@
+<!--src/app/stats/vision-test.component.html-->
+
+<div class="vision-test-container">
+  <h2>Vision-Language Model Testing</h2>
+  <p class="subtitle">Compare OCR correction performance using text-only vs. image+text input</p>
+
+  <!-- Configuration Section -->
+  <div class="config-section">
+    <h3>Test Configuration</h3>
+
+    <div class="config-grid">
+      <!-- Vision LLM Selection -->
+      <div class="config-item">
+        <mat-form-field appearance="fill">
+          <mat-label>Vision-Language Model</mat-label>
+          <mat-select [value]="selectedVisionLLM" (selectionChange)="onVisionLLMChange($event)">
+            <mat-option value="qwen-2.5-vl-72b">{{ visionLLMNames['qwen-2.5-vl-72b'] }}</mat-option>
+            <mat-option value="gpt-4o-mini">{{ visionLLMNames['gpt-4o-mini'] }}</mat-option>
+            <mat-option value="gemini-2.5-pro">{{ visionLLMNames['gemini-2.5-pro'] }}</mat-option>
+            <mat-option value="claude-sonnet-4">{{ visionLLMNames['claude-sonnet-4'] }}</mat-option>
+            <mat-option value="internalvl3">{{ visionLLMNames['internalvl3'] }}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- OCR Model Selection -->
+      <div class="config-item">
+        <mat-form-field appearance="fill">
+          <mat-label>OCR Model</mat-label>
+          <mat-select [value]="selectedOCRModel" (selectionChange)="onOCRModelChange($event)">
+            <mat-option value="Flor_model">Flor Model</mat-option>
+            <mat-option value="TrOCR_model">TrOCR Model</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Dataset Selection -->
+      <div class="config-item">
+        <mat-form-field appearance="fill">
+          <mat-label>Dataset</mat-label>
+          <mat-select [value]="selectedDataset" (selectionChange)="onDatasetChange($event)">
+            <mat-option value="washington">Washington</mat-option>
+            <mat-option value="bentham">Bentham</mat-option>
+            <mat-option value="iam">IAM</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Partition Selection -->
+      <div class="config-item">
+        <mat-form-field appearance="fill">
+          <mat-label>Partition</mat-label>
+          <mat-select [value]="selectedPartition" (selectionChange)="onPartitionChange($event)">
+            <mat-option value="train_25">Train 25%</mat-option>
+            <mat-option value="train_50">Train 50%</mat-option>
+            <mat-option value="train_75">Train 75%</mat-option>
+            <mat-option value="train_100">Train 100%</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Sample Size -->
+      <div class="config-item">
+        <label for="sampleSize">Sample Size:</label>
+        <input
+          type="number"
+          id="sampleSize"
+          [value]="sampleSize"
+          (change)="onSampleSizeChange($event)"
+          min="1"
+          max="100"
+          class="sample-size-input"
+        />
+      </div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+      <button
+        mat-raised-button
+        color="primary"
+        (click)="runVisionTest()"
+        [disabled]="isLoading"
+        class="run-test-btn"
+      >
+        <mat-icon>play_arrow</mat-icon>
+        {{ isLoading ? 'Running Test...' : 'Run Vision Test' }}
+      </button>
+
+      <button
+        mat-raised-button
+        (click)="clearResults()"
+        [disabled]="isLoading || testResults.length === 0"
+      >
+        <mat-icon>clear</mat-icon>
+        Clear Results
+      </button>
+    </div>
+
+    <!-- Progress Bar -->
+    <div *ngIf="isLoading" class="progress-section">
+      <mat-progress-spinner
+        mode="determinate"
+        [value]="currentProgress"
+        diameter="30"
+      ></mat-progress-spinner>
+      <span class="progress-text">{{ currentProgress }}% Complete</span>
+    </div>
+
+    <!-- Error Message -->
+    <div *ngIf="errorMessage" class="error-message">
+      <mat-icon>error</mat-icon>
+      {{ errorMessage }}
+    </div>
+  </div>
+
+  <!-- Statistics Summary -->
+  <div *ngIf="comparisonStats" class="stats-summary">
+    <h3>Performance Summary</h3>
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <h4>Average CER</h4>
+        <div class="stat-values">
+          <div class="stat-item">
+            <span class="stat-label">OCR Only:</span>
+            <span class="stat-value">{{ comparisonStats.avgOcrCer.toFixed(2) }}%</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Text-Only LLM:</span>
+            <span class="stat-value">{{ comparisonStats.avgTextOnlyCer.toFixed(2) }}%</span>
+          </div>
+          <div class="stat-item highlight">
+            <span class="stat-label">Vision LLM:</span>
+            <span class="stat-value">{{ comparisonStats.avgVisionCer.toFixed(2) }}%</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <h4>Improvement</h4>
+        <div class="stat-values">
+          <div class="stat-item large" [class.positive]="comparisonStats.avgImprovement > 0">
+            <span class="stat-value">{{ comparisonStats.avgImprovement > 0 ? '+' : '' }}{{ comparisonStats.avgImprovement.toFixed(2) }}%</span>
+            <span class="stat-label">Average Improvement</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <h4>Sample Distribution</h4>
+        <div class="stat-values">
+          <div class="stat-item">
+            <span class="stat-label">Better with Vision:</span>
+            <span class="stat-value positive">{{ comparisonStats.betterWithVision }}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Same Performance:</span>
+            <span class="stat-value">{{ comparisonStats.samePerformance }}</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Worse with Vision:</span>
+            <span class="stat-value negative">{{ comparisonStats.worseWithVision }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Detailed Results Table -->
+  <div *ngIf="testResults.length > 0" class="results-section">
+    <div class="results-header">
+      <h3>Detailed Results</h3>
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="downloadResults()"
+        class="download-btn"
+      >
+        <mat-icon>download</mat-icon>
+        Download Results
+      </button>
+    </div>
+
+    <table class="results-table">
+      <thead>
+      <tr>
+        <th rowspan="2">File</th>
+        <th rowspan="2">Ground Truth</th>
+        <th rowspan="2">OCR Output</th>
+        <th colspan="2">Text-Only Correction</th>
+        <th colspan="2">Vision Correction</th>
+        <th rowspan="2">Improvement</th>
+      </tr>
+      <tr>
+        <th>Output</th>
+        <th>CER</th>
+        <th>Output</th>
+        <th>CER</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let result of testResults" [class.improved]="result.improvement > 0">
+        <td class="file-name">{{ result.fileName }}</td>
+        <td class="text-cell">{{ result.groundTruth }}</td>
+        <td class="text-cell">{{ result.ocrOutput }}</td>
+        <td class="text-cell">{{ result.textOnlyCorrection }}</td>
+        <td class="metric-cell">{{ result.textOnlyCer.toFixed(2) }}%</td>
+        <td class="text-cell highlight">{{ result.visionCorrection }}</td>
+        <td class="metric-cell highlight">{{ result.visionCer.toFixed(2) }}%</td>
+        <td class="improvement-cell" [class.positive]="result.improvement > 0" [class.negative]="result.improvement < 0">
+          {{ result.improvement > 0 ? '+' : '' }}{{ result.improvement.toFixed(2) }}%
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Empty State -->
+  <div *ngIf="!isLoading && testResults.length === 0 && !errorMessage" class="empty-state">
+    <mat-icon>assessment</mat-icon>
+    <p>Configure your test parameters and click "Run Vision Test" to begin</p>
+  </div>
+</div>

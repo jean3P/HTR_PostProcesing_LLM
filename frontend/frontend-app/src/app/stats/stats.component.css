@@ -1,41 +1,42 @@
-
+/*src/app/stats/stats.component.css*/
+/* Headers */
 
 h2 {
-  font-family: 'Roboto', sans-serif;  /* Use a clean, modern font */
-  font-size: 1.8rem;                  /* Slightly larger than the default h2 size */
-  font-weight: bold;                  /* Make the title bold */
-  color: #333;                        /* Dark gray color for readability */
-  text-align: center;                 /* Center align the text */
-  margin-top: 20px;                   /* Add some space above */
-  margin-bottom: 20px;                /* Add space below for separation */
-  padding: 10px 0;                    /* Add vertical padding */
-  border-bottom: 3px solid #007bff;   /* Add a blue underline */
-  letter-spacing: 1px;                /* Add some spacing between letters */
-  text-transform: uppercase;          /* Convert the text to uppercase */
-  background: linear-gradient(to right, #007bff, #00d4ff); /* Gradient background */
-  color: white;                       /* White text for contrast */
-  border-radius: 5px;                 /* Soft rounded corners */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #333;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px 0;
+  border-bottom: 3px solid #007bff;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #007bff, #00d4ff);
+  color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 h3 {
-  font-family: 'Roboto', sans-serif;  /* Same modern font as h2 for consistency */
-  font-size: 1.4rem;                  /* Slightly smaller than the h2 size */
-  font-weight: bold;                  /* Make the title bold */
-  color: #555;                        /* A medium gray color for contrast with h2 */
-  text-align: left;                   /* Align left for a more content-related look */
-  margin-top: 15px;                   /* Space above the heading */
-  margin-bottom: 10px;                /* Space below the heading */
-  padding: 8px 15px;                  /* Add padding for better spacing */
-  border-left: 4px solid #007bff;     /* Blue left border for a clean accent */
-  background-color: #f9f9f9;          /* Light background to distinguish from content */
-  border-radius: 3px;                 /* Slight rounding of the corners */
-  text-transform: capitalize;         /* Keep the text looking formal */
-  letter-spacing: 0.5px;              /* Small letter spacing for readability */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Very subtle shadow for a polished effect */
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #555;
+  text-align: left;
+  margin-top: 15px;
+  margin-bottom: 10px;
+  padding: 8px 15px;
+  border-left: 4px solid #007bff;
+  background-color: #f9f9f9;
+  border-radius: 3px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-
+/* Tables */
 .styled-table {
   border-collapse: collapse;
   margin: 25px 0;
@@ -43,6 +44,8 @@ h3 {
   font-family: 'Arial', sans-serif;
   min-width: 400px;
   border: 1px solid #ddd;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .styled-table th, .styled-table td {
@@ -54,36 +57,42 @@ h3 {
   background-color: #f3f3f3;
   font-weight: bold;
   text-align: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
 
 .styled-table td {
   text-align: center;
 }
 
+.styled-table tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+/* Cell colors */
 .red-cell {
-  background-color: #ffcccc; /* Light red background */
+  background-color: #ffcccc;
 }
 
 .green-cell {
-  background-color: #ccffcc; /* Light green background */
+  background-color: #ccffcc;
 }
 
-/* More intense green when selected */
 .selected-green-cell {
   background-color: #66ff66 !important;
 }
 
-/* More intense red when selected */
 .selected-red-cell {
   background-color: #ff6666 !important;
 }
 
-/* Highlighted selection */
 .selected-cell {
   background-color: #d9edf7;
-  transition: background-color 0.3s ease;  /* Smooth transition */
+  transition: background-color 0.3s ease;
 }
-/* General container styling */
+
+/* Selection container */
 .selection-container {
   display: flex;
   flex-wrap: wrap;
@@ -93,49 +102,42 @@ h3 {
   border-radius: 8px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 20px;
-  max-width: 380px;
+  max-width: 100%;
 }
 
-/* Individual selection item styling */
 .selection-item {
   flex-basis: calc(33.333% - 10px);
   display: flex;
   flex-direction: column;
   margin-bottom: 20px;
+  min-width: 200px;
 }
 
-/* Styling for Labels */
 .selection-item label {
-  font-family: 'Arial', sans-serif;  /* Use the same modern font for consistency */
-  font-weight: bold;                 /* Bold text for emphasis */
-  font-size: 1rem;                   /* Standard size for readability */
-  color: #007bff;                    /* Use a blue color to match the theme */
-  margin-bottom: 8px;                /* Space below the label for separation */
-  text-transform: capitalize;        /* Capitalize the text for uniformity */
-  letter-spacing: 0.5px;             /* Add slight spacing for clarity */
-  transition: color 0.3s ease;       /* Smooth transition for hover effects */
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #007bff;
+  margin-bottom: 8px;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  transition: color 0.3s ease;
 }
 
 .selection-item label:hover {
-  color: #0056b3;                    /* Slightly darker blue on hover */
+  color: #0056b3;
 }
-
-/* Input focus effect for associated labels */
-.selection-item select:focus + label,
-.selection-item input:focus + label {
-  color: #004085;                    /* Even darker blue when focused */
-  font-size: 1.05rem;                /* Slightly increase the font size */
-  letter-spacing: 1px;               /* Add more spacing on focus */
-}
-
 
 .full-width {
-  flex-basis: 40%;  /* Full width for the row */
+  flex-basis: 100%;
   display: flex;
-  flex-direction: column;
+  gap: 20px;
   margin-bottom: 20px;
 }
 
+.full-width .selection-item {
+  flex: 1;
+}
 
 .selection-item select {
   padding: 8px;
@@ -152,74 +154,154 @@ h3 {
   outline: none;
 }
 
-/* Adjustments for small screens */
-@media (max-width: 768px) {
-  .selection-item {
-    flex-basis: 100%;
-    margin-bottom: 10px;
-  }
+/* Material Select Fix - IMPORTANT FOR MULTIPLE SELECTION */
+::ng-deep .mat-select-panel {
+  max-height: 400px !important;
 }
 
-/* Style for the Clear Table Button */
+::ng-deep .custom-panel-class {
+  max-height: 400px !important;
+}
+
+::ng-deep .mat-form-field {
+  width: 100%;
+}
+
+::ng-deep .mat-select-value {
+  max-width: 100%;
+}
+
+/* Buttons */
 .clear-button {
-  background-color: #ff6666; /* Softer red background */
-  color: white; /* White text */
-  border: none; /* Remove borders */
-  padding: 6px 12px; /* Smaller padding for a more compact look */
-  border-radius: 4px; /* Slightly smaller rounded corners */
-  font-size: 0.85rem; /* Slightly reduced font size */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth transitions */
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-  margin-left: 10px; /* Add space between the row count and the button */
+  background-color: #ff6666;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
 }
 
 .clear-button:hover {
-  background-color: #ff4d4d; /* Slightly darker red on hover */
-  transform: translateY(-1px); /* Subtle upward movement on hover */
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15); /* Slightly stronger shadow on hover */
+  background-color: #ff4d4d;
+  transform: translateY(-1px);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.15);
 }
 
 .clear-button:active {
-  background-color: #e60000; /* Stronger red when clicked */
-  transform: translateY(0); /* Reset movement when active */
+  background-color: #e60000;
+  transform: translateY(0);
 }
 
 .clear-button:focus {
-  outline: none; /* Remove default focus outline */
-  box-shadow: 0px 0px 4px rgba(255, 128, 128, 0.8); /* Softer red focus shadow */
+  outline: none;
+  box-shadow: 0px 0px 4px rgba(255, 128, 128, 0.8);
 }
 
-/* Style for Total Rows Count */
-.total-rows {
-  font-size: 1rem; /* Slightly larger text */
-  color: #555; /* Dark gray text */
-  background-color: #f4f4f4; /* Light gray background */
-  padding: 5px 10px; /* Add some padding around the text */
-  border-radius: 4px; /* Rounded corners */
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Container for Total Rows and Button */
-.rows-button-container {
+/* Refresh button */
+.refresh-item {
+  flex-basis: calc(25% - 10px);
   display: flex;
   align-items: center;
-  justify-content: flex-end; /* Align items to the right */
-  margin-top: 10px;
-  padding-right: 15px; /* Space on the right */
+  justify-content: center;
 }
 
-/* Style for the Filter Selection and Total Rows Count */
+.refresh-button {
+  background-color: #4da6ff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.refresh-button:hover {
+  background-color: #3399ff;
+}
+
+.refresh-button:active {
+  background-color: #267dcc;
+}
+
+.refresh-button:focus {
+  outline: none;
+  box-shadow: 0px 0px 3px rgba(0, 128, 255, 0.8);
+}
+
+/* Download buttons */
+.download-button {
+  background-color: #66ccff;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 2px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+  margin-left: 10px;
+}
+
+.download-button:hover {
+  background-color: #3399ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(102, 204, 255, 0.3);
+}
+
+.download-button:active {
+  background-color: #267dcc;
+}
+
+.download-button:focus {
+  outline: none;
+  box-shadow: 0px 0px 4px rgba(102, 204, 255, 0.8);
+}
+
+/* LaTeX button special styling */
+.latex-button {
+  background-color: #6f42c1 !important;
+}
+
+.latex-button:hover:not(:disabled) {
+  background-color: #5a32a3 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(111, 66, 193, 0.3);
+}
+
+button:disabled {
+  background-color: #6c757d !important;
+  cursor: not-allowed !important;
+  opacity: 0.65;
+  transform: none !important;
+  box-shadow: none !important;
+}
+
+/* Total rows */
+.total-rows {
+  font-size: 1rem;
+  color: #555;
+  background-color: #f4f4f4;
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* Filter container */
 .filter-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px; /* Padding for spacing */
+  padding: 5px 10px;
   background-color: #f9f9f9;
   border-radius: 4px;
   box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
-  max-width: 600px; /* Reduce the width of the filter container */
-  margin: 10px ; /* Center it on the page */
+  max-width: 100%;
+  margin: 10px 0;
 }
 
 .filter-item {
@@ -247,126 +329,138 @@ h3 {
   outline: none;
 }
 
-.refresh-item {
-  flex-basis: calc(25% - 10px);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.refresh-button {
-  background-color: #4da6ff; /* Light blue background */
-  color: white; /* White text */
-  border: none; /* Remove borders */
-  padding: 10px 15px; /* Padding for better spacing */
-  border-radius: 5px; /* Rounded corners */
-  cursor: pointer; /* Pointer cursor on hover */
-  transition: background-color 0.3s ease; /* Smooth transitions */
-  font-size: 0.9rem; /* Font size */
-}
-
-.refresh-button:hover {
-  background-color: #3399ff; /* Darker blue on hover */
-}
-
-.refresh-button:active {
-  background-color: #267dcc; /* Even darker blue when clicked */
-}
-
-.refresh-button:focus {
-  outline: none; /* Remove default focus outline */
-  box-shadow: 0px 0px 3px rgba(0, 128, 255, 0.8); /* Soft blue shadow on focus */
-}
-
-.method-1-table {
-  border: 2px solid #4CAF50;  /* Green border for Method 1 */
-}
-
-.method-2-table {
-  border: 2px solid #FF5733;  /* Orange border for Method 2 */
-}
-
+/* Log display */
 .log-display {
-  background-color: #2b2b2b; /* Dark grey background typical of MacOS terminal */
-  color: #e8e8e8;  /* Off-white text */
+  background-color: #2b2b2b;
+  color: #e8e8e8;
   padding: 15px;
-  border: 1px solid #444;  /* Subtle dark border */
-  white-space: pre-wrap;  /* Preserve line breaks and white space */
-  font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;  /* MacOS terminal-like fonts */
-  overflow-x: auto;  /* Allow horizontal scrolling if necessary */
-  border-radius: 8px;  /* Slightly larger border radius for smooth edges */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);  /* Subtle shadow for depth */
-  margin-top: 20px; /* Space above the log section */
+  border: 1px solid #444;
+  white-space: pre-wrap;
+  font-family: 'Menlo', 'Monaco', 'Consolas', 'Courier New', monospace;
+  overflow-x: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  margin-top: 20px;
+  max-height: 500px;
+  overflow-y: auto;
 }
 
-.download-button {
-  background-color: #66ccff; /* Softer blue background */
-  color: white;
-  border: none;
-  padding: 6px 10px;
-  border-radius: 2px;
-  font-size: 0.85rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.1);
-  margin-left: 10px;
-}
-
-.download-button:hover {
-  background-color: #3399ff;
-}
-
-.download-button:active {
-  background-color: #267dcc;
-}
-
-.download-button:focus {
-  outline: none;
-  box-shadow: 0px 0px 4px rgba(102, 204, 255, 0.8);
-}
-
-/* Sorting Icon Style */
+/* Sorting icons */
 .sort-icon {
-  margin-left: 5px; /* Add some space between the text and icon */
+  margin-left: 5px;
 }
 
 .asc-icon::before {
-  content: "▲"; /* Upward pointing arrow */
-  font-size: 0.75rem; /* Adjust the icon size */
-  color: #333; /* Darker color for visibility */
+  content: "▲";
+  font-size: 0.75rem;
+  color: #333;
 }
 
 .desc-icon::before {
-  content: "▼"; /* Downward pointing arrow */
-  font-size: 0.75rem; /* Adjust the icon size */
-  color: #333; /* Darker color for visibility */
+  content: "▼";
+  font-size: 0.75rem;
+  color: #333;
 }
 
-/* Hover effect for table headers */
 .styled-table th:hover {
   cursor: pointer;
-  background-color: #f1f1f1; /* Light background on hover */
+  background-color: #f1f1f1;
 }
 
-/* Style for group labels */
-.group-label {
-  font-family: 'Arial', sans-serif;   /* Consistent font with the rest of the application */
-  font-size: 1rem;                   /* Standard text size for subtle emphasis */
-  font-weight: 600;                  /* Slightly bold for distinction */
-  color: #333;                       /* Dark gray text for readability */
-  background-color: #f0f4f8;         /* Soft light gray background for subtle emphasis */
-  text-align: center;                /* Center-align the label text */
-  padding: 8px 0;                    /* Vertical padding for spacing */
-  border-radius: 3px;                /* Slightly rounded corners for a clean look */
-  letter-spacing: 0.3px;             /* Subtle letter spacing for elegance */
-  margin: 8px 0;                     /* Space around the group label for separation */
-  border: 1px solid #d6e0ea;         /* Light border for a defined section */
-  text-transform: capitalize;        /* Keep text professional and clean */
+/* Debug section */
+.debug-section {
+  font-family: monospace;
+  font-size: 0.9em;
+  background: #f0f0f0;
+  padding: 15px;
+  margin: 10px 0;
+  border: 2px dashed #999;
+  border-radius: 5px;
 }
 
-/* Add hover effect for interactivity */
-.group-label:hover {
-  background-color: #e9eff5;         /* Slightly darker gray on hover */
-  border-color: #cdd9e3;             /* Subtle change in border color */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); /* Very light shadow for hover effect */
+.debug-button {
+  background-color: #ffc107;
+  color: #212529;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.debug-button:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(255, 193, 7, 0.3);
+}
+
+/* No data warning */
+.no-data-warning {
+  padding: 20px;
+  text-align: center;
+  background-color: #fff3cd;
+  border: 1px solid #ffeaa7;
+  border-radius: 5px;
+  color: #856404;
+  margin: 10px 0;
+  font-weight: 500;
+}
+
+/* Statistics container */
+.statistics-tables-container {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  margin-bottom: 20px;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .selection-item {
+    flex-basis: 100%;
+    margin-bottom: 10px;
+  }
+
+  .filter-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .full-width {
+    flex-direction: column;
+  }
+}
+
+/* Print styles */
+@media print {
+  .selection-container,
+  .filter-container,
+  .debug-section,
+  button {
+    display: none !important;
+  }
+
+  .styled-table {
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .styled-table th {
+    background-color: #f0f0f0 !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
+
+.comparative-button {
+  background-color: #28a745 !important;
+}
+
+.comparative-button:hover:not(:disabled) {
+  background-color: #218838 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3);
 }
