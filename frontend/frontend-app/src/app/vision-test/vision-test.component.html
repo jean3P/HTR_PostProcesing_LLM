@@ -9,16 +9,14 @@
     <h3>Test Configuration</h3>
 
     <div class="config-grid">
-      <!-- Vision LLM Selection -->
+      <!-- Dataset Selection -->
       <div class="config-item">
         <mat-form-field appearance="fill">
-          <mat-label>Vision-Language Model</mat-label>
-          <mat-select [value]="selectedVisionLLM" (selectionChange)="onVisionLLMChange($event)">
-            <mat-option value="qwen-2.5-vl-72b">{{ visionLLMNames['qwen-2.5-vl-72b'] }}</mat-option>
-            <mat-option value="gpt-4o-mini">{{ visionLLMNames['gpt-4o-mini'] }}</mat-option>
-            <mat-option value="gemini-2.5-pro">{{ visionLLMNames['gemini-2.5-pro'] }}</mat-option>
-            <mat-option value="claude-sonnet-4">{{ visionLLMNames['claude-sonnet-4'] }}</mat-option>
-            <mat-option value="internalvl3">{{ visionLLMNames['internalvl3'] }}</mat-option>
+          <mat-label>Dataset</mat-label>
+          <mat-select [value]="selectedDataset" (selectionChange)="onDatasetChange($event)">
+            <mat-option value="washington">Washington</mat-option>
+            <mat-option value="bentham">Bentham</mat-option>
+            <mat-option value="iam">IAM</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -34,14 +32,44 @@
         </mat-form-field>
       </div>
 
-      <!-- Dataset Selection -->
+      <!-- LLM Selection -->
       <div class="config-item">
         <mat-form-field appearance="fill">
-          <mat-label>Dataset</mat-label>
-          <mat-select [value]="selectedDataset" (selectionChange)="onDatasetChange($event)">
-            <mat-option value="washington">Washington</mat-option>
-            <mat-option value="bentham">Bentham</mat-option>
-            <mat-option value="iam">IAM</mat-option>
+          <mat-label>LLM Model</mat-label>
+          <mat-select [value]="selectedLLM" (selectionChange)="onLLMChange($event)">
+            <mat-option value="mistral">Mistral</mat-option>
+            <mat-option value="gpt-3.5-turbo">GPT-3.5 Turbo</mat-option>
+            <mat-option value="gpt-4o-mini">GPT-4o mini</mat-option>
+            <mat-option value="llama-3-8B-I">Llama-3-8B-Instruct</mat-option>
+            <mat-option value="qwen-2.5-vl-72b">Qwen-2.5-vl-72b</mat-option>
+            <mat-option value="phi-4">Phi-4</mat-option>
+            <mat-option value="internalvl3">InternalVL3</mat-option>
+            <mat-option value="gemini-2.5-pro">Gemini 2.5 Pro</mat-option>
+            <mat-option value="gpt-4.1-mini">GPT-4.1 mini</mat-option>
+            <mat-option value="claude-sonnet-4">Claude Sonnet 4</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <!-- Method Selection -->
+      <div class="config-item">
+        <mat-form-field appearance="fill">
+          <mat-label>Method</mat-label>
+          <mat-select [value]="selectedMethod" (selectionChange)="onMethodChange($event)">
+            <mat-option value="promptOR_1">Prompt 1</mat-option>
+            <mat-option value="promptOR_2">Prompt 2</mat-option>
+            <mat-option value="promptOR_3">Prompt 3</mat-option>
+            <mat-option value="promptOR_4">Prompt 4</mat-option>
+            <mat-option value="method_0">Method 0</mat-option>
+            <mat-option value="method_0_simple_2">Method 0 - S2</mat-option>
+            <mat-option value="method_0_complex_2">Method 0 - C2</mat-option>
+            <mat-option value="method_1_paper">Method 1 - Paper</mat-option>
+            <mat-option value="method_1_paper_07">Method 1-07 - Paper</mat-option>
+            <mat-option value="method_1">Method 1</mat-option>
+            <mat-option value="method_1_V1">Method 1-V1</mat-option>
+            <mat-option value="method_1_V2">Method 1-V2</mat-option>
+            <mat-option value="method_1_V3_F">Method 1-V3_F</mat-option>
+            <mat-option value="method_2">Method 2</mat-option>
           </mat-select>
         </mat-form-field>
       </div>
@@ -59,19 +87,24 @@
         </mat-form-field>
       </div>
 
-      <!-- Sample Size -->
+      <!-- Number of samples to display -->
       <div class="config-item">
-        <label for="sampleSize">Sample Size:</label>
+        <label for="sampleSize">Number of samples to display:</label>
         <input
           type="number"
           id="sampleSize"
-          [value]="sampleSize"
-          (change)="onSampleSizeChange($event)"
+          [value]="displayCount"
+          (change)="onDisplayCountChange($event)"
           min="1"
-          max="100"
+          max="500"
           class="sample-size-input"
         />
       </div>
+    </div>
+
+    <!-- Status indicator -->
+    <div *ngIf="evaluationData.length > 0" class="status-indicator" style="margin: 15px 0; padding: 10px; background-color: #e8f5e9; border-radius: 4px;">
+      <strong>Data loaded from:</strong> {{ loadedWithDictionary === 'empty' ? 'No Word Suggestions' : 'With Word Suggestions (' + loadedWithDictionary + ')' }}
     </div>
 
     <!-- Action Buttons -->
@@ -79,32 +112,51 @@
       <button
         mat-raised-button
         color="primary"
-        (click)="runVisionTest()"
+        (click)="loadData()"
         [disabled]="isLoading"
         class="run-test-btn"
       >
-        <mat-icon>play_arrow</mat-icon>
-        {{ isLoading ? 'Running Test...' : 'Run Vision Test' }}
+        <mat-icon>visibility</mat-icon>
+        {{ isLoading ? 'Loading...' : 'Load Images' }}
       </button>
 
       <button
         mat-raised-button
         (click)="clearResults()"
-        [disabled]="isLoading || testResults.length === 0"
+        [disabled]="isLoading || !evaluationData || evaluationData.length === 0"
       >
         <mat-icon>clear</mat-icon>
-        Clear Results
+        Clear
+      </button>
+
+      <button
+        mat-raised-button
+        color="accent"
+        (click)="downloadResults()"
+        [disabled]="!evaluationData || evaluationData.length === 0"
+      >
+        <mat-icon>download</mat-icon>
+        Export Results
+      </button>
+
+      <button
+        mat-raised-button
+        color="warn"
+        (click)="debugCheckConfigurations()"
+        [disabled]="isLoading"
+      >
+        <mat-icon>bug_report</mat-icon>
+        Debug Configs
       </button>
     </div>
 
     <!-- Progress Bar -->
     <div *ngIf="isLoading" class="progress-section">
       <mat-progress-spinner
-        mode="determinate"
-        [value]="currentProgress"
+        mode="indeterminate"
         diameter="30"
       ></mat-progress-spinner>
-      <span class="progress-text">{{ currentProgress }}% Complete</span>
+      <span class="progress-text">Loading data...</span>
     </div>
 
     <!-- Error Message -->
@@ -115,24 +167,33 @@
   </div>
 
   <!-- Statistics Summary -->
-  <div *ngIf="comparisonStats" class="stats-summary">
+  <div *ngIf="evaluationData && evaluationData.length > 0 && statistics" class="stats-summary">
     <h3>Performance Summary</h3>
-
     <div class="stats-grid">
       <div class="stat-card">
-        <h4>Average CER</h4>
+        <h4>OCR Performance</h4>
         <div class="stat-values">
           <div class="stat-item">
-            <span class="stat-label">OCR Only:</span>
-            <span class="stat-value">{{ comparisonStats.avgOcrCer.toFixed(2) }}%</span>
+            <span class="stat-label">Average CER:</span>
+            <span class="stat-value">{{ statistics.averageCerOcr?.toFixed(2) || '-' }}%</span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Text-Only LLM:</span>
-            <span class="stat-value">{{ comparisonStats.avgTextOnlyCer.toFixed(2) }}%</span>
+            <span class="stat-label">Average WER:</span>
+            <span class="stat-value">{{ statistics.averageWerOcr?.toFixed(2) || '-' }}%</span>
           </div>
-          <div class="stat-item highlight">
-            <span class="stat-label">Vision LLM:</span>
-            <span class="stat-value">{{ comparisonStats.avgVisionCer.toFixed(2) }}%</span>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <h4>LLM Performance</h4>
+        <div class="stat-values">
+          <div class="stat-item">
+            <span class="stat-label">Average CER:</span>
+            <span class="stat-value">{{ statistics.averageCerLlm?.toFixed(2) || '-' }}%</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-label">Average WER:</span>
+            <span class="stat-value">{{ statistics.averageWerLlm?.toFixed(2) || '-' }}%</span>
           </div>
         </div>
       </div>
@@ -140,85 +201,187 @@
       <div class="stat-card">
         <h4>Improvement</h4>
         <div class="stat-values">
-          <div class="stat-item large" [class.positive]="comparisonStats.avgImprovement > 0">
-            <span class="stat-value">{{ comparisonStats.avgImprovement > 0 ? '+' : '' }}{{ comparisonStats.avgImprovement.toFixed(2) }}%</span>
-            <span class="stat-label">Average Improvement</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="stat-card">
-        <h4>Sample Distribution</h4>
-        <div class="stat-values">
           <div class="stat-item">
-            <span class="stat-label">Better with Vision:</span>
-            <span class="stat-value positive">{{ comparisonStats.betterWithVision }}</span>
+            <span class="stat-label">CER Reduction:</span>
+            <span class="stat-value positive">{{ statistics.cerReductionPercentage?.toFixed(2) || '-' }}%</span>
           </div>
           <div class="stat-item">
-            <span class="stat-label">Same Performance:</span>
-            <span class="stat-value">{{ comparisonStats.samePerformance }}</span>
-          </div>
-          <div class="stat-item">
-            <span class="stat-label">Worse with Vision:</span>
-            <span class="stat-value negative">{{ comparisonStats.worseWithVision }}</span>
+            <span class="stat-label">WER Reduction:</span>
+            <span class="stat-value positive">{{ statistics.werReductionPercentage?.toFixed(2) || '-' }}%</span>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Detailed Results Table -->
-  <div *ngIf="testResults.length > 0" class="results-section">
-    <div class="results-header">
-      <h3>Detailed Results</h3>
-      <button
-        mat-raised-button
-        color="accent"
-        (click)="downloadResults()"
-        class="download-btn"
-      >
-        <mat-icon>download</mat-icon>
-        Download Results
+  <!-- Image Gallery with Results -->
+  <div *ngIf="displayedData && displayedData.length > 0" class="results-gallery">
+    <h3>Image Samples (Showing {{ displayedData.length }} of {{ evaluationData.length }} total)</h3>
+
+    <div class="gallery-controls">
+      <button mat-button (click)="changeView('grid')" [class.active]="viewMode === 'grid'">
+        <mat-icon>grid_view</mat-icon>
+        Grid View
+      </button>
+      <button mat-button (click)="changeView('list')" [class.active]="viewMode === 'list'">
+        <mat-icon>view_list</mat-icon>
+        List View
+      </button>
+      <button mat-button (click)="changeView('compare')" [class.active]="viewMode === 'compare'">
+        <mat-icon>compare</mat-icon>
+        Compare View
       </button>
     </div>
 
-    <table class="results-table">
-      <thead>
-      <tr>
-        <th rowspan="2">File</th>
-        <th rowspan="2">Ground Truth</th>
-        <th rowspan="2">OCR Output</th>
-        <th colspan="2">Text-Only Correction</th>
-        <th colspan="2">Vision Correction</th>
-        <th rowspan="2">Improvement</th>
-      </tr>
-      <tr>
-        <th>Output</th>
-        <th>CER</th>
-        <th>Output</th>
-        <th>CER</th>
-      </tr>
-      </thead>
-      <tbody>
-      <tr *ngFor="let result of testResults" [class.improved]="result.improvement > 0">
-        <td class="file-name">{{ result.fileName }}</td>
-        <td class="text-cell">{{ result.groundTruth }}</td>
-        <td class="text-cell">{{ result.ocrOutput }}</td>
-        <td class="text-cell">{{ result.textOnlyCorrection }}</td>
-        <td class="metric-cell">{{ result.textOnlyCer.toFixed(2) }}%</td>
-        <td class="text-cell highlight">{{ result.visionCorrection }}</td>
-        <td class="metric-cell highlight">{{ result.visionCer.toFixed(2) }}%</td>
-        <td class="improvement-cell" [class.positive]="result.improvement > 0" [class.negative]="result.improvement < 0">
-          {{ result.improvement > 0 ? '+' : '' }}{{ result.improvement.toFixed(2) }}%
-        </td>
-      </tr>
-      </tbody>
-    </table>
+    <!-- Grid View -->
+    <div *ngIf="viewMode === 'grid'" class="grid-view">
+      <div class="image-card" *ngFor="let item of displayedData; let i = index">
+        <div class="image-header">
+          <span class="image-number">#{{ i + 1 }}</span>
+          <span class="file-name">{{ item.fileName }}</span>
+        </div>
+
+        <div class="image-container">
+          <img
+            [src]="getImagePath(item.fileName)"
+            [alt]="'Handwritten sample ' + item.fileName"
+            (load)="onImageLoad($event, item.fileName)"
+            (error)="handleImageError($event, item.fileName)"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="text-comparisons">
+          <div class="text-section ground-truth">
+            <h5>Ground Truth</h5>
+            <p>{{ item.groundTruth }}</p>
+          </div>
+
+          <div class="text-section ocr-output">
+            <h5>OCR Output <span class="metric">(CER: {{ item.cerOcr.toFixed(2) }}%)</span></h5>
+            <p>{{ item.predictedTextOcr }}</p>
+          </div>
+
+          <div class="text-section llm-output">
+            <h5>LLM Correction <span class="metric">(CER: {{ item.cerLlm.toFixed(2) }}%)</span></h5>
+            <p>{{ item.predictedTextLlm }}</p>
+            <div class="confidence" *ngIf="item.confidence">
+              <small>Confidence: {{ item.confidence }}</small>
+            </div>
+          </div>
+
+          <div class="improvements" [class.improved]="item.cerLlm < item.cerOcr">
+            <mat-icon>{{ item.cerLlm < item.cerOcr ? 'trending_up' : (item.cerLlm > item.cerOcr ? 'trending_down' : 'remove') }}</mat-icon>
+            <span>{{ getImprovementText(item) }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- List View -->
+    <div *ngIf="viewMode === 'list'" class="list-view">
+      <table class="results-table">
+        <thead>
+        <tr>
+          <th>#</th>
+          <th>Image</th>
+          <th>File Name</th>
+          <th>Ground Truth</th>
+          <th>OCR Output</th>
+          <th>LLM Correction</th>
+          <th>CER (OCR)</th>
+          <th>CER (LLM)</th>
+          <th>Improvement</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let item of displayedData; let i = index" [class.improved]="item.cerLlm < item.cerOcr">
+          <td>{{ i + 1 }}</td>
+          <td class="image-cell">
+            <img
+              [src]="getImagePath(item.fileName)"
+              [alt]="'Sample ' + item.fileName"
+              (load)="onImageLoad($event, item.fileName)"
+              (error)="handleImageError($event, item.fileName)"
+              loading="lazy"
+            />
+          </td>
+          <td class="file-name">{{ item.fileName }}</td>
+          <td class="text-cell">{{ item.groundTruth }}</td>
+          <td class="text-cell">{{ item.predictedTextOcr }}</td>
+          <td class="text-cell highlight">{{ item.predictedTextLlm }}</td>
+          <td class="metric-cell">{{ item.cerOcr.toFixed(2) }}%</td>
+          <td class="metric-cell highlight">{{ item.cerLlm.toFixed(2) }}%</td>
+          <td class="improvement-cell" [class.positive]="item.cerLlm < item.cerOcr" [class.negative]="item.cerLlm > item.cerOcr">
+            {{ getImprovementPercentage(item) }}
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Compare View -->
+    <div *ngIf="viewMode === 'compare'" class="compare-view">
+      <div class="compare-container" *ngFor="let item of displayedData; let i = index">
+        <h4 class="compare-header">Sample #{{ i + 1 }}: {{ item.fileName }}</h4>
+
+        <div class="compare-grid">
+          <div class="compare-section">
+            <h5>Original Image</h5>
+            <img
+              [src]="getImagePath(item.fileName)"
+              [alt]="'Handwritten sample ' + item.fileName"
+              (load)="onImageLoad($event, item.fileName)"
+              (error)="handleImageError($event, item.fileName)"
+              loading="lazy"
+            />
+          </div>
+
+          <div class="compare-section">
+            <h5>Text Analysis</h5>
+            <div class="compare-texts">
+              <div class="compare-item ground-truth">
+                <label>Ground Truth:</label>
+                <p>{{ item.groundTruth }}</p>
+              </div>
+
+              <div class="compare-item ocr">
+                <label>OCR (CER: {{ item.cerOcr.toFixed(2) }}%):</label>
+                <p>{{ item.predictedTextOcr }}</p>
+              </div>
+
+              <div class="compare-item llm">
+                <label>LLM (CER: {{ item.cerLlm.toFixed(2) }}%):</label>
+                <p>{{ item.predictedTextLlm }}</p>
+              </div>
+
+              <div class="compare-metrics">
+                <div class="metric-item">
+                  <label>CER Improvement:</label>
+                  <span [class.positive]="item.cerLlm < item.cerOcr" [class.negative]="item.cerLlm > item.cerOcr">
+                    {{ getImprovementPercentage(item) }}
+                  </span>
+                </div>
+                <div class="metric-item">
+                  <label>WER Improvement:</label>
+                  <span [class.positive]="item.werLlm < item.werOcr" [class.negative]="item.werLlm > item.werOcr">
+                    {{ getWERImprovement(item) }}
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Empty State -->
-  <div *ngIf="!isLoading && testResults.length === 0 && !errorMessage" class="empty-state">
-    <mat-icon>assessment</mat-icon>
-    <p>Configure your test parameters and click "Run Vision Test" to begin</p>
+  <div *ngIf="!isLoading && (!evaluationData || evaluationData.length === 0) && !errorMessage" class="empty-state">
+    <mat-icon>image_search</mat-icon>
+    <p>Select your configuration and click "Load Images" to view handwriting samples</p>
+    <p style="margin-top: 10px; font-size: 0.9rem; color: #666;">
+      If you're not sure which configuration has data, click "Find Working Config" to automatically find one.
+    </p>
   </div>
 </div>
