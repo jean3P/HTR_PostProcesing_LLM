@@ -1,0 +1,15 @@
+[project]
+name = "llms"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "accelerate>=1.8.1",
+    "dotenv>=0.9.9",
+    "editdistance>=0.8.1",
+    "openai>=1.91.0",
+    "tiktoken>=0.9.0",
+    "torch>=2.7.1",
+    "transformers>=4.52.4",
+]

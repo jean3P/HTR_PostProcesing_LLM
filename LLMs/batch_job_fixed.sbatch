@@ -103,8 +103,8 @@ MODELS=(
 # All datasets
 DATASETS=(
     "iam"
-    "bentham"
-    "washington"
+#    "bentham"
+#    "washington"
 )
 
 # HTR Models
@@ -114,15 +114,15 @@ HTR_MODELS=(
 
 # All 4 prompts
 PROMPT_METHODS=(
-    "promptOR_1"
-    "promptOR_2"
-    "promptOR_3"
+#    "promptOR_1"
+#    "promptOR_2"
+#    "promptOR_3"
     "promptOR_4"
 )
 
 # All training sizes
 TRAIN_SIZES=(
-    "train_25"
+#    "train_25"
     "train_50"
     "train_75"
     "train_100"

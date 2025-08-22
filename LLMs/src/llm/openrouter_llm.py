@@ -33,7 +33,7 @@ class OpenRouterLLM(BaseLLM):
         "internalvl3": "opengvlab/internvl3-14b",  # Adjust based on actual OpenRouter ID
         "mistral": "mistralai/mistral-7b-instruct",
         "gemini-2.5-pro": "google/gemini-2.5-pro",  # Adjust based on actual availability
-        "gpt-4.1-mini": "openai/gpt-4o-mini",
+        "gpt-4.1-mini": "openai/gpt-4.1-mini",
         "claude-sonnet-4": "anthropic/claude-sonnet-4"
     }
 
